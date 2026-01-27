@@ -1,0 +1,151 @@
+# Portfolio 2 - Project Todolist
+
+## Phase 1: Project Setup
+
+- [ ] Initialize Angular project with latest version
+- [ ] Configure .gitignore for Angular project
+- [ ] Create CLAUDE.md (project context file with tech stack, structure, coding standards, commands)
+- [ ] Set up folder structure (components, assets/img, services, shared)
+- [ ] Install required dependencies (ngx-translate for i18n)
+- [ ] Configure CSS variables for design system (colors, spacing, typography)
+- [ ] Set up routing module
+- [ ] Create base SCSS files (variables, mixins, reset)
+
+## Phase 2: Core Components
+
+### Header Component
+- [ ] Create header component
+- [ ] Implement logo placement (left)
+- [ ] Build navigation menu (About Me, Skills, Projects, Contact)
+- [ ] Create language toggle switch (DE/EN, default: DE)
+- [ ] Add hover states for navigation items
+- [ ] Implement smooth scroll to sections
+- [ ] Make header responsive (hamburger menu for mobile)
+
+### Hero Section Component
+- [ ] Create hero section component
+- [ ] Set up 100vh layout with background image
+- [ ] Build left column (social media icons with white circular borders)
+- [ ] Build right column top row ("Hello World" button + "FRONTEND" text + Polaroid image)
+- [ ] Build right column bottom row ("DEVELOPER" text + "Get in Touch" button)
+- [ ] Add entrance animations
+- [ ] Ensure responsive layout (stack columns on mobile)
+
+### About Me Section Component
+- [ ] Create about-me component
+- [ ] Design and implement layout
+- [ ] Add scroll animation on section entry
+- [ ] Make responsive
+
+### Skills Section Component
+- [ ] Create skills component
+- [ ] Design skill cards/display
+- [ ] Ensure correct spelling (JavaScript, TypeScript, Angular, etc.)
+- [ ] Add hover effects
+- [ ] Make responsive
+
+### Projects Section Component
+- [ ] Create projects component
+- [ ] Design project cards
+- [ ] Implement project links (open in new tab)
+- [ ] Add hover animations
+- [ ] Make responsive
+
+### Contact Section Component
+- [ ] Create contact component
+- [ ] Build contact form (name, email, message fields)
+- [ ] Implement onBlur validation
+- [ ] Add privacy checkbox
+- [ ] Disable submit button until form valid
+- [ ] Prevent layout shift on validation messages
+- [ ] Style autocomplete to match design (Webkit)
+- [ ] Implement form submission with feedback
+- [ ] Add loading state during submission
+- [ ] Show success/error messages
+
+### Footer Component
+- [ ] Create footer component
+- [ ] Add Impressum link (router link)
+- [ ] Add Privacy Policy link (router link)
+- [ ] Make responsive
+
+## Phase 3: Legal Pages
+
+- [ ] Create Impressum page component
+- [ ] Create Privacy Policy page component
+- [ ] Reuse header and footer components
+- [ ] Set up routes for legal pages
+
+## Phase 4: Internationalization (i18n)
+
+- [ ] Set up ngx-translate
+- [ ] Create translation files (de.json, en.json)
+- [ ] Translate all static text
+- [ ] Implement language toggle functionality
+- [ ] Persist language preference in localStorage
+- [ ] Test both language versions
+
+## Phase 5: Responsiveness
+
+- [ ] Define breakpoints (320px, 768px, 1024px, 1440px)
+- [ ] Test and fix mobile layout (320px - 767px)
+- [ ] Test and fix tablet layout (768px - 1023px)
+- [ ] Test and fix desktop layout (1024px+)
+- [ ] Implement max-width container (1440px or 1920px)
+- [ ] Remove unnecessary scrollbars
+- [ ] Test hero section 100vh on all devices
+
+## Phase 6: Animations & UX
+
+- [ ] Add loading spinner for initial page load
+- [ ] Implement scroll animations for section entries
+- [ ] Add hover effects to all clickable elements (max 200-300ms)
+- [ ] Ensure cursor: pointer on all buttons
+- [ ] Remove default borders from inputs/buttons
+- [ ] Add focus states for accessibility
+
+## Phase 7: Performance & Optimization
+
+- [ ] Compress all images (max 500kb each)
+- [ ] Implement lazy loading for images
+- [ ] Optimize bundle size
+- [ ] Run Lighthouse audit (target: >90)
+- [ ] Fix any performance issues
+
+## Phase 8: Accessibility
+
+- [ ] Add proper semantic HTML
+- [ ] Implement ARIA labels where needed
+- [ ] Ensure keyboard navigation works
+- [ ] Test color contrast (WCAG AA)
+- [ ] Add visible focus indicators
+- [ ] Test with screen reader
+
+## Phase 9: Testing & Quality
+
+- [ ] Write unit tests for components
+- [ ] Write unit tests for services
+- [ ] Test in Chrome
+- [ ] Test in Firefox
+- [ ] Test in Safari
+- [ ] Test in Edge
+- [ ] Check for console errors/warnings
+- [ ] Validate all links work
+- [ ] Test contact form submission
+
+## Phase 10: Deployment
+
+- [ ] Set up hosting server
+- [ ] Create subdomain for projects
+- [ ] Configure SSL certificate
+- [ ] Enforce HTTPS redirect
+- [ ] Deploy application
+- [ ] Final cross-browser testing on production
+
+## Phase 11: Documentation & Cleanup
+
+- [ ] Review all files (<400 LOC each)
+- [ ] Review all functions (<14 lines each)
+- [ ] Check naming conventions (camelCase)
+- [ ] Remove unused code
+- [ ] Final commit with conventional commit message

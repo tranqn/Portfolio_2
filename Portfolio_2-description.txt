@@ -1,0 +1,35 @@
+# Portfolio Design Specification
+
+## Desktop View
+
+### Above the Fold Section (Hero Section)
+
+**Layout:**
+- Full height: 100vh with a single background image covering the entire section
+- Note: The header is included within this 100vh and shares the same background image
+
+**Header (Top of Hero Section):**
+- Left: Website logo
+- Center: Navigation menu (About Me, Skills, Projects, Contact) - evenly spaced
+- Right: Language toggle switch (German / English, default: German)
+- All header elements appear equally sized/spaced
+
+**Hero Content (Below Header):**
+
+Layout - Two Main Columns:
+
+**Left Column:**
+- Social media icons with white circular borders
+- Aligned to bottom of the section
+
+**Right Column (Split into two rows):**
+
+Top Row (Split into two columns):
+- Left:
+  - "Hello World" button (top)
+  - "FRONTEND" text (bottom)
+- Right: Polaroid-style image
+
+Bottom Row (Split into two sections):
+- Top: "DEVELOPER" text
+- Bottom: "Get in Touch" button

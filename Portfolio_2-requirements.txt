@@ -1,0 +1,69 @@
+# Portfolio Technical Requirements
+
+## General
+
+- Use clear, meaningful commit messages following https://www.conventionalcommits.org/ specification
+- Use .gitignore to exclude unnecessary files
+- Test all functionalities with the latest versions of major browsers (Chrome, Firefox, Safari, Edge)
+- Compress photos (max 500kb)
+
+## User Experience
+
+- Provide intuitive feedback for interactions (hover effects, etc.)
+- Buttons must have CSS property `cursor: pointer`
+- Inputs and buttons must not have default borders
+- Include subtle animations for page load/scroll (loading spinner, etc.)
+- Only use animations when an element is clickable (max 125ms duration) or when scrolling into a new section
+
+## Technical Requirements
+
+- No console errors, warnings, or logs in the console
+- Maximum 400 lines of code per file
+- Use descriptive, consistent file names
+- Modern Angular file/project structure:
+  - Create a component for each section
+  - Impressum opens via router link
+  - Impressum/Privacy Policy use the same header and footer as the main page
+  - Links to projects/GitHub/LinkedIn etc. must open in a new browser window
+
+## Responsiveness
+
+- Every page must work at any resolution down to min 320px
+- Every page must work on mobile, tablet, and desktop
+- Portfolio must work on mobile devices with Above the Fold section always at 100vh
+- Limit page content width to 1920px or 1440px on large resolutions
+- No avoidable scrollbars at smaller resolutions
+
+## TypeScript / Clean Code
+
+- A function has only one responsibility
+- A function is maximum 14 lines long (HTML excluded)
+- Use clear function names
+- Use camelCase for file names, variables, and functions (correct: shoppingCart, wrong: Shopping_Cart)
+- First letter of functions/variables is lowercase
+- 1-2 blank lines between functions
+- Maximum 400 LOC per file
+- Files are named concisely
+- Separate folder for images (img)
+
+## Text Content
+
+- Ensure correct spelling for skills (e.g., "JavaScript", not "Javascript")
+- All text can be translated to German and English via a button in the header/responsive menu
+
+## Project Section
+
+- Projects must be linked and hosted on your own server (create separate subdomain)
+
+## URL and Domain
+
+- SSL certificate is configured for the site
+- SSL-secured connection is always enforced
+
+## Contact Form Validation
+
+- Form fields should only be validated after leaving a field (onBlur), not during input
+- Validation messages must not cause layout shifts
+- Email send button should only be active when form validation passes (including privacy checkbox)
+- Browser autocomplete must not affect the specified design (Webkit)
+- User receives feedback when email is sent

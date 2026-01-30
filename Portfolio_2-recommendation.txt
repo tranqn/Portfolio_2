@@ -194,3 +194,81 @@
 - Image compression: <500kb
 - Lighthouse score: >90
 - Test coverage: >70%
+
+
+Here are my recommendations for a modern, responsive layout system:                                       
+                                                                                                            
+  Breakpoints                                                                                               
+                                                                                                            
+  Mobile:      320px - 767px                                                                                
+  Tablet:      768px - 1023px                                                                               
+  Desktop:     1024px - 1439px                                                                              
+  Large:       1440px - 1919px                                                                              
+  Ultrawide:   1920px+                                                                                      
+                                                                                                            
+  Content Container Strategy                                                                                
+                                                                                                            
+  Max content width: 1200px or 1280px (most common for readability)                                         
+                                                                                                            
+  Horizontal padding (left/right margins):                                                                  
+  - Mobile: 16px or 24px                                                                                    
+  - Tablet: 32px or 48px                                                                                    
+  - Desktop+: 64px or auto-centered                                                                         
+                                                                                                            
+  CSS Implementation                                                                                        
+                                                                                                            
+  // Variables                                                                                              
+  $content-max-width: 1200px;                                                                               
+  $padding-mobile: 24px;                                                                                    
+  $padding-tablet: 48px;                                                                                    
+  $padding-desktop: 64px;                                                                                   
+                                                                                                            
+  // Container class                                                                                        
+  .container {                                                                                              
+    width: 100%;                                                                                            
+    max-width: $content-max-width;                                                                          
+    margin-inline: auto;  // centers the container                                                          
+    padding-inline: $padding-mobile;                                                                        
+                                                                                                            
+    @media (min-width: 768px) {                                                                             
+      padding-inline: $padding-tablet;                                                                      
+    }                                                                                                       
+                                                                                                            
+    @media (min-width: 1024px) {                                                                            
+      padding-inline: $padding-desktop;                                                                     
+    }                                                                                                       
+                                                                                                            
+    @media (min-width: 1440px) {                                                                            
+      padding-inline: 0;  // container is narrower than viewport, no padding needed                         
+    }                                                                                                       
+  }                                                                                                         
+                                                                                                            
+  Visual Behavior                                                                                           
+                                                                                                            
+  Mobile (320-767px)                                                                                        
+  |--24px--|----content----|--24px--|                                                                       
+                                                                                                            
+  Tablet (768-1023px)                                                                                       
+  |--48px--|----content----|--48px--|                                                                       
+                                                                                                            
+  Desktop (1024-1439px)                                                                                     
+  |--64px--|----content----|--64px--|                                                                       
+                                                                                                            
+  Large/Ultrawide (1440px+)                                                                                 
+  |---auto---|--1200px--|---auto---|                                                                        
+       ^                      ^                                                                             
+     equal margins (centered)                                                                               
+                                                                                                            
+  Recommendations                                                                                           
+                                                                                                            
+  1. Use 1200px max-width - Sweet spot for readability. 1440px feels too wide for text-heavy sections.      
+  2. Hero section exception - Your hero can span full width (background image) while inner content stays    
+  within the container.                                                                                     
+  3. Consider 8px grid system - All spacing values divisible by 8 (16, 24, 32, 48, 64, etc.) creates visual 
+  harmony.                                                                                                  
+  4. Ultrawide consideration - At 1920px+, consider a subtle background color/pattern outside the content   
+  area so it doesn't feel empty.                                                                            
+  5. Fluid typography - Use clamp() for font sizes that scale smoothly:                                     
+  font-size: clamp(1rem, 0.9rem + 0.5vw, 1.25rem);                                                          
+                                                                                                            
+  Want me to update the documentation files with these specifications?                                      

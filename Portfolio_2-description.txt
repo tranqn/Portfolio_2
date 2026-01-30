@@ -33,3 +33,7 @@ Top Row (Split into two columns):
 Bottom Row (Split into two sections):
 - Top: "DEVELOPER" text
 - Bottom: "Get in Touch" button
+
+### About me Section
+
+

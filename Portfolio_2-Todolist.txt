@@ -24,38 +24,73 @@
 
 ### Hero Section Component
 - [ ] Create hero section component
-- [ ] Set up 100vh layout with background image
-- [ ] Build left column (social media icons with white circular borders)
-- [ ] Build right column top row ("Hello World" button + "FRONTEND" text + Polaroid image)
-- [ ] Build right column bottom row ("DEVELOPER" text + "Get in Touch" button)
+- [ ] Set up 100vh layout with background image (header shares same background)
+- [ ] Build left column (social media icons with white circular borders, aligned to bottom)
+- [ ] Build right column top-left ("Hello World" button with hover animation)
+- [ ] Build right column top-left ("FRONTEND" text, hover: each letter uppercase + yellow color)
+- [ ] Build right column top-right (Polaroid-style image)
+- [ ] Build right column bottom-top ("DEVELOPER" text)
+- [ ] Build right column bottom-bottom ("Get in Touch" button)
 - [ ] Add entrance animations
 - [ ] Ensure responsive layout (stack columns on mobile)
 
 ### About Me Section Component
 - [ ] Create about-me component
-- [ ] Design and implement layout
+- [ ] Build two-column layout
+- [ ] Build left column (3 stacked images)
+- [ ] Build right column "Who's Nam?" subheading
+- [ ] Build right column "About Me" headline with underscore animation
+- [ ] Build right column about-me text
+- [ ] Build right column "Let's talk" button
 - [ ] Add scroll animation on section entry
 - [ ] Make responsive
 
 ### Skills Section Component
 - [ ] Create skills component
-- [ ] Design skill cards/display
+- [ ] Set up full background image covering entire section
+- [ ] Build two-column layout
+- [ ] Build left column "My Stack" subheading
+- [ ] Build left column "Skill set" headline
+- [ ] Build left column circle animation
+- [ ] Build right column top row (desktop paper background image with skills text)
+- [ ] Build right column bottom-left (skill icons with icon name below each icon)
+- [ ] Build right column bottom-right (sticker image with peel animation)
 - [ ] Ensure correct spelling (JavaScript, TypeScript, Angular, etc.)
-- [ ] Add hover effects
 - [ ] Make responsive
 
 ### Projects Section Component
 - [ ] Create projects component
-- [ ] Design project cards
+- [ ] Build 4-element grid layout
+- [ ] Build intro card ("My Craft" subheading, "Projects" headline, underscore animation, text)
+- [ ] Build 3 project cards (project image, title, description, link)
 - [ ] Implement project links (open in new tab)
-- [ ] Add hover animations
+- [ ] Add hover effect on project cards (zoom in, overlay shadow, "Project details" button)
+- [ ] Make responsive
+
+### Colleagues Thoughts Section Component
+- [ ] Create colleagues-thoughts component
+- [ ] Build 3-row layout
+- [ ] Build top row left (arrow animation)
+- [ ] Build top row right ("in Their Words:" text)
+- [ ] Build middle row ("Colleague Thoughts" headline)
+- [ ] Build bottom row (3 colleague cards)
+- [ ] Build colleague card layout (top: colleague text, bottom-left: name + position, bottom-right: profile box)
+- [ ] Add hover effect on card (colleague name turns white)
+- [ ] Add hover effect on profile box (profile elements turn white)
 - [ ] Make responsive
 
 ### Contact Section Component
 - [ ] Create contact component
-- [ ] Build contact form (name, email, message fields)
+- [ ] Set up 100vh layout with background image (footer shares same background)
+- [ ] Build two-column layout
+- [ ] Build left column "Contact Me" text
+- [ ] Build left column "Ready to work together?" headline
+- [ ] Build left column contact-me text
+- [ ] Build left column arrow animation
+- [ ] Build right column contact form (name, email, message fields)
+- [ ] Build right column sticker overlay on contact form
+- [ ] Add privacy policy agreement text with custom checkbox
 - [ ] Implement onBlur validation
-- [ ] Add privacy checkbox
 - [ ] Disable submit button until form valid
 - [ ] Prevent layout shift on validation messages
 - [ ] Style autocomplete to match design (Webkit)
@@ -65,6 +100,9 @@
 
 ### Footer Component
 - [ ] Create footer component
+- [ ] Add logo
+- [ ] Add copyright text
+- [ ] Build 4-column links layout (Legal Notice | Github | LinkedIn | Email)
 - [ ] Add Impressum link (router link)
 - [ ] Add Privacy Policy link (router link)
 - [ ] Make responsive

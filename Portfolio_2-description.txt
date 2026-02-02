@@ -10,7 +10,7 @@
 
 **Header (Top of Hero Section):**
 - Left: Website logo
-- Center: Navigation menu (About Me, Skills, Projects, Contact) - evenly spaced
+- Center: Navigation menu (About Me, Skills, Projects, Contact)
 - Right: Language toggle switch (German / English, default: German)
 - All header elements appear equally sized/spaced
 
@@ -26,8 +26,8 @@ Layout - Two Main Columns:
 
 Top Row (Split into two columns):
 - Left:
-  - "Hello World" button (top)
-  - "FRONTEND" text (bottom)
+  - "Hello World" button (top), hover animation
+  - "FRONTEND" text (bottom), on hover each letter gets uppercase and yellow color
 - Right: Polaroid-style image
 
 Bottom Row (Split into two sections):
@@ -36,4 +36,94 @@ Bottom Row (Split into two sections):
 
 ### About me Section
 
+Two-column layout:
 
+Left Column:
+- 3 images among each other
+
+Right Column:
+- Who's Nam?
+- "About Me" headline
+- underscore animation
+- about me text
+- "Let's talk" button
+
+### Skills Section
+
+- single background image covering the entire section
+
+Two-column layout:
+
+Left Column:
+- My Stack
+- Skill set headline
+- circle animation
+
+Right Column:
+
+Two-row layout:
+
+Top Row:
+- desktop paper backgroundimage with skills text
+
+Bottom Row:
+
+Two-column layout:
+
+Left Column:
+- skills icons with icon name below each icon
+
+Right Column:
+- sticker image with peel animation
+
+### Projects Section
+
+- 4 Elements:
+  - 1 Element with same size as 1 card, with "My Craft", "Projects" headline, underscore animation, and "Projects" text
+  - 3 cards with project image, project title, project description, project link
+  - Hover on project image: zoom in, overlay shadow, show "Project details" button
+
+### Colleagues Thoughts Section
+
+3-row layout:
+
+Top Row (two columns):
+- Left: arrow animation
+- Right: "in Their Words:"
+
+Middle Row:
+- "Colleague Thoughts" headline
+
+Bottom Row:
+- 3 cards, each with:
+  - Top: colleague text
+  - Bottom-left: colleague name, colleague position
+  - Bottom-right: colleague profile box
+- Hover on card: colleague name turns white
+- Hover on profile box: profile elements turn white
+
+### Contact Section
+
+**Layout:**
+- Full height: 100vh with a single background image covering the entire section
+- Note: The Footer is included within this 100vh and shares the same background image
+
+Two-column layout:
+
+Left Column:
+- "Contact Me"
+- "Ready to work together?" headline
+- contact me text
+- arrow animation
+
+Right Column:
+- contact form
+- sticker overlay on contact form
+- privacy policy agreement text, with custom checkbox
+- send submit button
+
+### Footer Section
+
+- logo
+- copyright text
+- 4 columns: Legal Notice | Github | LinkedIn | Email

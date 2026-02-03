@@ -1,129 +1,200 @@
 # Portfolio Design Specification
 
-## Desktop View
+## Global Components
 
-### Above the Fold Section (Hero Section)
+### CTA Button
+Reusable call-to-action button used across multiple sections.
+- On light background: black text, white background, black border, black box-shadow
+- On dark background: white text, black background, white border, white box-shadow
+- Hover (both variants): white text, orange background, translate to box-shadow ending coordinates
 
-**Layout:**
-- Full height: 100vh with a single background image covering the entire section
-- Note: The header is included within this 100vh and shares the same background image
+### Animation Technique
+All animations below are **images revealed with CSS `clip-path`**, except the Skills "Skill Set" circle animation (see below).
 
-**Header (Top of Hero Section):**
-- Left: Website logo
-- Center: Navigation menu (About Me, Skills, Projects, Contact)
-- Right: Language toggle switch (German / English, default: German)
-- All header elements appear equally sized/spaced
+### Arrow Animation
+Arrow image revealed with clip-path. Used in: Colleagues Thoughts section, Contact section.
 
-**Hero Content (Below Header):**
+### Header Navigation Hover Animations
+Each nav item has a unique hover animation (all clip-path image reveals):
+- "About Me": circle image over text
+- "Skills": underline image under text
+- "Projects": cross-out image over text
+- "Contact": underline image under text
 
-Layout - Two Main Columns:
+### Section Headline Animations
+Each section has a unique animation on its headline (all clip-path image reveals, except Skills):
+- About Me: underscore image beneath "About Me" headline
+- Projects: underscore image beneath "Projects" headline
+- Skills: circle image over "Skill Set" headline — starts at -90deg rotation and scaled down, animates to 0deg rotation and original size, also revealed with clip-path
 
-**Left Column:**
-- Social media icons with white circular borders
-- Aligned to bottom of the section
+---
 
-**Right Column (Split into two rows):**
+## Sections
 
-Top Row (Split into two columns):
+### 1. Hero Section (Above the Fold)
+
+**Layout:** 100vh, single background image covering entire section (header included within 100vh, sharing the same background).
+
+**Header:**
+- Left: website logo
+- Center: navigation menu (About Me, Skills, Projects, Contact) — each item has a unique hover animation (see Global Components)
+- Right: language toggle switch (German / English, default: German)
+- All header elements equally sized/spaced
+- Mobile: logo + hamburger menu icon only
+
+**Hamburger Menu (mobile only):**
+- Hamburger icon transforms to X icon on open
+- Navigation menu (About Me, Skills, Projects, Contact)
+- Language toggle switch
+- Social media icons (GitHub, LinkedIn, Email)
+
+**Hero Content:**
+
+Desktop — two main columns:
+
+Left column:
+- Social media icons (GitHub, LinkedIn, Email) with white circular borders
+- Aligned to bottom of section
+
+Right column, top row (two columns):
 - Left:
-  - "Hello World" button (top), hover animation
-  - "FRONTEND" text (bottom), on hover each letter gets uppercase and yellow color
+  - "Hello World" button (top)
+    - Hover: text changes to "I'm Quoc Nam Tran", blue background expands from center to expanded box size, overlay image fades in aligned to the right rotating 180 degrees with slight bounce-back effect
+  - "FRONTEND" text (bottom)
+    - Hover: each letter gets uppercase and yellow color
 - Right: Polaroid-style image
+  - Default: grayscale, text ":)"
+  - Hover: color, text ":D"
 
-Bottom Row (Split into two sections):
+Right column, bottom row:
 - Top: "DEVELOPER" text
-- Bottom: "Get in Touch" button
+- Bottom: "Get in Touch" button (CTA)
 
-### About me Section
+Mobile — single column, stacked:
+- "Hello World" button
+- "FRONTEND" text
+- "DEVELOPER" text
+- "Get in Touch" button (CTA)
+- Polaroid image
 
-Two-column layout:
+---
 
-Left Column:
-- 3 images among each other
+### 2. About Me Section
 
-Right Column:
-- Who's Nam?
-- "About Me" headline
-- underscore animation
-- about me text
-- "Let's talk" button
+**Elements:**
+- "Who's Nam?" subheadline
+- "About Me" headline + underscore animation
+- About-me text
+- "Let's talk" button (CTA)
+- 3 images stacked vertically
 
-### Skills Section
+**Desktop layout** — two columns:
+- Left: 3 stacked images
+- Right: subheadline, headline, text, button
 
-- single background image covering the entire section
+**Mobile layout** — single column:
+- Subheadline, headline, text, button, then 3 images below
 
-Two-column layout:
+---
 
-Left Column:
-- My Stack
-- Skill set headline
-- circle animation
+### 3. Skills Section
 
-Right Column:
+**Layout:** single background image covering entire section.
 
-Two-row layout:
+**Elements:**
+- "My Stack" subheadline
+- "Skill Set" headline + circle animation over headline
+- Torn/folded paper graphic with skills text overlaid
+- Skill icons with icon name below each icon
+- Sticker image with peel animation (unique sticker design for this section)
 
-Top Row:
-- desktop paper backgroundimage with skills text
+**Desktop layout** — two columns:
+- Left: subheadline, headline, circle animation
+- Right (two rows):
+  - Top: torn paper graphic with skills text
+  - Bottom (two columns):
+    - Left: skill icons with labels
+    - Right: sticker with peel animation
 
-Bottom Row:
+**Mobile layout** — single column:
+- Subheadline, headline, circle animation, skill icons with labels, sticker with peel animation
 
-Two-column layout:
+---
 
-Left Column:
-- skills icons with icon name below each icon
+### 4. Projects Section
 
-Right Column:
-- sticker image with peel animation
+**Elements:**
+- 1 intro element (same size as a project card): "My Craft" subheadline, "Projects" headline, underscore animation, projects text
+- 3 project cards: project image, project title, project description
 
-### Projects Section
+**Desktop layout** — 4-element grid (1 intro + 3 cards):
+- Hover on project card: image zooms in, overlay shadow, "Project details" button (CTA) appears
 
-- 4 Elements:
-  - 1 Element with same size as 1 card, with "My Craft", "Projects" headline, underscore animation, and "Projects" text
-  - 3 cards with project image, project title, project description, project link
-  - Hover on project image: zoom in, overlay shadow, show "Project details" button
+**Mobile layout** — single column:
+- Intro content (subheadline, headline, underscore animation, text)
+- 3 project cards stacked, with "Project details" button (CTA) shown below each description (no hover)
 
-### Colleagues Thoughts Section
+---
 
-3-row layout:
+### 5. Colleagues Thoughts Section
 
-Top Row (two columns):
-- Left: arrow animation
-- Right: "in Their Words:"
-
-Middle Row:
+**Elements:**
+- Arrow animation
+- "in Their Words:" subheadline
 - "Colleague Thoughts" headline
-
-Bottom Row:
-- 3 cards, each with:
+- 3 colleague cards, each with:
   - Top: colleague text
   - Bottom-left: colleague name, colleague position
-  - Bottom-right: colleague profile box
+  - Bottom-right: profile box (LinkedIn icon + "Profile" text, links to colleague's LinkedIn page)
 - Hover on card: colleague name turns white
 - Hover on profile box: profile elements turn white
 
-### Contact Section
+**Desktop layout** — 3 rows:
+- Top row (two columns): arrow animation (left), "in Their Words:" (right)
+- Middle row: headline
+- Bottom row: 3 cards side by side, slightly overlapping each other
 
-**Layout:**
-- Full height: 100vh with a single background image covering the entire section
-- Note: The Footer is included within this 100vh and shares the same background image
+**Mobile layout:**
+- Top: 2-column row — arrow animation (left), "in Their Words:" (right)
+- Headline
+- 3 cards stacked vertically
 
-Two-column layout:
+---
 
-Left Column:
-- "Contact Me"
+### 6. Contact Section
+
+**Layout:** 100vh, single background image covering entire section (footer included within 100vh, sharing the same background).
+
+**Elements:**
+- "Contact Me" text
 - "Ready to work together?" headline
-- contact me text
-- arrow animation
+- Contact-me text
+- Arrow animation
+- Contact form (name, email, message fields)
+- Sticker overlay on contact form (unique sticker design, different from Skills sticker)
+- Privacy policy agreement text with custom checkbox
+- Send/submit button (CTA)
 
-Right Column:
-- contact form
-- sticker overlay on contact form
-- privacy policy agreement text, with custom checkbox
-- send submit button
+**Desktop layout** — two columns:
+- Left: "Contact Me", headline, text, arrow animation
+- Right: contact form with sticker overlay, privacy checkbox, submit button
 
-### Footer Section
+**Mobile layout** — single column:
+- Sticker overlay on contact content
+- "Contact Me", headline, text
+- Contact form
+- Privacy checkbox
+- Arrow animation | send/submit button (CTA) on same row
 
-- logo
-- copyright text
-- 4 columns: Legal Notice | Github | LinkedIn | Email
+---
+
+### 7. Footer Section
+
+**Elements:**
+- Logo
+- Copyright text
+- 4 link columns: Legal Notice | GitHub | LinkedIn | Email
+
+**Desktop layout:** logo, copyright text, 4 columns in a row
+
+**Mobile layout:** logo | copyright text (same row), 4 link columns below

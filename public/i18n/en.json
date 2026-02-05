@@ -1,0 +1,73 @@
+{
+  "HEADER": {
+    "ABOUT": "About me",
+    "SKILLS": "Skills",
+    "PROJECTS": "Projects",
+    "CONTACT": "Contact"
+  },
+  "HERO": {
+    "HELLO": "Hello World",
+    "FRONTEND": "Frontend",
+    "DEVELOPER": "DEVELOPER",
+    "GET_IN_TOUCH": "Get in Touch"
+  },
+  "ABOUT": {
+    "LABEL": "WHO'S NAM?",
+    "TITLE": "About me",
+    "TEXT_1": "Hey there, I'm Nam! With some information about yourself like what is your source of inspiration for improving your programming skills? Do you learn from other challenges or do you focus on video tutorials?",
+    "TEXT_2": "Let's collaborate and build something remarkable together!",
+    "BUTTON": "Let's talk",
+    "LOCATION": "Based in Saxony",
+    "RELOCATE": "Open to relocate",
+    "REMOTE": "Open to work remote"
+  },
+  "SKILLS": {
+    "LABEL": "MY STACK",
+    "TITLE": "Skill set",
+    "DESCRIPTION": "Technologies I've been working with recently and am focused on mastering. I continuously track best practises and technologies and incorporate your approvals for improving your business with new technology.",
+    "BADGE": "Also, I'm interested in diving into:"
+  },
+  "PROJECTS": {
+    "LABEL": "MY CRAFT",
+    "TITLE": "Projects",
+    "DESCRIPTION": "Encourage people to take a look and interact with your projects. Select projects that made you either proud, confident, happy or which you have learned a lot working with. Showcasing real projects and the solutions you've learnt are effective code.",
+    "PROJECT_DETAILS": "Project details",
+    "JOIN": {
+      "TITLE": "Join",
+      "TECH": "Angular | TypeScript | HTML | CSS | Firebase",
+      "DESCRIPTION": "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories."
+    },
+    "POLLO": {
+      "TITLE": "El Pollo Loco",
+      "TECH": "JavaScript | HTML | CSS",
+      "DESCRIPTION": "Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen."
+    },
+    "BUBBLE": {
+      "TITLE": "DABubble",
+      "TECH": "Angular | TypeScript | Firebase",
+      "DESCRIPTION": "This App is a Slack Clone App. It revolutionizes team communication and collaboration with its intuitive interface, real-time messaging, and robust channel organization."
+    },
+    "LIVE_TEST": "Live test",
+    "GITHUB": "Github"
+  },
+  "CONTACT": {
+    "LABEL": "GET IN TOUCH",
+    "TITLE": "Contact",
+    "DESCRIPTION": "Feel free to reach out to discuss projects, collaborations, or just to say hello. I look forward to hearing from you!",
+    "NAME_LABEL": "What's your name?",
+    "NAME_PLACEHOLDER": "Your name goes here",
+    "EMAIL_LABEL": "What's your email?",
+    "EMAIL_PLACEHOLDER": "youremail@email.com",
+    "MESSAGE_LABEL": "How can I help you?",
+    "MESSAGE_PLACEHOLDER": "Hello, I am interested in...",
+    "PRIVACY_TEXT": "I've read the",
+    "PRIVACY_LINK": "privacy policy",
+    "PRIVACY_TEXT_2": "and agree to the processing of my data as outlined.",
+    "SUBMIT": "Send message"
+  },
+  "FOOTER": {
+    "LEGAL_NOTICE": "Legal Notice",
+    "GITHUB": "Github",
+    "LINKEDIN": "LinkedIn"
+  }
+}

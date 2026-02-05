@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" role="img" aria-label="QT logo">
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="#00FF0000"></rect>
+
+  <!-- Slightly redder gradient -->
+  <defs>
+    <linearGradient id="qtGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f38aa2"></stop>   <!-- stronger rose red -->
+      <stop offset="45%" stop-color="#d58fb1"></stop>  <!-- more red in midtones -->
+      <stop offset="100%" stop-color="#6fc7e9"></stop> <!-- ice blue base -->
+    </linearGradient>
+  </defs>
+
+  <!-- Q and T now closer together -->
+  <g>
+    <text x="120" y="560" font-family="'Nunito', 'Poppins', system-ui, sans-serif" font-weight="900" font-size="560" fill="url(#qtGradient)" style="text-rendering:optimizeLegibility;">
+      Q
+    </text>
+
+    <text x="525" y="560" font-family="'Nunito', 'Poppins', system-ui, sans-serif" font-weight="900" font-size="560" fill="url(#qtGradient)" style="text-rendering:optimizeLegibility;">
+      T
+    </text>
+  </g>
+
+</svg>

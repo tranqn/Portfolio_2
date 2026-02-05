@@ -1,0 +1,67 @@
+// ========================================
+// UTILITY CLASSES — Global helpers only
+// ========================================
+// Keep this file minimal. Angular's component-scoped styles handle
+// most layout and spacing. Only add classes here that are genuinely
+// reused across multiple unrelated components or need global scope.
+
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// ----------------------------------------
+// ACCESSIBILITY
+// ----------------------------------------
+
+// Visually hidden but accessible to screen readers
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+// ----------------------------------------
+// LAYOUT
+// ----------------------------------------
+
+// Responsive container with centered content
+.container {
+  @include container;
+}
+
+// ----------------------------------------
+// RESPONSIVE VISIBILITY
+// ----------------------------------------
+
+// Hidden on mobile (< 768px), visible on tablet+
+.hide-mobile {
+  @include mobile-only {
+    display: none !important;
+  }
+}
+
+// Visible only on mobile (< 768px)
+.show-mobile-only {
+  @include breakpoint(md) {
+    display: none !important;
+  }
+}
+
+// Hidden below desktop (< 1024px)
+.hide-below-desktop {
+  @include mobile {
+    display: none !important;
+  }
+}
+
+// Visible only below desktop (< 1024px)
+.show-below-desktop {
+  @include desktop {
+    display: none !important;
+  }
+}

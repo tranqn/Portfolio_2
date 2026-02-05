@@ -4,28 +4,47 @@
 
 ### CTA Button
 Reusable call-to-action button used across multiple sections.
-- On light background: black text, white background, black border, black box-shadow
-- On dark background: white text, black background, white border, white box-shadow
-- Hover (both variants): white text, orange background, translate to box-shadow ending coordinates
+- On light background: black (#0E1013) text, transparent background, black border, black box-shadow (2px 4px 0px)
+- On dark background: white (#F8F9FA) text, transparent background, white border, white box-shadow (2px 4px 0px)
+- Hover (both variants): white text, coral-orange (#F87A55) background, `transform: translate(2px, 4px)`, box-shadow removed (button moves to shadow position), 150ms ease transition
+- Disabled state: opacity 0.5, cursor not-allowed
+- Shape: rounded pill (`border-radius: 100px`), padding 12px 24px (customizable via `--cta-padding` CSS variable)
 
 ### Animation Technique
 All animations below are **images revealed with CSS `clip-path`**, except the Skills "Skill Set" circle animation (see below).
+- Each animation image is stored in `public/img/` organized by section, filenames use kebab-case.
+- Clip-path animations use `::before` pseudo-elements with `background-image` and `clip-path: inset()` transitions.
 
 ### Arrow Animation
-Arrow image revealed with clip-path. Used in: Colleagues Thoughts section, Contact section.
+Arrow image revealed with clip-path, same `underlineReveal` keyframe pattern (see Section Headline Animations). Used in: Colleagues Thoughts section, Contact section.
 
 ### Header Navigation Hover Animations
-Each nav item has a unique hover animation (all clip-path image reveals):
-- "About Me": circle image over text
-- "Skills": underline image under text
-- "Projects": cross-out image over text
-- "Contact": underline image under text
+Each nav link uses a `::before` pseudo-element with `background-image` and `clip-path: inset()` transition (300ms ease).
+- "About Me": circle image over text — reveals from bottom to top (`clip-path: inset(100% 0 0 0)` → `inset(0)`)
+- "Skills": underline image under text — reveals from left to right (`clip-path: inset(0 100% 0 0)` → `inset(0)`)
+- "Projects": cross-out image over text — reveals from left to right (`clip-path: inset(0 100% 0 0)` → `inset(0)`)
+- "Contact": underline image under text — reveals from left to right (`clip-path: inset(0 100% 0 0)` → `inset(0)`)
 
 ### Section Headline Animations
 Each section has a unique animation on its headline (all clip-path image reveals, except Skills):
-- About Me: underscore image beneath "About Me" headline
-- Projects: underscore image beneath "Projects" headline
-- Skills: circle image over "Skill Set" headline — starts at -90deg rotation and scaled down, animates to 0deg rotation and original size, also revealed with clip-path
+
+**Underscore Animation** (`@keyframes underlineReveal`) — used in About Me, Projects, Contact:
+- 7s infinite cycle with ease-in-out timing
+- 0% → 7.14% (0.5s): reveal left-to-right (`clip-path: inset(0 100% 0 0)` → `inset(0)`)
+- 7.14% → 50% (3s): stay fully visible
+- 50% → 57.14% (0.5s): wipe right-to-left (`clip-path: inset(0)` → `inset(0 100% 0 0)`)
+- 57.14% → 100% (3s): stay hidden (delay before next cycle)
+- Image width: 300px, displayed below headline with negative top margin
+
+**Skills Circle Animation** (`@keyframes titleBgReveal`) — unique to Skills:
+- 4.05s infinite cycle with ease-in-out timing
+- 0%: `rotate(-90deg) opacity(0)` + `clip-path: inset(0 0 100% 100%)`
+- 8.33% (0.34s): `rotate(0deg) opacity(1)` + `clip-path: inset(0)` — fully visible
+- 58.33% (2.36s): stays visible
+- 66.67% (2.7s): `rotate(-90deg) opacity(0)` + `clip-path: inset(0 0 0 100%)` — exits
+- 100% (4.05s): stays hidden
+- Transform origin: right center; image flipped horizontally with `scaleX(-1)`
+- Positioned absolute over headline, 120% width/height
 
 ---
 
@@ -43,10 +62,13 @@ Each section has a unique animation on its headline (all clip-path image reveals
 - Mobile: logo + hamburger menu icon only
 
 **Hamburger Menu (mobile only):**
-- Hamburger icon transforms to X icon on open
-- Navigation menu (About Me, Skills, Projects, Contact)
-- Language toggle switch
-- Social media icons (GitHub, LinkedIn, Email)
+- 3 horizontal lines (24px wide, 2px height, 6px gap between)
+- Open animation (300ms ease):
+  - Line 1: `translateY(8px) rotate(45deg)`
+  - Line 2: `opacity(0) scaleX(0)` (fade out)
+  - Line 3: `translateY(-8px) rotate(-45deg)`
+- Mobile overlay: slides down from `translateY(-100%)` to `translateY(0)` (400ms ease), same background image as hero
+- Overlay content: navigation menu (About Me, Skills, Projects, Contact), language toggle switch, social media icons (GitHub, LinkedIn, Email)
 
 **Hero Content:**
 
@@ -59,12 +81,20 @@ Left column:
 Right column, top row (two columns):
 - Left:
   - "Hello World" button (top)
-    - Hover: text changes to "I'm Quoc Nam Tran", blue background expands from center to expanded box size, overlay image fades in aligned to the right rotating 180 degrees with slight bounce-back effect
+    - Default: 140px width, white border, transparent background, rounded pill shape
+    - Hover animation:
+      - `::after` pseudo-element: 300px blue (#3355FF) circle positioned at bottom-center, starts `scale(0.1)`, expands to `scale(1)` on hover (500ms cubic-bezier(0.4, 0, 0.2, 1))
+      - `::before` pseudo-element: contains "I'M QUOC NAM TRAN" text, `opacity: 0` → `1` on hover (400ms ease-in-out)
+      - Original text becomes `color: transparent`, button width expands from 140px to 220px
+      - Waving hand icon: positioned absolute above button (-42px top), starts `opacity: 0`, hover: `translateX(0) rotate(360deg) opacity(1)` (400ms cubic-bezier)
   - "FRONTEND" text (bottom)
-    - Hover: each letter gets uppercase and yellow color
+    - Each letter is `display: inline-block` with 200ms ease transition
+    - Hover: color changes to yellow (#F7C518)
+    - Originally uppercase letters become lowercase on hover, and vice versa (uses `data-uppercase` attribute)
 - Right: Polaroid-style image
-  - Default: grayscale, text ":)"
-  - Hover: color, text ":D"
+  - Default: `rotate(8deg)`, 180px width, photo layered under polaroid frame via absolute positioning, frame has `drop-shadow` filter
+  - Hover: `rotate(5deg) scale(1.02)`, 200ms ease transition
+  - **TODO**: grayscale→color filter and ":)"→":D" text change (not yet in beta)
 
 Right column, bottom row:
 - Top: "DEVELOPER" text
@@ -103,10 +133,18 @@ Mobile — single column, stacked:
 
 **Elements:**
 - "My Stack" subheadline
-- "Skill Set" headline + circle animation over headline
-- Torn/folded paper graphic with skills text overlaid
+- "Skill Set" headline + circle animation over headline (see `@keyframes titleBgReveal` in Global Components)
+- Torn/folded paper graphic with skills text overlaid (background-image on container, `background-size: 100% 100%`, different image for mobile)
 - Skill icons with icon name below each icon
+  - Default: `filter: grayscale(1)`, 72x72px
+  - Hover: `transform: scale(0.85)` + `filter: grayscale(0)` (150ms ease)
 - Sticker image with peel animation (unique sticker design for this section)
+  - 3 layers stacked with absolute positioning: final (z-index: 1), transition (z-index: 2), default (z-index: 3)
+  - Click toggles `.peeled` class
+  - Peel: default layer `opacity` → 0 (no delay), then transition layer `opacity` → 0 (50ms delay)
+  - Unpeel: transition layer `opacity` → 1 (no delay), then default layer `opacity` → 1 (50ms delay)
+  - Badge rotated 5deg, `scale(1.05)` on hover (150ms ease)
+  - Contains text "Also, I'm interested in diving into:" + React and Vue.js icons
 
 **Desktop layout** — two columns:
 - Left: subheadline, headline, circle animation
@@ -127,8 +165,12 @@ Mobile — single column, stacked:
 - 1 intro element (same size as a project card): "My Craft" subheadline, "Projects" headline, underscore animation, projects text
 - 3 project cards: project image, project title, project description
 
-**Desktop layout** — 4-element grid (1 intro + 3 cards):
-- Hover on project card: image zooms in, overlay shadow, "Project details" button (CTA) appears
+**Desktop layout** — 4-element grid (1 intro + 3 cards, 50% width each, wrapped):
+- Hover on project card:
+  - Image: `transform: scale(1.1)` (300ms ease)
+  - `::after` gradient overlay: 40% height from bottom, `linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.7) 100%)`, `opacity: 0` → `1` (150ms ease)
+  - "Project details" button (CTA): `opacity: 0` → `1`, positioned absolute at bottom-right (150ms ease)
+- Join project special animation: `@keyframes floatUpDown` — 3s infinite ease-in-out, `translateY(0)` → `translateY(-30px)` → `translateY(0)`. Pauses on hover.
 
 **Mobile layout** — single column:
 - Intro content (subheadline, headline, underscore animation, text)
@@ -171,8 +213,15 @@ Mobile — single column, stacked:
 - Contact-me text
 - Arrow animation
 - Contact form (name, email, message fields)
+  - Input/textarea: transparent background, yellow (#F7C518) bottom border (2px solid)
+  - Focus state: `border-bottom-color` → blue (#3355FF), 150ms ease transition
+  - Hover state: same blue transition
+  - Textarea: resizable vertically, min-height 100px
 - Sticker overlay on contact form (unique sticker design, different from Skills sticker)
 - Privacy policy agreement text with custom checkbox
+  - Hidden native checkbox (`opacity: 0`, 24x24px clickable area)
+  - `::before`: 24x24px blue (#3355FF) border box, `border-radius: 4px`
+  - `::after`: checkmark image from `/img/shared/check.png`, `opacity: 0` → `1` (150ms ease) when `:has(input:checked)`
 - Send/submit button (CTA)
 
 **Desktop layout** — two columns:
@@ -190,11 +239,73 @@ Mobile — single column, stacked:
 
 ### 7. Footer Section
 
+**Layout:** overlays the bottom of the Contact section using negative top margin (matches Contact's bottom padding). Transparent background — shares Contact's background image.
+
 **Elements:**
 - Logo
-- Copyright text
+- Copyright text ("© Quoc Nam Tran 2025")
 - 4 link columns: Legal Notice | GitHub | LinkedIn | Email
 
-**Desktop layout:** logo, copyright text, 4 columns in a row
+**Animations:**
+- Legal Notice link: same clip-path reveal as header nav "Projects" (left-to-right, 300ms ease)
+- GitHub, LinkedIn, Email links: social button pattern — blue (#3355FF) circle expands from bottom center on hover (`scale(0.1)` → `scale(1)`, 400ms cubic-bezier), icon rotates 360deg and translates right (400ms cubic-bezier)
 
-**Mobile layout:** logo | copyright text (same row), 4 link columns below
+**Desktop layout:** logo, copyright text (stacked left), 4 link columns spread across full width
+
+**Mobile layout:** logo | copyright text (same row, space-between), 4 link columns below (flex-wrap-reverse)
+
+## Project Details Sections
+
+**Data structure per project:** title, description, implementation summary, duration, role (Solo/Team), tech stack (array of {name, icon}), GitHub URL, live demo URL, project image.
+
+### Desktop View
+
+- same Header as Home
+- arrow left icon and "go Back" text
+
+2 columns layout:
+Left: 
+- Project Title headline
+- underscore animation
+- Project description
+- Implementation details
+- Duration details
+- Technologies used
+Right: 
+- Project image
+- Sticker overlay
+- Github cta | Live Test cta
+- "Next Project" text and arrow right icon
+
+### Mobile View
+
+- same Header as Home (mobile layout)
+- Project Title headline
+- underscore animation
+- Project description
+- Implementation details
+- Duration details
+- Technologies used
+- Project image
+- Github cta | Live Test cta
+- arrow left icon and "go Back" text | "Next Project" text and arrow right icon
+
+## Legal Notice Section
+
+### Desktop View
+
+- same backgroundimage as Home
+- same Header as Home 
+- "Legal Notice" headline
+
+- Imprint text
+- same Footer as Home
+
+### Mobile View
+
+- same backgroundimage as Home
+- same Header as Home (mobile layout)
+- "Legal Notice" headline
+- arrow left icon and "Back" text
+- Imprint text
+- same Footer as Home (mobile layout)

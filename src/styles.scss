@@ -1,1 +1,42 @@
-/* You can add global styles to this file, and also import other style files */
+// ========================================
+// MAIN STYLES — Portfolio Website
+// Angular 20
+// ========================================
+
+// Import partials (@use must come first)
+@use 'styles/variables' as *;
+@use 'styles/reset';
+@use 'styles/utilities';
+
+// ----------------------------------------
+// FONT FACES
+// ----------------------------------------
+
+// Bricolage Grotesque — variable font (weights 200–900)
+@font-face {
+  font-family: 'Bricolage Grotesque';
+  src: url('/fonts/Bricolage_Grotesque/BricolageGrotesque-VariableFont_opsz,wdth,wght.ttf')
+    format('truetype');
+  font-weight: 200 900;
+  font-display: swap;
+}
+
+// ----------------------------------------
+// GLOBAL STYLES
+// ----------------------------------------
+
+// Offset scroll position for fixed header
+html {
+  scroll-padding-top: 80px;
+}
+
+// App root wrapper
+app-root {
+  display: block;
+  min-height: 100vh;
+}
+
+// Hide Angular router-outlet element
+router-outlet {
+  display: none;
+}

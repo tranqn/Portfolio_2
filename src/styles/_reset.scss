@@ -1,0 +1,232 @@
+// ========================================
+// CSS RESET & BASE STYLES
+// ========================================
+
+@use 'sass:color';
+@use 'variables' as *;
+
+// Box sizing reset
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+// HTML & Body
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $font-primary;
+  font-size: $font-size-base;
+  font-weight: $font-weight-normal;
+  line-height: $line-height-normal;
+  color: $text-primary;
+  background-color: $white;
+  overflow-x: hidden;
+}
+
+// Scrollbar
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: $dark-bg;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $primary-blue;
+  border-radius: $radius-sm;
+
+  &:hover {
+    background: color.adjust($primary-blue, $lightness: 10%);
+  }
+}
+
+// Firefox scrollbar
+* {
+  scrollbar-width: thin;
+  scrollbar-color: $primary-blue $dark-bg;
+}
+
+// Headings
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-heading;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-tight;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: $font-size-5xl;
+  font-weight: $font-weight-black;
+
+  @media (max-width: $breakpoint-md) {
+    font-size: $font-size-4xl;
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    font-size: $font-size-3xl;
+  }
+}
+
+h2 {
+  font-size: $font-size-3xl;
+
+  @media (max-width: $breakpoint-md) {
+    font-size: $font-size-2xl;
+  }
+}
+
+h3 {
+  font-size: $font-size-2xl;
+
+  @media (max-width: $breakpoint-md) {
+    font-size: $font-size-xl;
+  }
+}
+
+h4 {
+  font-size: $font-size-xl;
+}
+
+h5 {
+  font-size: $font-size-lg;
+}
+
+h6 {
+  font-size: $font-size-base;
+}
+
+// Paragraphs
+p {
+  margin: 0 0 $spacing-md 0;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// Links
+a {
+  color: $primary-blue;
+  text-decoration: none;
+  transition: color $transition-base;
+
+  &:hover {
+    color: color.adjust($primary-blue, $lightness: 10%);
+  }
+}
+
+// Lists
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+// Images
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+// Buttons
+button {
+  font-family: inherit;
+  cursor: pointer;
+
+  &:focus-visible {
+    outline: 2px solid $primary-blue;
+    outline-offset: 2px;
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+}
+
+// Inputs & Textareas
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+
+  &:focus-visible {
+    outline: 2px solid $primary-blue;
+    outline-offset: 2px;
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+}
+
+// Remove default borders from inputs and buttons
+input,
+textarea,
+button {
+  border: none;
+}
+
+// Main
+main {
+  display: block;
+}
+
+// Section
+section {
+  position: relative;
+}
+
+// SVG
+svg {
+  display: block;
+}
+
+// Strong
+strong {
+  font-weight: $font-weight-bold;
+}
+
+// Selection
+::selection {
+  background-color: $primary-blue;
+  color: $white;
+}
+
+// Remove autofill background color (Webkit browsers)
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus {
+  -webkit-text-fill-color: $text-primary;
+  -webkit-box-shadow: 0 0 0px 1000px $dark-bg inset;
+  transition: background-color 5000s ease-in-out 0s;
+}

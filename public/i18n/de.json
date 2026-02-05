@@ -1,0 +1,72 @@
+{
+  "HEADER": {
+    "ABOUT": "Über mich",
+    "SKILLS": "Fähigkeiten",
+    "PROJECTS": "Projekte",
+    "CONTACT": "Kontakt"
+  },
+  "HERO": {
+    "HELLO": "Hallo World",
+    "FRONTEND": "Frontend",
+    "DEVELOPER": "ENTWICKLER",
+    "GET_IN_TOUCH": "Kontaktier mich"
+  },
+  "ABOUT": {
+    "LABEL": "WER IST NAM?",
+    "TITLE": "Über mich",
+    "TEXT_1": "Hallo, ich bin Nam! Mit einigen Informationen über dich selbst, wie zum Beispiel, was ist deine Inspirationsquelle für die Verbesserung deiner Programmierkenntnisse? Lernst du aus anderen Herausforderungen oder konzentrierst du dich auf Video-Tutorials?",
+    "TEXT_2": "Lass uns zusammenarbeiten und etwas Bemerkenswertes schaffen!",
+    "BUTTON": "Lass uns reden",
+    "LOCATION": "Ansässig in Sachsen",
+    "RELOCATE": "Bereit zum Umzug",
+    "REMOTE": "Offen für Remote-Arbeit"
+  },
+  "SKILLS": {
+    "LABEL": "MEIN STACK",
+    "TITLE": "Fähigkeiten",
+    "DESCRIPTION": "Technologien, mit denen ich kürzlich gearbeitet habe und auf deren Beherrschung ich mich konzentriere. Ich verfolge kontinuierlich Best Practices und Technologien und integriere Ihre Genehmigungen zur Verbesserung Ihres Geschäfts mit neuer Technologie.",
+    "BADGE": "Also, I'm interested in diving into:"
+  },
+  "PROJECTS": {
+    "LABEL": "MEINE ARBEIT",
+    "TITLE": "Projekte",
+    "DESCRIPTION": "Ermutigen Sie Menschen, sich Ihre Projekte anzusehen und mit ihnen zu interagieren. Wählen Sie Projekte aus, die Sie entweder stolz, selbstbewusst oder glücklich gemacht haben oder bei denen Sie viel gelernt haben. Die Präsentation echter Projekte und der Lösungen, die Sie gelernt haben, sind effektiver Code.",
+    "JOIN": {
+      "TITLE": "Join",
+      "TECH": "Angular | TypeScript | HTML | CSS | Firebase",
+      "DESCRIPTION": "Task-Manager inspiriert vom Kanban-System. Erstellen und organisieren Sie Aufgaben mithilfe von Drag-and-Drop-Funktionen, weisen Sie Benutzer und Kategorien zu."
+    },
+    "POLLO": {
+      "TITLE": "El Pollo Loco",
+      "TECH": "JavaScript | HTML | CSS",
+      "DESCRIPTION": "Spring-, Lauf- und Wurfspiel basierend auf objektorientiertem Ansatz. Helfen Sie Pepe, Münzen und Tabasco-Salsa zu finden, um gegen das verrückte Huhn zu kämpfen."
+    },
+    "BUBBLE": {
+      "TITLE": "DABubble",
+      "TECH": "Angular | TypeScript | Firebase",
+      "DESCRIPTION": "Diese App ist ein Slack-Klon. Sie revolutioniert die Teamkommunikation und Zusammenarbeit mit ihrer intuitiven Benutzeroberfläche, Echtzeit-Messaging und robuster Kanalorganisation."
+    },
+    "LIVE_TEST": "Live-Test",
+    "GITHUB": "Github"
+  },
+  "CONTACT": {
+    "LABEL": "KONTAKTIEREN SIE MICH",
+    "TITLE": "Kontakt",
+    "DESCRIPTION": "Zögern Sie nicht, sich zu melden, um Projekte, Zusammenarbeit zu besprechen oder einfach nur Hallo zu sagen. Ich freue mich darauf, von Ihnen zu hören!",
+    "NAME_LABEL": "Wie heißen Sie?",
+    "NAME_PLACEHOLDER": "Ihr Name",
+    "EMAIL_LABEL": "Wie lautet Ihre E-Mail?",
+    "EMAIL_PLACEHOLDER": "ihre.email@email.com",
+    "MESSAGE_LABEL": "Wie kann ich Ihnen helfen?",
+    "MESSAGE_PLACEHOLDER": "Hallo, ich interessiere mich für...",
+    "PRIVACY_TEXT": "Ich habe die",
+    "PRIVACY_LINK": "Datenschutzerklärung",
+    "PRIVACY_TEXT_2": "gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu.",
+    "SUBMIT": "Nachricht senden"
+  },
+  "FOOTER": {
+    "LEGAL_NOTICE": "Impressum",
+    "GITHUB": "Github",
+    "LINKEDIN": "LinkedIn"
+  }
+}

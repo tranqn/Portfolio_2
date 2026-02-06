@@ -1,0 +1,195 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+// ========================================
+// COLLEAGUES THOUGHTS SECTION
+// ========================================
+
+.colleagues {
+  position: relative;
+  padding: $spacing-4xl 0;
+}
+
+.colleagues__container {
+  @include flex-column;
+  gap: $spacing-lg;
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding-left: $container-padding-x;
+  padding-right: $container-padding-x;
+}
+
+// Top row: arrow (left) + subheadline (right)
+.colleagues__top {
+  @include flex-center;
+  gap: $spacing-md;
+  align-self: flex-start;
+}
+
+// Arrow animation (same underlineReveal keyframe)
+@keyframes underlineReveal {
+  0% {
+    clip-path: inset(0 100% 0 0);
+  }
+  7.14% {
+    clip-path: inset(0);
+  }
+  50% {
+    clip-path: inset(0);
+  }
+  57.14% {
+    clip-path: inset(0 100% 0 0);
+  }
+  100% {
+    clip-path: inset(0 100% 0 0);
+  }
+}
+
+.colleagues__arrow {
+  width: 200px;
+  height: auto;
+  display: block;
+  clip-path: inset(0 100% 0 0);
+  animation: underlineReveal 7s ease-in-out infinite;
+}
+
+.colleagues__label {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $text-dark;
+  text-transform: uppercase;
+  letter-spacing: $letter-spacing-wide;
+}
+
+// Headline
+.colleagues__title {
+  font-size: $font-size-4xl;
+  font-weight: $font-weight-black;
+  color: $text-dark;
+  margin: 0;
+}
+
+// ========================================
+// COLLEAGUE CARDS — Slightly overlapping
+// ========================================
+
+.colleagues__cards {
+  display: flex;
+  gap: -$spacing-sm;
+  margin-top: $spacing-md;
+}
+
+.colleagues__card {
+  @include flex-column;
+  justify-content: space-between;
+  gap: $spacing-md;
+  padding: $spacing-lg;
+  background-color: $light-bg;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-card;
+  flex: 1;
+  transition: background-color $transition-base;
+
+  // Slight overlap via negative margin
+  &:not(:first-child) {
+    margin-left: -$spacing-sm;
+  }
+
+  &:hover .colleagues__card-name {
+    color: $white;
+  }
+}
+
+// Card content
+.colleagues__card-text {
+  font-size: $font-size-base;
+  font-weight: $font-weight-normal;
+  line-height: $line-height-relaxed;
+  color: $text-dark;
+  margin: 0;
+  font-style: italic;
+}
+
+// Card bottom: author (left) + profile link (right)
+.colleagues__card-bottom {
+  @include flex-between;
+  align-items: flex-end;
+}
+
+.colleagues__card-author {
+  @include flex-column;
+  gap: 4px;
+}
+
+.colleagues__card-name {
+  font-size: $font-size-md;
+  font-weight: $font-weight-bold;
+  color: $text-dark;
+  transition: color $transition-base;
+}
+
+.colleagues__card-position {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-normal;
+  color: $text-muted;
+}
+
+// Profile box (LinkedIn icon + "Profile" text)
+.colleagues__card-profile {
+  @include flex-center;
+  gap: $spacing-xs;
+  text-decoration: none;
+  color: $text-dark;
+  transition: color $transition-base;
+
+  &:hover {
+    color: $white;
+
+    .colleagues__card-profile-icon {
+      filter: brightness(0) invert(1);
+    }
+  }
+}
+
+.colleagues__card-profile-icon {
+  width: 20px;
+  height: 20px;
+  transition: filter $transition-base;
+}
+
+.colleagues__card-profile-text {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+}
+
+// ========================================
+// RESPONSIVE
+// ========================================
+
+@include mobile {
+  .colleagues {
+    padding: $spacing-xl 0;
+  }
+
+  .colleagues__container {
+    padding-left: $container-padding-x-mobile;
+    padding-right: $container-padding-x-mobile;
+  }
+
+  .colleagues__title {
+    font-size: $font-size-3xl-mobile;
+  }
+
+  .colleagues__arrow {
+    width: 120px;
+  }
+
+  .colleagues__cards {
+    flex-direction: column;
+    gap: $spacing-md;
+  }
+
+  .colleagues__card:not(:first-child) {
+    margin-left: 0;
+  }
+}

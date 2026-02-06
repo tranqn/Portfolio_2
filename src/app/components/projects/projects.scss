@@ -1,0 +1,125 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+// ========================================
+// PROJECTS SECTION
+// ========================================
+
+.projects {
+  position: relative;
+  padding: $spacing-4xl 0;
+}
+
+.projects__container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-4xl;
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding-left: $container-padding-x;
+  padding-right: $container-padding-x;
+}
+
+// Header (50% width on desktop grid)
+.projects__header {
+  @include flex-column;
+  gap: $spacing-md;
+  width: calc(50% - ($spacing-4xl / 2));
+  flex: 0 0 auto;
+}
+
+.projects__label {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $text-dark;
+  text-transform: uppercase;
+  letter-spacing: $letter-spacing-wide;
+}
+
+.projects__title {
+  font-size: $font-size-4xl;
+  font-weight: $font-weight-black;
+  color: $text-dark;
+  margin: 0;
+}
+
+.projects__description {
+  font-size: $font-size-base;
+  font-weight: $font-weight-normal;
+  line-height: $line-height-relaxed;
+  color: $text-dark;
+  margin: 0;
+}
+
+// Project cards sizing (50% width on desktop grid)
+app-project-card {
+  width: calc(50% - ($spacing-4xl / 2));
+  flex: 0 0 auto;
+}
+
+// Underline clip-path animation
+@keyframes underlineReveal {
+  0% {
+    clip-path: inset(0 100% 0 0);
+  }
+  7.14% {
+    clip-path: inset(0);
+  }
+  50% {
+    clip-path: inset(0);
+  }
+  57.14% {
+    clip-path: inset(0 100% 0 0);
+  }
+  100% {
+    clip-path: inset(0 100% 0 0);
+  }
+}
+
+.projects__underline {
+  margin-top: -$spacing-sm;
+  margin-bottom: $spacing-md;
+  width: 300px;
+  height: auto;
+  display: block;
+  clip-path: inset(0 100% 0 0);
+  animation: underlineReveal 7s ease-in-out infinite;
+}
+
+// ========================================
+// RESPONSIVE
+// ========================================
+
+@include mobile {
+  .projects {
+    padding: $spacing-xl 0;
+  }
+
+  .projects__container {
+    padding-left: $container-padding-x-mobile;
+    padding-right: $container-padding-x-mobile;
+    gap: $spacing-lg;
+    flex-direction: column;
+  }
+
+  .projects__header {
+    text-align: center;
+    width: 100%;
+  }
+
+  .projects__label {
+    font-size: $font-size-base;
+  }
+
+  .projects__title {
+    font-size: $font-size-3xl-mobile;
+  }
+
+  .projects__description {
+    font-size: $font-size-sm;
+  }
+
+  app-project-card {
+    width: 100%;
+  }
+}

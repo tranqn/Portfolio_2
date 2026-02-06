@@ -1,0 +1,43 @@
+<section id="about" class="about-me">
+  <div class="about-me__container">
+    <!-- Left: Colored Stickers -->
+    <div class="about-me__stickers">
+      <div class="about-me__sticker about-me__sticker--yellow">
+        <img [src]="images.STICKER_YELLOW" alt="Yellow sticker background" class="about-me__sticker-bg">
+        <div class="about-me__sticker-content">
+          <img [src]="images.LOCATION" alt="Location pin icon" class="about-me__sticker-icon">
+          <span class="about-me__sticker-text">{{ 'ABOUT.LOCATION' | translate }}</span>
+        </div>
+      </div>
+      <div class="about-me__sticker about-me__sticker--blue">
+        <img [src]="images.STICKER_BLUE" alt="Blue sticker background" class="about-me__sticker-bg">
+        <div class="about-me__sticker-content">
+          <img [src]="images.RELOCATE" alt="Relocate icon" class="about-me__sticker-icon">
+          <span class="about-me__sticker-text">{{ 'ABOUT.RELOCATE' | translate }}</span>
+        </div>
+      </div>
+      <div class="about-me__sticker about-me__sticker--orange">
+        <img [src]="images.STICKER_ORANGE" alt="Orange sticker background" class="about-me__sticker-bg">
+        <div class="about-me__sticker-content">
+          <img [src]="images.REMOTE" alt="Remote work icon" class="about-me__sticker-icon">
+          <span class="about-me__sticker-text">{{ 'ABOUT.REMOTE' | translate }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: Content -->
+    <div class="about-me__content">
+      <span class="about-me__label">{{ 'ABOUT.LABEL' | translate }}</span>
+      <h2 class="about-me__title">{{ 'ABOUT.TITLE' | translate }}</h2>
+      <img [src]="images.UNDERLINE" alt="Decorative underline" class="about-me__underline">
+      <p class="about-me__text">{{ 'ABOUT.TEXT_1' | translate }}</p>
+      <p class="about-me__text">{{ 'ABOUT.TEXT_2' | translate }}</p>
+      <div class="about-me__cta">
+        <app-cta-button
+          [translateKey]="'ABOUT.BUTTON'"
+          fragment="contact"
+          variant="light" />
+      </div>
+    </div>
+  </div>
+</section>

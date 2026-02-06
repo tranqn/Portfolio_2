@@ -1,0 +1,358 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+// ========================================
+// HERO SECTION — Shared background with header
+// ========================================
+
+.hero {
+  // Responsive tokens
+  --hero-title-size: #{$font-size-5xl};
+  --hero-content-gap: #{$spacing-lg};
+  --hero-top-gap: #{$spacing-3xl};
+  --hero-polaroid-width: 180px;
+  --hero-button-width: 140px;
+  --hero-button-hover-width: 220px;
+  --hero-button-font: #{$font-size-md};
+  --hero-button-padding: 6px 20px;
+
+  min-height: 100vh;
+  background-image: url('/img/hero/hero-bg.png');
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  padding-top: 90px;
+}
+
+.hero__container {
+  @include flex-center;
+  max-width: $container-max-width;
+  margin: 0 auto 22vh auto;
+  padding-left: $container-padding-x;
+  padding-right: $container-padding-x;
+}
+
+// Social icons (uses shared component with CSS variable overrides)
+.hero__social {
+  --social-height: 70vh;
+}
+
+// ========================================
+// MAIN CONTENT
+// ========================================
+
+.hero__content {
+  @include flex-column;
+  align-items: center;
+  gap: var(--hero-content-gap);
+  padding-top: $spacing-xl;
+  width: 100%;
+}
+
+.hero__content-top {
+  @include flex-center;
+  align-items: flex-end;
+  gap: var(--hero-top-gap);
+  width: 100%;
+  max-width: 1200px;
+}
+
+.hero__content-left {
+  @include flex-column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: $spacing-sm;
+}
+
+.hero__content-right {
+  @include flex-center;
+}
+
+.hero__content-bottom {
+  @include flex-column;
+  align-items: end;
+  gap: var(--hero-content-gap);
+  width: auto;
+}
+
+// ========================================
+// TITLE LETTERS
+// ========================================
+
+.hero__title {
+  margin: 0;
+  font-size: var(--hero-title-size);
+  font-weight: $font-weight-black;
+  line-height: $line-height-tight;
+  letter-spacing: $letter-spacing-tight;
+  color: $text-primary;
+}
+
+.hero__title--top {
+  text-align: left;
+}
+
+.hero__title--bottom {
+  text-align: center;
+}
+
+.hero__letters-container {
+  @include flex-center;
+  flex: 1;
+  min-height: 150px;
+
+  &--top {
+    width: 600px;
+  }
+
+  &--bottom {
+    width: 750px;
+  }
+}
+
+.hero__letter {
+  display: inline-block;
+  padding: 0 0.05em;
+  margin: 0 -0.03em;
+  transition: color 200ms ease, transform 200ms ease;
+  cursor: default;
+
+  &:hover {
+    color: $bright-yellow;
+
+    &[data-uppercase='true'] {
+      text-transform: lowercase;
+    }
+
+    &[data-uppercase='false'] {
+      text-transform: uppercase;
+    }
+  }
+}
+
+// ========================================
+// HELLO WORLD BUTTON
+// ========================================
+
+.hero__button-container {
+  @include flex-center;
+  position: relative;
+
+  &:hover .hero__button-icon {
+    transform: translateX(0) rotate(360deg);
+    opacity: 1;
+  }
+}
+
+.hero__button-icon {
+  position: absolute;
+  top: -42px;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  z-index: 4;
+  opacity: 0;
+  transition: transform $transition-expand, opacity $transition-expand;
+  pointer-events: none;
+  transform-origin: center;
+}
+
+.hero__button {
+  @include button-reset;
+  display: inline-flex;
+  align-items: center;
+  justify-content: left;
+  border: 1px solid $outline-white;
+  padding: var(--hero-button-padding);
+  border-radius: $radius-full;
+  color: $outline-white;
+  font-family: $font-primary;
+  font-weight: $font-weight-medium;
+  font-size: var(--hero-button-font);
+  line-height: $line-height-normal;
+  background: transparent;
+  width: var(--hero-button-width);
+  transition: border-color $transition-expand, color 100ms ease, width $transition-expand;
+  text-decoration: none;
+  position: relative;
+  white-space: nowrap;
+  overflow: hidden;
+
+  // Blue circle expanding from bottom center
+  &::after {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background-color: $primary-blue;
+    border-radius: 50%;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%) scale(0.1);
+    transform-origin: center bottom;
+    opacity: 0;
+    transition: transform $transition-fade-in, opacity $transition-fade-out;
+    z-index: 1;
+  }
+
+  &:hover {
+    border-color: $outline-white;
+    width: var(--hero-button-hover-width);
+  }
+
+  &:hover .hero__button-text {
+    color: transparent;
+  }
+
+  &:hover .hero__button-text-hover {
+    opacity: 1;
+  }
+
+  &:hover::after {
+    transform: translate(-50%, 50%) scale(1);
+    opacity: 1;
+    transition: transform $transition-fade-in, opacity $transition-fade-in;
+  }
+}
+
+.hero__button-text {
+  position: relative;
+  z-index: 2;
+  transition: color 100ms ease;
+}
+
+.hero__button-text-hover {
+  position: absolute;
+  color: $text-primary;
+  opacity: 0;
+  transition: opacity 400ms ease-in-out;
+  white-space: nowrap;
+  z-index: 3;
+}
+
+// ========================================
+// POLAROID
+// ========================================
+
+.hero__polaroid-wrapper {
+  position: relative;
+  width: var(--hero-polaroid-width);
+  height: auto;
+  transform: rotate(8deg);
+  transition: transform $transition-slow;
+
+  &:hover {
+    transform: rotate(5deg) scale(1.02);
+  }
+
+  &--desktop {
+    display: block;
+  }
+
+  &--mobile {
+    display: none;
+  }
+}
+
+.hero__polaroid-photo {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  width: calc(100% - 28px);
+  height: auto;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.hero__polaroid {
+  position: relative;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow($shadow-polaroid);
+  z-index: 2;
+}
+
+// CTA container
+.hero__cta-container {
+  @include flex-center;
+}
+
+// ========================================
+// RESPONSIVE
+// ========================================
+
+@include mobile {
+  .hero {
+    --hero-title-size: clamp(36px, 12vw, 100px);
+    --hero-content-gap: clamp(8px, 3vh, 48px);
+    --hero-top-gap: clamp(8px, 3vh, 32px);
+    --hero-polaroid-width: clamp(120px, 30vw, 280px);
+    --hero-button-width: clamp(120px, 35vw, 200px);
+    --hero-button-hover-width: clamp(150px, 40vw, 240px);
+    --hero-button-font: clamp(12px, 3vw, #{$font-size-base});
+    --hero-button-padding: clamp(6px, 1.5vh, 12px) clamp(12px, 3vw, 24px);
+
+    padding-top: 60px;
+  }
+
+  .hero__container {
+    flex-direction: column;
+    padding-left: $container-padding-x-mobile;
+    padding-right: $container-padding-x-mobile;
+    padding-top: 0;
+    margin: 0 auto;
+    min-height: calc(100vh - 60px);
+    justify-content: center;
+  }
+
+  .hero__social {
+    display: none;
+  }
+
+  .hero__content {
+    padding-top: 0;
+  }
+
+  .hero__content-top {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero__content-bottom {
+    align-items: center;
+    width: 100%;
+  }
+
+  .hero__content-left {
+    align-items: center;
+  }
+
+  .hero__content-right {
+    display: none;
+  }
+
+  .hero__title {
+    text-align: center;
+  }
+
+  .hero__letters-container {
+    min-height: auto;
+
+    &--top,
+    &--bottom {
+      width: 100%;
+    }
+  }
+
+  .hero__polaroid-wrapper {
+    &--desktop {
+      display: none;
+    }
+
+    &--mobile {
+      display: block;
+      margin-top: clamp(8px, 3vh, 40px);
+    }
+  }
+}

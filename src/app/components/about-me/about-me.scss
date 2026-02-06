@@ -1,0 +1,238 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+// ========================================
+// ABOUT ME SECTION
+// ========================================
+
+.about-me {
+  position: relative;
+  padding: $spacing-4xl 0;
+}
+
+.about-me__container {
+  @include flex-center;
+  align-items: start;
+  gap: $spacing-3xl;
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding-left: $container-padding-x;
+  padding-right: $container-padding-x;
+}
+
+// ========================================
+// STICKERS (Left side)
+// ========================================
+
+.about-me__stickers {
+  position: relative;
+  flex-shrink: 0;
+  min-height: 500px;
+  width: 500px;
+}
+
+.about-me__sticker {
+  position: absolute;
+  @include flex-center;
+
+  &--yellow {
+    top: 0;
+    left: 0;
+    transform: rotate(-3deg);
+    z-index: 3;
+  }
+
+  &--blue {
+    top: 100px;
+    left: 20px;
+    transform: rotate(2deg);
+    z-index: 2;
+  }
+
+  &--orange {
+    top: 200px;
+    left: 20px;
+    transform: rotate(5deg);
+    z-index: 1;
+  }
+}
+
+.about-me__sticker-bg {
+  width: 550px;
+  height: auto;
+  display: block;
+}
+
+.about-me__sticker-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  @include flex-center;
+  gap: $spacing-xs;
+  width: 100%;
+  height: 100%;
+  padding: $spacing-md;
+}
+
+.about-me__sticker-icon {
+  object-fit: contain;
+}
+
+.about-me__sticker-text {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-semibold;
+  color: $text-primary;
+  text-align: center;
+  line-height: $line-height-normal;
+}
+
+// ========================================
+// CONTENT (Right side)
+// ========================================
+
+.about-me__content {
+  @include flex-column;
+  gap: $spacing-md;
+  max-width: 600px;
+}
+
+.about-me__label {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $text-dark;
+  text-transform: uppercase;
+  letter-spacing: $letter-spacing-wide;
+}
+
+.about-me__title {
+  font-size: $font-size-4xl;
+  font-weight: $font-weight-black;
+  color: $text-dark;
+  margin: 0;
+}
+
+@keyframes underlineReveal {
+  0% {
+    clip-path: inset(0 100% 0 0);
+  }
+  7.14% {
+    clip-path: inset(0);
+  }
+  50% {
+    clip-path: inset(0);
+  }
+  57.14% {
+    clip-path: inset(0 100% 0 0);
+  }
+  100% {
+    clip-path: inset(0 100% 0 0);
+  }
+}
+
+.about-me__underline {
+  margin-top: -$spacing-sm;
+  margin-bottom: $spacing-md;
+  width: 300px;
+  height: auto;
+  display: block;
+  clip-path: inset(0 100% 0 0);
+  animation: underlineReveal 7s ease-in-out infinite;
+}
+
+.about-me__text {
+  font-size: $font-size-base;
+  font-weight: $font-weight-normal;
+  line-height: $line-height-relaxed;
+  color: $text-dark;
+  margin: 0;
+}
+
+.about-me__cta {
+  display: flex;
+  justify-content: end;
+  margin-top: $spacing-sm;
+}
+
+// ========================================
+// RESPONSIVE
+// ========================================
+
+@include mobile {
+  .about-me {
+    padding: $spacing-xl 0;
+  }
+
+  .about-me__container {
+    flex-direction: column;
+    padding-left: $container-padding-x-mobile;
+    padding-right: $container-padding-x-mobile;
+    gap: $spacing-lg;
+    align-items: center;
+  }
+
+  .about-me__stickers {
+    width: 100%;
+    min-height: 200px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    order: 2;
+  }
+
+  .about-me__sticker {
+    width: 280px;
+
+    &--yellow {
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%) rotate(-3deg);
+    }
+
+    &--blue {
+      left: 50%;
+      top: 60px;
+      transform: translateX(-50%) rotate(2deg);
+    }
+
+    &--orange {
+      left: 50%;
+      top: 120px;
+      transform: translateX(-50%) rotate(5deg);
+    }
+  }
+
+  .about-me__sticker-bg {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .about-me__content {
+    max-width: 100%;
+    text-align: center;
+    order: 1;
+  }
+
+  .about-me__label {
+    font-size: $font-size-base;
+  }
+
+  .about-me__title {
+    font-size: $font-size-3xl-mobile;
+  }
+
+  .about-me__underline {
+    width: 100%;
+    max-width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .about-me__sticker-text {
+    font-size: $font-size-md;
+  }
+
+  .about-me__cta {
+    justify-content: end;
+  }
+}

@@ -1,0 +1,292 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+// ========================================
+// HEADER — Absolute transparent overlay
+// ========================================
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: transparent;
+  z-index: $z-fixed;
+}
+
+.header__container {
+  @include flex-center;
+  height: 100%;
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding-left: $container-padding-x;
+  padding-right: $container-padding-x;
+}
+
+// Logo
+.header__logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: transform $transition-base;
+  z-index: $z-fixed + 1;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.header__logo-image {
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+}
+
+// ========================================
+// DESKTOP NAVIGATION
+// ========================================
+
+.header__desktop-nav {
+  @include flex-between;
+}
+
+// Nav link with clip-path image reveal on hover
+.header__nav-link {
+  position: relative;
+  display: inline-block;
+  padding: 12px 16px;
+  overflow: hidden;
+  color: $text-primary;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-medium;
+  text-decoration: none;
+  transition: color $transition-base;
+  z-index: 1;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    clip-path: inset(0 100% 0 0);
+    transition: clip-path $transition-slower;
+    z-index: -1;
+  }
+
+  &:hover::before {
+    clip-path: inset(0);
+  }
+
+  // About Me: reveals bottom → top
+  &--about::before {
+    background-image: url('/img/header/nav-hover/about.png');
+    clip-path: inset(100% 0 0 0);
+  }
+
+  &--about:hover::before {
+    clip-path: inset(0);
+  }
+
+  // Skills: reveals left → right
+  &--skills::before {
+    background-image: url('/img/header/nav-hover/skills.png');
+  }
+
+  // Projects: reveals left → right
+  &--projects::before {
+    background-image: url('/img/header/nav-hover/projects.png');
+  }
+
+  // Contact: reveals left → right
+  &--contact::before {
+    background-image: url('/img/header/nav-hover/contact.png');
+  }
+}
+
+// ========================================
+// LANGUAGE SWITCHER
+// ========================================
+
+.header__lang {
+  display: flex;
+  align-items: center;
+  gap: $spacing-xs;
+  margin-left: $spacing-lg;
+}
+
+.header__lang-option {
+  color: $text-primary;
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+  cursor: pointer;
+  transition: color $transition-base, opacity $transition-base;
+  opacity: 0.6;
+
+  &:hover {
+    color: $primary-blue;
+    opacity: 1;
+  }
+
+  &--active {
+    color: $primary-blue;
+    opacity: 1;
+  }
+}
+
+.header__lang-divider {
+  color: $text-primary;
+  font-size: $font-size-base;
+  opacity: 0.4;
+}
+
+// ========================================
+// BURGER MENU (hidden on desktop)
+// ========================================
+
+.header__burger {
+  @include button-reset;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  z-index: $z-fixed + 1;
+}
+
+.header__burger-line {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: $text-primary;
+  transition: transform 300ms ease, opacity 300ms ease;
+}
+
+// Hamburger → X transformation
+.header__burger--active {
+  .header__burger-line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .header__burger-line:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+
+  .header__burger-line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
+
+// ========================================
+// MOBILE OVERLAY
+// ========================================
+
+.header__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  min-height: 100vh;
+  background-image: url('/img/hero/hero-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: translateY(-100%);
+  transition: transform 400ms ease;
+  z-index: $z-fixed;
+  overflow-y: auto;
+}
+
+.header__overlay--open {
+  transform: translateY(0);
+}
+
+.header__overlay-content {
+  @include flex-column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 120px $container-padding-x-mobile 80px;
+  gap: $spacing-2xl;
+}
+
+// Mobile Navigation
+.header__mobile-nav {
+  @include flex-column;
+  align-items: center;
+  gap: $spacing-lg;
+}
+
+.header__mobile-link {
+  color: $text-primary;
+  font-size: $font-size-3xl;
+  font-weight: $font-weight-bold;
+  text-decoration: none;
+  transition: color $transition-base;
+
+  &:hover {
+    color: $primary-blue;
+  }
+}
+
+.header__mobile-lang {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  margin-top: $spacing-md;
+
+  .header__lang-option {
+    font-size: $font-size-xl;
+  }
+
+  .header__lang-divider {
+    font-size: $font-size-xl;
+  }
+}
+
+// Social links in mobile menu
+.header__mobile-social {
+  --social-icon-size: 40px;
+  --social-gap: #{$spacing-xl};
+  --social-direction: row;
+  --social-height: auto;
+  --social-justify: center;
+}
+
+// ========================================
+// RESPONSIVE
+// ========================================
+
+@include mobile {
+  .header__container {
+    justify-content: space-between;
+    padding-left: $container-padding-x-mobile;
+    padding-right: $container-padding-x-mobile;
+  }
+
+  .header__logo-image {
+    width: 35px;
+    height: 35px;
+  }
+
+  .header__desktop-nav {
+    display: none;
+  }
+
+  .header__burger {
+    display: flex;
+  }
+
+  .header__overlay-content {
+    padding: 60px $container-padding-x-mobile 60px;
+  }
+}

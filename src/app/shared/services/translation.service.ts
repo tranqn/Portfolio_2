@@ -12,7 +12,7 @@ type Language = (typeof SUPPORTED_LANGUAGES)[number];
 export class TranslationService {
   private readonly translate = inject(TranslateService);
   private readonly platformId = inject(PLATFORM_ID);
-  protected readonly currentLang = signal<Language>('de');
+  readonly currentLang = signal<Language>('de');
 
   constructor() {
     const initialLang = this.resolveInitialLanguage();

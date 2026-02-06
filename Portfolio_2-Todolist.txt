@@ -2,188 +2,236 @@
 
 ## Phase 1: Project Setup
 
-- [ ] Initialize Angular project with latest version
-- [ ] Configure .gitignore for Angular project
-- [ ] Create CLAUDE.md (project context file with tech stack, structure, coding standards, commands)
-- [ ] Set up folder structure (components, assets/img, services, shared)
-- [ ] Install required dependencies (ngx-translate for i18n)
-- [ ] Configure CSS variables for design system (colors, spacing, typography)
-- [ ] Set up routing module
-- [ ] Create base SCSS files (variables, mixins, reset)
+- [x] Initialize Angular 20 project with SSR, zoneless change detection
+- [x] Configure .gitignore for Angular project
+- [x] Create CLAUDE.md (project context file with tech stack, structure, coding standards, commands)
+- [x] Set up folder structure (components/, pages/, shared/services, shared/models, shared/constants, shared/components)
+- [x] Install required dependencies (@ngx-translate/core, @ngx-translate/http-loader)
+- [x] Create SCSS partials (_variables.scss, _mixins.scss, _reset.scss, _utilities.scss)
+- [x] Configure styles.scss entry point with @use imports and @font-face (Bricolage Grotesque)
+- [x] Set up routing with lazy-loaded routes (main, legal-notice, privacy-policy, projects/:projectId)
+- [x] Configure app providers (HttpClient, TranslateService, InMemoryScrolling, ClientHydration)
+- [x] Configure SSR render modes (prerender static routes, server for dynamic routes)
+- [x] Copy and rename assets from beta (fonts, images, translations, logo) to public/
+- [x] Create skeleton page components for all routes
+- [x] Update Portfolio_2-description.txt with detailed animation specs from beta
 
-## Phase 2: Core Components
+## Phase 2: Shared Layer
 
-### Header Component
-- [ ] Create header component
+### Models (src/app/shared/models/)
+- [ ] Create technology.model.ts
+- [ ] Create project.model.ts
+- [ ] Create letter.model.ts
+- [ ] Create social-link.model.ts
+- [ ] Create contact-form.model.ts
+- [ ] Create colleague.model.ts
+- [ ] Create index.ts barrel export
+
+### Constants (src/app/shared/constants/)
+- [ ] Create image-paths.constant.ts (all section image paths)
+- [ ] Create routes.constant.ts (route path constants)
+- [ ] Create index.ts barrel export
+
+### Services (src/app/shared/services/)
+- [ ] Create translation.service.ts (wraps TranslateService, localStorage persistence, browser language detection)
+- [ ] Create contact.service.ts (mock form submission with success Observable)
+- [ ] Create project-data.service.ts (project data provider with signals)
+- [ ] Create scroll.service.ts (SSR-safe scroll and anchor navigation)
+
+### Shared Components (src/app/shared/components/)
+- [ ] Create cta-button component (light/dark variants, hover: translate + coral-orange bg, 150ms)
+- [ ] Create social-links component (GitHub/LinkedIn/Email, target="_blank" rel="noopener noreferrer")
+- [ ] Create project-card component (image zoom, gradient overlay, CTA hover)
+
+## Phase 3: Section Components
+
+### Header (src/app/components/header/)
+- [ ] Create header component with signal-based state
 - [ ] Implement logo placement (left)
-- [ ] Build navigation menu (About Me, Skills, Projects, Contact)
-- [ ] Create language toggle switch (DE/EN, default: DE)
-- [ ] Add hover states for navigation items
+- [ ] Build navigation menu (About Me, Skills, Projects, Contact) with anchor links
+- [ ] Add clip-path hover animations per nav item (::before pseudo-element, 300ms ease)
+- [ ] Create language toggle switch (DE/EN, default: DE, persist to localStorage)
 - [ ] Implement smooth scroll to sections
-- [ ] Make header responsive (hamburger menu for mobile)
+- [ ] Build hamburger menu (3 lines, X transform on open, 300ms ease)
+- [ ] Build mobile overlay (slide down, nav items, language toggle, social links)
+- [ ] SSR-safe: use signal-based class binding instead of document.body.style.overflow
 
-### Hero Section Component
-- [ ] Create hero section component
-- [ ] Set up 100vh layout with background image (header shares same background)
-- [ ] Build left column (social media icons with white circular borders, aligned to bottom)
-- [ ] Build right column top-left ("Hello World" button with hover animation)
-- [ ] Build right column top-left ("FRONTEND" text, hover: each letter uppercase + yellow color)
-- [ ] Build right column top-right (Polaroid-style image)
-- [ ] Build right column bottom-top ("DEVELOPER" text)
-- [ ] Build right column bottom-bottom ("Get in Touch" button)
-- [ ] Add entrance animations
-- [ ] Ensure responsive layout (stack columns on mobile)
+### Hero (src/app/components/hero/)
+- [ ] Create hero component
+- [ ] Set up 100vh layout with background image (header shares same space)
+- [ ] Build left column: social links at bottom
+- [ ] Build right column top-left: "Hello World" button with blue circle expand hover
+- [ ] Build right column top-left: "FRONTEND" text with letter case toggle + yellow hover
+- [ ] Build right column top-right: Polaroid image (rotate(8deg), hover: rotate(5deg) scale(1.02))
+- [ ] Build right column bottom: "DEVELOPER" text + "Get in Touch" CTA
+- [ ] Implement waving hand icon animation (rotate 360deg, 400ms cubic-bezier)
+- [ ] Add Polaroid grayscale-to-color filter and ":)" to ":D" text change on hover
+- [ ] Build mobile layout (single column stacked)
 
-### About Me Section Component
+### About Me (src/app/components/about-me/)
 - [ ] Create about-me component
-- [ ] Build two-column layout
-- [ ] Build left column (3 stacked images)
-- [ ] Build right column "Who's Nam?" subheading
-- [ ] Build right column "About Me" headline with underscore animation
-- [ ] Build right column about-me text
-- [ ] Build right column "Let's talk" button
-- [ ] Add scroll animation on section entry
-- [ ] Make responsive
+- [ ] Build desktop two-column layout (images left, content right)
+- [ ] Build "Who's Nam?" subheadline + "About Me" headline
+- [ ] Add underscore clip-path animation (@keyframes underlineReveal, 7s cycle)
+- [ ] Add about-me text + "Let's talk" CTA
+- [ ] Build 3 stacked images
+- [ ] Build mobile layout (single column)
 
-### Skills Section Component
+### Skills (src/app/components/skills/)
 - [ ] Create skills component
-- [ ] Set up full background image covering entire section
-- [ ] Build two-column layout
-- [ ] Build left column "My Stack" subheading
-- [ ] Build left column "Skill set" headline
-- [ ] Build left column circle animation
-- [ ] Build right column top row (desktop paper background image with skills text)
-- [ ] Build right column bottom-left (skill icons with icon name below each icon)
-- [ ] Build right column bottom-right (sticker image with peel animation)
-- [ ] Ensure correct spelling (JavaScript, TypeScript, Angular, etc.)
-- [ ] Make responsive
+- [ ] Set up full background image covering section
+- [ ] Build "My Stack" subheadline + "Skill Set" headline
+- [ ] Add circle animation (@keyframes titleBgReveal, 4.05s cycle, rotation + clip-path)
+- [ ] Build torn paper graphic with skills text (different image for mobile)
+- [ ] Build skill icons with labels (grayscale default, scale(0.85) + color on hover)
+- [ ] Build sticker with 3-layer peel animation (click toggle .peeled class)
+- [ ] Build desktop two-column layout
+- [ ] Build mobile layout (single column)
 
-### Projects Section Component
+### Projects (src/app/components/projects/)
 - [ ] Create projects component
-- [ ] Build 4-element grid layout
-- [ ] Build intro card ("My Craft" subheading, "Projects" headline, underscore animation, text)
-- [ ] Build 3 project cards (project image, title, description, link)
-- [ ] Implement project links (open in new tab)
-- [ ] Add hover effect on project cards (zoom in, overlay shadow, "Project details" button)
-- [ ] Make responsive
+- [ ] Build 4-element grid (1 intro card + 3 project cards, 50% width each)
+- [ ] Build intro card: "My Craft" subheadline, "Projects" headline, underscore animation, text
+- [ ] Build project cards: image, title, description
+- [ ] Add card hover: image scale(1.1), gradient overlay, "Project details" CTA appears
+- [ ] Add Join project float animation (@keyframes floatUpDown, 3s, pauses on hover)
+- [ ] Route to project detail pages on CTA click
+- [ ] Build mobile layout (stacked, CTA always visible)
 
-### Colleagues Thoughts Section Component
-- [ ] Create colleagues-thoughts component
-- [ ] Build 3-row layout
-- [ ] Build top row left (arrow animation)
-- [ ] Build top row right ("in Their Words:" text)
-- [ ] Build middle row ("Colleague Thoughts" headline)
-- [ ] Build bottom row (3 colleague cards)
-- [ ] Build colleague card layout (top: colleague text, bottom-left: name + position, bottom-right: profile box)
-- [ ] Add hover effect on card (colleague name turns white)
-- [ ] Add hover effect on profile box (profile elements turn white)
-- [ ] Make responsive
+### Colleagues Thoughts (src/app/components/colleagues/)
+- [ ] Create colleagues component (placeholder data)
+- [ ] Build arrow clip-path animation
+- [ ] Build "in Their Words:" subheadline + "Colleague Thoughts" headline
+- [ ] Build 3 colleague cards (text, name, position, LinkedIn profile link)
+- [ ] Add hover: name turns white, profile box elements turn white
+- [ ] Build desktop layout (3 rows, overlapping cards)
+- [ ] Build mobile layout (stacked)
 
-### Contact Section Component
+### Contact (src/app/components/contact/)
 - [ ] Create contact component
-- [ ] Set up 100vh layout with background image (footer shares same background)
-- [ ] Build two-column layout
-- [ ] Build left column "Contact Me" text
-- [ ] Build left column "Ready to work together?" headline
-- [ ] Build left column contact-me text
-- [ ] Build left column arrow animation
-- [ ] Build right column contact form (name, email, message fields)
-- [ ] Build right column sticker overlay on contact form
-- [ ] Add privacy policy agreement text with custom checkbox
-- [ ] Implement onBlur validation
-- [ ] Disable submit button until form valid
-- [ ] Prevent layout shift on validation messages
-- [ ] Style autocomplete to match design (Webkit)
-- [ ] Implement form submission with feedback
-- [ ] Add loading state during submission
-- [ ] Show success/error messages
+- [ ] Set up 100vh layout with background image (footer shares same space)
+- [ ] Build "Contact Me" text + "Ready to work together?" headline + description
+- [ ] Build arrow clip-path animation
+- [ ] Build contact form (name, email, message fields)
+- [ ] Style inputs: transparent bg, yellow bottom border, blue on focus/hover (150ms)
+- [ ] Build sticker overlay on form (unique design)
+- [ ] Build custom checkbox (::before border box, ::after check.png, :has(input:checked))
+- [ ] Implement onBlur validation (reserve space for messages, no layout shift)
+- [ ] Disable submit CTA until all validation passes + privacy checkbox checked
+- [ ] Style Webkit autofill to match design
+- [ ] Build mock submission with success/error feedback UI
+- [ ] Build mobile layout (single column)
 
-### Footer Component
+### Footer (src/app/components/footer/)
 - [ ] Create footer component
-- [ ] Add logo
-- [ ] Add copyright text
-- [ ] Build 4-column links layout (Legal Notice | Github | LinkedIn | Email)
-- [ ] Add Impressum link (router link)
-- [ ] Add Privacy Policy link (router link)
-- [ ] Make responsive
+- [ ] Add logo + copyright text
+- [ ] Build 4 link columns: Legal Notice | GitHub | LinkedIn | Email
+- [ ] Add Legal Notice clip-path hover (left-to-right, 300ms ease)
+- [ ] Add social button hover (blue circle expand + icon rotate 360deg, 400ms cubic-bezier)
+- [ ] All external links: target="_blank" rel="noopener noreferrer"
+- [ ] Build desktop layout (single row)
+- [ ] Build mobile layout (logo + copyright row, links below with flex-wrap-reverse)
 
-## Phase 3: Legal Pages
+## Phase 4: Route Pages
 
-- [ ] Create Impressum page component
-- [ ] Create Privacy Policy page component
-- [ ] Reuse header and footer components
-- [ ] Set up routes for legal pages
+### Main Page (src/app/pages/main/)
+- [ ] Compose all section components (header, hero, about-me, skills, projects, colleagues, contact, footer)
 
-## Phase 4: Internationalization (i18n)
+### Project Detail (src/app/pages/project-detail/)
+- [ ] Build single reusable component with route param (:projectId)
+- [ ] Reuse header + footer
+- [ ] Build arrow left + "go Back" navigation
+- [ ] Build desktop two-column layout (left: title, underscore, description, implementation, duration, technologies; right: image, sticker, GitHub CTA, Live Test CTA, "Next Project" nav)
+- [ ] Build mobile layout (single column stacked)
 
-- [ ] Set up ngx-translate
-- [ ] Create translation files (de.json, en.json)
-- [ ] Translate all static text
-- [ ] Implement language toggle functionality
-- [ ] Persist language preference in localStorage
-- [ ] Test both language versions
+### Legal Notice (src/app/pages/legal-notice/)
+- [ ] Build with same background as hero
+- [ ] Reuse header + footer
+- [ ] Build "Legal Notice" headline + imprint text
+- [ ] Mobile: add arrow left + "Back" text
 
-## Phase 5: Responsiveness
+### Privacy Policy (src/app/pages/privacy-policy/)
+- [ ] Build similar layout to Legal Notice
+- [ ] Add privacy policy content
 
-- [ ] Define breakpoints (320px, 768px, 1024px, 1440px)
-- [ ] Test and fix mobile layout (320px - 767px)
-- [ ] Test and fix tablet layout (768px - 1023px)
-- [ ] Test and fix desktop layout (1024px+)
-- [ ] Implement max-width container (1440px or 1920px)
-- [ ] Remove unnecessary scrollbars
-- [ ] Test hero section 100vh on all devices
+## Phase 5: Internationalization (i18n)
 
-## Phase 6: Animations & UX
+- [x] Set up ngx-translate with provideTranslateService (functional API)
+- [x] Copy translation files from beta (de.json, en.json) to public/i18n/
+- [ ] Update translation files with all new keys (colleagues, project details, legal notice)
+- [ ] Implement language toggle functionality with localStorage persistence
+- [ ] Set German as default, detect browser language as fallback
+- [ ] Test both language versions across all sections
 
-- [ ] Add loading spinner for initial page load
-- [ ] Implement scroll animations for section entries
-- [ ] Add hover effects to all clickable elements (max 200-300ms)
-- [ ] Ensure cursor: pointer on all buttons
-- [ ] Remove default borders from inputs/buttons
-- [ ] Add focus states for accessibility
+## Phase 6: Animations
+
+### Port from beta (refine for Angular 20):
+- [ ] Header nav clip-path hover animations (4 unique reveals)
+- [ ] Hero letter hover (yellow + case toggle)
+- [ ] Hero blue circle button expansion (::after, 500ms cubic-bezier)
+- [ ] Skills circle animation (rotation + clip-path, 4.05s cycle)
+- [ ] Skills badge peel animation (3-layer opacity system)
+- [ ] Section underline animations (clip-path wipe, 7s cycle)
+- [ ] Project card hover (zoom + gradient overlay + CTA)
+- [ ] Burger menu hamburger-to-X transform (300ms ease)
+- [ ] Contact form focus states (yellow to blue border)
+
+### New animations to implement:
+- [ ] Hero waving hand icon (rotate 360deg + translate + opacity, 400ms cubic-bezier)
+- [ ] Hero Polaroid grayscale-to-color + ":)" to ":D" text change
+- [ ] Arrow clip-path animations (Colleagues + Contact sections)
+- [ ] Colleagues card hover effects
+- [ ] Contact sticker overlay
+- [ ] Skills torn paper graphic
+- [ ] Footer social button blue circle expand
+- [ ] Footer Legal Notice clip-path reveal
 
 ## Phase 7: Performance & Optimization
 
 - [ ] Compress all images (max 500kb each)
 - [ ] Implement lazy loading for images
-- [ ] Optimize bundle size
-- [ ] Run Lighthouse audit (target: >90)
+- [ ] Optimize bundle size (check budgets: initial 500kB warning, 1MB error)
+- [ ] Run Lighthouse audit (target: >90 performance, FCP <1.5s, LCP <2.5s)
 - [ ] Fix any performance issues
 
 ## Phase 8: Accessibility
 
-- [ ] Add proper semantic HTML
+- [ ] Add proper semantic HTML throughout
 - [ ] Implement ARIA labels where needed
 - [ ] Ensure keyboard navigation works
 - [ ] Test color contrast (WCAG AA)
-- [ ] Add visible focus indicators
+- [ ] Add visible focus indicators (focus-visible pattern)
+- [ ] Add skip-to-main-content link
 - [ ] Test with screen reader
 
 ## Phase 9: Testing & Quality
 
-- [ ] Write unit tests for components
-- [ ] Write unit tests for services
-- [ ] Test in Chrome
-- [ ] Test in Firefox
-- [ ] Test in Safari
-- [ ] Test in Edge
-- [ ] Check for console errors/warnings
+- [ ] Create .spec.ts for every component and service
+- [ ] Use TestBed for component tests, Jasmine spies for service mocks
+- [ ] Target 70% overall coverage
+- [ ] 100% coverage on contact form validation logic
+- [ ] Test in Chrome, Firefox, Safari, Edge
+- [ ] Check for zero console errors/warnings
 - [ ] Validate all links work
-- [ ] Test contact form submission
+- [ ] Test contact form submission flow
+- [ ] Run: ng test --code-coverage
 
-## Phase 10: Deployment
+## Phase 10: SSR & Deployment
 
+- [ ] Verify SSR works: npm run build && npm run serve:ssr:Portfolio_2
 - [ ] Set up hosting server
-- [ ] Create subdomain for projects
 - [ ] Configure SSL certificate
 - [ ] Enforce HTTPS redirect
 - [ ] Deploy application
 - [ ] Final cross-browser testing on production
 
-## Phase 11: Documentation & Cleanup
+## Phase 11: Final Polish & Cleanup
 
 - [ ] Review all files (<400 LOC each)
 - [ ] Review all functions (<14 lines each)
 - [ ] Check naming conventions (camelCase)
+- [ ] Remove all console output from production code
+- [ ] Verify all external links have target="_blank" rel="noopener noreferrer"
+- [ ] Run Prettier on all files
 - [ ] Remove unused code
-- [ ] Final commit with conventional commit message
+- [ ] Verify responsive design at all breakpoints (320px to 1920px+)

@@ -1,0 +1,55 @@
+@use '../../../../styles/variables' as *;
+@use '../../../../styles/mixins' as *;
+
+.cta-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--cta-padding, 12px 24px);
+  min-width: var(--cta-min-width, auto);
+  gap: 10px;
+  border: 1px solid $outline-white;
+  border-radius: $radius-full;
+  background: rgba(0, 0, 0, 0.01);
+  box-shadow: $shadow-button;
+  color: $text-primary;
+  font-family: $font-primary;
+  font-weight: $font-weight-medium;
+  font-size: $font-size-md;
+  line-height: $line-height-normal;
+  text-decoration: none;
+  transition:
+    background-color $transition-base,
+    transform $transition-base,
+    box-shadow $transition-base;
+  cursor: pointer;
+
+  &:hover:not(:disabled) {
+    background-color: $coral-orange;
+    transform: translate(2px, 4px);
+    box-shadow: none;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+// Light variant: dark border/shadow on light backgrounds
+.cta-button--light {
+  border-color: $outline-dark;
+  box-shadow: $shadow-button-dark;
+  color: $text-dark;
+
+  &:hover:not(:disabled) {
+    color: $text-primary;
+  }
+}
+
+@include mobile {
+  .cta-button {
+    font-size: $font-size-base;
+    padding: 10px 20px;
+  }
+}

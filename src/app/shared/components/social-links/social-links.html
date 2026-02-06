@@ -1,0 +1,12 @@
+<div class="social-links">
+  @for (link of links(); track link.url) {
+    <a
+      [href]="link.url"
+      [target]="isMailto(link.url) ? '_self' : '_blank'"
+      [rel]="isMailto(link.url) ? null : 'noopener noreferrer'"
+      class="social-links__link"
+      [attr.aria-label]="link.label">
+      <img [src]="link.icon" [alt]="link.label" class="social-links__icon">
+    </a>
+  }
+</div>

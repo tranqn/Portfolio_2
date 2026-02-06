@@ -7,6 +7,14 @@
     (click)="buttonClick.emit()">
     {{ translateKey() | translate }}
   </button>
+} @else if (fragment()) {
+  <a
+    routerLink="/"
+    [fragment]="fragment()"
+    class="cta-button"
+    [class.cta-button--light]="variant() === 'light'">
+    {{ translateKey() | translate }}
+  </a>
 } @else {
   <a
     [href]="href()"

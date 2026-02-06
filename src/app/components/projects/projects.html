@@ -1,0 +1,16 @@
+<section id="projects" class="projects">
+  <div class="projects__container">
+    <!-- Header (takes 50% width on desktop) -->
+    <div class="projects__header">
+      <span class="projects__label">{{ 'PROJECTS.LABEL' | translate }}</span>
+      <h2 class="projects__title">{{ 'PROJECTS.TITLE' | translate }}</h2>
+      <img [src]="underlinePath" alt="Decorative underline" class="projects__underline">
+      <p class="projects__description">{{ 'PROJECTS.DESCRIPTION' | translate }}</p>
+    </div>
+
+    <!-- Project Cards (each 50% width on desktop) -->
+    @for (project of projectDataService.allProjects(); track project.id) {
+      <app-project-card [project]="project" />
+    }
+  </div>
+</section>

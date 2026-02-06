@@ -30,6 +30,7 @@ export const appConfig: ApplicationConfig = {
         suffix: '.json',
       }),
       defaultLanguage: 'de',
+      lang: 'de',
     }),
   ],
 };

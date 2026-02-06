@@ -7,6 +7,7 @@
   },
   "HERO": {
     "HELLO": "Hallo World",
+    "HELLO_HOVER": "ICH BIN QUOC NAM TRAN",
     "FRONTEND": "Frontend",
     "DEVELOPER": "ENTWICKLER",
     "GET_IN_TOUCH": "Kontaktier mich"
@@ -63,6 +64,19 @@
     "PRIVACY_LINK": "Datenschutzerklärung",
     "PRIVACY_TEXT_2": "gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu.",
     "SUBMIT": "Nachricht senden"
+  },
+  "COLLEAGUES": {
+    "LABEL": "in ihren Worten:",
+    "TITLE": "Kollegenmeinungen",
+    "PROFILE": "Profil",
+    "CHRISTIAN": {
+      "POSITION": "Platzhalter Position",
+      "TEXT": "Nam trug mit seinem Fachwissen maßgeblich zum termingerechten Erfolg des Projekts „Join" bei. Besonders hervorzuheben sind seine klare Kommunikation und die Geduld, mit der er komplexe Code-Logiken erklärt und gemeinsam im Team erarbeitet. Dank seiner Übersicht und der strukturierten Aufgabenverteilung in den Sprints war er eine tragende Säule unserer Zusammenarbeit. Ich schätze Nam als hilfsbereiten sowie fachlich exzellenten Kollegen und empfehle ihn uneingeschränkt weiter."
+    },
+    "DANIEL": {
+      "POSITION": "Platzhalter Position",
+      "TEXT": "Nam war ein großer Teil unserer Teamarbeit, seine positive Art hat viel beigetragen. Genauso seine Gabe sich in neue Aufgabengebiete einzuarbeiten hat uns sehr weitergeholfen und seine Wissbegierde alles zu verstehen war ein guter Aspekt zu unserem Erfolg."
+    }
   },
   "FOOTER": {
     "LEGAL_NOTICE": "Impressum",

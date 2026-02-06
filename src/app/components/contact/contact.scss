@@ -1,0 +1,324 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+// ========================================
+// CONTACT SECTION — Full background image
+// ========================================
+
+.contact {
+  position: relative;
+  background-image: url('/img/contact/contact-bg.png');
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  padding: $spacing-4xl 0 264px 0;
+}
+
+.contact__container {
+  @include flex-center;
+  align-items: flex-start;
+  gap: $spacing-3xl;
+  max-width: $container-max-width;
+  width: 100%;
+  margin: 0 auto;
+  padding-top: $container-padding-x;
+  padding-left: $container-padding-x;
+  padding-right: $container-padding-x;
+  position: relative;
+}
+
+// ========================================
+// STICKER OVERLAY — TODO: uncomment when sticker image is available
+// ========================================
+
+// .contact__sticker {
+//   position: absolute;
+//   width: 160px;
+//   height: auto;
+//   right: 10%;
+//   top: 0;
+//   transform: rotate(12deg);
+//   pointer-events: none;
+//   z-index: $z-sticky;
+// }
+
+// ========================================
+// LEFT COLUMN: Content
+// ========================================
+
+.contact__left {
+  @include flex-column;
+  gap: $spacing-3xl;
+  max-width: 60%;
+}
+
+.contact__content {
+  @include flex-column;
+  gap: $spacing-md;
+  max-width: 600px;
+}
+
+.contact__label {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  color: $text-secondary;
+  text-transform: uppercase;
+  letter-spacing: $letter-spacing-wide;
+}
+
+.contact__title {
+  font-size: $font-size-4xl;
+  font-weight: $font-weight-black;
+  color: $text-primary;
+  margin: 0;
+  line-height: $line-height-tight;
+}
+
+.contact__description {
+  font-size: $font-size-base;
+  font-weight: $font-weight-normal;
+  line-height: $line-height-relaxed;
+  color: $text-primary;
+}
+
+// Arrow animation (same underlineReveal keyframe)
+@keyframes underlineReveal {
+  0% {
+    clip-path: inset(0 100% 0 0);
+  }
+  7.14% {
+    clip-path: inset(0);
+  }
+  50% {
+    clip-path: inset(0);
+  }
+  57.14% {
+    clip-path: inset(0 100% 0 0);
+  }
+  100% {
+    clip-path: inset(0 100% 0 0);
+  }
+}
+
+.contact__underline {
+  margin-top: $spacing-sm;
+  margin-bottom: $spacing-md;
+  width: 300px;
+  height: auto;
+  display: block;
+  clip-path: inset(0 100% 0 0);
+  animation: underlineReveal 7s ease-in-out infinite;
+  align-self: flex-end;
+}
+
+// Desktop: show left-column arrow, hide mobile arrow
+.contact__underline--mobile {
+  display: none;
+}
+
+// ========================================
+// RIGHT COLUMN: Form
+// ========================================
+
+.contact__right {
+  @include flex-center;
+  width: 40%;
+  position: relative;
+}
+
+.contact__form {
+  @include flex-column;
+  width: 100%;
+  max-width: 600px;
+
+  label {
+    font-size: $font-size-base;
+    font-weight: $font-weight-normal;
+    color: $text-primary;
+    display: block;
+    padding-left: $spacing-sm;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    padding: $spacing-sm 0 $spacing-sm $spacing-sm;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid $bright-yellow;
+    border-radius: 0;
+    color: $text-primary;
+    font-size: $font-size-base;
+    font-family: $font-primary;
+    transition: border-color $transition-base;
+    margin-bottom: $spacing-sm;
+
+    &::placeholder {
+      color: rgba($text-primary, 0.5);
+    }
+
+    &:focus {
+      outline: none;
+      border-bottom-color: $primary-blue;
+    }
+
+    &:hover {
+      border-bottom-color: $primary-blue;
+    }
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 100px;
+    padding-top: $spacing-sm;
+  }
+}
+
+// Form actions row (CTA right-aligned on desktop, arrow + CTA on mobile)
+.contact__form-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  app-cta-button {
+    --cta-min-width: 120px;
+    --cta-padding: 6px 24px;
+  }
+}
+
+// ========================================
+// CUSTOM CHECKBOX
+// ========================================
+
+.contact__form-checkbox {
+  display: flex;
+  align-items: center;
+  margin: $spacing-md 0;
+  position: relative;
+
+  // Blue border box (overlay)
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    border: 2px solid $primary-blue;
+    border-radius: $radius-sm;
+    background-color: transparent;
+    pointer-events: none;
+  }
+
+  // Checkmark image (overlay)
+  &::after {
+    content: '';
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 24px;
+    height: 24px;
+    background-image: url('/img/shared/check.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0;
+    transition: opacity $transition-base;
+    pointer-events: none;
+  }
+
+  &:has(input:checked)::after {
+    opacity: 1;
+  }
+
+  input[type='checkbox'] {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    margin-bottom: 0;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  label {
+    font-size: $font-size-sm;
+    font-weight: $font-weight-normal;
+    color: $text-primary;
+    line-height: $line-height-relaxed;
+    cursor: pointer;
+
+    a {
+      color: $primary-blue;
+      text-decoration: none;
+      transition: opacity $transition-base;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}
+
+// ========================================
+// RESPONSIVE
+// ========================================
+
+@include mobile {
+  .contact {
+    padding: $spacing-xl 0 259px 0;
+  }
+
+  .contact__container {
+    flex-direction: column;
+    padding-left: $container-padding-x-mobile;
+    padding-right: $container-padding-x-mobile;
+    gap: $spacing-md;
+    align-items: center;
+  }
+
+  .contact__left,
+  .contact__right {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .contact__label {
+    font-size: $font-size-xs;
+  }
+
+  .contact__title {
+    font-size: $font-size-3xl-mobile;
+  }
+
+  .contact__description {
+    font-size: $font-size-sm;
+  }
+
+  // TODO: Sticker mobile override — uncomment when sticker image is available
+  // .contact__sticker {
+  //   right: auto;
+  //   left: 60%;
+  //   top: -$spacing-md;
+  //   width: 120px;
+  // }
+
+  // Mobile: hide desktop arrow, show mobile arrow
+  .contact__underline--desktop {
+    display: none;
+  }
+
+  .contact__underline--mobile {
+    display: block;
+    width: 200px;
+  }
+
+  // Arrow + CTA side by side
+  .contact__form-actions {
+    justify-content: space-between;
+  }
+}

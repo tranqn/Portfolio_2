@@ -1,0 +1,51 @@
+<footer class="footer">
+  <div class="footer__container">
+    <!-- Top: Logo + Copyright -->
+    <div class="footer__top">
+      <div class="footer__logo">
+        <img [src]="logoPath" alt="QT Logo" class="footer__logo-image">
+      </div>
+      <span class="footer__copyright">&copy; Quoc Nam Tran 2025</span>
+    </div>
+
+    <!-- Bottom: 4 link columns -->
+    <div class="footer__links">
+      <!-- Legal Notice (clip-path hover) -->
+      <a routerLink="/legal-notice" class="footer__link footer__link--legal">
+        {{ 'FOOTER.LEGAL_NOTICE' | translate }}
+      </a>
+
+      <!-- GitHub (blue circle expand hover) -->
+      <div class="footer__button-container">
+        <img [src]="icons.GITHUB" alt="GitHub icon" class="footer__button-icon">
+        <a
+          href="https://github.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="footer__button">
+          <span class="footer__button-text">{{ 'FOOTER.GITHUB' | translate }}</span>
+        </a>
+      </div>
+
+      <!-- LinkedIn (blue circle expand hover) -->
+      <div class="footer__button-container">
+        <img [src]="icons.LINKEDIN" alt="LinkedIn icon" class="footer__button-icon">
+        <a
+          href="https://linkedin.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="footer__button">
+          <span class="footer__button-text">{{ 'FOOTER.LINKEDIN' | translate }}</span>
+        </a>
+      </div>
+
+      <!-- Email (blue circle expand hover) -->
+      <div class="footer__button-container">
+        <img [src]="icons.EMAIL" alt="Email icon" class="footer__button-icon">
+        <a href="mailto:contact@example.com" class="footer__button">
+          <span class="footer__button-text">Email</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>

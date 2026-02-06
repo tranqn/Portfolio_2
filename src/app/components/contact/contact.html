@@ -1,0 +1,77 @@
+<section id="contact" class="contact">
+  <div class="contact__container">
+    <!-- TODO: Sticker overlay (add once sticker image is available) -->
+
+    <!-- Left: Content -->
+    <div class="contact__left">
+      <div class="contact__content">
+        <span class="contact__label">{{ 'CONTACT.LABEL' | translate }}</span>
+        <h2 class="contact__title">{{ 'CONTACT.TITLE' | translate }}</h2>
+        <p class="contact__description">{{ 'CONTACT.DESCRIPTION' | translate }}</p>
+        <!-- Arrow: desktop only -->
+        <img [src]="underlinePath" alt="" class="contact__underline contact__underline--desktop">
+      </div>
+    </div>
+
+    <!-- Right: Contact Form -->
+    <div class="contact__right">
+      <form class="contact__form" (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+        <label for="name">{{ 'CONTACT.NAME_LABEL' | translate }}</label>
+        <input
+          [(ngModel)]="formData.name"
+          type="text"
+          id="name"
+          name="name"
+          [placeholder]="'CONTACT.NAME_PLACEHOLDER' | translate"
+          required
+          autocomplete="name">
+
+        <label for="email">{{ 'CONTACT.EMAIL_LABEL' | translate }}</label>
+        <input
+          [(ngModel)]="formData.email"
+          type="email"
+          id="email"
+          name="email"
+          [placeholder]="'CONTACT.EMAIL_PLACEHOLDER' | translate"
+          pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+          required
+          autocomplete="email">
+
+        <label for="message">{{ 'CONTACT.MESSAGE_LABEL' | translate }}</label>
+        <textarea
+          [(ngModel)]="formData.message"
+          id="message"
+          name="message"
+          [placeholder]="'CONTACT.MESSAGE_PLACEHOLDER' | translate"
+          minlength="4"
+          required></textarea>
+
+        <!-- Privacy checkbox with custom styling -->
+        <div class="contact__form-checkbox">
+          <input
+            [(ngModel)]="privacyAccepted"
+            type="checkbox"
+            id="privacy"
+            name="privacy"
+            required>
+          <label for="privacy">
+            <span>
+              {{ 'CONTACT.PRIVACY_TEXT' | translate }}
+              <a routerLink="/privacy-policy">{{ 'CONTACT.PRIVACY_LINK' | translate }}</a>
+              {{ 'CONTACT.PRIVACY_TEXT_2' | translate }}
+            </span>
+          </label>
+        </div>
+
+        <!-- Form actions: arrow (mobile) + CTA -->
+        <div class="contact__form-actions">
+          <img [src]="underlinePath" alt="" class="contact__underline contact__underline--mobile">
+          <app-cta-button
+            type="submit"
+            [translateKey]="'CONTACT.SUBMIT'"
+            [disabled]="!contactForm.valid || isSubmitting()" />
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

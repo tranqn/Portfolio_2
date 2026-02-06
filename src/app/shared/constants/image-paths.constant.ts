@@ -51,9 +51,9 @@ export const IMAGE_PATHS = {
   },
   CONTACT: {
     UNDERLINE: '/img/contact/underline.png',
+    // STICKER: '/img/contact/sticker.png', // TODO: add when sticker image is available
   },
   FOOTER: {
-    BACKGROUND: '/img/footer/footer-bg.png',
     GITHUB: '/img/footer/github.svg',
     LINKEDIN: '/img/footer/linkedin.svg',
     EMAIL: '/img/footer/email.svg',

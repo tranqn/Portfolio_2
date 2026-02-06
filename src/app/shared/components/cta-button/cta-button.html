@@ -1,0 +1,19 @@
+@if (type() === 'submit') {
+  <button
+    type="submit"
+    class="cta-button"
+    [class.cta-button--light]="variant() === 'light'"
+    [disabled]="disabled()"
+    (click)="buttonClick.emit()">
+    {{ translateKey() | translate }}
+  </button>
+} @else {
+  <a
+    [href]="href()"
+    class="cta-button"
+    [class.cta-button--light]="variant() === 'light'"
+    target="_blank"
+    rel="noopener noreferrer">
+    {{ translateKey() | translate }}
+  </a>
+}

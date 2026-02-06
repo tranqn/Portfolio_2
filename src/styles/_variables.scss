@@ -25,6 +25,7 @@ $text-muted: #666666;
 
 // Outline Colors
 $outline-white: #f8f9fa;
+$outline-dark: #0e1013;
 
 // Shadow Colors
 $shadow-light: rgba(0, 0, 0, 0.1);
@@ -133,6 +134,7 @@ $shadow-lg: 0 8px 16px $shadow-dark;
 $shadow-polaroid: 0 4px 8px $shadow-medium;
 $shadow-card: 0 4px 8px rgba(0, 0, 0, 0.16);
 $shadow-button: 2px 4px 0px $text-primary;
+$shadow-button-dark: 2px 4px 0px $outline-dark;
 
 // Z-index layers
 $z-base: 1;

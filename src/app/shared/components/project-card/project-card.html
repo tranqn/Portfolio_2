@@ -1,0 +1,17 @@
+<div [id]="'project-' + project().id" class="project-card">
+  <div class="project-card__image-wrapper">
+    @if (project().featured) {
+      <img src="/img/shared/featured.svg" alt="Featured" class="project-card__featured">
+    }
+    <div [class.project-card__image-float]="project().featured">
+      <img [src]="project().image" [alt]="project().title + ' Project'" class="project-card__image">
+    </div>
+    <a [routerLink]="'/projects/' + project().id" class="project-card__hover-link">
+      <span class="project-card__hover-button">{{ 'PROJECTS.PROJECT_DETAILS' | translate }}</span>
+    </a>
+  </div>
+  <div class="project-card__content">
+    <h3 class="project-card__title">{{ project().title }}</h3>
+    <p class="project-card__description">{{ project().description }}</p>
+  </div>
+</div>

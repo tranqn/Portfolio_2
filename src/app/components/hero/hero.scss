@@ -11,8 +11,6 @@
   --hero-content-gap: #{$spacing-lg};
   --hero-top-gap: #{$spacing-3xl};
   --hero-polaroid-width: 180px;
-  --hero-button-width: 140px;
-  --hero-button-hover-width: 220px;
   --hero-button-font: #{$font-size-md};
   --hero-button-padding: 6px 20px;
 
@@ -171,8 +169,10 @@
   font-size: var(--hero-button-font);
   line-height: $line-height-normal;
   background: transparent;
-  width: var(--hero-button-width);
-  transition: border-color $transition-expand, color 100ms ease, width $transition-expand;
+  width: 140px;
+  transition: border-color $transition-expand, color 100ms ease,
+    padding $transition-expand, width $transition-expand, transform 100ms ease;
+  cursor: pointer;
   text-decoration: none;
   position: relative;
   white-space: nowrap;
@@ -196,16 +196,9 @@
   }
 
   &:hover {
-    border-color: $outline-white;
-    width: var(--hero-button-hover-width);
-  }
-
-  &:hover .hero__button-text {
+    border: 1px solid $outline-white;
     color: transparent;
-  }
-
-  &:hover .hero__button-text-hover {
-    opacity: 1;
+    width: 260px;
   }
 
   &:hover::after {
@@ -213,12 +206,15 @@
     opacity: 1;
     transition: transform $transition-fade-in, opacity $transition-fade-in;
   }
+
+  &:hover .hero__button-text-hover {
+    opacity: 1;
+  }
 }
 
 .hero__button-text {
   position: relative;
   z-index: 2;
-  transition: color 100ms ease;
 }
 
 .hero__button-text-hover {
@@ -256,9 +252,9 @@
 
 .hero__polaroid-photo {
   position: absolute;
-  top: 14px;
-  left: 14px;
-  width: calc(100% - 28px);
+  top: 6px;
+  left: 6px;
+  width: calc(100% - 14px);
   height: auto;
   object-fit: cover;
   z-index: 1;
@@ -288,8 +284,6 @@
     --hero-content-gap: clamp(8px, 3vh, 48px);
     --hero-top-gap: clamp(8px, 3vh, 32px);
     --hero-polaroid-width: clamp(120px, 30vw, 280px);
-    --hero-button-width: clamp(120px, 35vw, 200px);
-    --hero-button-hover-width: clamp(150px, 40vw, 240px);
     --hero-button-font: clamp(12px, 3vw, #{$font-size-base});
     --hero-button-padding: clamp(6px, 1.5vh, 12px) clamp(12px, 3vw, 24px);
 
@@ -342,6 +336,14 @@
     &--top,
     &--bottom {
       width: 100%;
+    }
+  }
+
+  .hero__button {
+    width: clamp(120px, 30vw, 180px);
+
+    &:hover {
+      width: clamp(180px, 50vw, 260px);
     }
   }
 

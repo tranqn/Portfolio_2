@@ -1,3 +1,140 @@
+@use 'sass:color';
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+// ========================================
+// PRIVACY POLICY PAGE
+// ========================================
+
 :host {
   display: block;
+}
+
+// Hero-like header sharing hero background
+.privacy-header {
+  position: relative;
+  min-height: 500px;
+  background-image: url('/img/hero/hero-bg.png');
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  @include flex-center;
+}
+
+.privacy-header__container {
+  display: flex;
+  justify-content: flex-start;
+  @include container;
+}
+
+.privacy-header__title {
+  font-size: $font-size-4xl;
+  font-weight: $font-weight-black;
+  color: $text-primary;
+  margin: 0;
+  line-height: $line-height-tight;
+}
+
+// ========================================
+// CONTENT
+// ========================================
+
+.privacy-content {
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: $spacing-3xl $container-padding-x $spacing-4xl;
+  background-color: $light-bg;
+}
+
+.privacy-content h2 {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  color: $primary-blue;
+  margin-top: $spacing-2xl;
+  margin-bottom: $spacing-md;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.privacy-content h3 {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $text-dark;
+  margin-top: $spacing-xl;
+  margin-bottom: $spacing-sm;
+}
+
+.privacy-content p {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-normal;
+  line-height: $line-height-relaxed;
+  color: $text-dark;
+  margin-bottom: $spacing-md;
+}
+
+.privacy-content a {
+  color: $primary-blue;
+  text-decoration: underline;
+  transition: color $transition-base;
+
+  &:hover {
+    color: color.adjust($primary-blue, $lightness: -15%);
+  }
+}
+
+// ========================================
+// FOOTER OVERRIDES — dark text on light bg
+// ========================================
+
+:host ::ng-deep .footer {
+  .footer__copyright {
+    color: $text-dark;
+  }
+
+  .footer__link {
+    color: $text-dark;
+
+    &:hover {
+      color: $primary-blue;
+    }
+  }
+
+  .footer__button {
+    border-color: $text-dark;
+    color: $text-dark;
+
+    &:hover {
+      border-color: $primary-blue;
+      color: $text-primary;
+    }
+  }
+
+  .footer__button-icon {
+    filter: invert(0);
+  }
+}
+
+// ========================================
+// RESPONSIVE
+// ========================================
+
+@include mobile {
+  .privacy-header {
+    min-height: 60vh;
+  }
+
+  .privacy-header__container {
+    padding-top: 90px;
+  }
+
+  .privacy-header__title {
+    font-size: $font-size-5xl-mobile;
+    text-align: center;
+  }
+
+  .privacy-content {
+    padding: $spacing-2xl $container-padding-x-mobile;
+  }
 }

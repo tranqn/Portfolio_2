@@ -1,3 +1,34 @@
-<section class="legal-notice">
-  <h1>Legal Notice</h1>
-</section>
+<app-header />
+
+<main class="legal-notice-page">
+  <section class="legal-header">
+    <div class="legal-header__container">
+      <h1 class="legal-header__title">{{ 'LEGAL_NOTICE.TITLE' | translate }}</h1>
+    </div>
+  </section>
+
+  <div class="legal-content">
+    <h2>{{ 'LEGAL_NOTICE.IMPRINT' | translate }}</h2>
+    <p [innerHTML]="'LEGAL_NOTICE.IMPRINT_TEXT' | translate"></p>
+
+    <h2>{{ 'LEGAL_NOTICE.CONTACT' | translate }}</h2>
+    <p>{{ 'LEGAL_NOTICE.CONTACT_TEXT' | translate }}</p>
+
+    <h2>{{ 'LEGAL_NOTICE.ACCEPTANCE' | translate }}</h2>
+    <p>{{ 'LEGAL_NOTICE.ACCEPTANCE_TEXT' | translate }}</p>
+
+    <h2>{{ 'LEGAL_NOTICE.SCOPE' | translate }}</h2>
+    <p>{{ 'LEGAL_NOTICE.SCOPE_TEXT' | translate }}</p>
+
+    <h2>{{ 'LEGAL_NOTICE.USE' | translate }}</h2>
+    <p>{{ 'LEGAL_NOTICE.USE_TEXT' | translate }}</p>
+
+    <h2>{{ 'LEGAL_NOTICE.PROPRIETARY' | translate }}</h2>
+    <p>{{ 'LEGAL_NOTICE.PROPRIETARY_TEXT' | translate }}</p>
+
+    <h2>{{ 'LEGAL_NOTICE.WARRANTIES' | translate }}</h2>
+    <p>{{ 'LEGAL_NOTICE.WARRANTIES_TEXT' | translate }}</p>
+  </div>
+</main>
+
+<app-footer />

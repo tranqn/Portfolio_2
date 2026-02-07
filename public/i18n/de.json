@@ -26,7 +26,7 @@
     "LABEL": "MEIN STACK",
     "TITLE": "Fähigkeiten",
     "DESCRIPTION": "Technologien, mit denen ich kürzlich gearbeitet habe und auf deren Beherrschung ich mich konzentriere. Ich verfolge kontinuierlich Best Practices und Technologien und integriere Ihre Genehmigungen zur Verbesserung Ihres Geschäfts mit neuer Technologie.",
-    "BADGE": "Also, I'm interested in diving into:"
+    "BADGE": "Au\u00DFerdem interessiere ich mich f\u00FCr:"
   },
   "PROJECTS": {
     "LABEL": "MEINE ARBEIT",
@@ -48,7 +48,8 @@
       "DESCRIPTION": "Diese App ist ein Slack-Klon. Sie revolutioniert die Teamkommunikation und Zusammenarbeit mit ihrer intuitiven Benutzeroberfläche, Echtzeit-Messaging und robuster Kanalorganisation."
     },
     "LIVE_TEST": "Live-Test",
-    "GITHUB": "Github"
+    "GITHUB": "Github",
+    "PROJECT_DETAILS": "Projektdetails"
   },
   "CONTACT": {
     "LABEL": "KONTAKTIEREN SIE MICH",
@@ -71,12 +72,53 @@
     "PROFILE": "Profil",
     "CHRISTIAN": {
       "POSITION": "Platzhalter Position",
-      "TEXT": "Nam trug mit seinem Fachwissen maßgeblich zum termingerechten Erfolg des Projekts „Join" bei. Besonders hervorzuheben sind seine klare Kommunikation und die Geduld, mit der er komplexe Code-Logiken erklärt und gemeinsam im Team erarbeitet. Dank seiner Übersicht und der strukturierten Aufgabenverteilung in den Sprints war er eine tragende Säule unserer Zusammenarbeit. Ich schätze Nam als hilfsbereiten sowie fachlich exzellenten Kollegen und empfehle ihn uneingeschränkt weiter."
+      "TEXT": "Nam trug mit seinem Fachwissen maßgeblich zum termingerechten Erfolg des Projekts \u201EJoin\u201C bei. Besonders hervorzuheben sind seine klare Kommunikation und die Geduld, mit der er komplexe Code-Logiken erklärt und gemeinsam im Team erarbeitet. Dank seiner Übersicht und der strukturierten Aufgabenverteilung in den Sprints war er eine tragende Säule unserer Zusammenarbeit. Ich schätze Nam als hilfsbereiten sowie fachlich exzellenten Kollegen und empfehle ihn uneingeschränkt weiter."
     },
     "DANIEL": {
       "POSITION": "Platzhalter Position",
       "TEXT": "Nam war ein großer Teil unserer Teamarbeit, seine positive Art hat viel beigetragen. Genauso seine Gabe sich in neue Aufgabengebiete einzuarbeiten hat uns sehr weitergeholfen und seine Wissbegierde alles zu verstehen war ein guter Aspekt zu unserem Erfolg."
     }
+  },
+  "PROJECT_DETAIL": {
+    "GO_BACK": "Zur\u00FCck",
+    "DESCRIPTION": "Beschreibung",
+    "IMPLEMENTATION": "Implementierungsdetails",
+    "DURATION": "Dauer",
+    "ROLE": "Rolle",
+    "NEXT_PROJECT": "N\u00E4chstes Projekt"
+  },
+  "LEGAL_NOTICE": {
+    "TITLE": "Impressum",
+    "IMPRINT": "Impressum",
+    "IMPRINT_TEXT": "Quocnam Dinh Huu Tran<br>Windm\u00FChlenstra\u00DFe 12<br>04107 Leipzig<br>Deutschland",
+    "CONTACT": "Kontakt",
+    "CONTACT_TEXT": "E-Mail: quocnamtran@outlook.de",
+    "ACCEPTANCE": "Akzeptanz der Bedingungen",
+    "ACCEPTANCE_TEXT": "Durch den Zugriff auf und die Nutzung dieser Website erkennen Sie alle folgenden Bedingungen an und stimmen ihnen zu, und Sie stimmen zu, alle geltenden Gesetze und Vorschriften einzuhalten. Wenn Sie mit diesen Nutzungsbedingungen nicht einverstanden sind, unterlassen Sie bitte die Nutzung dieser Website.",
+    "SCOPE": "Umfang und Eigentum der Produkte",
+    "SCOPE_TEXT": "Die visuellen Schnittstellen, Grafiken, Designs, Systeme, Methoden, Informationen, Computercode (einschlie\u00DFlich Quellcode und Objektcode), Software, Dienste und alle anderen Elemente dieses Dienstes sind durch Urheberrecht, Trade Dress und andere Eigentumsrechte im Zusammenhang mit geistigem Eigentum gesch\u00FCtzt.",
+    "USE": "Nutzung der Produkte",
+    "USE_TEXT": "Das Design dieses Portfolios ist von der Education Academia Sonnenau unter der Creative Commons Non-Commercial Attribution (CC BY-NC-ND 4.0) lizenziert. Die unbefugte Nutzung, Vervielf\u00E4ltigung, Verbreitung oder \u00C4nderung unserer Arbeit ohne schriftliche Genehmigung ist strengstens untersagt.",
+    "PROPRIETARY": "Eigentumsrechte und Download von Inhalten",
+    "PROPRIETARY_TEXT": "Dieser Dienst und die \u00FCber ihn bereitgestellten Inhalte (ausgenommen Benutzerinhalte) sind Eigentum der Developer Academy GmbH und ihrer Lizenzgeber und k\u00F6nnen durch geltende Urheberrechtsgesetze und andere Eigentumsrechte (einschlie\u00DFlich geistiges Eigentum) gesch\u00FCtzt sein.",
+    "WARRANTIES": "Keine Gew\u00E4hrleistung",
+    "WARRANTIES_TEXT": "Dieser Dienst und alle Materialien und Inhalte, die \u00FCber diesen Dienst verf\u00FCgbar sind, werden \u201Ewie besehen\u201C und \u201Ewie verf\u00FCgbar\u201C bereitgestellt. Die Developer Academy GmbH gibt keine ausdr\u00FCcklichen oder stillschweigenden Garantien, Zusicherungen oder Best\u00E4tigungen ab."
+  },
+  "PRIVACY_POLICY": {
+    "TITLE": "Datenschutzerkl\u00E4rung",
+    "SECTION_1_TITLE": "1. Datenschutz auf einen Blick",
+    "GENERAL_INFO": "Allgemeine Hinweise",
+    "SECTION_1_TEXT": "Die folgenden Hinweise geben einen einfachen \u00DCberblick dar\u00FCber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen.",
+    "SECTION_2_TITLE": "2. Allgemeine Hinweise und Pflichtinformationen",
+    "DATA_PROTECTION": "Datenschutz",
+    "SECTION_2_TEXT": "Die Betreiber dieser Website nehmen den Schutz Ihrer pers\u00F6nlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend der gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerkl\u00E4rung.",
+    "DATA_COLLECTION_WEBSITE": "Datenerfassung auf dieser Website",
+    "SECTION_2_TEXT_2": "Wer ist verantwortlich f\u00FCr die Datenerfassung auf dieser Website? Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber.",
+    "SECTION_3_TITLE": "3. Datenerfassung",
+    "CONTACT_FORM": "Kontaktformular",
+    "SECTION_3_TEXT": "Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und f\u00FCr den Fall von Anschlussfragen bei uns gespeichert.",
+    "SECTION_4_TITLE": "4. Ihre Rechte",
+    "SECTION_4_TEXT": "Sie haben jederzeit das Recht, unentgeltlich Auskunft \u00FCber Herkunft, Empf\u00E4nger und Zweck Ihrer gespeicherten personenbezogenen Daten zu erhalten. Sie haben au\u00DFerdem das Recht, die Berichtigung oder L\u00F6schung dieser Daten zu verlangen."
   },
   "FOOTER": {
     "LEGAL_NOTICE": "Impressum",

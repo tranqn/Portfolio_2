@@ -16,12 +16,19 @@
 }
 
 .header__container {
-  @include flex-center;
+  display: flex;
+  align-items: center;
   height: 100%;
   max-width: $container-max-width;
   margin: 0 auto;
   padding-left: $container-padding-x;
   padding-right: $container-padding-x;
+
+  > *,
+  .header__desktop-nav > * {
+    flex: 1;
+    text-align: center;
+  }
 }
 
 // Logo
@@ -48,7 +55,7 @@
 // ========================================
 
 .header__desktop-nav {
-  @include flex-between;
+  display: contents;
 }
 
 // Nav link with clip-path image reveal on hover
@@ -71,7 +78,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-size: cover;
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     clip-path: inset(0 100% 0 0);
@@ -116,8 +123,8 @@
 .header__lang {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: $spacing-xs;
-  margin-left: $spacing-lg;
 }
 
 .header__lang-option {

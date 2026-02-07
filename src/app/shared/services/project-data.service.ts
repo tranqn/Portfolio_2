@@ -12,6 +12,8 @@ export class ProjectDataService {
       title: 'Join',
       description:
         'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.',
+      implementationDetails:
+        'As the sole developer, I was responsible for the Frontend, designing and implementing user interactions, and ensuring responsiveness to work independently at every stage of the development process.',
       techStack: [
         { name: 'CSS', icon: IMAGE_PATHS.SKILLS.CSS },
         { name: 'HTML', icon: IMAGE_PATHS.SKILLS.HTML },
@@ -24,12 +26,15 @@ export class ProjectDataService {
       role: 'Team Project',
       githubUrl: 'https://github.com',
       liveUrl: 'https://example.com',
+      nextProjectId: 'pollo-loco',
     },
     {
       id: 'pollo-loco',
       title: 'El Pollo Loco',
       description:
         'A simple Jump-and-Run game based on an object-oriented approach. Help Pepe to find coins and salsa bottles to fight against the crazy hen.',
+      implementationDetails:
+        'Built entirely from scratch using vanilla JavaScript and object-oriented programming. Implemented game physics, collision detection, and sprite animations while managing game state and user input.',
       techStack: [
         { name: 'CSS', icon: IMAGE_PATHS.SKILLS.CSS },
         { name: 'HTML', icon: IMAGE_PATHS.SKILLS.HTML },
@@ -41,12 +46,15 @@ export class ProjectDataService {
       role: 'Solo Project',
       githubUrl: 'https://github.com',
       liveUrl: 'https://example.com',
+      nextProjectId: 'dabubble',
     },
     {
       id: 'dabubble',
       title: 'DABubble',
       description:
         'This App is a Slack Clone App. It revolutionizes team communication and collaboration with its intuitive interface, real-time messaging, and robust channel organization.',
+      implementationDetails:
+        'Developed the frontend with Angular and TypeScript, implementing real-time messaging with Firebase, channel management, and responsive design using Material Design components.',
       techStack: [
         { name: 'CSS', icon: IMAGE_PATHS.SKILLS.CSS },
         { name: 'HTML', icon: IMAGE_PATHS.SKILLS.HTML },
@@ -61,6 +69,7 @@ export class ProjectDataService {
       role: 'Team Project',
       githubUrl: 'https://github.com',
       liveUrl: 'https://example.com',
+      nextProjectId: 'join',
     },
   ]);
 

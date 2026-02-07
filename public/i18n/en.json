@@ -79,6 +79,47 @@
       "TEXT": "Nam was a big part of our teamwork, his positive attitude contributed a lot. Likewise, his ability to familiarize himself with new areas of work helped us greatly, and his eagerness to understand everything was a good aspect of our success."
     }
   },
+  "PROJECT_DETAIL": {
+    "GO_BACK": "Go Back",
+    "DESCRIPTION": "Description",
+    "IMPLEMENTATION": "Implementation Details",
+    "DURATION": "Duration",
+    "ROLE": "Role",
+    "NEXT_PROJECT": "Next Project"
+  },
+  "LEGAL_NOTICE": {
+    "TITLE": "Legal Notice",
+    "IMPRINT": "Imprint",
+    "IMPRINT_TEXT": "Quocnam Dinh Huu Tran<br>Windmühlenstraße 12<br>04107 Leipzig<br>Germany",
+    "CONTACT": "Contact",
+    "CONTACT_TEXT": "Email: quocnamtran@outlook.de",
+    "ACCEPTANCE": "Acceptance of Terms",
+    "ACCEPTANCE_TEXT": "By accessing and using this website, you acknowledge and agree to all of the following terms and conditions, and you agree to comply with all applicable laws and regulations. If you do not agree to these terms of use, please refrain from using this website.",
+    "SCOPE": "Scope and Ownership of the Products",
+    "SCOPE_TEXT": "The visual interfaces, graphics, design, systems, methods, information, computer code (including source code and object code), software, services, and all other elements of this service are protected by copyright, trade dress, and other proprietary rights related to intellectual property.",
+    "USE": "Use of the Products",
+    "USE_TEXT": "The design of this Portfolio is licensed by the Education Academia Sonnenau under the Creative Commons Non-Commercial Attribution (CC BY-NC-ND 4.0). Unauthorized use, reproduction, distribution, or modification of our work without written permission is strictly prohibited.",
+    "PROPRIETARY": "Proprietary Rights and Download of Content",
+    "PROPRIETARY_TEXT": "This service and the content provided through it (excluding user content) are the property of Developer Academy GmbH and its licensors and may be protected by applicable copyright laws and other proprietary (including intellectual property) rights.",
+    "WARRANTIES": "No Warranties",
+    "WARRANTIES_TEXT": "This service and all materials and content available through this service are provided \"as-is\" and \"as available\". Developer Academy GmbH makes no express or implied warranties, representations or endorsements concerning the service or materials and content available through the service."
+  },
+  "PRIVACY_POLICY": {
+    "TITLE": "Privacy Policy",
+    "SECTION_1_TITLE": "1. Data Protection at a Glance",
+    "GENERAL_INFO": "General Information",
+    "SECTION_1_TEXT": "The following information provides a simple overview of what happens to your personal data when you visit this website.",
+    "SECTION_2_TITLE": "2. General Information and Mandatory Information",
+    "DATA_PROTECTION": "Data Protection",
+    "SECTION_2_TEXT": "The operators of this website take the protection of your personal data very seriously. We treat your personal data confidentially and in accordance with statutory data protection regulations and this privacy policy.",
+    "DATA_COLLECTION_WEBSITE": "Data Collection on this Website",
+    "SECTION_2_TEXT_2": "Who is responsible for data collection on this website? Data processing on this website is carried out by the website operator.",
+    "SECTION_3_TITLE": "3. Data Collection",
+    "CONTACT_FORM": "Contact Form",
+    "SECTION_3_TEXT": "If you send us inquiries via the contact form, your details from the inquiry form, including the contact details you provided there, will be stored by us for the purpose of processing the inquiry and in case of follow-up questions.",
+    "SECTION_4_TITLE": "4. Your Rights",
+    "SECTION_4_TEXT": "You have the right to receive information about the origin, recipient and purpose of your stored personal data free of charge at any time. You also have the right to request the correction or deletion of this data."
+  },
   "FOOTER": {
     "LEGAL_NOTICE": "Legal Notice",
     "GITHUB": "Github",

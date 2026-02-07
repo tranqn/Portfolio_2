@@ -4,6 +4,7 @@ export interface Project {
   id: string;
   title: string;
   description: string;
+  implementationDetails?: string;
   techStack: Technology[];
   image: string;
   duration?: string;
@@ -11,4 +12,5 @@ export interface Project {
   featured?: boolean;
   githubUrl?: string;
   liveUrl?: string;
+  nextProjectId?: string;
 }

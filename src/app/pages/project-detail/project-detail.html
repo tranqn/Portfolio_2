@@ -1,3 +1,91 @@
-<section class="project-detail">
-  <h1>Project Detail</h1>
-</section>
+<app-header />
+
+<main class="project-detail">
+  <div class="project-detail__container">
+    <!-- Breadcrumb Navigation -->
+    <nav class="project-detail__breadcrumb">
+      <a routerLink="/" fragment="projects" class="project-detail__back-link">
+        <img [src]="breadcrumbArrow" alt="" class="project-detail__back-arrow" />
+        {{ 'PROJECT_DETAIL.GO_BACK' | translate }}
+      </a>
+    </nav>
+
+    @if (project(); as proj) {
+      <!-- Main Content Grid -->
+      <div class="project-detail__content">
+        <!-- Left Column: Project Details -->
+        <div class="project-detail__details">
+          <h1 class="project-detail__title">
+            {{ proj.title }}
+            <span class="project-detail__title-underline"></span>
+          </h1>
+
+          <section class="project-detail__section">
+            <h2 class="project-detail__section-title">{{ 'PROJECT_DETAIL.DESCRIPTION' | translate }}</h2>
+            <p class="project-detail__text">{{ proj.description }}</p>
+          </section>
+
+          @if (proj.implementationDetails) {
+            <section class="project-detail__section">
+              <h2 class="project-detail__section-title">{{ 'PROJECT_DETAIL.IMPLEMENTATION' | translate }}</h2>
+              <p class="project-detail__text">{{ proj.implementationDetails }}</p>
+            </section>
+          }
+
+          @if (proj.duration) {
+            <div class="project-detail__meta">
+              <strong>{{ 'PROJECT_DETAIL.DURATION' | translate }}:</strong> {{ proj.duration }}
+            </div>
+          }
+
+          @if (proj.role) {
+            <div class="project-detail__meta">
+              <strong>{{ 'PROJECT_DETAIL.ROLE' | translate }}:</strong> {{ proj.role }}
+            </div>
+          }
+
+          <div class="project-detail__tech-stack">
+            @for (tech of proj.techStack; track tech.name) {
+              <div class="project-detail__tech-item">
+                <img [src]="tech.icon" [alt]="tech.name" class="project-detail__tech-icon" />
+                <span class="project-detail__tech-name">{{ tech.name }}</span>
+              </div>
+            }
+          </div>
+        </div>
+
+        <!-- Right Column: Project Preview -->
+        <div class="project-detail__preview">
+          <div class="project-detail__image-wrapper">
+            <img [src]="proj.image" [alt]="proj.title" class="project-detail__image" />
+            @if (proj.featured) {
+              <img [src]="featuredIcon" alt="Featured" class="project-detail__sticker" />
+            }
+          </div>
+
+          <div class="project-detail__actions">
+            @if (proj.githubUrl) {
+              <app-cta-button
+                [translateKey]="'PROJECTS.GITHUB'"
+                [href]="proj.githubUrl" />
+            }
+            @if (proj.liveUrl) {
+              <app-cta-button
+                [translateKey]="'PROJECTS.LIVE_TEST'"
+                [href]="proj.liveUrl" />
+            }
+          </div>
+
+          @if (nextProject(); as next) {
+            <a [routerLink]="nextProjectRoute()" class="project-detail__next">
+              {{ 'PROJECT_DETAIL.NEXT_PROJECT' | translate }}
+              <img [src]="nextArrow" alt="" class="project-detail__next-arrow" />
+            </a>
+          }
+        </div>
+      </div>
+    }
+  </div>
+</main>
+
+<app-footer />

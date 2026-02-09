@@ -26,7 +26,6 @@
 
   > *,
   .header__desktop-nav > * {
-    flex: 1;
     text-align: center;
   }
 }
@@ -114,6 +113,26 @@
   &--contact::before {
     background-image: url('/img/header/nav-hover/contact.png');
   }
+
+  // EN: reveals bottom-right → top-left
+  &--en::before {
+    background-image: url('/img/header/toggle.png');
+    clip-path: inset(100% 0 0 100%);
+  }
+
+  &--en:hover::before {
+    clip-path: inset(0);
+  }
+
+  // DE: reveals top-left → bottom-right
+  &--de::before {
+    background-image: url('/img/header/toggle.png');
+    clip-path: inset(0 100% 100% 0);
+  }
+
+  &--de:hover::before {
+    clip-path: inset(0);
+  }
 }
 
 // ========================================
@@ -136,20 +155,47 @@
   opacity: 0.6;
 
   &:hover {
-    color: $primary-blue;
     opacity: 1;
   }
 
   &--active {
-    color: $primary-blue;
+    color: $coral-orange;
     opacity: 1;
+
+    &::before {
+      display: none;
+    }
   }
 }
 
-.header__lang-divider {
-  color: $text-primary;
-  font-size: $font-size-base;
-  opacity: 0.4;
+// Toggle track (orange box)
+.header__lang-toggle {
+  position: relative;
+  width: 36px;
+  height: 9px;
+  background-color: $coral-orange;
+  border: 1px solid $outline-white;
+  border-radius: $radius-full;
+  cursor: pointer;
+}
+
+// Toggle thumb (blue circle)
+.header__lang-toggle-thumb {
+  position: absolute;
+  top: 50%;
+  left: -2px;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  background-color: $primary-blue;
+  border: 1px solid $outline-white;
+  border-radius: 50%;
+  transition: left 200ms ease-in-out;
+}
+
+// DE active: thumb slides right
+.header__lang-toggle--de .header__lang-toggle-thumb {
+  left: calc(100% - 16px);
 }
 
 // ========================================
@@ -255,8 +301,19 @@
     font-size: $font-size-xl;
   }
 
-  .header__lang-divider {
-    font-size: $font-size-xl;
+  .header__lang-toggle {
+    width: 48px;
+    height: 12px;
+  }
+
+  .header__lang-toggle-thumb {
+    left: -2px;
+    width: 24px;
+    height: 24px;
+  }
+
+  .header__lang-toggle--de .header__lang-toggle-thumb {
+    left: calc(100% - 22px);
   }
 }
 

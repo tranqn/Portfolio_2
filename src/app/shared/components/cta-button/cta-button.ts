@@ -11,6 +11,7 @@ import { TranslateModule } from '@ngx-translate/core';
 export class CtaButton {
   readonly translateKey = input.required<string>();
   readonly href = input<string>('');
+  readonly route = input<string>('');
   readonly fragment = input<string>('');
   readonly type = input<'link' | 'submit'>('link');
   readonly variant = input<'dark' | 'light'>('dark');

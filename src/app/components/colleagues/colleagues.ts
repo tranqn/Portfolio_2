@@ -17,7 +17,7 @@ interface ColleagueRef {
 })
 export class Colleagues {
   protected readonly underlinePath = IMAGE_PATHS.COLLEAGUES.UNDERLINE;
-  protected readonly linkedInIcon = IMAGE_PATHS.SHARED.LINKEDIN;
+  protected readonly linkedInIcon = IMAGE_PATHS.SHARED.LINKEDIN_PLAIN;
 
   protected readonly colleagues: ColleagueRef[] = [
     {

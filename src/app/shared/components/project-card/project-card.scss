@@ -132,6 +132,10 @@
   flex: 1;
 }
 
+.project-card__mobile-cta {
+  display: none;
+}
+
 .project-card__title {
   font-size: $font-size-2xl;
   font-weight: $font-weight-black;
@@ -163,6 +167,26 @@
 
   .project-card__description {
     font-size: $font-size-sm;
+  }
+
+  .project-card__image-wrapper {
+    &::after,
+    &:hover::after {
+      display: none;
+    }
+
+    &:hover .project-card__image {
+      transform: none;
+    }
+  }
+
+  .project-card__hover-link {
+    display: none;
+  }
+
+  .project-card__mobile-cta {
+    display: block;
+    align-self: flex-end;
   }
 
   .project-card__hover-button {

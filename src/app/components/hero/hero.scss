@@ -6,11 +6,11 @@
 // ========================================
 
 .hero {
-  // Responsive tokens
-  --hero-title-size: #{$font-size-5xl};
-  --hero-content-gap: #{$spacing-lg};
-  --hero-top-gap: #{$spacing-3xl};
-  --hero-polaroid-width: 180px;
+  // Responsive tokens — scale with viewport height
+  --hero-title-size: clamp(64px, 13vh, #{$font-size-5xl});
+  --hero-content-gap: clamp(16px, 3vh, #{$spacing-lg});
+  --hero-top-gap: clamp(32px, 8vh, #{$spacing-3xl});
+  --hero-polaroid-width: clamp(120px, 20vh, 180px);
   --hero-button-font: #{$font-size-md};
   --hero-button-padding: 6px 20px;
 
@@ -19,15 +19,21 @@
   background-size: cover;
   background-position: bottom;
   background-repeat: no-repeat;
-  padding-top: 90px;
+  padding-top: 60px;
 }
 
 .hero__container {
-  @include flex-center;
+  display: flex;
+  align-items: center;
   max-width: $container-max-width;
-  margin: 0 auto 22vh auto;
+  margin: 0 auto clamp(40px, 10vh, 22vh) auto;
   padding-left: $container-padding-x;
   padding-right: $container-padding-x;
+}
+
+.hero__content-center {
+  flex: 1;
+  @include flex-center;
 }
 
 // Social icons (uses shared component with CSS variable overrides)
@@ -41,18 +47,16 @@
 
 .hero__content {
   @include flex-column;
-  align-items: center;
   gap: var(--hero-content-gap);
   padding-top: $spacing-xl;
-  width: 100%;
+  width: fit-content;
 }
 
 .hero__content-top {
-  @include flex-center;
+  display: flex;
+  justify-content: space-between;
   align-items: flex-end;
   gap: var(--hero-top-gap);
-  width: 100%;
-  max-width: 1200px;
 }
 
 .hero__content-left {
@@ -69,8 +73,8 @@
 .hero__content-bottom {
   @include flex-column;
   align-items: end;
+  align-self: flex-end;
   gap: var(--hero-content-gap);
-  width: auto;
 }
 
 // ========================================
@@ -97,14 +101,14 @@
 .hero__letters-container {
   @include flex-center;
   flex: 1;
-  min-height: 150px;
+  min-height: clamp(60px, 15vh, 150px);
 
   &--top {
-    width: 600px;
+    justify-content: flex-start;
   }
 
   &--bottom {
-    width: 750px;
+    justify-content: flex-end;
   }
 }
 
@@ -304,22 +308,30 @@
     display: none;
   }
 
+  .hero__content-center {
+    width: 100%;
+  }
+
   .hero__content {
     padding-top: 0;
   }
 
   .hero__content-top {
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
   }
 
   .hero__content-bottom {
-    align-items: center;
-    width: 100%;
+    align-items: flex-start;
+    align-self: flex-start;
+  }
+
+  .hero__cta-container {
+    align-self: flex-end;
   }
 
   .hero__content-left {
-    align-items: center;
+    align-items: flex-start;
   }
 
   .hero__content-right {
@@ -327,7 +339,7 @@
   }
 
   .hero__title {
-    text-align: center;
+    text-align: left;
   }
 
   .hero__letters-container {
@@ -336,6 +348,7 @@
     &--top,
     &--bottom {
       width: 100%;
+      justify-content: flex-start;
     }
   }
 
@@ -354,6 +367,7 @@
 
     &--mobile {
       display: block;
+      align-self: center;
       margin-top: clamp(8px, 3vh, 40px);
     }
   }

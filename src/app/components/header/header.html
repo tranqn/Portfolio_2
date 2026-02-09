@@ -21,14 +21,19 @@
 
       <div class="header__lang">
         <span
-          class="header__lang-option"
+          class="header__lang-option header__nav-link header__nav-link--en"
           [class.header__lang-option--active]="translationService.currentLang() === 'en'"
           (click)="translationService.currentLang() !== 'en' && translationService.switchLanguage()">
           EN
         </span>
-        <span class="header__lang-divider">|</span>
         <span
-          class="header__lang-option"
+          class="header__lang-toggle"
+          [class.header__lang-toggle--de]="translationService.currentLang() === 'de'"
+          (click)="translationService.switchLanguage()">
+          <span class="header__lang-toggle-thumb"></span>
+        </span>
+        <span
+          class="header__lang-option header__nav-link header__nav-link--de"
           [class.header__lang-option--active]="translationService.currentLang() === 'de'"
           (click)="translationService.currentLang() !== 'de' && translationService.switchLanguage()">
           DE
@@ -72,7 +77,12 @@
             (click)="translationService.currentLang() !== 'en' && translationService.switchLanguage()">
             EN
           </span>
-          <span class="header__lang-divider">|</span>
+          <span
+            class="header__lang-toggle"
+            [class.header__lang-toggle--de]="translationService.currentLang() === 'de'"
+            (click)="translationService.switchLanguage()">
+            <span class="header__lang-toggle-thumb"></span>
+          </span>
           <span
             class="header__lang-option"
             [class.header__lang-option--active]="translationService.currentLang() === 'de'"

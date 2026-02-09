@@ -13,5 +13,10 @@
   <div class="project-card__content">
     <h3 class="project-card__title">{{ project().title }}</h3>
     <p class="project-card__description">{{ project().description }}</p>
+    <app-cta-button
+      class="project-card__mobile-cta"
+      [translateKey]="'PROJECTS.PROJECT_DETAILS'"
+      [route]="'/projects/' + project().id"
+      variant="light" />
   </div>
 </div>

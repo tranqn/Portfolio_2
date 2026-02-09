@@ -12,4 +12,5 @@ import { IMAGE_PATHS } from '../../shared/constants';
 export class Footer {
   protected readonly logoPath = IMAGE_PATHS.LOGO;
   protected readonly icons = IMAGE_PATHS.FOOTER;
+  protected readonly linkedInPlain = IMAGE_PATHS.SHARED.LINKEDIN_PLAIN;
 }

@@ -55,7 +55,6 @@ export const IMAGE_PATHS = {
   },
   FOOTER: {
     GITHUB: '/img/footer/github.svg',
-    LINKEDIN: '/img/footer/linkedin.svg',
     EMAIL: '/img/footer/email.svg',
   },
   SHARED: {
@@ -64,6 +63,7 @@ export const IMAGE_PATHS = {
     FEATURED: '/img/shared/featured.svg',
     GITHUB: '/img/shared/github.svg',
     LINKEDIN: '/img/shared/linkedin.svg',
+    LINKEDIN_PLAIN: '/img/shared/linkedin_plain.svg',
     EMAIL: '/img/shared/email.svg',
   },
   PROJECT_PAGES: {

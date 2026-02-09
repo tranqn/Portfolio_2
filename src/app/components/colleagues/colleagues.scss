@@ -23,7 +23,7 @@
 .colleagues__top {
   @include flex-center;
   gap: $spacing-md;
-  align-self: flex-start;
+  align-self: flex-end;
 }
 
 // Arrow animation (same underlineReveal keyframe)
@@ -67,6 +67,7 @@
   font-weight: $font-weight-black;
   color: $text-dark;
   margin: 0;
+  align-self: flex-end;
 }
 
 // ========================================
@@ -81,14 +82,51 @@
 
 .colleagues__card {
   @include flex-column;
+  position: relative;
   justify-content: space-between;
   gap: $spacing-md;
   padding: $spacing-lg;
-  background-color: $light-bg;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   border-radius: $radius-lg;
   box-shadow: $shadow-card;
   flex: 1;
-  transition: background-color $transition-base;
+
+  &:nth-child(1) {
+    background-image: url('/img/testimonials/color-option-1/a.png');
+  }
+
+  &:nth-child(2) {
+    background-image: url('/img/testimonials/color-option-1/b.png');
+  }
+
+  // Hover overlay
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('/img/testimonials/color-option-1/hover.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: $radius-lg;
+    opacity: 0;
+    transition: opacity $transition-base;
+    z-index: 0;
+  }
+
+  &:hover::after {
+    opacity: 0.5;
+  }
+
+  // Keep content above overlay
+  > * {
+    position: relative;
+    z-index: 1;
+  }
 
   // Slight overlap via negative margin
   &:not(:first-child) {

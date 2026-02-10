@@ -64,10 +64,13 @@
   justify-content: flex-end;
   align-items: flex-start;
   gap: $spacing-sm;
+  flex: 1;
+  min-width: 0;
 }
 
 .hero__content-right {
   @include flex-center;
+  flex-shrink: 0;
 }
 
 .hero__content-bottom {
@@ -92,6 +95,8 @@
 
 .hero__title--top {
   text-align: left;
+  // Reserve width for one letter expanding to uppercase on hover
+  min-width: 4.5em;
 }
 
 .hero__title--bottom {
@@ -114,8 +119,6 @@
 
 .hero__letter {
   display: inline-block;
-  padding: 0 0.05em;
-  margin: 0 -0.03em;
   transition: color 200ms ease, transform 200ms ease;
   cursor: default;
 
@@ -239,11 +242,6 @@
   width: var(--hero-polaroid-width);
   height: auto;
   transform: rotate(8deg);
-  transition: transform $transition-slow;
-
-  &:hover {
-    transform: rotate(5deg) scale(1.02);
-  }
 
   &--desktop {
     display: block;
@@ -262,6 +260,12 @@
   height: auto;
   object-fit: cover;
   z-index: 1;
+  filter: grayscale(100%);
+  transition: filter $transition-slow;
+
+  .hero__polaroid-wrapper:hover & {
+    filter: grayscale(0%);
+  }
 }
 
 .hero__polaroid {
@@ -271,6 +275,36 @@
   object-fit: contain;
   filter: drop-shadow($shadow-polaroid);
   z-index: 2;
+}
+
+.hero__polaroid-text {
+  position: absolute;
+  bottom: 4%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  font-family: $font-handwriting;
+  font-size: clamp(14px, 2vh, 20px);
+  font-weight: $font-weight-bold;
+  color: $text-dark;
+  white-space: nowrap;
+  transition: opacity $transition-base;
+
+  &--default {
+    opacity: 1;
+  }
+
+  &--hover {
+    opacity: 0;
+  }
+}
+
+.hero__polaroid-wrapper:hover .hero__polaroid-text--default {
+  opacity: 0;
+}
+
+.hero__polaroid-wrapper:hover .hero__polaroid-text--hover {
+  opacity: 1;
 }
 
 // CTA container

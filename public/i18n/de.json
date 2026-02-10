@@ -64,7 +64,12 @@
     "PRIVACY_TEXT": "Ich habe die",
     "PRIVACY_LINK": "Datenschutzerklärung",
     "PRIVACY_TEXT_2": "gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu.",
-    "SUBMIT": "Nachricht senden"
+    "SUBMIT": "Nachricht senden",
+    "SUCCESS_MESSAGE": "Ihre Nachricht wurde erfolgreich gesendet!",
+    "ERROR_SUBMIT": "Beim Senden ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
+    "ERROR_REQUIRED": "Dieses Feld ist erforderlich.",
+    "ERROR_EMAIL": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+    "ERROR_MINLENGTH": "Bitte geben Sie mindestens 4 Zeichen ein."
   },
   "COLLEAGUES": {
     "LABEL": "in ihren Worten:",
@@ -77,6 +82,10 @@
     "DANIEL": {
       "POSITION": "Frontend Developer",
       "TEXT": "Nam war ein großer Teil unserer Teamarbeit, seine positive Art hat viel beigetragen. Genauso seine Gabe sich in neue Aufgabengebiete einzuarbeiten hat uns sehr weitergeholfen und seine Wissbegierde alles zu verstehen war ein guter Aspekt zu unserem Erfolg."
+    },
+    "PAUL": {
+      "POSITION": "Frontend Entwickler",
+      "TEXT": "Die Zusammenarbeit mit Nam war stets produktiv und angenehm. Er bringt frische Ideen ein und setzt diese zielstrebig um. Seine Fähigkeit, sich schnell in neue Technologien einzuarbeiten, hat unser Team nachhaltig bereichert."
     }
   },
   "PROJECT_DETAIL": {

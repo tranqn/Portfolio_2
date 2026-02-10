@@ -17,6 +17,7 @@
 
 .header__container {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   height: 100%;
   max-width: $container-max-width;
@@ -147,12 +148,17 @@
 }
 
 .header__lang-option {
-  color: $text-primary;
+  color: $white;
   font-size: $font-size-base;
   font-weight: $font-weight-medium;
   cursor: pointer;
   transition: color $transition-base, opacity $transition-base;
-  opacity: 0.6;
+
+  // Override .header__nav-link padding/overflow for compact lang switcher
+  &.header__nav-link {
+    padding: 4px 2px;
+    overflow: visible;
+  }
 
   &:hover {
     opacity: 1;

@@ -47,11 +47,11 @@ export const IMAGE_PATHS = {
     UNDERLINE: '/img/projects/underline.png',
   },
   COLLEAGUES: {
-    UNDERLINE: '/img/testimonials/underline.png',
+    UNDERLINE: '/img/colleagues/underline.png',
   },
   CONTACT: {
     UNDERLINE: '/img/contact/underline.png',
-    // STICKER: '/img/contact/sticker.png', // TODO: add when sticker image is available
+    STICKER: '/img/shared/round/color-option-1-orange.png',
   },
   FOOTER: {
     GITHUB: '/img/footer/github.svg',

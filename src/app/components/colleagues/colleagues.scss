@@ -84,21 +84,29 @@
   @include flex-column;
   position: relative;
   justify-content: space-between;
-  gap: $spacing-md;
-  padding: $spacing-lg;
+  gap: $spacing-sm;
+  padding: $spacing-md $spacing-lg;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   border-radius: $radius-lg;
   box-shadow: $shadow-card;
   flex: 1;
+  aspect-ratio: 3 / 2;
 
   &:nth-child(1) {
-    background-image: url('/img/testimonials/color-option-1/a.png');
+    background-image: url('/img/colleagues/color-option-1/a.png');
+    transform: rotate(-2deg);
+    margin-top: -$spacing-sm;
   }
 
   &:nth-child(2) {
-    background-image: url('/img/testimonials/color-option-1/b.png');
+    background-image: url('/img/colleagues/color-option-1/b.png');
+  }
+
+  &:nth-child(3) {
+    background-image: url('/img/colleagues/color-option-1/a.png');
+    transform: rotate(2deg);
   }
 
   // Hover overlay
@@ -109,13 +117,17 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('/img/testimonials/color-option-1/hover.png');
+    background-image: url('/img/colleagues/color-option-1/hover.png');
     background-size: cover;
     background-position: center;
     border-radius: $radius-lg;
     opacity: 0;
     transition: opacity $transition-base;
     z-index: 0;
+  }
+
+  &:hover {
+    z-index: 2;
   }
 
   &:hover::after {
@@ -140,12 +152,13 @@
 
 // Card content
 .colleagues__card-text {
-  font-size: $font-size-base;
+  font-size: $font-size-sm;
   font-weight: $font-weight-normal;
   line-height: $line-height-relaxed;
   color: $text-dark;
   margin: 0;
   font-style: italic;
+  overflow: hidden;
 }
 
 // Card bottom: author (left) + profile link (right)
@@ -184,7 +197,7 @@
     color: $white;
 
     .colleagues__card-profile-icon {
-      filter: brightness(0) invert(1);
+      filter:invert(0);
     }
   }
 }
@@ -193,6 +206,7 @@
   width: 20px;
   height: 20px;
   transition: filter $transition-base;
+  filter:invert(1);
 }
 
 .colleagues__card-profile-text {

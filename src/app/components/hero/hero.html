@@ -16,7 +16,7 @@
           <div class="hero__letters-container hero__letters-container--top">
             <h1 class="hero__title hero__title--top">
               @for (letter of frontendLetters; track $index) {
-                <span class="hero__letter" [attr.data-uppercase]="letter.isUpperCase">
+                <span class="hero__letter" [attr.data-uppercase]="letter.isUpperCase" >
                   {{ letter.char }}
                 </span>
               }
@@ -27,6 +27,8 @@
           <div class="hero__polaroid-wrapper hero__polaroid-wrapper--desktop">
             <img [src]="photoPath" alt="Nam" class="hero__polaroid-photo" />
             <img [src]="polaroidFramePath" alt="Polaroid Frame" class="hero__polaroid" />
+            <span class="hero__polaroid-text hero__polaroid-text--default">Nam :)</span>
+            <span class="hero__polaroid-text hero__polaroid-text--hover">Nam :D</span>
           </div>
         </div>
       </div>
@@ -49,6 +51,8 @@
       <div class="hero__polaroid-wrapper hero__polaroid-wrapper--mobile">
         <img [src]="photoPath" alt="Nam" class="hero__polaroid-photo" />
         <img [src]="polaroidFramePath" alt="Polaroid Frame" class="hero__polaroid" />
+        <span class="hero__polaroid-text hero__polaroid-text--default">Nam :)</span>
+        <span class="hero__polaroid-text hero__polaroid-text--hover">Nam :D</span>
       </div>
       </div>
     </div>

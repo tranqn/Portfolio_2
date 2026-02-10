@@ -23,19 +23,34 @@
         <span
           class="header__lang-option header__nav-link header__nav-link--en"
           [class.header__lang-option--active]="translationService.currentLang() === 'en'"
-          (click)="translationService.currentLang() !== 'en' && translationService.switchLanguage()">
+          (click)="translationService.currentLang() !== 'en' && translationService.switchLanguage()"
+          (keydown.enter)="translationService.currentLang() !== 'en' && translationService.switchLanguage()"
+          (keydown.space)="translationService.currentLang() !== 'en' && translationService.switchLanguage(); $event.preventDefault()"
+          role="button"
+          tabindex="0"
+          aria-label="Switch to English">
           EN
         </span>
         <span
           class="header__lang-toggle"
           [class.header__lang-toggle--de]="translationService.currentLang() === 'de'"
-          (click)="translationService.switchLanguage()">
+          (click)="translationService.switchLanguage()"
+          (keydown.enter)="translationService.switchLanguage()"
+          (keydown.space)="translationService.switchLanguage(); $event.preventDefault()"
+          role="button"
+          tabindex="0"
+          aria-label="Toggle language">
           <span class="header__lang-toggle-thumb"></span>
         </span>
         <span
           class="header__lang-option header__nav-link header__nav-link--de"
           [class.header__lang-option--active]="translationService.currentLang() === 'de'"
-          (click)="translationService.currentLang() !== 'de' && translationService.switchLanguage()">
+          (click)="translationService.currentLang() !== 'de' && translationService.switchLanguage()"
+          (keydown.enter)="translationService.currentLang() !== 'de' && translationService.switchLanguage()"
+          (keydown.space)="translationService.currentLang() !== 'de' && translationService.switchLanguage(); $event.preventDefault()"
+          role="button"
+          tabindex="0"
+          aria-label="Zu Deutsch wechseln">
           DE
         </span>
       </div>
@@ -74,19 +89,34 @@
           <span
             class="header__lang-option"
             [class.header__lang-option--active]="translationService.currentLang() === 'en'"
-            (click)="translationService.currentLang() !== 'en' && translationService.switchLanguage()">
+            (click)="translationService.currentLang() !== 'en' && translationService.switchLanguage()"
+            (keydown.enter)="translationService.currentLang() !== 'en' && translationService.switchLanguage()"
+            (keydown.space)="translationService.currentLang() !== 'en' && translationService.switchLanguage(); $event.preventDefault()"
+            role="button"
+            tabindex="0"
+            aria-label="Switch to English">
             EN
           </span>
           <span
             class="header__lang-toggle"
             [class.header__lang-toggle--de]="translationService.currentLang() === 'de'"
-            (click)="translationService.switchLanguage()">
+            (click)="translationService.switchLanguage()"
+            (keydown.enter)="translationService.switchLanguage()"
+            (keydown.space)="translationService.switchLanguage(); $event.preventDefault()"
+            role="button"
+            tabindex="0"
+            aria-label="Toggle language">
             <span class="header__lang-toggle-thumb"></span>
           </span>
           <span
             class="header__lang-option"
             [class.header__lang-option--active]="translationService.currentLang() === 'de'"
-            (click)="translationService.currentLang() !== 'de' && translationService.switchLanguage()">
+            (click)="translationService.currentLang() !== 'de' && translationService.switchLanguage()"
+            (keydown.enter)="translationService.currentLang() !== 'de' && translationService.switchLanguage()"
+            (keydown.space)="translationService.currentLang() !== 'de' && translationService.switchLanguage(); $event.preventDefault()"
+            role="button"
+            tabindex="0"
+            aria-label="Zu Deutsch wechseln">
             DE
           </span>
         </div>

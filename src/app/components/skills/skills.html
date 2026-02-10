@@ -38,6 +38,8 @@
             class="skills__badge"
             [class.peeled]="isPeeled()"
             (click)="toggleBadge()"
+            (keydown.enter)="toggleBadge()"
+            (keydown.space)="toggleBadge(); $event.preventDefault()"
             role="button"
             tabindex="0"
             [attr.aria-label]="'SKILLS.BADGE' | translate">

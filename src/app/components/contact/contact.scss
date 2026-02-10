@@ -31,16 +31,47 @@
 // STICKER OVERLAY — TODO: uncomment when sticker image is available
 // ========================================
 
-// .contact__sticker {
-//   position: absolute;
-//   width: 160px;
-//   height: auto;
-//   right: 10%;
-//   top: 0;
-//   transform: rotate(12deg);
-//   pointer-events: none;
-//   z-index: $z-sticky;
-// }
+.contact__sticker {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  right: 10%;
+  top: 0;
+  transform: rotate(12deg);
+  pointer-events: none;
+  z-index: $z-sticky;
+}
+
+.contact__sticker-bg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(90deg);
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.contact__sticker-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 35%;
+}
+
+.contact__sticker-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  text {
+    fill: $text-dark;
+    font-size: 11px;
+    font-weight: $font-weight-bold;
+    font-family: $font-primary;
+  }
+}
 
 // ========================================
 // LEFT COLUMN: Content
@@ -174,6 +205,13 @@
   }
 }
 
+.contact__form-error {
+  min-height: 20px;
+  color: $coral-orange;
+  font-size: $font-size-xs;
+  padding-left: $spacing-sm;
+}
+
 // Form actions row (CTA right-aligned on desktop, arrow + CTA on mobile)
 .contact__form-actions {
   display: flex;
@@ -299,13 +337,13 @@
     font-size: $font-size-sm;
   }
 
-  // TODO: Sticker mobile override — uncomment when sticker image is available
-  // .contact__sticker {
-  //   right: auto;
-  //   left: 60%;
-  //   top: -$spacing-md;
-  //   width: 120px;
-  // }
+  .contact__sticker {
+    right: auto;
+    left: 60%;
+    top: -$spacing-md;
+    width: 120px;
+    height: 120px;
+  }
 
   // Mobile: hide desktop arrow, show mobile arrow
   .contact__underline--desktop {

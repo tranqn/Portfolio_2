@@ -1,6 +1,6 @@
 export interface Colleague {
   name: string;
-  position: string;
-  text: string;
+  positionKey: string;
+  textKey: string;
   linkedInUrl: string;
 }

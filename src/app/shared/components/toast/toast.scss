@@ -1,0 +1,45 @@
+@use '../../../../styles/variables' as *;
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.toast-container {
+  position: fixed;
+  bottom: $spacing-lg;
+  right: $spacing-lg;
+  z-index: $z-modal;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+}
+
+.toast {
+  display: flex;
+  align-items: center;
+  padding: $spacing-sm $spacing-md;
+  border-radius: $radius-md;
+  color: $white;
+  font-family: $font-primary;
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+  box-shadow: $shadow-md;
+  animation: slideIn 300ms ease-out;
+  min-width: 280px;
+  max-width: 400px;
+
+  &--success {
+    background-color: #2e7d32;
+  }
+
+  &--error {
+    background-color: $coral-orange;
+  }
+}

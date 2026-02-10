@@ -64,7 +64,12 @@
     "PRIVACY_TEXT": "I've read the",
     "PRIVACY_LINK": "privacy policy",
     "PRIVACY_TEXT_2": "and agree to the processing of my data as outlined.",
-    "SUBMIT": "Send message"
+    "SUBMIT": "Send message",
+    "SUCCESS_MESSAGE": "Your message has been sent successfully!",
+    "ERROR_SUBMIT": "An error occurred while sending. Please try again.",
+    "ERROR_REQUIRED": "This field is required.",
+    "ERROR_EMAIL": "Please enter a valid email address.",
+    "ERROR_MINLENGTH": "Please enter at least 4 characters."
   },
   "COLLEAGUES": {
     "LABEL": "in Their Words:",
@@ -77,6 +82,10 @@
     "DANIEL": {
       "POSITION": "Frontend Developer",
       "TEXT": "Nam was a big part of our teamwork, his positive attitude contributed a lot. Likewise, his ability to familiarize himself with new areas of work helped us greatly, and his eagerness to understand everything was a good aspect of our success."
+    },
+    "PAUL": {
+      "POSITION": "Frontend Developer",
+      "TEXT": "Working with Nam was always productive and enjoyable. He brings fresh ideas to the table and implements them with determination. His ability to quickly adapt to new technologies has greatly enriched our team."
     }
   },
   "PROJECT_DETAIL": {

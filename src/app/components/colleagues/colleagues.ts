@@ -1,13 +1,7 @@
 import { Component } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { IMAGE_PATHS } from '../../shared/constants';
-
-interface ColleagueRef {
-  name: string;
-  positionKey: string;
-  textKey: string;
-  linkedInUrl: string;
-}
+import { Colleague } from '../../shared/models';
 
 @Component({
   selector: 'app-colleagues',
@@ -19,7 +13,7 @@ export class Colleagues {
   protected readonly underlinePath = IMAGE_PATHS.COLLEAGUES.UNDERLINE;
   protected readonly linkedInIcon = IMAGE_PATHS.SHARED.LINKEDIN_PLAIN;
 
-  protected readonly colleagues: ColleagueRef[] = [
+  protected readonly colleagues: Colleague[] = [
     {
       name: 'Christian Hajduk',
       positionKey: 'COLLEAGUES.CHRISTIAN.POSITION',
@@ -30,6 +24,12 @@ export class Colleagues {
       name: 'Daniel Kersten',
       positionKey: 'COLLEAGUES.DANIEL.POSITION',
       textKey: 'COLLEAGUES.DANIEL.TEXT',
+      linkedInUrl: 'https://linkedin.com',
+    },
+    {
+      name: 'Paul',
+      positionKey: 'COLLEAGUES.PAUL.POSITION',
+      textKey: 'COLLEAGUES.PAUL.TEXT',
       linkedInUrl: 'https://linkedin.com',
     },
   ];

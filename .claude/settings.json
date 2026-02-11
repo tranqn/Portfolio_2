@@ -1,0 +1,11 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "command": "cd /Users/quocnamtran/Desktop/repos/DA-first-projects/Portfolio_2 && npx tsc --noEmit --pretty 2>&1 | head -20",
+        "description": "Type-check TypeScript after edits"
+      }
+    ]
+  }
+}

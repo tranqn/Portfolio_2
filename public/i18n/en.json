@@ -64,7 +64,7 @@
     "PRIVACY_TEXT": "I've read the",
     "PRIVACY_LINK": "privacy policy",
     "PRIVACY_TEXT_2": "and agree to the processing of my data as outlined.",
-    "SUBMIT": "Send message",
+    "SUBMIT": "Send",
     "SUCCESS_MESSAGE": "Your message has been sent successfully!",
     "ERROR_SUBMIT": "An error occurred while sending. Please try again.",
     "ERROR_REQUIRED": "This field is required.",

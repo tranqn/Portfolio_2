@@ -76,7 +76,6 @@
 .skills__title-container {
   position: relative;
   width: fit-content;
-  min-width: 250px;
 }
 
 .skills__title-bg-wrapper {
@@ -104,7 +103,6 @@
   color: $text-primary;
   margin: 0;
   width: fit-content;
-  min-width: 250px;
   z-index: 1;
 }
 
@@ -143,7 +141,7 @@
 .skills__icon-container {
   display: flex;
   justify-content: start;
-  align-items: center;
+  align-items: flex-end;
   gap: $spacing-2xl;
 }
 
@@ -159,6 +157,7 @@
 .skills__icon {
   @include flex-column;
   align-items: center;
+  align-self: flex-start;
   gap: $spacing-xs;
   width: 80px;
 }
@@ -188,19 +187,13 @@
 // PEELABLE STICKER BADGE (3-layer system)
 // ========================================
 
-.skills__badge-container {
-  display: flex;
-  justify-content: start;
-  align-items: end;
-  align-self: center;
-}
-
 .skills__badge {
   position: relative;
   width: 200px;
   height: 200px;
   @include flex-center;
   flex-shrink: 0;
+  align-self: center;
   transform: rotate(5deg);
   cursor: pointer;
   transition: transform $transition-base;
@@ -303,7 +296,7 @@
 
 @include mobile {
   .skills {
-    padding: $spacing-xl 0 $spacing-2xl 0;
+    padding: $spacing-xl 0 $spacing-4xl 0;
   }
 
   .skills__container {
@@ -317,6 +310,11 @@
   .skills__content {
     max-width: 100%;
     text-align: center;
+  }
+
+  .skills__header {
+    align-items: flex-end;
+    align-self: flex-end;
   }
 
   .skills__label {
@@ -340,20 +338,13 @@
   }
 
   .skills__icon-container {
-    flex-direction: column;
-    gap: $spacing-lg;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: $spacing-md;
   }
 
   .skills__icons {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: $spacing-md;
-    max-width: 100%;
-    justify-items: center;
-  }
-
-  .skills__icon {
-    width: 75px;
+    display: contents;
   }
 
   .skills__icon-image {

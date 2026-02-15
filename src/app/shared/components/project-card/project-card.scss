@@ -13,10 +13,9 @@
   position: absolute;
   bottom: 20%;
   left: 0;
-  width: 160px;
+  width: clamp(100px, 25%, 160px);
   height: auto;
   z-index: 10;
-  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
 }
 
 .project-card__image-wrapper {

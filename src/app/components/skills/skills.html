@@ -33,46 +33,44 @@
         </div>
 
         <!-- Peelable sticker badge (3-layer system) -->
-        <div class="skills__badge-container">
-          <div
-            class="skills__badge"
-            [class.peeled]="isPeeled()"
-            (click)="toggleBadge()"
-            (keydown.enter)="toggleBadge()"
-            (keydown.space)="toggleBadge(); $event.preventDefault()"
-            role="button"
-            tabindex="0"
-            [attr.aria-label]="'SKILLS.BADGE' | translate">
-            <!-- Layer 1 (z-index: 1): Final revealed state -->
-            <img
-              [src]="images.BADGE_FINAL"
-              alt="Badge final layer"
-              class="skills__badge-layer skills__badge-layer--final">
-            <!-- Badge content: text + React/Vue icons -->
-            <div class="skills__badge-content">
-              <span class="skills__badge-text">{{ 'SKILLS.BADGE' | translate }}</span>
-              <div class="skills__badge-icons">
-                <div class="skills__badge-icon">
-                  <img src="/img/skills/badge/react.svg" alt="React icon" class="skills__badge-icon-svg">
-                  <span class="skills__badge-icon-label">React</span>
-                </div>
-                <div class="skills__badge-icon">
-                  <img src="/img/skills/badge/vue.svg" alt="Vue.js icon" class="skills__badge-icon-svg">
-                  <span class="skills__badge-icon-label">Vue.js</span>
-                </div>
+        <div
+          class="skills__badge"
+          [class.peeled]="isPeeled()"
+          (click)="toggleBadge()"
+          (keydown.enter)="toggleBadge()"
+          (keydown.space)="toggleBadge(); $event.preventDefault()"
+          role="button"
+          tabindex="0"
+          [attr.aria-label]="'SKILLS.BADGE' | translate">
+          <!-- Layer 1 (z-index: 1): Final revealed state -->
+          <img
+            [src]="images.BADGE_FINAL"
+            alt="Badge final layer"
+            class="skills__badge-layer skills__badge-layer--final">
+          <!-- Badge content: text + React/Vue icons -->
+          <div class="skills__badge-content">
+            <span class="skills__badge-text">{{ 'SKILLS.BADGE' | translate }}</span>
+            <div class="skills__badge-icons">
+              <div class="skills__badge-icon">
+                <img src="/img/skills/badge/react.svg" alt="React icon" class="skills__badge-icon-svg">
+                <span class="skills__badge-icon-label">React</span>
+              </div>
+              <div class="skills__badge-icon">
+                <img src="/img/skills/badge/vue.svg" alt="Vue.js icon" class="skills__badge-icon-svg">
+                <span class="skills__badge-icon-label">Vue.js</span>
               </div>
             </div>
-            <!-- Layer 2 (z-index: 2): Transition layer -->
-            <img
-              [src]="images.BADGE_TRANSITION"
-              alt="Badge transition layer"
-              class="skills__badge-layer skills__badge-layer--transition">
-            <!-- Layer 3 (z-index: 3): Default top layer -->
-            <img
-              [src]="images.BADGE_DEFAULT"
-              alt="Badge default layer"
-              class="skills__badge-layer skills__badge-layer--default">
           </div>
+          <!-- Layer 2 (z-index: 2): Transition layer -->
+          <img
+            [src]="images.BADGE_TRANSITION"
+            alt="Badge transition layer"
+            class="skills__badge-layer skills__badge-layer--transition">
+          <!-- Layer 3 (z-index: 3): Default top layer -->
+          <img
+            [src]="images.BADGE_DEFAULT"
+            alt="Badge default layer"
+            class="skills__badge-layer skills__badge-layer--default">
         </div>
       </div>
     </div>

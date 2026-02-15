@@ -1,4 +1,4 @@
-<header class="header">
+<header class="header" [attr.data-lang]="translationService.currentLang()">
   <nav class="header__container">
     <a routerLink="/" class="header__logo">
       <img [src]="logoPath" alt="QT Logo" class="header__logo-image">

@@ -338,11 +338,11 @@
   }
 
   .contact__sticker {
-    right: auto;
-    left: 60%;
+    left: auto;
+    right: $container-padding-x-mobile;
     top: -$spacing-md;
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
   }
 
   // Mobile: hide desktop arrow, show mobile arrow
@@ -352,7 +352,7 @@
 
   .contact__underline--mobile {
     display: block;
-    width: 200px;
+    width: clamp(100px, 40%, 200px);
   }
 
   // Arrow + CTA side by side

@@ -64,7 +64,7 @@
     "PRIVACY_TEXT": "Ich habe die",
     "PRIVACY_LINK": "Datenschutzerklärung",
     "PRIVACY_TEXT_2": "gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu.",
-    "SUBMIT": "Nachricht senden",
+    "SUBMIT": "Senden",
     "SUCCESS_MESSAGE": "Ihre Nachricht wurde erfolgreich gesendet!",
     "ERROR_SUBMIT": "Beim Senden ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
     "ERROR_REQUIRED": "Dieses Feld ist erforderlich.",

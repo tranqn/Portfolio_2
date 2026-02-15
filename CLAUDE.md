@@ -1,5 +1,19 @@
 # CLAUDE.md — Portfolio_2
 
+## General Rules
+
+When I ask you to fix something, start making code changes immediately. Do not spend the session only reading files, creating plans, or asking clarifying questions. If you need clarification, make your best attempt first, then ask.
+
+## Project Context
+
+This is an Angular portfolio project using TypeScript, HTML, and SCSS. The stack includes Firebase/Firestore for backend. Always assume this context unless told otherwise.
+
+## Styling & Layout
+
+When fixing CSS/layout issues, try the fix, then verify it doesn't break other viewport sizes (mobile, tablet, desktop). Always check that elements remain visible (correct colors, z-index, display properties).
+
+When a first approach to a CSS/UI fix doesn't work, step back and reason about the root cause before trying another property. Don't just cycle through CSS properties.
+
 ## 1. Project Overview
 
 Portfolio_2 is a personal portfolio website for a frontend developer, built with Angular 20 and SSR. The main single-page layout includes: hero, about-me, skills, projects, colleague thoughts, and contact sections. Separate routes exist for Legal Notice, Privacy Policy, and individual Project Detail pages — all sharing the same header/footer. The site supports German (default) / English i18n with runtime switching, responsive design from 320px to 1920px+, and follows strict code-quality and accessibility standards.
@@ -194,6 +208,7 @@ Format: `<type>(<scope>): <description>`
 
 ### Rules
 
+- Use conventional commits for all git operations. Format: `type(scope): description`. Always stage, commit, and push when I ask for a commit.
 - Make small, focused commits — one logical change per commit
 - Use `.gitignore` to exclude `node_modules/`, `dist/`, IDE files, and `.env`
 

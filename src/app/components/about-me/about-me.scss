@@ -26,9 +26,8 @@
 
 .about-me__stickers {
   position: relative;
-  flex-shrink: 0;
   min-height: 500px;
-  width: 500px;
+  width: 50%;
 }
 
 .about-me__sticker {
@@ -40,6 +39,10 @@
     left: 0;
     transform: rotate(-3deg);
     z-index: 3;
+
+    .about-me__sticker-content {
+      top: 40%;
+    }
   }
 
   &--blue {
@@ -54,6 +57,10 @@
     left: 20px;
     transform: rotate(5deg);
     z-index: 1;
+
+    .about-me__sticker-text {
+      transform: rotate(4deg);
+    }
   }
 }
 
@@ -80,7 +87,7 @@
 }
 
 .about-me__sticker-text {
-  font-size: $font-size-xl;
+  font-size: $font-size-md;
   font-weight: $font-weight-semibold;
   color: $text-primary;
   text-align: center;
@@ -94,7 +101,7 @@
 .about-me__content {
   @include flex-column;
   gap: $spacing-md;
-  max-width: 600px;
+  max-width: 50%;
 }
 
 .about-me__label {
@@ -209,7 +216,8 @@
 
   .about-me__content {
     max-width: 100%;
-    text-align: center;
+    text-align: start;
+    align-self: flex-start;
     order: 1;
   }
 
@@ -224,8 +232,7 @@
   .about-me__underline {
     width: 100%;
     max-width: 250px;
-    margin-left: auto;
-    margin-right: auto;
+    align-self: flex-start;
   }
 
   .about-me__sticker-text {

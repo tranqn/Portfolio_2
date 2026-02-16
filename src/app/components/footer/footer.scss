@@ -5,9 +5,12 @@
 // FOOTER — Overlays contact section bottom
 // ========================================
 
+$footer-height-desktop: 230px;
+$footer-height-mobile: 200px;
+
 .footer {
   position: relative;
-  margin-top: -264px;
+  margin-top: -$footer-height-desktop;
   background-color: transparent;
   z-index: $z-sticky;
 }
@@ -162,12 +165,12 @@
 
 @include mobile {
   .footer {
-    margin-top: -259px;
+    margin-top: -$footer-height-mobile;
   }
 
   .footer__container {
-    padding: $spacing-sm $container-padding-x-mobile $spacing-lg;
-    gap: $spacing-sm;
+    padding: $spacing-md $container-padding-x-mobile $spacing-lg;
+    gap: $spacing-md;
     align-items: center;
   }
 
@@ -189,16 +192,18 @@
 
   .footer__links {
     flex-wrap: wrap-reverse;
-    justify-content: flex-end;
-    gap: $spacing-lg;
+    justify-content: space-between;
+    gap: $spacing-sm;
   }
 
   .footer__link {
-    font-size: $font-size-lg;
+    font-size: $font-size-sm;
+    order: 1;
+    margin-left: auto;
   }
 
   .footer__button {
-    font-size: $font-size-xs;
+    font-size: $font-size-sm;
     padding: 6px 16px;
   }
 

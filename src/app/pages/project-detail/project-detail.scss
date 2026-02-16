@@ -17,6 +17,7 @@
 .project-detail {
   min-height: 100vh;
   background-color: $dark-bg;
+  overflow: clip;
 }
 
 .project-detail__container {

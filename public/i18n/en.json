@@ -67,9 +67,11 @@
     "SUBMIT": "Send",
     "SUCCESS_MESSAGE": "Your message has been sent successfully!",
     "ERROR_SUBMIT": "An error occurred while sending. Please try again.",
-    "ERROR_REQUIRED": "This field is required.",
-    "ERROR_EMAIL": "Please enter a valid email address.",
-    "ERROR_MINLENGTH": "Please enter at least 4 characters."
+    "ERROR_NAME_REQUIRED": "Oops! it seems your name is missing",
+    "ERROR_EMAIL_REQUIRED": "Hoppla! your email is required",
+    "ERROR_EMAIL_INVALID": "Hoppla! your email address is not valid",
+    "ERROR_MESSAGE_REQUIRED": "What do you need to develop?",
+    "ERROR_MESSAGE_MINLENGTH": "Please enter at least 4 characters"
   },
   "COLLEAGUES": {
     "LABEL": "in Their Words:",

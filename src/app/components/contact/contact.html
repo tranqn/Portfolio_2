@@ -1,16 +1,18 @@
 <section id="contact" class="contact">
   <div class="contact__container">
     <div class="contact__sticker">
-      <img [src]="stickerPath" alt="" class="contact__sticker-bg">
-      <img [src]="logoPath" alt="" class="contact__sticker-logo">
+      <img [src]="stickerPath" alt="" class="contact__sticker-bg" />
+      <img [src]="logoPath" alt="" class="contact__sticker-logo" />
       <svg class="contact__sticker-text" viewBox="0 0 200 200">
         <defs>
-          <path id="stickerTextPath"
-            d="M 100,100 m -68,0 a 68,68 0 1,1 136,0 a 68,68 0 1,1 -136,0" />
+          <path
+            id="stickerTextPath"
+            d="M 100,100 m -78,0 a 79,79 0 1,1 158,0 a 79,79 0 1,1 -158,0"
+          />
         </defs>
         <text>
           <textPath href="#stickerTextPath">
-            Quoc Nam Tran &#8226; Frontend Developer &#8226;
+            Quoc Nam Tran - Frontend Developer - Quoc Nam Tran - Frontend Developer -
           </textPath>
         </text>
       </svg>
@@ -23,63 +25,75 @@
         <h2 class="contact__title">{{ 'CONTACT.TITLE' | translate }}</h2>
         <p class="contact__description">{{ 'CONTACT.DESCRIPTION' | translate }}</p>
         <!-- Arrow: desktop only -->
-        <img [src]="underlinePath" alt="" class="contact__underline contact__underline--desktop">
+        <img [src]="underlinePath" alt="" class="contact__underline contact__underline--desktop" />
       </div>
     </div>
 
     <!-- Right: Contact Form -->
     <div class="contact__right">
       <form class="contact__form" (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
-        <label for="name">{{ 'CONTACT.NAME_LABEL' | translate }}</label>
-        <input
-          [(ngModel)]="formData.name"
-          #nameInput="ngModel"
-          type="text"
-          id="name"
-          name="name"
-          [placeholder]="'CONTACT.NAME_PLACEHOLDER' | translate"
-          required
-          autocomplete="name">
-        <div class="contact__form-error">
-          @if (nameInput.touched && nameInput.errors?.['required']) {
-            <span>{{ 'CONTACT.ERROR_REQUIRED' | translate }}</span>
-          }
+        <div class="contact__form-group">
+          <label for="name">{{ 'CONTACT.NAME_LABEL' | translate }}</label>
+          <input
+            [(ngModel)]="formData.name"
+            #nameInput="ngModel"
+            type="text"
+            id="name"
+            name="name"
+            [class.contact__form-input--error]="nameInput.touched && nameInput.invalid"
+            [placeholder]="'CONTACT.NAME_PLACEHOLDER' | translate"
+            required
+            autocomplete="name"
+          />
+          <div class="contact__form-error">
+            @if (nameInput.touched && nameInput.errors?.['required']) {
+              <span>{{ 'CONTACT.ERROR_NAME_REQUIRED' | translate }}</span>
+            }
+          </div>
         </div>
 
-        <label for="email">{{ 'CONTACT.EMAIL_LABEL' | translate }}</label>
-        <input
-          [(ngModel)]="formData.email"
-          #emailInput="ngModel"
-          type="email"
-          id="email"
-          name="email"
-          [placeholder]="'CONTACT.EMAIL_PLACEHOLDER' | translate"
-          pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
-          required
-          autocomplete="email">
-        <div class="contact__form-error">
-          @if (emailInput.touched && emailInput.errors?.['required']) {
-            <span>{{ 'CONTACT.ERROR_REQUIRED' | translate }}</span>
-          } @else if (emailInput.touched && emailInput.errors?.['pattern']) {
-            <span>{{ 'CONTACT.ERROR_EMAIL' | translate }}</span>
-          }
+        <div class="contact__form-group">
+          <label for="email">{{ 'CONTACT.EMAIL_LABEL' | translate }}</label>
+          <input
+            [(ngModel)]="formData.email"
+            #emailInput="ngModel"
+            type="email"
+            id="email"
+            name="email"
+            [class.contact__form-input--error]="emailInput.touched && emailInput.invalid"
+            [placeholder]="'CONTACT.EMAIL_PLACEHOLDER' | translate"
+            pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+            required
+            autocomplete="email"
+          />
+          <div class="contact__form-error">
+            @if (emailInput.touched && emailInput.errors?.['required']) {
+              <span>{{ 'CONTACT.ERROR_EMAIL_REQUIRED' | translate }}</span>
+            } @else if (emailInput.touched && emailInput.errors?.['pattern']) {
+              <span>{{ 'CONTACT.ERROR_EMAIL_INVALID' | translate }}</span>
+            }
+          </div>
         </div>
 
-        <label for="message">{{ 'CONTACT.MESSAGE_LABEL' | translate }}</label>
-        <textarea
-          [(ngModel)]="formData.message"
-          #messageInput="ngModel"
-          id="message"
-          name="message"
-          [placeholder]="'CONTACT.MESSAGE_PLACEHOLDER' | translate"
-          minlength="4"
-          required></textarea>
-        <div class="contact__form-error">
-          @if (messageInput.touched && messageInput.errors?.['required']) {
-            <span>{{ 'CONTACT.ERROR_REQUIRED' | translate }}</span>
-          } @else if (messageInput.touched && messageInput.errors?.['minlength']) {
-            <span>{{ 'CONTACT.ERROR_MINLENGTH' | translate }}</span>
-          }
+        <div class="contact__form-group contact__form-group--textarea">
+          <label for="message">{{ 'CONTACT.MESSAGE_LABEL' | translate }}</label>
+          <textarea
+            [(ngModel)]="formData.message"
+            #messageInput="ngModel"
+            id="message"
+            name="message"
+            [class.contact__form-input--error]="messageInput.touched && messageInput.invalid"
+            [placeholder]="'CONTACT.MESSAGE_PLACEHOLDER' | translate"
+            minlength="4"
+            required
+          ></textarea>
+          <div class="contact__form-error">
+            @if (messageInput.touched && messageInput.errors?.['required']) {
+              <span>{{ 'CONTACT.ERROR_MESSAGE_REQUIRED' | translate }}</span>
+            } @else if (messageInput.touched && messageInput.errors?.['minlength']) {
+              <span>{{ 'CONTACT.ERROR_MESSAGE_MINLENGTH' | translate }}</span>
+            }
+          </div>
         </div>
 
         <!-- Privacy checkbox with custom styling -->
@@ -89,7 +103,8 @@
             type="checkbox"
             id="privacy"
             name="privacy"
-            required>
+            required
+          />
           <label for="privacy">
             <span>
               {{ 'CONTACT.PRIVACY_TEXT' | translate }}
@@ -101,11 +116,12 @@
 
         <!-- Form actions: arrow (mobile) + CTA -->
         <div class="contact__form-actions">
-          <img [src]="underlinePath" alt="" class="contact__underline contact__underline--mobile">
+          <img [src]="underlinePath" alt="" class="contact__underline contact__underline--mobile" />
           <app-cta-button
             type="submit"
             [translateKey]="'CONTACT.SUBMIT'"
-            [disabled]="!contactForm.valid || isSubmitting()" />
+            [disabled]="!contactForm.valid || isSubmitting()"
+          />
         </div>
       </form>
     </div>

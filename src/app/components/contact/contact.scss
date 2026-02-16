@@ -11,7 +11,8 @@
   background-size: cover;
   background-position: bottom;
   background-repeat: no-repeat;
-  padding: $spacing-4xl 0 264px 0;
+  padding: $spacing-4xl 0 230px 0;
+  overflow: clip;
 }
 
 .contact__container {
@@ -33,10 +34,10 @@
 
 .contact__sticker {
   position: absolute;
-  width: 160px;
-  height: 160px;
+  width: clamp(100px, 12vw, 160px);
+  height: clamp(100px, 12vw, 160px);
   right: 10%;
-  top: 0;
+  top: -$spacing-2xl;
   transform: rotate(12deg);
   pointer-events: none;
   z-index: $z-sticky;
@@ -67,7 +68,7 @@
 
   text {
     fill: $text-dark;
-    font-size: 11px;
+    font-size: 13px;
     font-weight: $font-weight-bold;
     font-family: $font-primary;
   }
@@ -182,7 +183,6 @@
     font-size: $font-size-base;
     font-family: $font-primary;
     transition: border-color $transition-base;
-    margin-bottom: $spacing-sm;
 
     &::placeholder {
       color: rgba($text-primary, 0.5);
@@ -196,6 +196,23 @@
     &:hover {
       border-bottom-color: $primary-blue;
     }
+
+    &.contact__form-input--error {
+      border-bottom-color: $coral-orange;
+      color: transparent;
+
+      &::placeholder {
+        color: transparent;
+      }
+
+      &:focus {
+        color: $text-primary;
+
+        &::placeholder {
+          color: rgba($text-primary, 0.5);
+        }
+      }
+    }
   }
 
   textarea {
@@ -205,11 +222,29 @@
   }
 }
 
+.contact__form-group {
+  position: relative;
+  margin-bottom: $spacing-sm;
+
+  &--textarea .contact__form-error {
+    bottom: auto;
+    top: $spacing-sm + $spacing-sm;
+  }
+}
+
 .contact__form-error {
-  min-height: 20px;
+  position: absolute;
+  left: $spacing-sm;
+  bottom: $spacing-sm;
   color: $coral-orange;
-  font-size: $font-size-xs;
-  padding-left: $spacing-sm;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  pointer-events: none;
+
+  input:focus ~ &,
+  textarea:focus ~ & {
+    visibility: hidden;
+  }
 }
 
 // Form actions row (CTA right-aligned on desktop, arrow + CTA on mobile)
@@ -308,7 +343,7 @@
 
 @include mobile {
   .contact {
-    padding: $spacing-xl 0 259px 0;
+    padding: $spacing-xl 0 200px 0;
   }
 
   .contact__container {
@@ -340,9 +375,9 @@
   .contact__sticker {
     left: auto;
     right: $container-padding-x-mobile;
-    top: -$spacing-md;
-    width: 100px;
-    height: 100px;
+    top: $spacing-lg;
+    width: clamp(80px, 25vw, 120px);
+    height: clamp(80px, 25vw, 120px);
   }
 
   // Mobile: hide desktop arrow, show mobile arrow

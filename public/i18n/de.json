@@ -67,9 +67,11 @@
     "SUBMIT": "Senden",
     "SUCCESS_MESSAGE": "Ihre Nachricht wurde erfolgreich gesendet!",
     "ERROR_SUBMIT": "Beim Senden ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
-    "ERROR_REQUIRED": "Dieses Feld ist erforderlich.",
-    "ERROR_EMAIL": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
-    "ERROR_MINLENGTH": "Bitte geben Sie mindestens 4 Zeichen ein."
+    "ERROR_NAME_REQUIRED": "Hoppla! Ihr Name fehlt noch",
+    "ERROR_EMAIL_REQUIRED": "Hoppla! Ihre E-Mail wird benötigt",
+    "ERROR_EMAIL_INVALID": "Hoppla! Ihre E-Mail-Adresse ist ungültig",
+    "ERROR_MESSAGE_REQUIRED": "Was möchten Sie entwickeln?",
+    "ERROR_MESSAGE_MINLENGTH": "Bitte geben Sie mindestens 4 Zeichen ein"
   },
   "COLLEAGUES": {
     "LABEL": "in ihren Worten:",

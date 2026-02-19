@@ -9,11 +9,6 @@
   display: block;
 }
 
-// Header gradient overlay for project pages
-:host ::ng-deep .header {
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, transparent 70%);
-}
-
 .project-detail {
   min-height: 100vh;
   background-color: $dark-bg;
@@ -21,11 +16,10 @@
 }
 
 .project-detail__container {
+  min-height: 100vh;
   padding-top: 120px;
   padding-bottom: $spacing-4xl;
-  background: url('/img/project-pages/notebook-paper.png') left center / auto 100% no-repeat,
-    $dark-bg;
-  background-attachment: scroll;
+  background: url('/img/project-pages/notebook-paper.png') top left / auto 100% no-repeat;
   @include container;
 }
 
@@ -229,21 +223,26 @@
 }
 
 // ========================================
-// FOOTER OVERRIDES — light text on dark bg
-// ========================================
-
-:host ::ng-deep .footer {
-  background-color: transparent;
-}
-
-// ========================================
 // RESPONSIVE
 // ========================================
+
+@media (max-width: 1380px) and (min-width: 1240px) {
+  .project-detail__container {
+    background-size: 2000px auto;
+  }
+}
+
+@media (max-width: 1090px){
+  .project-detail__container {
+    background-size: 1980px auto;
+  }
+}
 
 @include mobile {
   .project-detail__container {
     padding-top: 80px;
-    background-image: none;
+    background: url('/img/project-pages/notebook-paper-vertical.png') top left / 1000px auto no-repeat,
+      $dark-bg;
   }
 
   .project-detail__breadcrumb {

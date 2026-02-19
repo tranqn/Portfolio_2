@@ -3,24 +3,38 @@
 
 // ========================================
 // FOOTER — Overlays contact section bottom
+// Fixed height per breakpoint; content pushed to bottom.
+// Contact section padding-bottom must match these values.
 // ========================================
 
-$footer-height-desktop: 230px;
+$footer-height-desktop: 200px;
+$footer-height-tablet: 200px;
 $footer-height-mobile: 200px;
+
+:host {
+  display: block;
+  height: $footer-height-desktop;
+  margin-top: -$footer-height-desktop;
+}
+
+:host(.hidden) {
+  display: none;
+}
 
 .footer {
   position: relative;
-  margin-top: -$footer-height-desktop;
-  background-color: transparent;
+  height: 100%;
   z-index: $z-sticky;
 }
 
 .footer__container {
   @include flex-column;
-  gap: $spacing-xl;
+  justify-content: flex-end;
+  height: 100%;
+  gap: $spacing-md;
   max-width: $container-max-width;
   margin: 0 auto;
-  padding: $spacing-xl $container-padding-x;
+  padding: $spacing-md $container-padding-x $spacing-lg;
 }
 
 // Top: Logo + Copyright (stacked)
@@ -46,7 +60,11 @@ $footer-height-mobile: 200px;
 // ========================================
 
 .footer__links {
-  @include flex-between;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: $spacing-sm;
   width: 100%;
 }
 
@@ -88,6 +106,7 @@ $footer-height-mobile: 200px;
 .footer__button-container {
   @include flex-center;
   position: relative;
+  min-width: 100px;
 
   &:hover .footer__button-icon {
     transform: translate(20px, 0) rotate(360deg);
@@ -160,11 +179,51 @@ $footer-height-mobile: 200px;
 }
 
 // ========================================
+// LIGHT THEME — dark text on light bg
+// ========================================
+
+:host(.light) {
+  .footer__copyright {
+    color: $text-dark;
+  }
+
+  .footer__link {
+    color: $text-dark;
+
+    &:hover {
+      color: $primary-blue;
+    }
+  }
+
+  .footer__button {
+    border-color: $text-dark;
+    color: $text-dark;
+
+    &:hover {
+      border-color: $primary-blue;
+      color: $text-primary;
+    }
+  }
+
+  .footer__button-icon {
+    filter: invert(0);
+  }
+}
+
+// ========================================
 // RESPONSIVE
 // ========================================
 
+@include tablet {
+  :host {
+    height: $footer-height-tablet;
+    margin-top: -$footer-height-tablet;
+  }
+}
+
 @include mobile {
-  .footer {
+  :host {
+    height: $footer-height-mobile;
     margin-top: -$footer-height-mobile;
   }
 
@@ -191,15 +250,13 @@ $footer-height-mobile: 200px;
   }
 
   .footer__links {
-    flex-wrap: wrap-reverse;
+    flex-wrap: wrap;
     justify-content: space-between;
     gap: $spacing-sm;
   }
 
   .footer__link {
     font-size: $font-size-sm;
-    order: 1;
-    margin-left: auto;
   }
 
   .footer__button {

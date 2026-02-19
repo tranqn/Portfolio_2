@@ -71,6 +71,24 @@
   transition: color $transition-base;
   z-index: 1;
 
+  // Project pages — dark text for links over light paper bg
+  :host(.project) &--about,
+  :host(.project) &--skills {
+    color: $text-dark;
+  }
+
+  @media (max-width: 1380px){
+    :host(.project) &--projects {
+      color: $text-dark;
+    }
+  }
+
+  @media (max-width: 1090px){
+    :host(.contact) &--contact {
+      color: $text-dark;
+    }
+}
+
   &::before {
     content: '';
     position: absolute;

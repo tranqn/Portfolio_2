@@ -3,15 +3,13 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { map } from 'rxjs';
-import { Header } from '../../components/header/header';
-import { Footer } from '../../components/footer/footer';
 import { ProjectDataService } from '../../shared/services/project-data.service';
 import { CtaButton } from '../../shared/components/cta-button/cta-button';
 import { IMAGE_PATHS } from '../../shared/constants';
 
 @Component({
   selector: 'app-project-detail',
-  imports: [RouterLink, TranslateModule, Header, Footer, CtaButton],
+  imports: [RouterLink, TranslateModule, CtaButton],
   templateUrl: './project-detail.html',
   styleUrl: './project-detail.scss',
 })

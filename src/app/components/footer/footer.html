@@ -3,7 +3,7 @@
     <!-- Top: Logo + Copyright -->
     <div class="footer__top">
       <div class="footer__logo">
-        <img [src]="logoPath" alt="QT Logo" class="footer__logo-image">
+        <img [src]="images.LOGO" alt="QT Logo" class="footer__logo-image">
       </div>
       <span class="footer__copyright">&copy; Quoc Nam Tran 2025</span>
     </div>
@@ -17,7 +17,7 @@
 
       <!-- GitHub (blue circle expand hover) -->
       <div class="footer__button-container">
-        <img [src]="icons.GITHUB" alt="GitHub icon" class="footer__button-icon">
+        <img [src]="images.FOOTER.GITHUB" alt="GitHub icon" class="footer__button-icon">
         <a
           href="https://github.com"
           target="_blank"
@@ -29,7 +29,7 @@
 
       <!-- LinkedIn (blue circle expand hover) -->
       <div class="footer__button-container">
-        <img [src]="linkedInPlain" alt="LinkedIn icon" class="footer__button-icon">
+        <img [src]="images.SHARED.LINKEDIN_PLAIN" alt="LinkedIn icon" class="footer__button-icon">
         <a
           href="https://linkedin.com"
           target="_blank"
@@ -41,7 +41,7 @@
 
       <!-- Email (blue circle expand hover) -->
       <div class="footer__button-container">
-        <img [src]="icons.EMAIL" alt="Email icon" class="footer__button-icon">
+        <img [src]="images.FOOTER.EMAIL" alt="Email icon" class="footer__button-icon">
         <a href="mailto:contact@example.com" class="footer__button">
           <span class="footer__button-text">Email</span>
         </a>

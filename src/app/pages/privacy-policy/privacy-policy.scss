@@ -42,7 +42,7 @@
 .privacy-content {
   max-width: $container-max-width;
   margin: 0 auto;
-  padding: $spacing-3xl $container-padding-x $spacing-4xl;
+  padding: $spacing-3xl $container-padding-x 200px;
   background-color: $light-bg;
 }
 
@@ -81,38 +81,6 @@
 
   &:hover {
     color: color.adjust($primary-blue, $lightness: -15%);
-  }
-}
-
-// ========================================
-// FOOTER OVERRIDES — dark text on light bg
-// ========================================
-
-:host ::ng-deep .footer {
-  .footer__copyright {
-    color: $text-dark;
-  }
-
-  .footer__link {
-    color: $text-dark;
-
-    &:hover {
-      color: $primary-blue;
-    }
-  }
-
-  .footer__button {
-    border-color: $text-dark;
-    color: $text-dark;
-
-    &:hover {
-      border-color: $primary-blue;
-      color: $text-primary;
-    }
-  }
-
-  .footer__button-icon {
-    filter: invert(0);
   }
 }
 

@@ -29,7 +29,7 @@ export const appConfig: ApplicationConfig = {
         prefix: '/i18n/',
         suffix: '.json',
       }),
-      defaultLanguage: 'de',
+      fallbackLang: 'de',
       lang: 'de',
     }),
   ],

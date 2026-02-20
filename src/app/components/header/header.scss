@@ -77,17 +77,11 @@
     color: $text-dark;
   }
 
-  @media (max-width: 1380px){
+  @media (max-width: 1300px){
     :host(.project) &--projects {
       color: $text-dark;
     }
   }
-
-  @media (max-width: 1090px){
-    :host(.contact) &--contact {
-      color: $text-dark;
-    }
-}
 
   &::before {
     content: '';
@@ -381,5 +375,33 @@
 
   .header__overlay-content {
     padding: 60px $container-padding-x-mobile 60px;
+  }
+}
+
+// Project pages: earlier mobile breakpoint at 1220px
+@media (max-width: 1219px) {
+  :host(.project) {
+    .header__container {
+      justify-content: space-between;
+      padding-left: $container-padding-x-mobile;
+      padding-right: $container-padding-x-mobile;
+    }
+
+    .header__logo-image {
+      width: 35px;
+      height: 35px;
+    }
+
+    .header__desktop-nav {
+      display: none;
+    }
+
+    .header__burger {
+      display: flex;
+    }
+
+    .header__overlay-content {
+      padding: 60px $container-padding-x-mobile 60px;
+    }
   }
 }

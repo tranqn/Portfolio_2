@@ -14,31 +14,31 @@
         <!-- Left Column: Project Details -->
         <div class="project-detail__details">
           <h1 class="project-detail__title">
-            {{ proj.title }}
+            {{ proj.title | translate }}
             <span class="project-detail__title-underline"></span>
           </h1>
 
           <section class="project-detail__section">
             <h2 class="project-detail__section-title">{{ 'PROJECT_DETAIL.DESCRIPTION' | translate }}</h2>
-            <p class="project-detail__text">{{ proj.description }}</p>
+            <p class="project-detail__text">{{ proj.description | translate }}</p>
           </section>
 
           @if (proj.implementationDetails) {
             <section class="project-detail__section">
               <h2 class="project-detail__section-title">{{ 'PROJECT_DETAIL.IMPLEMENTATION' | translate }}</h2>
-              <p class="project-detail__text">{{ proj.implementationDetails }}</p>
+              <p class="project-detail__text">{{ proj.implementationDetails | translate }}</p>
             </section>
           }
 
           @if (proj.duration) {
             <div class="project-detail__meta">
-              <strong>{{ 'PROJECT_DETAIL.DURATION' | translate }}:</strong> {{ proj.duration }}
+              <strong>{{ 'PROJECT_DETAIL.DURATION' | translate }}:</strong> {{ proj.duration | translate }}
             </div>
           }
 
           @if (proj.role) {
             <div class="project-detail__meta">
-              <strong>{{ 'PROJECT_DETAIL.ROLE' | translate }}:</strong> {{ proj.role }}
+              <strong>{{ 'PROJECT_DETAIL.ROLE' | translate }}:</strong> {{ proj.role | translate }}
             </div>
           }
 
@@ -55,7 +55,7 @@
         <!-- Right Column: Project Preview -->
         <div class="project-detail__preview">
           <div class="project-detail__image-wrapper">
-            <img [src]="proj.image" [alt]="proj.title" class="project-detail__image" />
+            <img [src]="proj.image" [alt]="proj.title | translate" class="project-detail__image" />
             @if (proj.featured) {
               <img [src]="featuredIcon" alt="Featured" class="project-detail__sticker" />
             }
@@ -74,12 +74,18 @@
             }
           </div>
 
-          @if (nextProject(); as next) {
-            <a [routerLink]="nextProjectRoute()" class="project-detail__next">
-              {{ 'PROJECT_DETAIL.NEXT_PROJECT' | translate }}
-              <img [src]="nextArrow" alt="" class="project-detail__next-arrow" />
+          <div class="project-detail__nav-row">
+            <a routerLink="/" fragment="projects" class="project-detail__back-link project-detail__back-link--mobile">
+              <img [src]="breadcrumbArrow" alt="" class="project-detail__back-arrow" />
+              {{ 'PROJECT_DETAIL.GO_BACK' | translate }}
             </a>
-          }
+            @if (nextProject(); as next) {
+              <a [routerLink]="nextProjectRoute()" class="project-detail__next">
+                {{ 'PROJECT_DETAIL.NEXT_PROJECT' | translate }}
+                <img [src]="nextArrow" alt="" class="project-detail__next-arrow" />
+              </a>
+            }
+          </div>
         </div>
       </div>
     }

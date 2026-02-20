@@ -35,17 +35,26 @@
     "JOIN": {
       "TITLE": "Join",
       "TECH": "Angular | TypeScript | HTML | CSS | Firebase",
-      "DESCRIPTION": "Task-Manager inspiriert vom Kanban-System. Erstellen und organisieren Sie Aufgaben mithilfe von Drag-and-Drop-Funktionen, weisen Sie Benutzer und Kategorien zu."
+      "DESCRIPTION": "Task-Manager inspiriert vom Kanban-System. Erstellen und organisieren Sie Aufgaben mithilfe von Drag-and-Drop-Funktionen, weisen Sie Benutzer und Kategorien zu.",
+      "IMPLEMENTATION": "Als einziger Entwickler war ich für das Frontend verantwortlich, habe Benutzerinteraktionen entworfen und implementiert und die Responsivität sichergestellt, um in jeder Phase des Entwicklungsprozesses unabhängig arbeiten zu können.",
+      "DURATION": "5 Wochen",
+      "ROLE": "Teamprojekt"
     },
     "POLLO": {
       "TITLE": "El Pollo Loco",
       "TECH": "JavaScript | HTML | CSS",
-      "DESCRIPTION": "Spring-, Lauf- und Wurfspiel basierend auf objektorientiertem Ansatz. Helfen Sie Pepe, Münzen und Tabasco-Salsa zu finden, um gegen das verrückte Huhn zu kämpfen."
+      "DESCRIPTION": "Spring-, Lauf- und Wurfspiel basierend auf objektorientiertem Ansatz. Helfen Sie Pepe, Münzen und Tabasco-Salsa zu finden, um gegen das verrückte Huhn zu kämpfen.",
+      "IMPLEMENTATION": "Komplett von Grund auf mit reinem JavaScript und objektorientierter Programmierung erstellt. Spielphysik, Kollisionserkennung und Sprite-Animationen implementiert, während Spielstatus und Benutzereingaben verwaltet wurden.",
+      "DURATION": "4 Wochen",
+      "ROLE": "Einzelprojekt"
     },
     "BUBBLE": {
       "TITLE": "DABubble",
       "TECH": "Angular | TypeScript | Firebase",
-      "DESCRIPTION": "Diese App ist ein Slack-Klon. Sie revolutioniert die Teamkommunikation und Zusammenarbeit mit ihrer intuitiven Benutzeroberfläche, Echtzeit-Messaging und robuster Kanalorganisation."
+      "DESCRIPTION": "Diese App ist ein Slack-Klon. Sie revolutioniert die Teamkommunikation und Zusammenarbeit mit ihrer intuitiven Benutzeroberfläche, Echtzeit-Messaging und robuster Kanalorganisation.",
+      "IMPLEMENTATION": "Frontend mit Angular und TypeScript entwickelt, Echtzeit-Messaging mit Firebase implementiert, Kanalverwaltung und responsives Design mit Material Design-Komponenten umgesetzt.",
+      "DURATION": "8 Wochen",
+      "ROLE": "Teamprojekt"
     },
     "LIVE_TEST": "Live-Test",
     "GITHUB": "Github",

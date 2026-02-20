@@ -19,8 +19,20 @@
   min-height: 100vh;
   padding-top: 120px;
   padding-bottom: $spacing-4xl;
-  background: url('/img/project-pages/notebook-paper.png') top left / auto 100% no-repeat;
+  background-image: url('/img/project-pages/notebook-paper.png');
+  background-position: 25%;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
   @include container;
+
+  @media (max-width: #{$breakpoint-xl - 1px}) and (min-width: 1220px) {
+    padding-left: $container-padding-x;
+    padding-right: $container-padding-x;
+  }
+
+  @media (max-width: 1300px) {
+    background-position: 0%;
+  }
 }
 
 // ========================================
@@ -35,7 +47,7 @@
   display: inline-flex;
   align-items: center;
   gap: $spacing-xs;
-  color: $text-primary;
+  color: $text-dark;
   font-size: $font-size-base;
   font-weight: $font-weight-medium;
   text-decoration: none;
@@ -76,7 +88,7 @@
   font-size: $font-size-4xl;
   font-weight: $font-weight-bold;
   line-height: $line-height-tight;
-  color: $text-primary;
+  color: $text-dark;
   margin-bottom: $spacing-lg;
   position: relative;
   display: inline-block;
@@ -100,20 +112,20 @@
   font-size: $font-size-xl;
   font-weight: $font-weight-bold;
   line-height: $line-height-tight;
-  color: $text-primary;
+  color: $text-dark;
   margin-bottom: $spacing-sm;
 }
 
 .project-detail__text {
   font-size: $font-size-md;
   line-height: $line-height-relaxed;
-  color: $text-secondary;
+  color: $text-dark;
 }
 
 .project-detail__meta {
   font-size: $font-size-md;
   font-weight: $font-weight-medium;
-  color: $text-primary;
+  color: $text-dark;
   margin-bottom: $spacing-sm;
 
   strong {
@@ -150,7 +162,7 @@
   font-size: $font-size-base;
   font-weight: $font-weight-normal;
   line-height: $line-height-normal;
-  color: $text-primary;
+  color: $text-dark;
 }
 
 // ========================================
@@ -160,7 +172,6 @@
 .project-detail__preview {
   flex: 1;
   min-width: 0;
-  max-width: 650px;
   @include flex-column;
   gap: $spacing-lg;
 }
@@ -211,6 +222,7 @@
   text-decoration: none;
   transition: color $transition-base;
   margin-top: $spacing-md;
+  text-align: end;
 
   &:hover {
     color: $primary-blue;
@@ -222,31 +234,39 @@
   height: auto;
 }
 
+.project-detail__nav-row {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.project-detail__back-link--mobile {
+  display: none;
+}
+
 // ========================================
 // RESPONSIVE
 // ========================================
 
-@media (max-width: 1380px) and (min-width: 1240px) {
-  .project-detail__container {
-    background-size: 2000px auto;
-  }
-}
-
-@media (max-width: 1090px){
-  .project-detail__container {
-    background-size: 1980px auto;
-  }
-}
-
-@include mobile {
+@media (max-width: 1219px) {
   .project-detail__container {
     padding-top: 80px;
-    background: url('/img/project-pages/notebook-paper-vertical.png') top left / 1000px auto no-repeat,
-      $dark-bg;
+    background: url('/img/project-pages/notebook-paper-vertical.png');
+    background-position: top left;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
   }
 
   .project-detail__breadcrumb {
-    margin-bottom: $spacing-lg;
+    display: none;
+  }
+
+  .project-detail__back-link--mobile {
+    display: inline-flex;
+  }
+
+  .project-detail__nav-row {
+    justify-content: space-between;
+    align-items: center;
   }
 
   .project-detail__content {
@@ -254,16 +274,12 @@
     gap: $spacing-xl;
   }
 
-  .project-detail__details {
-    max-width: 100%;
-  }
-
   .project-detail__title {
     font-size: $font-size-2xl;
   }
 
   .project-detail__preview {
-    max-width: 100%;
+    width: 100%;
   }
 
   .project-detail__sticker {
@@ -279,7 +295,24 @@
     justify-content: center;
   }
 
-  .project-detail__next {
-    justify-content: center;
+  .project-detail__next,
+  .project-detail__back-link {
+    color: $text-primary;
+    font-size: $font-size-md;
+    font-weight: $font-weight-bold;
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 800px) {
+  .project-detail__container {
+    background: url('/img/project-pages/notebook-paper-vertical.png') top left / 1100px auto no-repeat;
+  }
+}
+
+@media (max-width: 725px) {
+  .project-detail__container {
+    background: url('/img/project-pages/notebook-paper-vertical.png') top left / 1000px auto no-repeat,
+      $dark-bg;
   }
 }

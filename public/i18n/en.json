@@ -36,17 +36,26 @@
     "JOIN": {
       "TITLE": "Join",
       "TECH": "Angular | TypeScript | HTML | CSS | Firebase",
-      "DESCRIPTION": "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories."
+      "DESCRIPTION": "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.",
+      "IMPLEMENTATION": "As the sole developer, I was responsible for the Frontend, designing and implementing user interactions, and ensuring responsiveness to work independently at every stage of the development process.",
+      "DURATION": "5 weeks",
+      "ROLE": "Team Project"
     },
     "POLLO": {
       "TITLE": "El Pollo Loco",
       "TECH": "JavaScript | HTML | CSS",
-      "DESCRIPTION": "Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen."
+      "DESCRIPTION": "Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.",
+      "IMPLEMENTATION": "Built entirely from scratch using vanilla JavaScript and object-oriented programming. Implemented game physics, collision detection, and sprite animations while managing game state and user input.",
+      "DURATION": "4 weeks",
+      "ROLE": "Solo Project"
     },
     "BUBBLE": {
       "TITLE": "DABubble",
       "TECH": "Angular | TypeScript | Firebase",
-      "DESCRIPTION": "This App is a Slack Clone App. It revolutionizes team communication and collaboration with its intuitive interface, real-time messaging, and robust channel organization."
+      "DESCRIPTION": "This App is a Slack Clone App. It revolutionizes team communication and collaboration with its intuitive interface, real-time messaging, and robust channel organization.",
+      "IMPLEMENTATION": "Developed the frontend with Angular and TypeScript, implementing real-time messaging with Firebase, channel management, and responsive design using Material Design components.",
+      "DURATION": "8 weeks",
+      "ROLE": "Team Project"
     },
     "LIVE_TEST": "Live test",
     "GITHUB": "Github"

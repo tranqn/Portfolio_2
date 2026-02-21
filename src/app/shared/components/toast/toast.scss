@@ -1,23 +1,33 @@
 @use '../../../../styles/variables' as *;
 
-@keyframes slideIn {
-  from {
-    transform: translateX(100%);
+@keyframes toastLife {
+  0% {
+    transform: translateY(-100%);
     opacity: 0;
   }
-  to {
-    transform: translateX(0);
+  6% {
+    transform: translateY(0);
     opacity: 1;
+  }
+  94% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100%);
+    opacity: 0;
   }
 }
 
 .toast-container {
   position: fixed;
-  bottom: $spacing-lg;
-  right: $spacing-lg;
+  top: $spacing-lg;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: $z-modal;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: $spacing-xs;
 }
 
@@ -31,7 +41,7 @@
   font-size: $font-size-base;
   font-weight: $font-weight-medium;
   box-shadow: $shadow-md;
-  animation: slideIn 300ms ease-out;
+  animation: toastLife 5s ease-in-out forwards;
   min-width: 280px;
   max-width: 400px;
 

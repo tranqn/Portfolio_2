@@ -38,13 +38,14 @@ export class Contact {
     }
     this.isSubmitting.set(true);
     this.contactService.submitContactForm(this.formData).subscribe({
-      next: () => {
-        this.toastService.show('CONTACT.SUCCESS_MESSAGE', 'success');
-        form.resetForm();
-        this.privacyAccepted = false;
-      },
-      error: () => {
-        this.toastService.show('CONTACT.ERROR_SUBMIT', 'error');
+      next: (success) => {
+        if (success) {
+          this.toastService.show('CONTACT.SUCCESS_MESSAGE', 'success');
+          form.resetForm();
+          this.privacyAccepted = false;
+        } else {
+          this.toastService.show('CONTACT.ERROR_SUBMIT', 'error');
+        }
       },
       complete: () => this.isSubmitting.set(false),
     });

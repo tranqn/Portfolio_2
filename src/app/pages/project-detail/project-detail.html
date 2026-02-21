@@ -88,6 +88,15 @@
           </div>
         </div>
       </div>
+    } @else {
+      <div class="project-detail__not-found">
+        <h1>{{ 'NOT_FOUND.TITLE' | translate }}</h1>
+        <p>{{ 'NOT_FOUND.TEXT' | translate }}</p>
+        <a routerLink="/" fragment="projects" class="project-detail__back-link">
+          <img [src]="breadcrumbArrow" alt="" class="project-detail__back-arrow" />
+          {{ 'PROJECT_DETAIL.GO_BACK' | translate }}
+        </a>
+      </div>
     }
   </div>
 </main>

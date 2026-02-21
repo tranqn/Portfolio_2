@@ -1,9 +1,10 @@
-import { Component, computed, inject } from '@angular/core';
+import { Component, computed, effect, inject } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { map } from 'rxjs';
 import { ProjectDataService } from '../../shared/services/project-data.service';
+import { SeoService } from '../../shared/services/seo.service';
 import { CtaButton } from '../../shared/components/cta-button/cta-button';
 import { IMAGE_PATHS } from '../../shared/constants';
 
@@ -16,6 +17,8 @@ import { IMAGE_PATHS } from '../../shared/constants';
 export class ProjectDetail {
   private readonly route = inject(ActivatedRoute);
   private readonly projectDataService = inject(ProjectDataService);
+  private readonly seoService = inject(SeoService);
+  private readonly translate = inject(TranslateService);
 
   protected readonly breadcrumbArrow = IMAGE_PATHS.PROJECT_PAGES.BREADCRUMB_ARROW;
   protected readonly nextArrow = IMAGE_PATHS.PROJECT_PAGES.NEXT_PROJECT_ARROW;
@@ -35,6 +38,16 @@ export class ProjectDetail {
     if (!current?.nextProjectId) return undefined;
     return this.projectDataService.getProjectById(current.nextProjectId);
   });
+
+  constructor() {
+    effect(() => {
+      const proj = this.project();
+      if (proj) {
+        const title = this.translate.instant(proj.title);
+        this.seoService.updateTags({ title: `${title} | Quoc Nam Tran` });
+      }
+    });
+  }
 
   protected nextProjectRoute(): string {
     const next = this.nextProject();

@@ -13,16 +13,58 @@ const app = express();
 const angularApp = new AngularNodeAppEngine();
 
 /**
- * Example Express Rest API endpoints can be defined here.
- * Uncomment and define endpoints as necessary.
- *
- * Example:
- * ```ts
- * app.get('/api/{*splat}', (req, res) => {
- *   // Handle API request
- * });
- * ```
+ * Security headers
  */
+app.use((_req, res, next) => {
+  res.setHeader('X-Content-Type-Options', 'nosniff');
+  res.setHeader('X-Frame-Options', 'DENY');
+  res.setHeader('X-XSS-Protection', '1; mode=block');
+  res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
+  res.setHeader('Permissions-Policy', 'camera=(), microphone=(), geolocation=()');
+  next();
+});
+
+/**
+ * Parse JSON request bodies for API routes
+ */
+app.use(express.json());
+
+/**
+ * Contact form API endpoint
+ */
+app.post('/api/contact', async (req, res) => {
+  const { name, email, message } = req.body;
+
+  if (!name || !email || !message) {
+    res.status(400).json({ error: 'All fields are required.' });
+    return;
+  }
+
+  try {
+    const nodemailer = await import('nodemailer');
+    const transporter = nodemailer.default.createTransport({
+      host: process.env['SMTP_HOST'],
+      port: Number(process.env['SMTP_PORT'] || 587),
+      secure: Number(process.env['SMTP_PORT'] || 587) === 465,
+      auth: {
+        user: process.env['SMTP_USER'],
+        pass: process.env['SMTP_PASS'],
+      },
+    });
+
+    await transporter.sendMail({
+      from: process.env['SMTP_USER'],
+      to: 'tran.qn@protonmail.com',
+      replyTo: email,
+      subject: `Portfolio Contact: ${name}`,
+      text: `Name: ${name}\nEmail: ${email}\n\n${message}`,
+    });
+
+    res.json({ success: true });
+  } catch {
+    res.status(500).json({ error: 'Failed to send email.' });
+  }
+});
 
 /**
  * Serve static files from /browser
@@ -53,13 +95,7 @@ app.use((req, res, next) => {
  */
 if (isMainModule(import.meta.url) || process.env['pm_id']) {
   const port = process.env['PORT'] || 4000;
-  app.listen(port, (error) => {
-    if (error) {
-      throw error;
-    }
-
-    console.log(`Node Express server listening on http://localhost:${port}`);
-  });
+  app.listen(port);
 }
 
 /**

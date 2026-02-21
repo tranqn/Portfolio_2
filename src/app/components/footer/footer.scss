@@ -44,9 +44,14 @@ $footer-height-mobile: 200px;
 }
 
 .footer__logo-image {
+  display: block;
   width: 45px;
   height: 45px;
-  object-fit: contain;
+  background-color: $primary-blue;
+  mask-image: url('/logo/qt_logo_transparent.png');
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
 }
 
 .footer__copyright {
@@ -244,6 +249,7 @@ $footer-height-mobile: 200px;
     width: 35px;
     height: 35px;
   }
+
 
   .footer__copyright {
     font-size: $font-size-lg;

@@ -45,9 +45,19 @@
 }
 
 .header__logo-image {
+  display: block;
   width: 45px;
   height: 45px;
-  object-fit: contain;
+  background-color: $primary-blue;
+  mask-image: url('/logo/qt_logo_transparent.png');
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  transition: background-color $transition-base;
+
+  .header__logo:hover & {
+    background-color: $bright-yellow;
+  }
 }
 
 // ========================================
@@ -244,6 +254,10 @@
   height: 2px;
   background-color: $text-primary;
   transition: transform 300ms ease, opacity 300ms ease;
+
+  :host(.project) & {
+    background-color: $text-dark;
+  }
 }
 
 // Hamburger → X transformation
@@ -391,6 +405,7 @@
       width: 35px;
       height: 35px;
     }
+
 
     .header__desktop-nav {
       display: none;

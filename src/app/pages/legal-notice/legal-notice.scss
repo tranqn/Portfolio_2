@@ -8,13 +8,14 @@
 
 :host {
   display: block;
+  background-color: $light-bg;
 }
 
 // Hero-like header sharing hero background
 .legal-header {
   position: relative;
-  min-height: 500px;
-  background-image: url('/img/hero/hero-bg.png');
+  min-height: 350px;
+  background-image: url('/img/skills/skills-bg.png');
   background-size: cover;
   background-position: bottom;
   background-repeat: no-repeat;
@@ -28,7 +29,7 @@
 }
 
 .legal-header__title {
-  font-size: $font-size-4xl;
+  font-size: clamp(#{$font-size-3xl-mobile}, 5vw, #{$font-size-4xl});
   font-weight: $font-weight-black;
   color: $text-primary;
   margin: 0;
@@ -82,19 +83,17 @@
 
 @include mobile {
   .legal-header {
-    min-height: 60vh;
+    min-height: 250px;
   }
 
   .legal-header__container {
-    padding-top: 90px;
   }
 
   .legal-header__title {
-    font-size: $font-size-5xl-mobile;
     text-align: center;
   }
 
   .legal-content {
-    padding: $spacing-2xl $container-padding-x-mobile;
+    padding: $spacing-2xl $container-padding-x-mobile 200px;
   }
 }

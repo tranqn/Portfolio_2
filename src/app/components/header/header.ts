@@ -6,7 +6,6 @@ import { TranslateModule } from '@ngx-translate/core';
 import { filter, map, startWith } from 'rxjs';
 import { SocialLinks } from '../../shared/components/social-links/social-links';
 import { TranslationService } from '../../shared/services/translation.service';
-import { IMAGE_PATHS } from '../../shared/constants';
 
 @Component({
   selector: 'app-header',
@@ -21,7 +20,6 @@ import { IMAGE_PATHS } from '../../shared/constants';
 export class Header {
   protected readonly translationService = inject(TranslationService);
   protected readonly menuOpen = signal(false);
-  protected readonly logoPath = IMAGE_PATHS.LOGO;
 
   private readonly renderer = inject(Renderer2);
   private readonly document = inject(DOCUMENT);

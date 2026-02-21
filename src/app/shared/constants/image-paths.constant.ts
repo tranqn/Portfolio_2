@@ -72,5 +72,5 @@ export const IMAGE_PATHS = {
     BREADCRUMB_ARROW: '/img/project-pages/breadcrumb-arrow-1.png',
     NEXT_PROJECT_ARROW: '/img/project-pages/next-project-arrow-1.png',
   },
-  LOGO: '/logo/logo.svg',
+  LOGO: '/logo/qt_logo_transparent.png',
 } as const;

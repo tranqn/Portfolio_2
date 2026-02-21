@@ -8,13 +8,14 @@
 
 :host {
   display: block;
+  background-color: $light-bg;
 }
 
 // Hero-like header sharing hero background
 .privacy-header {
   position: relative;
   min-height: 500px;
-  background-image: url('/img/hero/hero-bg.png');
+  background-image: url('/img/skills/skills-bg.png');
   background-size: cover;
   background-position: bottom;
   background-repeat: no-repeat;
@@ -103,6 +104,6 @@
   }
 
   .privacy-content {
-    padding: $spacing-2xl $container-padding-x-mobile;
+    padding: $spacing-2xl $container-padding-x-mobile 200px;
   }
 }

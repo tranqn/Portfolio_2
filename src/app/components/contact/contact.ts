@@ -21,7 +21,6 @@ export class Contact {
   protected readonly underlinePath = IMAGE_PATHS.CONTACT.UNDERLINE;
   protected readonly checkPath = IMAGE_PATHS.SHARED.CHECK;
   protected readonly stickerPath = IMAGE_PATHS.CONTACT.STICKER;
-  protected readonly logoPath = IMAGE_PATHS.LOGO;
   protected readonly isSubmitting = signal(false);
 
   protected formData: ContactForm = {

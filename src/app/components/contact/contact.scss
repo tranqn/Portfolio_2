@@ -56,7 +56,13 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 35%;
+  width: 50%;
+  height: 50%;
+  background-color: $text-dark;
+  mask-image: url('/logo/qt_logo_transparent.png');
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
 }
 
 .contact__sticker-text {
@@ -68,7 +74,7 @@
 
   text {
     fill: $text-dark;
-    font-size: 13px;
+    font-size: 16px;
     font-weight: $font-weight-bold;
     font-family: $font-primary;
   }

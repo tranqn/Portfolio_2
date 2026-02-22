@@ -12,4 +12,8 @@ import { Contact } from '../../components/contact/contact';
   templateUrl: './main.html',
   styleUrl: './main.scss',
 })
+/**
+ * Home page composing all single-page sections in order:
+ * Hero, About Me, Skills, Projects, Colleagues, Contact.
+ */
 export class Main {}

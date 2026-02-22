@@ -11,7 +11,7 @@
 
     <!-- Bottom row: 3 cards side by side, slightly overlapping -->
     <div class="colleagues__cards">
-      @for (colleague of colleagues; track colleague.name) {
+      @for (colleague of colleagueDataService.allColleagues(); track colleague.name) {
         <div class="colleagues__card">
           <p class="colleagues__card-text">{{ colleague.textKey | translate }}</p>
           <div class="colleagues__card-bottom">

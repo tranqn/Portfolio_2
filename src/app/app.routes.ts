@@ -1,5 +1,11 @@
 import { Routes } from '@angular/router';
 
+/**
+ * Top-level route definitions.
+ *
+ * All page components are lazy-loaded. Route `data` drives header/footer
+ * behavior (theme, visibility, project styling).
+ */
 export const routes: Routes = [
   {
     path: '',

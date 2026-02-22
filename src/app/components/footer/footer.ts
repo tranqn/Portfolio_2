@@ -1,9 +1,10 @@
 import { Component, inject } from '@angular/core';
-import { ActivatedRoute, NavigationEnd, Router, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { TranslateModule } from '@ngx-translate/core';
-import { filter, map, startWith } from 'rxjs';
+import { map } from 'rxjs';
 import { IMAGE_PATHS } from '../../shared/constants';
+import { createRouteChange$, getNestedRouteData } from '../../shared/utils/route.utils';
 
 @Component({
   selector: 'app-footer',
@@ -15,30 +16,30 @@ import { IMAGE_PATHS } from '../../shared/constants';
     '[class.hidden]': 'hidden()',
   },
 })
+/**
+ * Site-wide footer with contact CTA, social links, legal links, and copyright.
+ *
+ * Adapts to route data:
+ * - `footerTheme: 'light'` — light background for legal pages.
+ * - `hideFooter: true` — completely hidden on project-detail pages.
+ */
 export class Footer {
   protected readonly images = IMAGE_PATHS;
 
   private readonly router = inject(Router);
   private readonly route = inject(ActivatedRoute);
 
-  private readonly routeChange$ = this.router.events.pipe(
-    filter((e): e is NavigationEnd => e instanceof NavigationEnd),
-    startWith(null),
-  );
+  private readonly routeChange$ = createRouteChange$(this.router);
 
+  /** Active color theme derived from the current route's `footerTheme` data. */
   protected readonly theme = toSignal(
-    this.routeChange$.pipe(map(() => this.getRouteData('footerTheme') ?? 'dark')),
+    this.routeChange$.pipe(map(() => getNestedRouteData(this.route, 'footerTheme') ?? 'dark')),
     { initialValue: 'dark' },
   );
 
+  /** `true` when the footer should be completely hidden (project-detail pages). */
   protected readonly hidden = toSignal(
-    this.routeChange$.pipe(map(() => !!this.getRouteData('hideFooter'))),
+    this.routeChange$.pipe(map(() => !!getNestedRouteData(this.route, 'hideFooter'))),
     { initialValue: false },
   );
-
-  private getRouteData(key: string): string | undefined {
-    let r: ActivatedRoute = this.route;
-    while (r.firstChild) r = r.firstChild;
-    return r.snapshot.data[key] as string | undefined;
-  }
 }

@@ -1,20 +1,25 @@
-import { Injectable, inject, PLATFORM_ID } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { isPlatformBrowser } from '@angular/common';
 import { Observable, of, map, catchError } from 'rxjs';
 import { ContactForm } from '../models';
 
 @Injectable({
   providedIn: 'root',
 })
+/**
+ * Handles contact-form submissions via POST to `/api/contact`.
+ *
+ * Returns `Observable<boolean>` — `true` on success, `false` on error.
+ */
 export class ContactService {
   private readonly http = inject(HttpClient);
-  private readonly platformId = inject(PLATFORM_ID);
 
+  /**
+   * Posts the contact form data to the backend API.
+   * @param formData - Validated form payload.
+   * @returns `true` when the server responds successfully, `false` otherwise.
+   */
   submitContactForm(formData: ContactForm): Observable<boolean> {
-    if (!isPlatformBrowser(this.platformId)) {
-      return of(false);
-    }
     return this.http.post('/api/contact', formData).pipe(
       map(() => true),
       catchError(() => of(false)),

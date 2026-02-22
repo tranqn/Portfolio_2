@@ -49,7 +49,7 @@
   width: 45px;
   height: 45px;
   background-color: $primary-blue;
-  mask-image: url('/logo/qt_logo_transparent.png');
+  mask-image: url('#{$deploy-path}/logo/qt_logo_transparent.png');
   mask-size: contain;
   mask-repeat: no-repeat;
   mask-position: center;
@@ -114,7 +114,7 @@
 
   // About Me: reveals bottom → top
   &--about::before {
-    background-image: url('/img/header/nav-hover/about.png');
+    background-image: url('#{$deploy-path}/img/header/nav-hover/about.png');
     clip-path: inset(100% 0 0 0);
   }
 
@@ -124,7 +124,7 @@
 
   // Skills: reveals left → right
   &--skills::before {
-    background-image: url('/img/header/nav-hover/skills.png');
+    background-image: url('#{$deploy-path}/img/header/nav-hover/skills.png');
   }
 
   // German "Fähigkeiten" is wider than "Skills" — stretch image to fill
@@ -134,17 +134,17 @@
 
   // Projects: reveals left → right
   &--projects::before {
-    background-image: url('/img/header/nav-hover/projects.png');
+    background-image: url('#{$deploy-path}/img/header/nav-hover/projects.png');
   }
 
   // Contact: reveals left → right
   &--contact::before {
-    background-image: url('/img/header/nav-hover/contact.png');
+    background-image: url('#{$deploy-path}/img/header/nav-hover/contact.png');
   }
 
   // EN: reveals bottom-right → top-left
   &--en::before {
-    background-image: url('/img/header/toggle.png');
+    background-image: url('#{$deploy-path}/img/header/toggle.png');
     clip-path: inset(100% 0 0 100%);
   }
 
@@ -154,7 +154,7 @@
 
   // DE: reveals top-left → bottom-right
   &--de::before {
-    background-image: url('/img/header/toggle.png');
+    background-image: url('#{$deploy-path}/img/header/toggle.png');
     clip-path: inset(0 100% 100% 0);
   }
 
@@ -255,7 +255,7 @@
   background-color: $text-primary;
   transition: transform 300ms ease, opacity 300ms ease;
 
-  :host(.project) & {
+  :host(.project) .header__burger:not(.header__burger--active) & {
     background-color: $text-dark;
   }
 }
@@ -286,7 +286,7 @@
   left: 0;
   right: 0;
   min-height: 100vh;
-  background-image: url('/img/hero/hero-bg.png');
+  background-image: url('#{$deploy-path}/img/hero/hero-bg.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

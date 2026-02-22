@@ -10,6 +10,11 @@ import { IMAGE_PATHS } from '../../shared/constants';
   templateUrl: './projects.html',
   styleUrl: './projects.scss',
 })
+/**
+ * Projects grid section listing all portfolio projects as interactive cards.
+ *
+ * Retrieves project data reactively from {@link ProjectDataService}.
+ */
 export class Projects {
   protected readonly projectDataService = inject(ProjectDataService);
   protected readonly underlinePath = IMAGE_PATHS.PROJECTS.UNDERLINE;

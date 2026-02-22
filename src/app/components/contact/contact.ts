@@ -14,6 +14,14 @@ import { IMAGE_PATHS } from '../../shared/constants';
   templateUrl: './contact.html',
   styleUrl: './contact.scss',
 })
+/**
+ * Contact form section with name/email/message fields and a privacy checkbox.
+ *
+ * Validates fields on blur only (no live validation). Submits via
+ * {@link ContactService} and shows success/error toasts via {@link ToastService}.
+ * The submit button is disabled until all fields pass validation and
+ * the privacy checkbox is accepted.
+ */
 export class Contact {
   private readonly contactService = inject(ContactService);
   private readonly toastService = inject(ToastService);
@@ -21,16 +29,23 @@ export class Contact {
   protected readonly underlinePath = IMAGE_PATHS.CONTACT.UNDERLINE;
   protected readonly checkPath = IMAGE_PATHS.SHARED.CHECK;
   protected readonly stickerPath = IMAGE_PATHS.CONTACT.STICKER;
+  /** Prevents double-submission while the HTTP request is in-flight. */
   protected readonly isSubmitting = signal(false);
 
+  /** Two-way bound form model reset after successful submission. */
   protected formData: ContactForm = {
     name: '',
     email: '',
     message: '',
   };
 
+  /** Bound to the privacy-policy acceptance checkbox. */
   protected privacyAccepted = false;
 
+  /**
+   * Submits the contact form if valid and not already submitting.
+   * Shows a toast on success or failure and resets the form on success.
+   */
   onSubmit(form: NgForm): void {
     if (!form.valid || this.isSubmitting()) {
       return;

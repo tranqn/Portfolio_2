@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, effect, inject } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { SeoService } from '../../shared/services/seo.service';
 
@@ -8,10 +8,13 @@ import { SeoService } from '../../shared/services/seo.service';
   templateUrl: './privacy-policy.html',
   styleUrl: './privacy-policy.scss',
 })
-export class PrivacyPolicy implements OnInit {
+/** Privacy Policy (Datenschutzerklärung) page required by German law. Sets its own SEO title. */
+export class PrivacyPolicy {
   private readonly seoService = inject(SeoService);
 
-  ngOnInit(): void {
-    this.seoService.updateTags({ title: 'Datenschutzerklärung | Quoc Nam Tran' });
+  constructor() {
+    effect(() => {
+      this.seoService.updateTags({ title: 'Datenschutzerklärung | Quoc Nam Tran' });
+    });
   }
 }

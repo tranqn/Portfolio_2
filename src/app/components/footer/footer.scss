@@ -48,7 +48,7 @@ $footer-height-mobile: 200px;
   width: 45px;
   height: 45px;
   background-color: $primary-blue;
-  mask-image: url('/logo/qt_logo_transparent.png');
+  mask-image: url('#{$deploy-path}/logo/qt_logo_transparent.png');
   mask-size: contain;
   mask-repeat: no-repeat;
   mask-position: center;
@@ -93,7 +93,7 @@ $footer-height-mobile: 200px;
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('/img/header/nav-hover/projects.png');
+    background-image: url('#{$deploy-path}/img/header/nav-hover/projects.png');
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -133,6 +133,7 @@ $footer-height-mobile: 200px;
 }
 
 .footer__button {
+  @include button-expand-circle;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -150,27 +151,6 @@ $footer-height-mobile: 200px;
   position: relative;
   white-space: nowrap;
   overflow: hidden;
-
-  // Blue circle expand from bottom center
-  &::after {
-    content: '';
-    position: absolute;
-    width: 300px;
-    height: 300px;
-    background-color: $primary-blue;
-    border-radius: 50%;
-    bottom: 0;
-    left: 50%;
-    transform: translate(-50%, 50%) scale(0.1);
-    transition: transform $transition-expand;
-    z-index: -1;
-    opacity: 0;
-  }
-
-  &:hover::after {
-    transform: translate(-50%, 50%) scale(1);
-    opacity: 1;
-  }
 }
 
 .footer__button-text {

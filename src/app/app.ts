@@ -10,4 +10,10 @@ import { Toast } from './shared/components/toast/toast';
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })
+/**
+ * Root shell component.
+ *
+ * Renders the shared header, a `<router-outlet>` for page content,
+ * the shared footer, and the global toast overlay.
+ */
 export class App {}

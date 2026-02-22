@@ -71,10 +71,7 @@
 }
 
 .about-me__sticker-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  @include abs-center;
   @include flex-center;
   gap: $spacing-xs;
   width: 100%;
@@ -119,32 +116,12 @@
   margin: 0;
 }
 
-@keyframes underlineReveal {
-  0% {
-    clip-path: inset(0 100% 0 0);
-  }
-  7.14% {
-    clip-path: inset(0);
-  }
-  50% {
-    clip-path: inset(0);
-  }
-  57.14% {
-    clip-path: inset(0 100% 0 0);
-  }
-  100% {
-    clip-path: inset(0 100% 0 0);
-  }
-}
+@include underline-reveal-keyframes;
 
 .about-me__underline {
+  @include underline-reveal(300px);
   margin-top: -$spacing-sm;
   margin-bottom: $spacing-md;
-  width: 300px;
-  height: auto;
-  display: block;
-  clip-path: inset(0 100% 0 0);
-  animation: underlineReveal 7s ease-in-out infinite;
 }
 
 .about-me__text {

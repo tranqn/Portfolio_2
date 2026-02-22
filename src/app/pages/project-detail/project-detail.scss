@@ -19,7 +19,7 @@
   min-height: 100vh;
   padding-top: 120px;
   padding-bottom: $spacing-4xl;
-  background-image: url('/img/project-pages/notebook-paper.png');
+  background-image: url('#{$deploy-path}/img/project-pages/notebook-paper.png');
   background-position: 25%;
   background-size: auto 100%;
   background-repeat: no-repeat;
@@ -32,6 +32,7 @@
 
   @media (max-width: 1300px) {
     background-position: 0%;
+    background-size: 160%;
   }
 }
 
@@ -178,16 +179,13 @@
 
 .project-detail__image-wrapper {
   position: relative;
-  border-radius: $radius-lg;
-  box-shadow: $shadow-lg;
-  overflow: hidden;
 }
 
 .project-detail__image {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: $radius-lg;
+  filter: drop-shadow($shadow-lg);
 }
 
 .project-detail__sticker {
@@ -195,7 +193,7 @@
   top: 50%;
   right: -40px;
   transform: translateY(-50%);
-  width: 90px;
+  width: clamp(70px, 10vw, 120px);
   height: auto;
   z-index: 10;
 }
@@ -273,7 +271,7 @@
   .project-detail__container {
     padding-top: 80px;
     padding-bottom: 80px;
-    background: url('/img/project-pages/notebook-paper-vertical.png');
+    background: url('#{$deploy-path}/img/project-pages/notebook-paper-vertical.png');
     background-position: top left;
     background-size: 100% auto;
     background-repeat: no-repeat;
@@ -306,7 +304,6 @@
   }
 
   .project-detail__sticker {
-    width: 60px;
     right: -15px;
   }
 
@@ -329,13 +326,13 @@
 
 @media (max-width: 800px) {
   .project-detail__container {
-    background: url('/img/project-pages/notebook-paper-vertical.png') top left / 1100px auto no-repeat;
+    background: url('#{$deploy-path}/img/project-pages/notebook-paper-vertical.png') top left / 1100px auto no-repeat;
   }
 }
 
 @media (max-width: 725px) {
   .project-detail__container {
-    background: url('/img/project-pages/notebook-paper-vertical.png') top left / 1000px auto no-repeat,
+    background: url('#{$deploy-path}/img/project-pages/notebook-paper-vertical.png') top left / 1000px auto no-repeat,
       $dark-bg;
   }
 }

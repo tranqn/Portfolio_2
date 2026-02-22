@@ -11,13 +11,23 @@ import { IMAGE_PATHS } from '../../shared/constants';
   templateUrl: './hero.html',
   styleUrl: './hero.scss',
 })
+/**
+ * Full-viewport hero section (100vh including header).
+ *
+ * Displays the animated "Frontend DEVELOPER" title (split into individual
+ * {@link Letter} objects for per-character styling), a polaroid photo,
+ * social links, and a scroll-down CTA.
+ */
 export class Hero {
+  /** Individual characters for the word "Frontend" with case metadata. */
   protected readonly frontendLetters: Letter[] = this.splitIntoLetters('Frontend');
+  /** Individual characters for the word "DEVELOPER" with case metadata. */
   protected readonly developerLetters: Letter[] = this.splitIntoLetters('DEVELOPER');
   protected readonly wavingHandPath = IMAGE_PATHS.HERO.WAVING_HAND;
   protected readonly photoPath = IMAGE_PATHS.HERO.PHOTO;
   protected readonly polaroidFramePath = IMAGE_PATHS.HERO.POLAROID_FRAME;
 
+  /** Splits a string into {@link Letter} objects for per-character template rendering. */
   private splitIntoLetters(text: string): Letter[] {
     return text.split('').map((char) => ({
       char,

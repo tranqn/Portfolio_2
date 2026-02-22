@@ -57,33 +57,12 @@ app-project-card {
   flex: 0 0 auto;
 }
 
-// Underline clip-path animation
-@keyframes underlineReveal {
-  0% {
-    clip-path: inset(0 100% 0 0);
-  }
-  7.14% {
-    clip-path: inset(0);
-  }
-  50% {
-    clip-path: inset(0);
-  }
-  57.14% {
-    clip-path: inset(0 100% 0 0);
-  }
-  100% {
-    clip-path: inset(0 100% 0 0);
-  }
-}
+@include underline-reveal-keyframes;
 
 .projects__underline {
+  @include underline-reveal(300px);
   margin-top: -$spacing-sm;
   margin-bottom: $spacing-md;
-  width: 300px;
-  height: auto;
-  display: block;
-  clip-path: inset(0 100% 0 0);
-  animation: underlineReveal 7s ease-in-out infinite;
 }
 
 // ========================================

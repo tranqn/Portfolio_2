@@ -1,4 +1,3 @@
-@use 'sass:color';
 @use '../../../styles/variables' as *;
 @use '../../../styles/mixins' as *;
 
@@ -15,7 +14,7 @@
 .privacy-header {
   position: relative;
   min-height: 500px;
-  background-image: url('/img/skills/skills-bg.png');
+  background-image: url('#{$deploy-path}/img/skills/skills-bg.png');
   background-size: cover;
   background-position: bottom;
   background-repeat: no-repeat;
@@ -29,7 +28,7 @@
 }
 
 .privacy-header__title {
-  font-size: $font-size-4xl;
+  font-size: clamp(#{$font-size-3xl-mobile}, 5vw, #{$font-size-4xl});
   font-weight: $font-weight-black;
   color: $text-primary;
   margin: 0;
@@ -76,13 +75,7 @@
 }
 
 .privacy-content a {
-  color: $primary-blue;
-  text-decoration: underline;
-  transition: color $transition-base;
-
-  &:hover {
-    color: color.adjust($primary-blue, $lightness: -15%);
-  }
+  @include legal-link;
 }
 
 // ========================================

@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, effect, inject } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { SeoService } from '../../shared/services/seo.service';
 
@@ -8,10 +8,13 @@ import { SeoService } from '../../shared/services/seo.service';
   templateUrl: './legal-notice.html',
   styleUrl: './legal-notice.scss',
 })
-export class LegalNotice implements OnInit {
+/** Legal Notice (Impressum) page required by German law. Sets its own SEO title. */
+export class LegalNotice {
   private readonly seoService = inject(SeoService);
 
-  ngOnInit(): void {
-    this.seoService.updateTags({ title: 'Impressum | Quoc Nam Tran' });
+  constructor() {
+    effect(() => {
+      this.seoService.updateTags({ title: 'Impressum | Quoc Nam Tran' });
+    });
   }
 }

@@ -7,7 +7,7 @@
 
 .skills {
   position: relative;
-  background-image: url('/img/skills/skills-bg.png');
+  background-image: url('#{$deploy-path}/img/skills/skills-bg.png');
   background-size: 100% 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -120,7 +120,7 @@
 // Torn paper graphic with description text overlaid
 .skills__description {
   display: flex;
-  background-image: url('/img/skills/skills-description.png');
+  background-image: url('#{$deploy-path}/img/skills/skills-description.png');
   background-size: 100% 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -167,7 +167,7 @@
   width: 72px;
   height: 72px;
   object-fit: contain;
-  filter: grayscale(1);
+  filter: grayscale(100%);
   transition: transform $transition-base, filter $transition-base;
 
   &:hover {
@@ -327,7 +327,7 @@
   }
 
   .skills__description {
-    background-image: url('/img/skills/skills-description-mobile.png');
+    background-image: url('#{$deploy-path}/img/skills/skills-description-mobile.png');
     background-size: 100% 100%;
     min-width: auto;
     max-width: 100%;

@@ -24,7 +24,7 @@
       <div class="skills__icon-container">
         <!-- Skill icons grid (grayscale default, color on hover) -->
         <div class="skills__icons">
-          @for (skill of skills; track skill.name) {
+          @for (skill of skillDataService.allSkills(); track skill.name) {
             <div class="skills__icon">
               <img [src]="skill.icon" [alt]="skill.name + ' icon'" class="skills__icon-image">
               <span class="skills__icon-name">{{ skill.name }}</span>
@@ -52,11 +52,11 @@
             <span class="skills__badge-text">{{ 'SKILLS.BADGE' | translate }}</span>
             <div class="skills__badge-icons">
               <div class="skills__badge-icon">
-                <img src="/img/skills/badge/react.svg" alt="React icon" class="skills__badge-icon-svg">
+                <img src="img/skills/badge/react.svg" alt="React icon" class="skills__badge-icon-svg">
                 <span class="skills__badge-icon-label">React</span>
               </div>
               <div class="skills__badge-icon">
-                <img src="/img/skills/badge/vue.svg" alt="Vue.js icon" class="skills__badge-icon-svg">
+                <img src="img/skills/badge/vue.svg" alt="Vue.js icon" class="skills__badge-icon-svg">
                 <span class="skills__badge-icon-label">Vue.js</span>
               </div>
             </div>

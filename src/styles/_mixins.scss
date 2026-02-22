@@ -2,6 +2,7 @@
 // MIXINS — Functions only, no CSS output
 // ========================================
 
+@use 'sass:color';
 @use 'variables' as *;
 
 // ----------------------------------------
@@ -107,4 +108,88 @@
   color: inherit;
   cursor: pointer;
   outline: none;
+}
+
+// Absolute-center an element within its positioned parent
+@mixin abs-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// Blue circle hover-expand effect for pill-shaped buttons.
+// The ::after pseudo-element scales up from the bottom center on hover.
+@mixin button-expand-circle {
+  &::after {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background-color: $primary-blue;
+    border-radius: 50%;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%) scale(0.1);
+    transform-origin: center bottom;
+    opacity: 0;
+    transition: transform $transition-expand, opacity $transition-expand;
+    z-index: -1;
+  }
+
+  &:hover::after {
+    transform: translate(-50%, 50%) scale(1);
+    opacity: 1;
+  }
+}
+
+// ----------------------------------------
+// SHARED ANIMATIONS
+// ----------------------------------------
+
+// Outputs the underlineReveal @keyframes block.
+// Must be called once at the root level of each component that uses it,
+// since Angular's view encapsulation scopes keyframes per component.
+@mixin underline-reveal-keyframes {
+  @keyframes underlineReveal {
+    0% {
+      clip-path: inset(0 100% 0 0);
+    }
+    7.14% {
+      clip-path: inset(0);
+    }
+    50% {
+      clip-path: inset(0);
+    }
+    57.14% {
+      clip-path: inset(0 100% 0 0);
+    }
+    100% {
+      clip-path: inset(0 100% 0 0);
+    }
+  }
+}
+
+// Applies underlineReveal animation properties to a decorative image element
+@mixin underline-reveal($width: 300px) {
+  width: $width;
+  height: auto;
+  display: block;
+  clip-path: inset(0 100% 0 0);
+  animation: underlineReveal 7s ease-in-out infinite;
+}
+
+// ----------------------------------------
+// LEGAL PAGE LINK STYLES
+// ----------------------------------------
+
+// Shared link styling for legal-notice and privacy-policy content areas
+@mixin legal-link {
+  color: $primary-blue;
+  text-decoration: underline;
+  transition: color $transition-base;
+
+  &:hover {
+    color: color.adjust($primary-blue, $lightness: -15%);
+  }
 }

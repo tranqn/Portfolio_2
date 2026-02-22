@@ -1,7 +1,7 @@
 <div [id]="'project-' + project().id" class="project-card">
   <div class="project-card__image-wrapper">
     @if (project().featured) {
-      <img src="/img/shared/featured.svg" alt="Featured" class="project-card__featured">
+      <img src="img/shared/featured.svg" alt="Featured" class="project-card__featured">
     }
     <div [class.project-card__image-float]="project().featured">
       <img [src]="project().image" [alt]="project().title + ' Project'" class="project-card__image">

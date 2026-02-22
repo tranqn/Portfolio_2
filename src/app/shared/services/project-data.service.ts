@@ -5,6 +5,12 @@ import { IMAGE_PATHS } from '../constants';
 @Injectable({
   providedIn: 'root',
 })
+/**
+ * In-memory store for all portfolio projects.
+ *
+ * Projects are defined as a signal-based list so computed views
+ * (e.g. filtered lists, single lookups) remain reactive.
+ */
 export class ProjectDataService {
   private readonly projects = signal<Project[]>([
     {
@@ -67,8 +73,10 @@ export class ProjectDataService {
     },
   ]);
 
+  /** Read-only computed signal exposing every project. */
   readonly allProjects = computed(() => this.projects());
 
+  /** Finds a project by its URL slug. Returns `undefined` if not found. */
   getProjectById(id: string): Project | undefined {
     return this.projects().find((p) => p.id === id);
   }

@@ -15,7 +15,7 @@
   --hero-button-padding: 6px 20px;
 
   min-height: 100vh;
-  background-image: url('/img/hero/hero-bg.png');
+  background-image: url('#{$deploy-path}/img/hero/hero-bg.png');
   background-size: cover;
   background-position: bottom;
   background-repeat: no-repeat;
@@ -273,7 +273,7 @@
   width: 100%;
   height: auto;
   object-fit: contain;
-  filter: drop-shadow($shadow-polaroid);
+  filter: drop-shadow($shadow-card);
   z-index: 2;
 }
 

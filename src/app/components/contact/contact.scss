@@ -7,7 +7,7 @@
 
 .contact {
   position: relative;
-  background-image: url('/img/contact/contact-bg.png');
+  background-image: url('#{$deploy-path}/img/contact/contact-bg.png');
   background-size: cover;
   background-position: bottom;
   background-repeat: no-repeat;
@@ -52,14 +52,11 @@
 }
 
 .contact__sticker-logo {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  @include abs-center;
   width: 50%;
   height: 50%;
   background-color: $text-dark;
-  mask-image: url('/logo/qt_logo_transparent.png');
+  mask-image: url('#{$deploy-path}/logo/qt_logo_transparent.png');
   mask-size: contain;
   mask-repeat: no-repeat;
   mask-position: center;
@@ -119,33 +116,12 @@
   color: $text-primary;
 }
 
-// Arrow animation (same underlineReveal keyframe)
-@keyframes underlineReveal {
-  0% {
-    clip-path: inset(0 100% 0 0);
-  }
-  7.14% {
-    clip-path: inset(0);
-  }
-  50% {
-    clip-path: inset(0);
-  }
-  57.14% {
-    clip-path: inset(0 100% 0 0);
-  }
-  100% {
-    clip-path: inset(0 100% 0 0);
-  }
-}
+@include underline-reveal-keyframes;
 
 .contact__underline {
+  @include underline-reveal(300px);
   margin-top: $spacing-sm;
   margin-bottom: $spacing-md;
-  width: 300px;
-  height: auto;
-  display: block;
-  clip-path: inset(0 100% 0 0);
-  animation: underlineReveal 7s ease-in-out infinite;
   align-self: flex-end;
 }
 
@@ -299,7 +275,7 @@
     transform: translate(-50%, -50%);
     width: 24px;
     height: 24px;
-    background-image: url('/img/shared/check.png');
+    background-image: url('#{$deploy-path}/img/shared/check.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -384,6 +360,10 @@
     top: $spacing-lg;
     width: clamp(80px, 25vw, 120px);
     height: clamp(80px, 25vw, 120px);
+
+    @media (max-width: 360px) {
+    top: $spacing-xs;
+  }
   }
 
   // Mobile: hide desktop arrow, show mobile arrow

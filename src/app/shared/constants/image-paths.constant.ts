@@ -47,9 +47,9 @@ export const IMAGE_PATHS = {
     MATERIAL_DESIGN: 'img/skills/material-design.svg',
   },
   PROJECTS: {
-    JOIN: 'img/projects/join.svg',
-    POLLO_LOCO: 'img/projects/pollo_loco.svg',
-    DABUBBLE: 'img/projects/bubble.svg',
+    JOIN: 'img/projects/join.png',
+    POLLO_LOCO: 'img/projects/pollo_loco.png',
+    DABUBBLE: 'img/projects/bubble.png',
     UNDERLINE: 'img/projects/underline.png',
   },
   COLLEAGUES: {
@@ -66,7 +66,7 @@ export const IMAGE_PATHS = {
   SHARED: {
     CHECK: 'img/shared/check.png',
     TOGGLE: 'img/shared/toggle.png',
-    FEATURED: 'img/shared/featured.svg',
+    FEATURED: 'img/shared/featured.png',
     GITHUB: 'img/shared/github.svg',
     LINKEDIN: 'img/shared/linkedin.svg',
     LINKEDIN_PLAIN: 'img/shared/linkedin_plain.svg',
@@ -74,7 +74,7 @@ export const IMAGE_PATHS = {
   },
   PROJECT_PAGES: {
     NOTEBOOK_PAPER: 'img/project-pages/notebook-paper.png',
-    JOIN: 'img/project-pages/join.svg',
+    JOIN: 'img/project-pages/join.png',
     BREADCRUMB_ARROW: 'img/project-pages/breadcrumb-arrow-1.png',
     NEXT_PROJECT_ARROW: 'img/project-pages/next-project-arrow-1.png',
   },

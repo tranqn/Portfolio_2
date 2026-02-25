@@ -32,7 +32,7 @@
           },
           "configurations": {
             "production": {
-              "baseHref": "/angular-projects/",
+              "baseHref": "/",
               "budgets": [
                 {
                   "type": "initial",

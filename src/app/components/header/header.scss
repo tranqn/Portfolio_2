@@ -87,12 +87,6 @@
     color: $text-dark;
   }
 
-  @media (max-width: 1300px){
-    :host(.project) &--projects {
-      color: $text-dark;
-    }
-  }
-
   &::before {
     content: '';
     position: absolute;

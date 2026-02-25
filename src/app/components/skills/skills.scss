@@ -298,6 +298,7 @@
 @include mobile {
   .skills {
     padding: $spacing-xl 0 $spacing-4xl 0;
+    background-size: auto 100%;
   }
 
   .skills__container {

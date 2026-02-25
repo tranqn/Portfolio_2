@@ -101,6 +101,8 @@
 
 .hero__title--bottom {
   text-align: center;
+  // Reserve width so lowercase hover doesn't shrink the title
+  min-width: 5.8em;
 }
 
 .hero__letters-container {

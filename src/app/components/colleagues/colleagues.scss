@@ -72,6 +72,7 @@
   box-shadow: $shadow-card;
   flex: 1;
   aspect-ratio: 3 / 2;
+  transition: transform 125ms ease-out, box-shadow 125ms ease-out;
 
   &:nth-child(1) {
     background-image: url('#{$deploy-path}/img/colleagues/color-option-1/a.png');
@@ -110,6 +111,7 @@
 
   &:hover {
     z-index: 4;
+    transform: scale(1.05) rotate(0deg);
   }
 
   &:hover::after {

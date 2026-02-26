@@ -166,9 +166,7 @@
 
 .hero__button {
   @include button-reset;
-  display: inline-flex;
-  align-items: center;
-  justify-content: left;
+  display: inline-grid;
   border: 1px solid $outline-white;
   padding: var(--hero-button-padding);
   border-radius: $radius-full;
@@ -178,9 +176,8 @@
   font-size: var(--hero-button-font);
   line-height: $line-height-normal;
   background: transparent;
-  width: 140px;
-  transition: border-color $transition-expand, color 100ms ease,
-    padding $transition-expand, width $transition-expand, transform 100ms ease;
+  width: fit-content;
+  transition: border-color $transition-expand, transform 100ms ease;
   cursor: pointer;
   text-decoration: none;
   position: relative;
@@ -204,34 +201,42 @@
     z-index: 1;
   }
 
-  &:hover {
-    border: 1px solid $outline-white;
-    color: transparent;
-    width: 260px;
-  }
-
   &:hover::after {
     transform: translate(-50%, 50%) scale(1);
     opacity: 1;
     transition: transform $transition-fade-in, opacity $transition-fade-in;
   }
 
+  &:hover .hero__button-text {
+    max-width: 0;
+    opacity: 0;
+  }
+
   &:hover .hero__button-text-hover {
+    max-width: 500px;
     opacity: 1;
   }
 }
 
+.hero__button-text,
+.hero__button-text-hover {
+  grid-area: 1 / 1;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
 .hero__button-text {
-  position: relative;
+  max-width: 500px;
+  opacity: 1;
+  transition: max-width $transition-expand, opacity 150ms ease;
   z-index: 2;
 }
 
 .hero__button-text-hover {
-  position: absolute;
-  color: $text-primary;
+  max-width: 0;
   opacity: 0;
-  transition: opacity 400ms ease-in-out;
-  white-space: nowrap;
+  color: $text-primary;
+  transition: max-width $transition-expand, opacity 400ms ease-in-out;
   z-index: 3;
 }
 
@@ -388,12 +393,10 @@
     }
   }
 
-  .hero__button {
-    width: clamp(120px, 30vw, 180px);
-
-    &:hover {
-      width: clamp(180px, 50vw, 260px);
-    }
+  .hero__button-icon {
+    width: 28px;
+    height: 28px;
+    top: -30px;
   }
 
   .hero__polaroid-wrapper {

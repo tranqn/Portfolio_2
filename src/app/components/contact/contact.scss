@@ -245,10 +245,13 @@
 // CUSTOM CHECKBOX
 // ========================================
 
+.contact__form-checkbox-wrapper {
+  margin: $spacing-md 0;
+}
+
 .contact__form-checkbox {
   display: flex;
   align-items: center;
-  margin: $spacing-md 0;
   position: relative;
 
   // Blue border box (overlay)
@@ -322,6 +325,7 @@
 .contact__form-checkbox-error {
   width: 100%;
   min-height: 20px;
+  padding: $spacing-xs 0;
   color: $coral-orange;
   font-size: $font-size-sm;
   font-weight: $font-weight-medium;

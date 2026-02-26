@@ -80,7 +80,8 @@
     "ERROR_EMAIL_REQUIRED": "Hoppla! Ihre E-Mail wird benötigt",
     "ERROR_EMAIL_INVALID": "Hoppla! Ihre E-Mail-Adresse ist ungültig",
     "ERROR_MESSAGE_REQUIRED": "Was möchten Sie entwickeln?",
-    "ERROR_MESSAGE_MINLENGTH": "Bitte geben Sie mindestens 4 Zeichen ein"
+    "ERROR_MESSAGE_MINLENGTH": "Bitte geben Sie mindestens 4 Zeichen ein",
+    "ERROR_PRIVACY_REQUIRED": "Bitte akzeptieren Sie die Datenschutzerklärung"
   },
   "COLLEAGUES": {
     "LABEL": "in ihren Worten:",

@@ -100,6 +100,7 @@
         <div class="contact__form-checkbox">
           <input
             [(ngModel)]="privacyAccepted"
+            #privacy="ngModel"
             type="checkbox"
             id="privacy"
             name="privacy"
@@ -112,6 +113,11 @@
               {{ 'CONTACT.PRIVACY_TEXT_2' | translate }}
             </span>
           </label>
+        </div>
+        <div class="contact__form-checkbox-error">
+          @if (privacy.errors?.['required']) {
+            <span>{{ 'CONTACT.ERROR_PRIVACY_REQUIRED' | translate }}</span>
+          }
         </div>
 
         <!-- Form actions: arrow (mobile) + CTA -->

@@ -49,13 +49,13 @@
       "DURATION": "4 weeks",
       "ROLE": "Solo Project"
     },
-    "BUBBLE": {
-      "TITLE": "DABubble",
-      "TECH": "Angular | TypeScript | Firebase",
-      "DESCRIPTION": "This App is a Slack Clone App. It revolutionizes team communication and collaboration with its intuitive interface, real-time messaging, and robust channel organization.",
-      "IMPLEMENTATION": "Developed the frontend with Angular and TypeScript, implementing real-time messaging with Firebase, channel management, and responsive design using Material Design components.",
-      "DURATION": "8 weeks",
-      "ROLE": "Team Project"
+    "POKEDEX": {
+      "TITLE": "Pokédex",
+      "TECH": "JavaScript | HTML | CSS",
+      "DESCRIPTION": "A Pokédex web application that lets you browse and search through Pokémon. Built with vanilla JavaScript and the PokéAPI to display detailed information about each Pokémon.",
+      "IMPLEMENTATION": "Built entirely from scratch using vanilla JavaScript. Integrated the PokéAPI to fetch and display Pokémon data dynamically, implemented search and filter functionality, and created a responsive card-based layout.",
+      "DURATION": "3 weeks",
+      "ROLE": "Solo Project"
     },
     "LIVE_TEST": "Live test",
     "GITHUB": "Github"

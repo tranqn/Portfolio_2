@@ -49,7 +49,7 @@ export const IMAGE_PATHS = {
   PROJECTS: {
     JOIN: 'img/projects/join.png',
     POLLO_LOCO: 'img/projects/pollo_loco.png',
-    DABUBBLE: 'img/projects/bubble.png',
+    POKEDEX: 'img/projects/pokedex.png',
     UNDERLINE: 'img/projects/underline.png',
   },
   COLLEAGUES: {

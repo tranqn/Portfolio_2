@@ -1,0 +1,43 @@
+# Force HTTPS
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Let PHP files execute directly — skip SPA fallback
+RewriteRule \.php$ - [L]
+
+# Serve static files directly, fallback to index.html for Angular SPA
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ /index.html [L]
+
+# Ensure PHP is handled
+AddHandler application/x-httpd-php .php
+
+# MIME types
+AddType image/svg+xml .svg
+AddType application/javascript .js
+AddType text/css .css
+AddType application/json .json
+AddType font/ttf .ttf
+AddType image/png .png
+AddType image/jpeg .jpg .jpeg
+AddType image/webp .webp
+AddType image/avif .avif
+
+# Gzip compression
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml
+</IfModule>
+
+# Browser caching
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/png "access plus 1 month"
+  ExpiresByType image/jpeg "access plus 1 month"
+  ExpiresByType image/svg+xml "access plus 1 month"
+  ExpiresByType image/webp "access plus 1 month"
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType font/ttf "access plus 1 month"
+</IfModule>

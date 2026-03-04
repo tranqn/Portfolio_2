@@ -2,7 +2,7 @@ import { Technology } from './technology.model';
 
 /** Portfolio project displayed in the projects grid and detail pages. */
 export interface Project {
-  /** URL-friendly slug used as the route parameter (e.g. "join", "dabubble"). */
+  /** URL-friendly slug used as the route parameter (e.g. "join", "pokedex"). */
   id: string;
   /** i18n translation key for the project title. */
   title: string;

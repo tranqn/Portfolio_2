@@ -20,7 +20,7 @@ export class ContactService {
    * @returns `true` when the server responds successfully, `false` otherwise.
    */
   submitContactForm(formData: ContactForm): Observable<boolean> {
-    return this.http.post('/api/contact', formData).pipe(
+    return this.http.post('/api/sendMail.php', formData).pipe(
       map(() => true),
       catchError(() => of(false)),
     );

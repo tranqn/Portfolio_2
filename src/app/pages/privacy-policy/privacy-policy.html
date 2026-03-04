@@ -1,39 +1,51 @@
 <main class="privacy-policy-page">
-  <section class="privacy-header">
+  <section class="privacy-header" aria-label="Privacy Policy">
     <div class="privacy-header__container">
       <h1 class="privacy-header__title">{{ 'PRIVACY_POLICY.TITLE' | translate }}</h1>
     </div>
   </section>
 
   <div class="privacy-content">
-    <h2>{{ 'PRIVACY_POLICY.OVERVIEW_TITLE' | translate }}</h2>
-    <p>{{ 'PRIVACY_POLICY.OVERVIEW_TEXT' | translate }}</p>
+    <section aria-labelledby="overview-heading">
+      <h2 id="overview-heading">{{ 'PRIVACY_POLICY.OVERVIEW_TITLE' | translate }}</h2>
+      <p>{{ 'PRIVACY_POLICY.OVERVIEW_TEXT' | translate }}</p>
+    </section>
 
-    <h2>{{ 'PRIVACY_POLICY.CONTROLLER_TITLE' | translate }}</h2>
-    <p [innerHTML]="'PRIVACY_POLICY.CONTROLLER_TEXT' | translate"></p>
+    <section aria-labelledby="controller-heading">
+      <h2 id="controller-heading">{{ 'PRIVACY_POLICY.CONTROLLER_TITLE' | translate }}</h2>
+      <address [innerHTML]="'PRIVACY_POLICY.CONTROLLER_TEXT' | translate"></address>
+    </section>
 
-    <h2>{{ 'PRIVACY_POLICY.HOSTING_TITLE' | translate }}</h2>
-    <p>{{ 'PRIVACY_POLICY.HOSTING_TEXT' | translate }}</p>
+    <section aria-labelledby="hosting-heading">
+      <h2 id="hosting-heading">{{ 'PRIVACY_POLICY.HOSTING_TITLE' | translate }}</h2>
+      <p>{{ 'PRIVACY_POLICY.HOSTING_TEXT' | translate }}</p>
+    </section>
 
-    <h2>{{ 'PRIVACY_POLICY.SSL_TITLE' | translate }}</h2>
-    <p>{{ 'PRIVACY_POLICY.SSL_TEXT' | translate }}</p>
+    <section aria-labelledby="ssl-heading">
+      <h2 id="ssl-heading">{{ 'PRIVACY_POLICY.SSL_TITLE' | translate }}</h2>
+      <p>{{ 'PRIVACY_POLICY.SSL_TEXT' | translate }}</p>
+    </section>
 
-    <h2>{{ 'PRIVACY_POLICY.CONTACT_FORM_TITLE' | translate }}</h2>
-    <p>{{ 'PRIVACY_POLICY.CONTACT_FORM_TEXT' | translate }}</p>
+    <section aria-labelledby="contact-form-heading">
+      <h2 id="contact-form-heading">{{ 'PRIVACY_POLICY.CONTACT_FORM_TITLE' | translate }}</h2>
+      <p>{{ 'PRIVACY_POLICY.CONTACT_FORM_TEXT' | translate }}</p>
+    </section>
 
-    <h2>{{ 'PRIVACY_POLICY.RIGHTS_TITLE' | translate }}</h2>
-    <p>{{ 'PRIVACY_POLICY.RIGHTS_TEXT' | translate }}</p>
+    <section aria-labelledby="rights-heading">
+      <h2 id="rights-heading">{{ 'PRIVACY_POLICY.RIGHTS_TITLE' | translate }}</h2>
+      <p>{{ 'PRIVACY_POLICY.RIGHTS_TEXT' | translate }}</p>
 
-    <h3>{{ 'PRIVACY_POLICY.RIGHT_ACCESS' | translate }}</h3>
-    <p>{{ 'PRIVACY_POLICY.RIGHT_ACCESS_TEXT' | translate }}</p>
+      <h3>{{ 'PRIVACY_POLICY.RIGHT_ACCESS' | translate }}</h3>
+      <p>{{ 'PRIVACY_POLICY.RIGHT_ACCESS_TEXT' | translate }}</p>
 
-    <h3>{{ 'PRIVACY_POLICY.RIGHT_RECTIFICATION' | translate }}</h3>
-    <p>{{ 'PRIVACY_POLICY.RIGHT_RECTIFICATION_TEXT' | translate }}</p>
+      <h3>{{ 'PRIVACY_POLICY.RIGHT_RECTIFICATION' | translate }}</h3>
+      <p>{{ 'PRIVACY_POLICY.RIGHT_RECTIFICATION_TEXT' | translate }}</p>
 
-    <h3>{{ 'PRIVACY_POLICY.RIGHT_DELETION' | translate }}</h3>
-    <p>{{ 'PRIVACY_POLICY.RIGHT_DELETION_TEXT' | translate }}</p>
+      <h3>{{ 'PRIVACY_POLICY.RIGHT_DELETION' | translate }}</h3>
+      <p>{{ 'PRIVACY_POLICY.RIGHT_DELETION_TEXT' | translate }}</p>
 
-    <h3>{{ 'PRIVACY_POLICY.RIGHT_COMPLAINT' | translate }}</h3>
-    <p>{{ 'PRIVACY_POLICY.RIGHT_COMPLAINT_TEXT' | translate }}</p>
+      <h3>{{ 'PRIVACY_POLICY.RIGHT_COMPLAINT' | translate }}</h3>
+      <p>{{ 'PRIVACY_POLICY.RIGHT_COMPLAINT_TEXT' | translate }}</p>
+    </section>
   </div>
 </main>

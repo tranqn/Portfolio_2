@@ -66,6 +66,15 @@
   margin-bottom: $spacing-md;
 }
 
+.legal-content address {
+  font-style: normal;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-normal;
+  line-height: $line-height-relaxed;
+  color: $text-dark;
+  margin-bottom: $spacing-md;
+}
+
 .legal-content a {
   @include legal-link;
 }

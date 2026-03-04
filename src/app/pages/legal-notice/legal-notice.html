@@ -1,27 +1,39 @@
 <main class="legal-notice-page">
-  <section class="legal-header">
+  <section class="legal-header" aria-label="Legal Notice">
     <div class="legal-header__container">
       <h1 class="legal-header__title">{{ 'LEGAL_NOTICE.TITLE' | translate }}</h1>
     </div>
   </section>
 
   <div class="legal-content">
-    <h2>{{ 'LEGAL_NOTICE.IMPRINT' | translate }}</h2>
-    <p [innerHTML]="'LEGAL_NOTICE.IMPRINT_TEXT' | translate"></p>
+    <section aria-labelledby="imprint-heading">
+      <h2 id="imprint-heading">{{ 'LEGAL_NOTICE.IMPRINT' | translate }}</h2>
+      <address [innerHTML]="'LEGAL_NOTICE.IMPRINT_TEXT' | translate"></address>
+    </section>
 
-    <h2>{{ 'LEGAL_NOTICE.CONTACT' | translate }}</h2>
-    <p [innerHTML]="'LEGAL_NOTICE.CONTACT_TEXT' | translate"></p>
+    <section aria-labelledby="contact-heading">
+      <h2 id="contact-heading">{{ 'LEGAL_NOTICE.CONTACT' | translate }}</h2>
+      <address [innerHTML]="'LEGAL_NOTICE.CONTACT_TEXT' | translate"></address>
+    </section>
 
-    <h2>{{ 'LEGAL_NOTICE.RESPONSIBLE' | translate }}</h2>
-    <p [innerHTML]="'LEGAL_NOTICE.RESPONSIBLE_TEXT' | translate"></p>
+    <section aria-labelledby="responsible-heading">
+      <h2 id="responsible-heading">{{ 'LEGAL_NOTICE.RESPONSIBLE' | translate }}</h2>
+      <address [innerHTML]="'LEGAL_NOTICE.RESPONSIBLE_TEXT' | translate"></address>
+    </section>
 
-    <h2>{{ 'LEGAL_NOTICE.LIABILITY_CONTENT' | translate }}</h2>
-    <p>{{ 'LEGAL_NOTICE.LIABILITY_CONTENT_TEXT' | translate }}</p>
+    <section aria-labelledby="liability-content-heading">
+      <h2 id="liability-content-heading">{{ 'LEGAL_NOTICE.LIABILITY_CONTENT' | translate }}</h2>
+      <p>{{ 'LEGAL_NOTICE.LIABILITY_CONTENT_TEXT' | translate }}</p>
+    </section>
 
-    <h2>{{ 'LEGAL_NOTICE.LIABILITY_LINKS' | translate }}</h2>
-    <p>{{ 'LEGAL_NOTICE.LIABILITY_LINKS_TEXT' | translate }}</p>
+    <section aria-labelledby="liability-links-heading">
+      <h2 id="liability-links-heading">{{ 'LEGAL_NOTICE.LIABILITY_LINKS' | translate }}</h2>
+      <p>{{ 'LEGAL_NOTICE.LIABILITY_LINKS_TEXT' | translate }}</p>
+    </section>
 
-    <h2>{{ 'LEGAL_NOTICE.COPYRIGHT' | translate }}</h2>
-    <p>{{ 'LEGAL_NOTICE.COPYRIGHT_TEXT' | translate }}</p>
+    <section aria-labelledby="copyright-heading">
+      <h2 id="copyright-heading">{{ 'LEGAL_NOTICE.COPYRIGHT' | translate }}</h2>
+      <p>{{ 'LEGAL_NOTICE.COPYRIGHT_TEXT' | translate }}</p>
+    </section>
   </div>
 </main>

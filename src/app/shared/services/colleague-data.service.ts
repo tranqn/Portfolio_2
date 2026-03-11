@@ -16,19 +16,19 @@ export class ColleagueDataService {
       name: 'Christian Hajduk',
       positionKey: 'COLLEAGUES.CHRISTIAN.POSITION',
       textKey: 'COLLEAGUES.CHRISTIAN.TEXT',
-      linkedInUrl: 'https://linkedin.com',
+      linkedInUrl: 'https://www.linkedin.com/in/christian-hajduk/',
     },
     {
       name: 'Daniel Kersten',
       positionKey: 'COLLEAGUES.DANIEL.POSITION',
       textKey: 'COLLEAGUES.DANIEL.TEXT',
-      linkedInUrl: 'https://linkedin.com',
+      linkedInUrl: 'https://www.linkedin.com/in/kersten-daniel/',
     },
     {
       name: 'Paul',
       positionKey: 'COLLEAGUES.PAUL.POSITION',
       textKey: 'COLLEAGUES.PAUL.TEXT',
-      linkedInUrl: 'https://linkedin.com',
+      linkedInUrl: 'https://www.linkedin.com/in/paul-angeles-chaquire/',
     },
   ]);
 

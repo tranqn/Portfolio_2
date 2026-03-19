@@ -15,8 +15,8 @@
   "ABOUT": {
     "LABEL": "WHO'S NAM?",
     "TITLE": "About me",
-    "TEXT_1": "Hey there, I'm Nam! With some information about yourself like what is your source of inspiration for improving your programming skills? Do you learn from other challenges or do you focus on video tutorials?",
-    "TEXT_2": "Let's collaborate and build something remarkable together!",
+    "TEXT_1": "Hey there, I'm Nam! I fell in love with coding the moment I built my first interface and watched someone actually enjoy using it. That feeling never got old. Now I spend my days turning messy, complex problems into clean, intuitive experiences that just feel right. I believe great software should be invisible. If the user doesn't even think about it, you've done your job.",
+    "TEXT_2": "I'm always chasing the next challenge, always learning something new, and honestly? I'm just getting started. If you've got a vision, I'd love to help bring it to life.",
     "BUTTON": "Let's talk",
     "LOCATION": "Based in Saxony",
     "RELOCATE": "Open to relocate",
@@ -25,13 +25,13 @@
   "SKILLS": {
     "LABEL": "MY STACK",
     "TITLE": "Skill set",
-    "DESCRIPTION": "Technologies I've been working with recently and am focused on mastering. I continuously track best practises and technologies and incorporate your approvals for improving your business with new technology.",
+    "DESCRIPTION": "I've worked with these technologies in real projects and I keep pushing myself to go deeper every single day. I don't just want to use a tool. I want to understand it, master it, and build things with it that are fast, solid, and built to last.",
     "BADGE": "Also, I'm interested in diving into:"
   },
   "PROJECTS": {
     "LABEL": "MY CRAFT",
     "TITLE": "Projects",
-    "DESCRIPTION": "Encourage people to take a look and interact with your projects. Select projects that made you either proud, confident, happy or which you have learned a lot working with. Showcasing real projects and the solutions you've learnt are effective code.",
+    "DESCRIPTION": "Every project here taught me something new. I ran into real problems, made tough decisions, and shipped something I'm proud of. Go ahead, explore them live and dig into the code. This is where I turned what I learned into what I can do.",
     "PROJECT_DETAILS": "Project details",
     "JOIN": {
       "TITLE": "Join",

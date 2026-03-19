@@ -15,8 +15,8 @@
   "ABOUT": {
     "LABEL": "WER IST NAM?",
     "TITLE": "Über mich",
-    "TEXT_1": "Hallo, ich bin Nam! Mit einigen Informationen über dich selbst, wie zum Beispiel, was ist deine Inspirationsquelle für die Verbesserung deiner Programmierkenntnisse? Lernst du aus anderen Herausforderungen oder konzentrierst du dich auf Video-Tutorials?",
-    "TEXT_2": "Lass uns zusammenarbeiten und etwas Bemerkenswertes schaffen!",
+    "TEXT_1": "Hey, ich bin Nam! Ich habe mich in das Coden verliebt, als ich zum ersten Mal ein Interface gebaut habe und gesehen habe, wie jemand es mit Freude benutzt hat. Dieses Gefühl ist bis heute geblieben. Heute verwandle ich komplexe Probleme in saubere, intuitive Erlebnisse, die sich einfach richtig anfühlen. Ich glaube, großartige Software sollte unsichtbar sein. Wenn der Nutzer gar nicht darüber nachdenkt, hast du deinen Job gut gemacht.",
+    "TEXT_2": "Ich jage immer der nächsten Herausforderung hinterher, lerne ständig etwas Neues, und ehrlich gesagt? Ich fange gerade erst an. Wenn du eine Vision hast, würde ich sie gerne zum Leben erwecken.",
     "BUTTON": "Lass uns reden",
     "LOCATION": "Ansässig in Sachsen",
     "RELOCATE": "Bereit zum Umzug",
@@ -25,13 +25,13 @@
   "SKILLS": {
     "LABEL": "MEIN STACK",
     "TITLE": "Fähigkeiten",
-    "DESCRIPTION": "Technologien, mit denen ich kürzlich gearbeitet habe und auf deren Beherrschung ich mich konzentriere. Ich verfolge kontinuierlich Best Practices und Technologien und integriere Ihre Genehmigungen zur Verbesserung Ihres Geschäfts mit neuer Technologie.",
+    "DESCRIPTION": "Mit diesen Technologien habe ich an echten Projekten gearbeitet und ich motiviere mich jeden Tag, noch tiefer einzutauchen. Ich will ein Tool nicht einfach nur benutzen. Ich will es verstehen, es meistern und damit Sachen bauen, die schnell, solide und zukunftssicher sind.",
     "BADGE": "Au\u00DFerdem interessiere ich mich f\u00FCr:"
   },
   "PROJECTS": {
     "LABEL": "MEINE ARBEIT",
     "TITLE": "Projekte",
-    "DESCRIPTION": "Ermutigen Sie Menschen, sich Ihre Projekte anzusehen und mit ihnen zu interagieren. Wählen Sie Projekte aus, die Sie entweder stolz, selbstbewusst oder glücklich gemacht haben oder bei denen Sie viel gelernt haben. Die Präsentation echter Projekte und der Lösungen, die Sie gelernt haben, sind effektiver Code.",
+    "DESCRIPTION": "Jedes Projekt hier hat mir etwas Neues beigebracht. Ich bin auf echte Probleme gestoßen, habe schwierige Entscheidungen getroffen und am Ende etwas abgeliefert, auf das ich stolz bin. Schau sie dir live an und wirf einen Blick in den Code. Hier habe ich aus dem, was ich gelernt habe, das gemacht, was ich kann.",
     "JOIN": {
       "TITLE": "Join",
       "TECH": "Angular | TypeScript | HTML | CSS | Firebase",

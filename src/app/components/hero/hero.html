@@ -15,7 +15,7 @@
           </div>
           <div class="hero__letters-container hero__letters-container--top">
             <h1 class="hero__title hero__title--top">
-              @for (letter of frontendLetters; track $index) {
+              @for (letter of fullstackLetters; track $index) {
                 <span class="hero__letter" [attr.data-uppercase]="letter.isUpperCase" >
                   {{ letter.char }}
                 </span>

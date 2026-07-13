@@ -14,13 +14,13 @@ import { IMAGE_PATHS } from '../../shared/constants';
 /**
  * Full-viewport hero section (100vh including header).
  *
- * Displays the animated "Frontend DEVELOPER" title (split into individual
+ * Displays the animated "Fullstack DEVELOPER" title (split into individual
  * {@link Letter} objects for per-character styling), a polaroid photo,
  * social links, and a scroll-down CTA.
  */
 export class Hero {
-  /** Individual characters for the word "Frontend" with case metadata. */
-  protected readonly frontendLetters: Letter[] = this.splitIntoLetters('Frontend');
+  /** Individual characters for the word "Fullstack" with case metadata. */
+  protected readonly fullstackLetters: Letter[] = this.splitIntoLetters('Fullstack');
   /** Individual characters for the word "DEVELOPER" with case metadata. */
   protected readonly developerLetters: Letter[] = this.splitIntoLetters('DEVELOPER');
   protected readonly wavingHandPath = IMAGE_PATHS.HERO.WAVING_HAND;

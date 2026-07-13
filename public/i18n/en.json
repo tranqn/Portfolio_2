@@ -8,14 +8,14 @@
   "HERO": {
     "HELLO": "Hello World",
     "HELLO_HOVER": "I'M QUOC NAM TRAN",
-    "FRONTEND": "Frontend",
+    "FRONTEND": "Fullstack",
     "DEVELOPER": "DEVELOPER",
     "GET_IN_TOUCH": "Get in Touch"
   },
   "ABOUT": {
     "LABEL": "WHO'S NAM?",
     "TITLE": "About me",
-    "TEXT_1": "Hey, I'm Nam. I build frontends that turn messy, complex problems into clean, intuitive experiences people actually want to use. Coding clicked for me the first time I watched someone breeze through an interface I'd built, and chasing that moment is what drives me. I believe great software is invisible: when the user never has to stop and think, the problem is truly solved.",
+    "TEXT_1": "Hey, I'm Nam. I build complete web applications — from the Angular frontend through the Django REST API to the Docker deployment on my own server. Coding clicked for me the first time I watched someone breeze through an interface I'd built — these days I make sure everything behind it runs just as smoothly. I believe great software is invisible: when the user never has to stop and think, the problem is truly solved.",
     "TEXT_2": "I take ownership from the first problem to the shipped solution, and I set the bar a little higher every time. Give me a hard challenge and a clear vision, and I'll help turn it into something real.",
     "BUTTON": "Let's talk",
     "LOCATION": "Based in Saxony",
@@ -33,6 +33,30 @@
     "TITLE": "Projects",
     "DESCRIPTION": "Each of these started as a real problem to solve. I made the tough calls, shipped solutions I'm proud of, and leveled up with every one. Explore them live and dig into the code to see how.",
     "PROJECT_DETAILS": "Project details",
+    "VIDEOFLIX": {
+      "TITLE": "Videoflix",
+      "TECH": "Python | Django REST | Redis | FFmpeg | Docker",
+      "DESCRIPTION": "A Netflix-style video streaming platform. Register, sign in and watch videos as adaptive HLS streams (480p/720p/1080p) — uploaded videos are transcoded automatically in the background.",
+      "IMPLEMENTATION": "Complete Django REST backend: authentication with JWTs in HttpOnly cookies including email activation and password reset, video upload with FFmpeg transcoding into three resolutions via a Redis/RQ task queue, and delivery as HLS segments. Runs in production in Docker behind a reverse proxy on my own server — backend and deployment are entirely my own work.",
+      "DURATION": "3 weeks",
+      "ROLE": "Solo Project"
+    },
+    "CODERR": {
+      "TITLE": "Coderr",
+      "TECH": "Python | Django REST | Token Auth | Docker",
+      "DESCRIPTION": "A Fiverr-style service marketplace: business users create offers in three package tiers, customers order and review — with profiles, filters and order management.",
+      "IMPLEMENTATION": "A full DRF API built from six Django apps: token authentication, role-based permissions (business/customer), nested serializers, filtering, pagination and DB annotations for sorting. Orders snapshot the offer conditions at purchase time. Backed by 73 tests at 99% coverage. The frontend was provided as a course template — the entire API is my own work.",
+      "DURATION": "5 weeks",
+      "ROLE": "Solo Project"
+    },
+    "QUIZLY": {
+      "TITLE": "Quizly",
+      "TECH": "Python | Django REST | Whisper | Gemini | Docker",
+      "DESCRIPTION": "Turns any YouTube video into a multiple-choice quiz: submit a URL, and the AI pipeline transcribes the audio with Whisper and generates a ten-question quiz with Google Gemini.",
+      "IMPLEMENTATION": "Django REST backend with a complete AI pipeline: audio download, Whisper transcription and Gemini quiz generation. Authentication uses JWTs in HttpOnly cookies with refresh token rotation and blacklisting. The static frontend was provided as a course template — backend, AI integration and Docker deployment are my own work.",
+      "DURATION": "2 weeks",
+      "ROLE": "Solo Project"
+    },
     "JOIN": {
       "TITLE": "Join",
       "TECH": "Angular | TypeScript | HTML | CSS | Firebase",

@@ -8,14 +8,14 @@
   "HERO": {
     "HELLO": "Hallo World",
     "HELLO_HOVER": "ICH BIN QUOC NAM TRAN",
-    "FRONTEND": "Frontend",
+    "FRONTEND": "Fullstack",
     "DEVELOPER": "ENTWICKLER",
     "GET_IN_TOUCH": "Kontaktier mich"
   },
   "ABOUT": {
     "LABEL": "WER IST NAM?",
     "TITLE": "Über mich",
-    "TEXT_1": "Hey, ich bin Nam. Ich baue Frontends, die komplexe Probleme in saubere, intuitive Erlebnisse verwandeln, die Menschen wirklich gern nutzen. Beim Coden hat es für mich Klick gemacht, als ich zum ersten Mal sah, wie jemand mühelos durch ein von mir gebautes Interface kam, und genau dieser Moment treibt mich an. Ich glaube, großartige Software ist unsichtbar: Wenn der Nutzer nie ins Stocken gerät, ist das Problem wirklich gelöst.",
+    "TEXT_1": "Hey, ich bin Nam. Ich baue komplette Webanwendungen — vom Angular-Frontend über die Django-REST-API bis zum Docker-Deployment auf dem eigenen Server. Beim Coden hat es für mich Klick gemacht, als ich zum ersten Mal sah, wie jemand mühelos durch ein von mir gebautes Interface kam — heute sorge ich dafür, dass auch alles dahinter genauso reibungslos läuft. Ich glaube, großartige Software ist unsichtbar: Wenn der Nutzer nie ins Stocken gerät, ist das Problem wirklich gelöst.",
     "TEXT_2": "Ich übernehme Verantwortung vom ersten Problem bis zur ausgelieferten Lösung und lege die Messlatte jedes Mal ein Stück höher. Gib mir eine knifflige Herausforderung und eine klare Vision, und ich helfe, sie Wirklichkeit werden zu lassen.",
     "BUTTON": "Lass uns reden",
     "LOCATION": "Ansässig in Sachsen",
@@ -32,6 +32,30 @@
     "LABEL": "MEINE ARBEIT",
     "TITLE": "Projekte",
     "DESCRIPTION": "Jedes dieser Projekte begann als echtes Problem, das es zu lösen galt. Ich habe die schwierigen Entscheidungen getroffen, Lösungen abgeliefert, auf die ich stolz bin, und bin mit jedem Projekt gewachsen. Schau sie dir live an und wirf einen Blick in den Code, um zu sehen, wie.",
+    "VIDEOFLIX": {
+      "TITLE": "Videoflix",
+      "TECH": "Python | Django REST | Redis | FFmpeg | Docker",
+      "DESCRIPTION": "Video-Streaming-Plattform im Netflix-Stil. Registrieren, einloggen und Videos als adaptive HLS-Streams (480p/720p/1080p) ansehen — hochgeladene Videos werden im Hintergrund automatisch transkodiert.",
+      "IMPLEMENTATION": "Komplettes Django-REST-Backend: Authentifizierung mit JWT in HttpOnly-Cookies inklusive E-Mail-Aktivierung und Passwort-Reset, Video-Upload mit FFmpeg-Transcoding in drei Auflösungen über eine Redis/RQ-Task-Queue und Auslieferung als HLS-Segmente. Läuft produktiv in Docker hinter einem Reverse Proxy auf meinem eigenen Server — Backend und Deployment sind komplett Eigenentwicklung.",
+      "DURATION": "3 Wochen",
+      "ROLE": "Einzelprojekt"
+    },
+    "CODERR": {
+      "TITLE": "Coderr",
+      "TECH": "Python | Django REST | Token-Auth | Docker",
+      "DESCRIPTION": "Service-Marktplatz im Fiverr-Stil: Business-Nutzer erstellen Angebote in drei Paketstufen, Kunden bestellen und bewerten — mit Profilen, Filtern und Bestellverwaltung.",
+      "IMPLEMENTATION": "Vollständige DRF-API aus sechs Django-Apps: Token-Authentifizierung, rollenbasierte Permissions (Business/Customer), verschachtelte Serializer, Filter, Pagination und DB-Annotationen für die Sortierung. Bestellungen frieren die Angebotskonditionen per Snapshot ein. Abgesichert mit 73 Tests bei 99 % Coverage. Das Frontend war als Kursvorlage vorgegeben — die gesamte API ist Eigenentwicklung.",
+      "DURATION": "5 Wochen",
+      "ROLE": "Einzelprojekt"
+    },
+    "QUIZLY": {
+      "TITLE": "Quizly",
+      "TECH": "Python | Django REST | Whisper | Gemini | Docker",
+      "DESCRIPTION": "Verwandelt jedes YouTube-Video in ein Multiple-Choice-Quiz: URL einreichen, die KI-Pipeline transkribiert das Audio mit Whisper und generiert mit Google Gemini ein Quiz mit zehn Fragen.",
+      "IMPLEMENTATION": "Django-REST-Backend mit kompletter KI-Pipeline: Audio-Download, Whisper-Transkription und Gemini-Quiz-Generierung. Authentifizierung über JWT in HttpOnly-Cookies mit Refresh-Token-Rotation und Blacklisting. Das statische Frontend war als Kursvorlage vorgegeben — Backend, KI-Anbindung und Docker-Deployment sind Eigenentwicklung.",
+      "DURATION": "2 Wochen",
+      "ROLE": "Einzelprojekt"
+    },
     "JOIN": {
       "TITLE": "Join",
       "TECH": "Angular | TypeScript | HTML | CSS | Firebase",

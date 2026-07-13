@@ -19,8 +19,8 @@ import { IMAGE_PATHS } from '../../shared/constants';
  * social links, and a scroll-down CTA.
  */
 export class Hero {
-  /** Individual characters for the word "Fullstack" with case metadata. */
-  protected readonly fullstackLetters: Letter[] = this.splitIntoLetters('Fullstack');
+  /** Individual characters for the word "FULLSTACK" with case metadata. */
+  protected readonly fullstackLetters: Letter[] = this.splitIntoLetters('FULLSTACK');
   /** Individual characters for the word "DEVELOPER" with case metadata. */
   protected readonly developerLetters: Letter[] = this.splitIntoLetters('DEVELOPER');
   protected readonly wavingHandPath = IMAGE_PATHS.HERO.WAVING_HAND;

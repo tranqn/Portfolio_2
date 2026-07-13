@@ -324,11 +324,15 @@
 
 .contact__form-checkbox-error {
   width: 100%;
-  min-height: 20px;
+  // Reserve space for up to two lines of text (the German message wraps on
+  // narrow viewports) so the submit button below never shifts when the error
+  // toggles. 2 lines × ($font-size-sm × $line-height-relaxed) + vertical padding.
+  min-height: calc(2 * #{$font-size-sm} * #{$line-height-relaxed} + 2 * #{$spacing-xs});
   padding: $spacing-xs 0;
   color: $coral-orange;
   font-size: $font-size-sm;
   font-weight: $font-weight-medium;
+  line-height: $line-height-relaxed;
 }
 
 // ========================================

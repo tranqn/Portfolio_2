@@ -15,8 +15,8 @@
   "ABOUT": {
     "LABEL": "WER IST NAM?",
     "TITLE": "Über mich",
-    "TEXT_1": "Hey, ich bin Nam! Ich habe mich in das Coden verliebt, als ich zum ersten Mal ein Interface gebaut habe und gesehen habe, wie jemand es mit Freude benutzt hat. Dieses Gefühl ist bis heute geblieben. Heute verwandle ich komplexe Probleme in saubere, intuitive Erlebnisse, die sich einfach richtig anfühlen. Ich glaube, großartige Software sollte unsichtbar sein. Wenn der Nutzer gar nicht darüber nachdenkt, hast du deinen Job gut gemacht.",
-    "TEXT_2": "Ich jage immer der nächsten Herausforderung hinterher, lerne ständig etwas Neues, und ehrlich gesagt? Ich fange gerade erst an. Wenn du eine Vision hast, würde ich sie gerne zum Leben erwecken.",
+    "TEXT_1": "Hey, ich bin Nam. Ich baue Frontends, die komplexe Probleme in saubere, intuitive Erlebnisse verwandeln, die Menschen wirklich gern nutzen. Beim Coden hat es für mich Klick gemacht, als ich zum ersten Mal sah, wie jemand mühelos durch ein von mir gebautes Interface kam, und genau dieser Moment treibt mich an. Ich glaube, großartige Software ist unsichtbar: Wenn der Nutzer nie ins Stocken gerät, ist das Problem wirklich gelöst.",
+    "TEXT_2": "Ich übernehme Verantwortung vom ersten Problem bis zur ausgelieferten Lösung und lege die Messlatte jedes Mal ein Stück höher. Gib mir eine knifflige Herausforderung und eine klare Vision, und ich helfe, sie Wirklichkeit werden zu lassen.",
     "BUTTON": "Lass uns reden",
     "LOCATION": "Ansässig in Sachsen",
     "RELOCATE": "Bereit zum Umzug",
@@ -25,18 +25,18 @@
   "SKILLS": {
     "LABEL": "MEIN STACK",
     "TITLE": "Fähigkeiten",
-    "DESCRIPTION": "Mit diesen Technologien habe ich an echten Projekten gearbeitet und ich motiviere mich jeden Tag, noch tiefer einzutauchen. Ich will ein Tool nicht einfach nur benutzen. Ich will es verstehen, es meistern und damit Sachen bauen, die schnell, solide und zukunftssicher sind.",
+    "DESCRIPTION": "Diese Technologien habe ich in echten Projekten eingesetzt und treibe jede mit jedem Build weiter. Ich benutze ein Tool nicht einfach nur, ich verstehe, wie es im Inneren funktioniert, um Lösungen zu liefern, die schnell, zuverlässig und skalierbar sind.",
     "BADGE": "Au\u00DFerdem interessiere ich mich f\u00FCr:"
   },
   "PROJECTS": {
     "LABEL": "MEINE ARBEIT",
     "TITLE": "Projekte",
-    "DESCRIPTION": "Jedes Projekt hier hat mir etwas Neues beigebracht. Ich bin auf echte Probleme gestoßen, habe schwierige Entscheidungen getroffen und am Ende etwas abgeliefert, auf das ich stolz bin. Schau sie dir live an und wirf einen Blick in den Code. Hier habe ich aus dem, was ich gelernt habe, das gemacht, was ich kann.",
+    "DESCRIPTION": "Jedes dieser Projekte begann als echtes Problem, das es zu lösen galt. Ich habe die schwierigen Entscheidungen getroffen, Lösungen abgeliefert, auf die ich stolz bin, und bin mit jedem Projekt gewachsen. Schau sie dir live an und wirf einen Blick in den Code, um zu sehen, wie.",
     "JOIN": {
       "TITLE": "Join",
       "TECH": "Angular | TypeScript | HTML | CSS | Firebase",
       "DESCRIPTION": "Task-Manager inspiriert vom Kanban-System. Erstellen und organisieren Sie Aufgaben mithilfe von Drag-and-Drop-Funktionen, weisen Sie Benutzer und Kategorien zu.",
-      "IMPLEMENTATION": "Als einziger Entwickler war ich für das Frontend verantwortlich, habe Benutzerinteraktionen entworfen und implementiert und die Responsivität sichergestellt, um in jeder Phase des Entwicklungsprozesses unabhängig arbeiten zu können.",
+      "IMPLEMENTATION": "Als Frontend-Entwickler im Team habe ich die Benutzerinteraktionen entworfen und umgesetzt und die App durchgehend responsive gehalten. Das Frontend habe ich in jeder Phase eigenständig verantwortet.",
       "DURATION": "5 Wochen",
       "ROLE": "Teamprojekt"
     },
@@ -49,10 +49,10 @@
       "ROLE": "Einzelprojekt"
     },
     "POKEDEX": {
-      "TITLE": "Pokédex",
-      "TECH": "JavaScript | HTML | CSS",
-      "DESCRIPTION": "Eine Pokédex-Webanwendung zum Durchsuchen und Erkunden von Pokémon. Erstellt mit reinem JavaScript und der PokéAPI, um detaillierte Informationen zu jedem Pokémon anzuzeigen.",
-      "IMPLEMENTATION": "Komplett von Grund auf mit reinem JavaScript erstellt. PokéAPI integriert, um Pokémon-Daten dynamisch abzurufen und anzuzeigen, Such- und Filterfunktionen implementiert sowie ein responsives kartenbasiertes Layout erstellt.",
+      "TITLE": "Pokédex Holo TCG",
+      "TECH": "Next.js | TypeScript | Tailwind | Three.js",
+      "DESCRIPTION": "Ein neu aufgebauter Pokédex, der alle 1025 Pokémon der PokéAPI als holografische Sammelkarten zeigt. Im Detail öffnet sich eine zur Maus kippbare 3D-Karte im TCG-Stil. Komplett zweisprachig (DE/EN), inklusive übersetzter Namen, Typen und Fähigkeiten, mit Suche, Filtern, Entwicklungsketten und Vergleichsmodus.",
+      "IMPLEMENTATION": "Neuauflage eines früheren Vanilla-Projekts als moderne Next.js-App. Server-seitig wird die erste Seite vorab geladen, danach übernimmt der Client Suche, Typ-/Generations-/Favoriten-Filter und einen URL-gesteuerten Detail-Dialog. Die 3D-Karte entsteht mit Three.js / React Three Fiber (gezeichnete Canvas-Textur + holografischer Schimmer). Vollständige DE/EN-Lokalisierung über gebündelte Namens-/Fähigkeiten-Daten, dazu ein Sparmodus (Pixel-Sprites) für schwache Geräte und großes Laden. Als statischer Export ausgeliefert (kein Server nötig), inkl. PWA/Offline-Caching, Sitemap sowie Unit-Tests (Vitest) und E2E-Tests (Playwright).",
       "DURATION": "3 Wochen",
       "ROLE": "Einzelprojekt"
     },
@@ -63,7 +63,7 @@
   "CONTACT": {
     "LABEL": "KONTAKTIEREN SIE MICH",
     "TITLE": "Kontakt",
-    "DESCRIPTION": "Zögern Sie nicht, sich zu melden, um Projekte, Zusammenarbeit zu besprechen oder einfach nur Hallo zu sagen. Ich freue mich darauf, von Ihnen zu hören!",
+    "DESCRIPTION": "Haben Sie ein Problem, das es zu lösen lohnt, oder eine ambitionierte Idee, die gebaut werden will? Das höre ich gern. Melden Sie sich zu Projekten, Zusammenarbeit oder Ihrer nächsten Herausforderung, und lassen Sie es uns umsetzen.",
     "NAME_LABEL": "Wie heißen Sie?",
     "NAME_PLACEHOLDER": "Ihr Name",
     "EMAIL_LABEL": "Wie lautet Ihre E-Mail?",
@@ -79,13 +79,13 @@
     "ERROR_NAME_REQUIRED": "Hoppla! Ihr Name fehlt noch",
     "ERROR_EMAIL_REQUIRED": "Hoppla! Ihre E-Mail wird benötigt",
     "ERROR_EMAIL_INVALID": "Hoppla! Ihre E-Mail-Adresse ist ungültig",
-    "ERROR_MESSAGE_REQUIRED": "Was möchten Sie entwickeln?",
+    "ERROR_MESSAGE_REQUIRED": "Hoppla! Ihre Nachricht fehlt noch",
     "ERROR_MESSAGE_MINLENGTH": "Bitte geben Sie mindestens 4 Zeichen ein",
     "ERROR_PRIVACY_REQUIRED": "Bitte akzeptieren Sie die Datenschutzerklärung"
   },
   "COLLEAGUES": {
     "LABEL": "in ihren Worten:",
-    "TITLE": "Kollegenmeinungen",
+    "TITLE": "Was Kollegen sagen",
     "PROFILE": "Profil",
     "CHRISTIAN": {
       "POSITION": "Frontend Developer",

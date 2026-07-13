@@ -15,29 +15,29 @@
   "ABOUT": {
     "LABEL": "WHO'S NAM?",
     "TITLE": "About me",
-    "TEXT_1": "Hey there, I'm Nam! I fell in love with coding the moment I built my first interface and watched someone actually enjoy using it. That feeling never got old. Now I spend my days turning messy, complex problems into clean, intuitive experiences that just feel right. I believe great software should be invisible. If the user doesn't even think about it, you've done your job.",
-    "TEXT_2": "I'm always chasing the next challenge, always learning something new, and honestly? I'm just getting started. If you've got a vision, I'd love to help bring it to life.",
+    "TEXT_1": "Hey, I'm Nam. I build frontends that turn messy, complex problems into clean, intuitive experiences people actually want to use. Coding clicked for me the first time I watched someone breeze through an interface I'd built, and chasing that moment is what drives me. I believe great software is invisible: when the user never has to stop and think, the problem is truly solved.",
+    "TEXT_2": "I take ownership from the first problem to the shipped solution, and I set the bar a little higher every time. Give me a hard challenge and a clear vision, and I'll help turn it into something real.",
     "BUTTON": "Let's talk",
     "LOCATION": "Based in Saxony",
     "RELOCATE": "Open to relocate",
-    "REMOTE": "Open to work remote"
+    "REMOTE": "Open to remote work"
   },
   "SKILLS": {
     "LABEL": "MY STACK",
     "TITLE": "Skill set",
-    "DESCRIPTION": "I've worked with these technologies in real projects and I keep pushing myself to go deeper every single day. I don't just want to use a tool. I want to understand it, master it, and build things with it that are fast, solid, and built to last.",
+    "DESCRIPTION": "I've put these technologies to work on real projects, and I push each one further with every build. I don't just use a tool, I learn how it works under the hood so I can ship solutions that are fast, reliable, and built to scale.",
     "BADGE": "Also, I'm interested in diving into:"
   },
   "PROJECTS": {
     "LABEL": "MY CRAFT",
     "TITLE": "Projects",
-    "DESCRIPTION": "Every project here taught me something new. I ran into real problems, made tough decisions, and shipped something I'm proud of. Go ahead, explore them live and dig into the code. This is where I turned what I learned into what I can do.",
+    "DESCRIPTION": "Each of these started as a real problem to solve. I made the tough calls, shipped solutions I'm proud of, and leveled up with every one. Explore them live and dig into the code to see how.",
     "PROJECT_DETAILS": "Project details",
     "JOIN": {
       "TITLE": "Join",
       "TECH": "Angular | TypeScript | HTML | CSS | Firebase",
       "DESCRIPTION": "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.",
-      "IMPLEMENTATION": "As the sole developer, I was responsible for the Frontend, designing and implementing user interactions, and ensuring responsiveness to work independently at every stage of the development process.",
+      "IMPLEMENTATION": "As the team's frontend developer, I designed and built the user interactions and kept the app fully responsive, owning the frontend independently at every stage.",
       "DURATION": "5 weeks",
       "ROLE": "Team Project"
     },
@@ -50,10 +50,10 @@
       "ROLE": "Solo Project"
     },
     "POKEDEX": {
-      "TITLE": "Pokédex",
-      "TECH": "JavaScript | HTML | CSS",
-      "DESCRIPTION": "A Pokédex web application that lets you browse and search through Pokémon. Built with vanilla JavaScript and the PokéAPI to display detailed information about each Pokémon.",
-      "IMPLEMENTATION": "Built entirely from scratch using vanilla JavaScript. Integrated the PokéAPI to fetch and display Pokémon data dynamically, implemented search and filter functionality, and created a responsive card-based layout.",
+      "TITLE": "Pokédex Holo TCG",
+      "TECH": "Next.js | TypeScript | Tailwind | Three.js",
+      "DESCRIPTION": "A from-scratch rebuild of a Pokédex that shows all 1025 Pokémon from the PokéAPI as holographic trading cards. Opening one reveals a mouse-tilting 3D card in TCG style. It's fully bilingual (EN/DE), with translated names, types and abilities, plus search, filters, evolution chains and a compare mode.",
+      "IMPLEMENTATION": "A remake of an earlier vanilla project as a modern Next.js app. The first page is server-rendered, then the client takes over search, type/generation/favorite filters and a URL-driven detail dialog. The 3D card is built with Three.js / React Three Fiber (a drawn canvas texture plus a holographic sheen). Full EN/DE localization via bundled name/ability data, plus a low-graphics mode (pixel sprites) for weaker devices and bulk loading. Shipped as a static export (no server required), with PWA/offline caching, a sitemap, and unit (Vitest) + end-to-end (Playwright) tests.",
       "DURATION": "3 weeks",
       "ROLE": "Solo Project"
     },
@@ -63,7 +63,7 @@
   "CONTACT": {
     "LABEL": "GET IN TOUCH",
     "TITLE": "Contact",
-    "DESCRIPTION": "Feel free to reach out to discuss projects, collaborations, or just to say hello. I look forward to hearing from you!",
+    "DESCRIPTION": "Got a problem worth solving or an ambitious idea to build? I'd love to hear it. Reach out about projects, collaborations, or your next challenge, and let's make it happen.",
     "NAME_LABEL": "What's your name?",
     "NAME_PLACEHOLDER": "Your name goes here",
     "EMAIL_LABEL": "What's your email?",
@@ -76,16 +76,16 @@
     "SUBMIT": "Send",
     "SUCCESS_MESSAGE": "Your message has been sent successfully!",
     "ERROR_SUBMIT": "An error occurred while sending. Please try again.",
-    "ERROR_NAME_REQUIRED": "Oops! it seems your name is missing",
-    "ERROR_EMAIL_REQUIRED": "Hoppla! your email is required",
-    "ERROR_EMAIL_INVALID": "Hoppla! your email address is not valid",
-    "ERROR_MESSAGE_REQUIRED": "What do you need to develop?",
+    "ERROR_NAME_REQUIRED": "Oops! It looks like your name is missing",
+    "ERROR_EMAIL_REQUIRED": "Oops! Your email is required",
+    "ERROR_EMAIL_INVALID": "Oops! That email address doesn't look valid",
+    "ERROR_MESSAGE_REQUIRED": "Oops! Your message is empty",
     "ERROR_MESSAGE_MINLENGTH": "Please enter at least 4 characters",
     "ERROR_PRIVACY_REQUIRED": "Please accept the privacy policy"
   },
   "COLLEAGUES": {
     "LABEL": "in Their Words:",
-    "TITLE": "Colleague Thoughts",
+    "TITLE": "What Colleagues Say",
     "PROFILE": "Profile",
     "CHRISTIAN": {
       "POSITION": "Frontend Developer",

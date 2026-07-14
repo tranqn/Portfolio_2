@@ -36,7 +36,7 @@
     "VIDEOFLIX": {
       "TITLE": "Videoflix",
       "TECH": "Python | Django REST | Redis | FFmpeg | Docker",
-      "DESCRIPTION": "A Netflix-style video streaming platform. Register, sign in and watch videos as adaptive HLS streams (480p/720p/1080p). Uploaded videos are transcoded automatically in the background.",
+      "DESCRIPTION": "A Netflix-style video streaming platform. Register, sign in and watch videos as HLS streams in three quality levels (480p/720p/1080p). Uploaded videos are transcoded automatically in the background.",
       "IMPLEMENTATION": "Complete Django REST backend: authentication with JWTs in HttpOnly cookies including email activation and password reset, video upload with FFmpeg transcoding into three resolutions via a Redis/RQ task queue, and delivery as HLS segments. Runs in production in Docker behind a reverse proxy on my own server. Backend and deployment are entirely my own work.",
       "DURATION": "3 weeks",
       "ROLE": "Solo Project"
@@ -45,7 +45,7 @@
       "TITLE": "Coderr",
       "TECH": "Python | Django REST | Token Auth | Docker",
       "DESCRIPTION": "A Fiverr-style service marketplace: business users create offers in three package tiers, customers order and review, with profiles, filters and order management.",
-      "IMPLEMENTATION": "A full DRF API built from six Django apps: token authentication, role-based permissions (business/customer), nested serializers, filtering, pagination and DB annotations for sorting. Orders snapshot the offer conditions at purchase time. Backed by 73 tests at 99% coverage. The frontend was provided as a course template. The entire API is my own work.",
+      "IMPLEMENTATION": "A full DRF API built from six Django apps: token authentication, role-based permissions (business/customer), nested serializers, filtering, pagination and DB annotations for sorting. Orders snapshot the offer conditions at purchase time. Backed by 88 tests at 98% coverage. The frontend was provided as a course template. The entire API is my own work.",
       "DURATION": "5 weeks",
       "ROLE": "Solo Project"
     },

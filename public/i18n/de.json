@@ -35,7 +35,7 @@
     "VIDEOFLIX": {
       "TITLE": "Videoflix",
       "TECH": "Python | Django REST | Redis | FFmpeg | Docker",
-      "DESCRIPTION": "Video-Streaming-Plattform im Netflix-Stil. Registrieren, einloggen und Videos als adaptive HLS-Streams (480p/720p/1080p) ansehen. Hochgeladene Videos werden im Hintergrund automatisch transkodiert.",
+      "DESCRIPTION": "Video-Streaming-Plattform im Netflix-Stil. Registrieren, einloggen und Videos als HLS-Streams in drei Qualitätsstufen (480p/720p/1080p) ansehen. Hochgeladene Videos werden im Hintergrund automatisch transkodiert.",
       "IMPLEMENTATION": "Komplettes Django-REST-Backend: Authentifizierung mit JWT in HttpOnly-Cookies inklusive E-Mail-Aktivierung und Passwort-Reset, Video-Upload mit FFmpeg-Transcoding in drei Auflösungen über eine Redis/RQ-Task-Queue und Auslieferung als HLS-Segmente. Läuft produktiv in Docker hinter einem Reverse Proxy auf meinem eigenen Server. Backend und Deployment sind komplett Eigenentwicklung.",
       "DURATION": "3 Wochen",
       "ROLE": "Einzelprojekt"
@@ -44,7 +44,7 @@
       "TITLE": "Coderr",
       "TECH": "Python | Django REST | Token-Auth | Docker",
       "DESCRIPTION": "Service-Marktplatz im Fiverr-Stil: Business-Nutzer erstellen Angebote in drei Paketstufen, Kunden bestellen und bewerten, mit Profilen, Filtern und Bestellverwaltung.",
-      "IMPLEMENTATION": "Vollständige DRF-API aus sechs Django-Apps: Token-Authentifizierung, rollenbasierte Permissions (Business/Customer), verschachtelte Serializer, Filter, Pagination und DB-Annotationen für die Sortierung. Bestellungen frieren die Angebotskonditionen per Snapshot ein. Abgesichert mit 73 Tests bei 99 % Coverage. Das Frontend war als Kursvorlage vorgegeben, die gesamte API ist Eigenentwicklung.",
+      "IMPLEMENTATION": "Vollständige DRF-API aus sechs Django-Apps: Token-Authentifizierung, rollenbasierte Permissions (Business/Customer), verschachtelte Serializer, Filter, Pagination und DB-Annotationen für die Sortierung. Bestellungen frieren die Angebotskonditionen per Snapshot ein. Abgesichert mit 88 Tests bei 98 % Coverage. Das Frontend war als Kursvorlage vorgegeben, die gesamte API ist Eigenentwicklung.",
       "DURATION": "5 Wochen",
       "ROLE": "Einzelprojekt"
     },

@@ -54,8 +54,12 @@ export const IMAGE_PATHS = {
     POSTGRESQL: 'img/skills/postgresql.svg',
     DOCKER: 'img/skills/docker.svg',
     REDIS: 'img/skills/redis.svg',
+    NODEJS: 'img/skills/nodejs.svg',
+    VUE: 'img/skills/vue.svg',
   },
   PROJECTS: {
+    PRAXIS_UI_LAB: 'img/projects/praxis_ui_lab.gif',
+    STADTPULS: 'img/projects/stadtpuls.gif',
     BOOKSTORE: 'img/projects/bookstore.gif',
     JOIN: 'img/projects/join.gif',
     POLLO_LOCO: 'img/projects/pollo_loco.gif',

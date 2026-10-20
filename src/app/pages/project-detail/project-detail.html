@@ -67,6 +67,11 @@
                 [translateKey]="'PROJECTS.GITHUB'"
                 [href]="proj.githubUrl" />
             }
+            @if (proj.gitlabUrl) {
+              <app-cta-button
+                [translateKey]="'PROJECTS.GITLAB'"
+                [href]="proj.gitlabUrl" />
+            }
             @if (proj.liveUrl) {
               <app-cta-button
                 [translateKey]="'PROJECTS.LIVE_TEST'"

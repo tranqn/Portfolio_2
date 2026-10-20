@@ -34,6 +34,22 @@
     "TITLE": "Projects",
     "DESCRIPTION": "Each of these started as a real problem to solve. I made the tough calls, shipped solutions I'm proud of, and leveled up with every one. Explore them live and dig into the code to see how.",
     "PROJECT_DETAILS": "Project details",
+    "PRAXIS_UI_LAB": {
+      "TITLE": "Praxis UI Lab",
+      "TECH": "Angular 22 | Signals | TypeScript | MSW | Playwright",
+      "DESCRIPTION": "A day list for a medical practice: appointments move by click or keyboard from \"planned\" to \"completed\", and waiting times and warnings are visible at a glance. An independent case study with synthetic patient data.",
+      "IMPLEMENTATION": "Angular 22 without Zone.js, built with standalone components, signals and strict TypeScript. The domain logic lives in its own framework-free layer: a state machine for appointments, derived waiting times with thresholds and a Europe/Berlin time facade. Six signal stores hold the state. Every API call follows an OpenAPI contract and is answered by Mock Service Worker from fixed test data. The UI reports conflicting edits (409) and stale data (412) separately. The day list works fully by keyboard and command palette, statuses show as icon, text and colour, and there are three density modes. Unit tests run in GitLab CI, and Playwright checks the flows and accessibility with axe.",
+      "DURATION": "4 weeks",
+      "ROLE": "Solo Project"
+    },
+    "STADTPULS": {
+      "TITLE": "StadtPuls",
+      "TECH": "Node.js | Moleculer | Vue 3 | PostgreSQL | InfluxDB | Keycloak",
+      "DESCRIPTION": "An IoT platform for municipal utilities: LoRaWAN readings from water meters and sensors arrive validated in a dashboard with a site tree, a map and consumption charts. Each tenant sees only its own assets.",
+      "IMPLEMENTATION": "Node.js services built with Moleculer and connected over RabbitMQ. Incoming uplinks are validated, deduplicated and decoded in a sandboxed driver runtime. Measurement time and ingest time stay separate, so no misleading time series appear. Master data lives in PostgreSQL, measurements in InfluxDB 2. The REST API is generated as OpenAPI from the route table and uses keyset pagination. Keycloak issues OIDC tokens, and permissions plus scopes keep tenants apart. The Vue 3 dashboard is bilingual and signs in with PKCE. 253 automated tests, 9 browser tests against the production bundle and a 15-job GitLab pipeline back it up.",
+      "DURATION": "Ongoing project",
+      "ROLE": "Solo Project"
+    },
     "VIDEOFLIX": {
       "TITLE": "Videoflix",
       "TECH": "Python | Django REST | Redis | FFmpeg | Docker",
@@ -91,7 +107,8 @@
       "ROLE": "Solo Project"
     },
     "LIVE_TEST": "Live test",
-    "GITHUB": "Github"
+    "GITHUB": "Github",
+    "GITLAB": "GitLab"
   },
   "CONTACT": {
     "LABEL": "GET IN TOUCH",

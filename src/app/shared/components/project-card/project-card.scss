@@ -218,6 +218,89 @@ $quizly-green: #3ddc97;
   border-radius: 0;
 }
 
+// ---- 7. Praxis UI Lab — app window chrome bar (Praxis UI Lab's own primary blue) ----
+$praxis-blue: #0066cc;
+
+#project-praxis-ui-lab .project-card__image-clip {
+  flex-direction: column;
+  border: 2px solid $praxis-blue;
+}
+
+#project-praxis-ui-lab .project-card__chrome-bar {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 6px;
+  height: 26px;
+  padding: 0 12px;
+  background: $praxis-blue;
+
+  span {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba($outline-white, 0.85);
+  }
+}
+
+#project-praxis-ui-lab .project-card__image-inner {
+  flex: 1;
+  min-height: 0;
+}
+
+#project-praxis-ui-lab .project-card__image {
+  border-radius: 0;
+}
+
+// ---- 8. StadtPuls — viewfinder corner brackets (StadtPuls' own primary blue) ----
+$stadtpuls-blue: #0f5c8c;
+
+#project-stadtpuls .project-card__bracket {
+  display: block;
+  position: absolute;
+  width: 34px;
+  height: 34px;
+  z-index: 3;
+  border: 0 solid $stadtpuls-blue;
+  pointer-events: none;
+  transition: transform $transition-base;
+
+  &--tl {
+    top: -10px;
+    left: -10px;
+    border-top-width: 4px;
+    border-left-width: 4px;
+  }
+
+  &--tr {
+    top: -10px;
+    right: -10px;
+    border-top-width: 4px;
+    border-right-width: 4px;
+  }
+
+  &--bl {
+    bottom: -10px;
+    left: -10px;
+    border-bottom-width: 4px;
+    border-left-width: 4px;
+  }
+
+  &--br {
+    bottom: -10px;
+    right: -10px;
+    border-bottom-width: 4px;
+    border-right-width: 4px;
+  }
+}
+
+#project-stadtpuls .project-card__image-wrapper:hover {
+  .project-card__bracket--tl { transform: translate(4px, 4px); }
+  .project-card__bracket--tr { transform: translate(-4px, 4px); }
+  .project-card__bracket--bl { transform: translate(4px, -4px); }
+  .project-card__bracket--br { transform: translate(-4px, -4px); }
+}
+
 #project-join .project-card__image-float {
   animation: floatUpDown 3s ease-in-out infinite;
 }

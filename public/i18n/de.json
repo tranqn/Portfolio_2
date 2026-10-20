@@ -33,6 +33,22 @@
     "LABEL": "MEINE ARBEIT",
     "TITLE": "Projekte",
     "DESCRIPTION": "Jedes dieser Projekte begann als echtes Problem, das es zu lösen galt. Ich habe die schwierigen Entscheidungen getroffen, Lösungen abgeliefert, auf die ich stolz bin, und bin mit jedem Projekt gewachsen. Schau sie dir live an und wirf einen Blick in den Code, um zu sehen, wie.",
+    "PRAXIS_UI_LAB": {
+      "TITLE": "Praxis UI Lab",
+      "TECH": "Angular 22 | Signals | TypeScript | MSW | Playwright",
+      "DESCRIPTION": "Tagesliste für den Praxisalltag: Termine wandern per Klick oder Tastatur von „Geplant“ bis „Abgeschlossen“, Wartezeiten und Warnhinweise sind sofort sichtbar. Eine unabhängige Fallstudie mit synthetischen Patientendaten.",
+      "IMPLEMENTATION": "Angular 22 ohne Zone.js, mit Standalone-Komponenten, Signals und strikt typisiertem TypeScript. Die Fachlogik liegt framework-frei in einer eigenen Domänenschicht: ein Statusautomat für Termine, berechnete Wartezeiten mit Schwellenwerten und eine Zeitlogik für Europe/Berlin. Sechs Signal-Stores halten den Zustand. Alle API-Aufrufe folgen einem OpenAPI-Vertrag und werden von Mock Service Worker mit festen Testdaten beantwortet. Konflikte durch parallele Änderungen (409) und veraltete Stände (412) meldet die Oberfläche getrennt. Die Tagesliste ist komplett per Tastatur und Befehlspalette bedienbar, Status erscheinen als Icon, Text und Farbe, dazu kommen drei Dichtestufen. Unit-Tests laufen in der GitLab-CI, Playwright prüft Abläufe und Barrierefreiheit mit axe.",
+      "DURATION": "4 Wochen",
+      "ROLE": "Einzelprojekt"
+    },
+    "STADTPULS": {
+      "TITLE": "StadtPuls",
+      "TECH": "Node.js | Moleculer | Vue 3 | PostgreSQL | InfluxDB | Keycloak",
+      "DESCRIPTION": "IoT-Plattform für Stadtwerke: LoRaWAN-Messwerte von Wasserzählern und Sensoren landen geprüft in einem Dashboard mit Standortbaum, Karte und Verbrauchskurven. Jeder Mandant sieht nur seine eigenen Anlagen.",
+      "IMPLEMENTATION": "Node.js-Services mit Moleculer, verbunden über RabbitMQ. Eingehende Uplinks werden validiert, dedupliziert und in einer abgeschotteten Treiber-Laufzeit dekodiert. Messzeit und Eingangszeit bleiben getrennt, damit keine falschen Zeitreihen entstehen. Stammdaten liegen in PostgreSQL, Messwerte in InfluxDB 2. Die REST-API wird als OpenAPI aus der Routentabelle generiert und nutzt Keyset-Pagination. Keycloak stellt OIDC-Tokens aus, Berechtigungen und Scopes trennen die Mandanten. Das Vue-3-Dashboard ist zweisprachig und meldet sich per PKCE an. 253 automatisierte Tests, 9 Browser-Tests gegen das Produktions-Bundle und eine GitLab-Pipeline mit 15 Jobs sichern das ab.",
+      "DURATION": "Laufendes Projekt",
+      "ROLE": "Einzelprojekt"
+    },
     "VIDEOFLIX": {
       "TITLE": "Videoflix",
       "TECH": "Python | Django REST | Redis | FFmpeg | Docker",
@@ -91,6 +107,7 @@
     },
     "LIVE_TEST": "Live-Test",
     "GITHUB": "Github",
+    "GITLAB": "GitLab",
     "PROJECT_DETAILS": "Projektdetails"
   },
   "CONTACT": {

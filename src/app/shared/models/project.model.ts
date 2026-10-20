@@ -22,6 +22,8 @@ export interface Project {
   featured?: boolean;
   /** GitHub repository URL. */
   githubUrl?: string;
+  /** GitLab repository URL. */
+  gitlabUrl?: string;
   /** Live demo URL. */
   liveUrl?: string;
   /** `id` of the next project for circular navigation on the detail page. */

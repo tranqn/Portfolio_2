@@ -14,6 +14,44 @@ import { IMAGE_PATHS } from '../constants';
 export class ProjectDataService {
   private readonly projects = signal<Project[]>([
     {
+      id: 'praxis-ui-lab',
+      title: 'PROJECTS.PRAXIS_UI_LAB.TITLE',
+      description: 'PROJECTS.PRAXIS_UI_LAB.DESCRIPTION',
+      implementationDetails: 'PROJECTS.PRAXIS_UI_LAB.IMPLEMENTATION',
+      techStack: [
+        { name: 'Angular', icon: IMAGE_PATHS.SKILLS.ANGULAR },
+        { name: 'TypeScript', icon: IMAGE_PATHS.SKILLS.TYPESCRIPT },
+        { name: 'CSS', icon: IMAGE_PATHS.SKILLS.CSS },
+        { name: 'REST-API', icon: IMAGE_PATHS.SKILLS.REST_API },
+      ],
+      image: IMAGE_PATHS.PROJECTS.PRAXIS_UI_LAB,
+      featured: false,
+      duration: 'PROJECTS.PRAXIS_UI_LAB.DURATION',
+      role: 'PROJECTS.PRAXIS_UI_LAB.ROLE',
+      liveUrl: 'https://praxis-ui-lab.quocnamtran.com',
+      nextProjectId: 'stadtpuls',
+    },
+    {
+      id: 'stadtpuls',
+      title: 'PROJECTS.STADTPULS.TITLE',
+      description: 'PROJECTS.STADTPULS.DESCRIPTION',
+      implementationDetails: 'PROJECTS.STADTPULS.IMPLEMENTATION',
+      techStack: [
+        { name: 'Node.js', icon: IMAGE_PATHS.SKILLS.NODEJS },
+        { name: 'TypeScript', icon: IMAGE_PATHS.SKILLS.TYPESCRIPT },
+        { name: 'Vue', icon: IMAGE_PATHS.SKILLS.VUE },
+        { name: 'PostgreSQL', icon: IMAGE_PATHS.SKILLS.POSTGRESQL },
+        { name: 'Docker', icon: IMAGE_PATHS.SKILLS.DOCKER },
+      ],
+      image: IMAGE_PATHS.PROJECTS.STADTPULS,
+      featured: false,
+      duration: 'PROJECTS.STADTPULS.DURATION',
+      role: 'PROJECTS.STADTPULS.ROLE',
+      gitlabUrl: 'https://gitlab.com/nam.qt/stadtpuls',
+      liveUrl: 'https://stadtpuls.quocnamtran.com',
+      nextProjectId: 'videoflix',
+    },
+    {
       id: 'videoflix',
       title: 'PROJECTS.VIDEOFLIX.TITLE',
       description: 'PROJECTS.VIDEOFLIX.DESCRIPTION',
@@ -144,7 +182,7 @@ export class ProjectDataService {
       role: 'PROJECTS.POKEDEX.ROLE',
       githubUrl: 'https://github.com/tranqn/pokedex-holo-tcg',
       liveUrl: 'https://pokedex.quocnamtran.com',
-      nextProjectId: 'videoflix',
+      nextProjectId: 'praxis-ui-lab',
     },
   ]);
 

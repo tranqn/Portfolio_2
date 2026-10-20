@@ -10,14 +10,15 @@
     "HELLO_HOVER": "ICH BIN QUOC NAM TRAN",
     "FRONTEND": "FULLSTACK",
     "DEVELOPER": "ENTWICKLER",
-    "GET_IN_TOUCH": "Kontaktier mich"
+    "GET_IN_TOUCH": "Kontakt aufnehmen"
   },
   "ABOUT": {
     "LABEL": "WER IST NAM?",
     "TITLE": "Über mich",
-    "TEXT_1": "Hey, ich bin Nam. Ich baue komplette Webanwendungen: vom Angular-Frontend über die Django-REST-API bis zum Docker-Deployment auf dem eigenen Server. Beim Coden hat es für mich Klick gemacht, als ich zum ersten Mal sah, wie jemand mühelos durch ein von mir gebautes Interface kam. Heute sorge ich dafür, dass auch alles dahinter genauso reibungslos läuft. Ich glaube, großartige Software ist unsichtbar: Wenn der Nutzer nie ins Stocken gerät, ist das Problem wirklich gelöst.",
-    "TEXT_2": "Ich übernehme Verantwortung vom ersten Problem bis zur ausgelieferten Lösung und lege die Messlatte jedes Mal ein Stück höher. Gib mir eine knifflige Herausforderung und eine klare Vision, und ich helfe, sie Wirklichkeit werden zu lassen.",
-    "BUTTON": "Lass uns reden",
+    "TEXT_1": "Ich bin Nam, Fullstack Developer. Ich entwickle vollständige Webanwendungen mit modernen Frontends, sicheren REST-APIs und stabilen Deployments. Zuletzt habe ich eine praxisorientierte Fullstack-Weiterbildung bei der Developer Akademie abgeschlossen. In dieser Zeit entstanden Join, Coderr, Videoflix und Quizly als Einzel- und Teamprojekte.",
+    "TEXT_2": "Bevor ich Code schreibe, möchte ich das Problem verstehen. Deshalb beginne ich mit einer klaren Spezifikation, entwickle früh einen funktionierenden Prototyp und prüfe die wichtigsten Annahmen. Claude Code nutze ich täglich für Analyse, Umsetzung und Tests. Parallel vertiefe ich meinen Einsatz von Codex. Die technischen Entscheidungen und die abschließende Qualitätsprüfung verantworte ich selbst.",
+    "TEXT_3": "Darüber hinaus unterstütze ich andere beim Einstieg in moderne KI-Tools. Dabei vermittle ich passende Einsatzbereiche, sichere Arbeitsweisen und klare Verfahren zur Prüfung der Ergebnisse.",
+    "BUTTON": "Kontakt aufnehmen",
     "LOCATION": "Ansässig in Sachsen",
     "RELOCATE": "Bereit zum Umzug",
     "REMOTE": "Offen für Remote-Arbeit"
@@ -25,7 +26,7 @@
   "SKILLS": {
     "LABEL": "MEIN STACK",
     "TITLE": "Fähigkeiten",
-    "DESCRIPTION": "Diese Technologien habe ich in echten Projekten eingesetzt und treibe jede mit jedem Build weiter. Ich benutze ein Tool nicht einfach nur, ich verstehe, wie es im Inneren funktioniert, um Lösungen zu liefern, die schnell, zuverlässig und skalierbar sind.",
+    "DESCRIPTION": "Jede dieser Technologien steckt in einem Projekt, das ich gebaut, getestet und ausgeliefert habe. Wo es nötig war, habe ich mich tiefer eingearbeitet, etwa in FFmpeg-Transcoding, Refresh-Token-Rotation und die Optimierung von Datenbankabfragen.",
     "BADGE": "Au\u00DFerdem interessiere ich mich f\u00FCr:"
   },
   "PROJECTS": {
@@ -40,11 +41,19 @@
       "DURATION": "3 Wochen",
       "ROLE": "Einzelprojekt"
     },
+    "BOOKSTORE": {
+      "TITLE": "Bookstore",
+      "TECH": "Angular 21 | SSR | TypeScript | Three.js | Docker",
+      "DESCRIPTION": "Zweisprachiger Buchshop mit serverseitigem Rendering. Besucher stöbern durch einen kuratierten Katalog, wandern über eine Cover-Wand aus Three.js und lassen sich Bücher nach Stimmung empfehlen, etwa „etwas Verträumtes für einen Regentag“.",
+      "IMPLEMENTATION": "Angular 21 mit SSR und Hydration, signalbasierten Stores und durchgehend typisiertem Code. Die Buchempfehlung läuft dreistufig: zuerst über eine KI-Schnittstelle, bei fehlendem Zugang über ein lokal auf dem Server laufendes Embedding-Modell, zuletzt über eine Stichwortsuche. Dadurch bekommt jede Anfrage eine Antwort, auch wenn der externe Dienst nicht erreichbar ist. Der API-Schlüssel bleibt im Backend, der Browser sieht ihn nie. Barrierefreiheit prüfe ich automatisiert mit axe nach WCAG AA, dazu laufen Unit- und End-to-End-Tests sowie Lighthouse-Budgets in der CI. Ausgeliefert wird in Docker hinter einem Caddy-Reverse-Proxy.",
+      "DURATION": "Laufendes Projekt",
+      "ROLE": "Einzelprojekt"
+    },
     "CODERR": {
       "TITLE": "Coderr",
-      "TECH": "Python | Django REST | Token-Auth | Docker",
-      "DESCRIPTION": "Service-Marktplatz im Fiverr-Stil: Business-Nutzer erstellen Angebote in drei Paketstufen, Kunden bestellen und bewerten, mit Profilen, Filtern und Bestellverwaltung.",
-      "IMPLEMENTATION": "Vollständige DRF-API aus sechs Django-Apps: Token-Authentifizierung, rollenbasierte Permissions (Business/Customer), verschachtelte Serializer, Filter, Pagination und DB-Annotationen für die Sortierung. Bestellungen frieren die Angebotskonditionen per Snapshot ein. Abgesichert mit 88 Tests bei 98 % Coverage. Das Frontend war als Kursvorlage vorgegeben, die gesamte API ist Eigenentwicklung.",
+      "TECH": "Python | Django REST | PostgreSQL | Docker",
+      "DESCRIPTION": "Coderr ist ein Service-Marktplatz, auf dem Unternehmen Angebote erstellen und Kunden Leistungen bestellen und bewerten können.",
+      "IMPLEMENTATION": "Ich entwickelte die vollständige Django-REST-API. Dazu gehören rollenbasierte Berechtigungen, verschachtelte Serializer, Filter, Pagination und Datenbankannotationen. Bestellungen speichern die vereinbarten Angebotsbedingungen als unveränderlichen Snapshot. 88 automatisierte Tests sichern die zentralen API-Abläufe ab. Die produktive Anwendung nutzt PostgreSQL, Docker, Gunicorn und Caddy. Das Frontend wurde als Kursvorlage bereitgestellt.",
       "DURATION": "5 Wochen",
       "ROLE": "Einzelprojekt"
     },
@@ -87,7 +96,7 @@
   "CONTACT": {
     "LABEL": "KONTAKTIEREN SIE MICH",
     "TITLE": "Kontakt",
-    "DESCRIPTION": "Haben Sie ein Problem, das es zu lösen lohnt, oder eine ambitionierte Idee, die gebaut werden will? Das höre ich gern. Melden Sie sich zu Projekten, Zusammenarbeit oder Ihrer nächsten Herausforderung, und lassen Sie es uns umsetzen.",
+    "DESCRIPTION": "Sie haben eine offene Stelle, ein Projekt oder eine Frage zu meiner Arbeit? Schreiben Sie mir, ich melde mich zurück.",
     "NAME_LABEL": "Wie heißen Sie?",
     "NAME_PLACEHOLDER": "Ihr Name",
     "EMAIL_LABEL": "Wie lautet Ihre E-Mail?",

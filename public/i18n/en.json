@@ -15,9 +15,10 @@
   "ABOUT": {
     "LABEL": "WHO'S NAM?",
     "TITLE": "About me",
-    "TEXT_1": "Hey, I'm Nam. I build complete web applications: from the Angular frontend through the Django REST API to the Docker deployment on my own server. Coding clicked for me the first time I watched someone breeze through an interface I'd built. These days I make sure everything behind it runs just as smoothly. I believe great software is invisible: when the user never has to stop and think, the problem is truly solved.",
-    "TEXT_2": "I take ownership from the first problem to the shipped solution, and I set the bar a little higher every time. Give me a hard challenge and a clear vision, and I'll help turn it into something real.",
-    "BUTTON": "Let's talk",
+    "TEXT_1": "I am Nam, a fullstack developer. I build complete web applications with modern interfaces, secure REST APIs and reliable deployments. I recently completed a practical fullstack development program at Developer Akademie. During this time, I built Join, Coderr, Videoflix and Quizly through individual and team projects.",
+    "TEXT_2": "Before writing code, I want to understand the problem. I start with a clear specification, build an early working prototype and validate the important assumptions. I use Claude Code daily for analysis, implementation and testing. I am also expanding my workflow with Codex. I remain responsible for the technical decisions and final quality.",
+    "TEXT_3": "I also help others adopt modern AI tools by explaining suitable use cases, safe workflows and clear review procedures.",
+    "BUTTON": "Get in touch",
     "LOCATION": "Based in Saxony",
     "RELOCATE": "Open to relocate",
     "REMOTE": "Open to remote work"
@@ -25,7 +26,7 @@
   "SKILLS": {
     "LABEL": "MY STACK",
     "TITLE": "Skill set",
-    "DESCRIPTION": "I've put these technologies to work on real projects, and I push each one further with every build. I don't just use a tool, I learn how it works under the hood so I can ship solutions that are fast, reliable, and built to scale.",
+    "DESCRIPTION": "Every one of these technologies sits in a project I built, tested and shipped. Where it mattered, I dug deeper into how they work, for example FFmpeg transcoding, refresh-token rotation and database query optimisation.",
     "BADGE": "Also, I'm interested in diving into:"
   },
   "PROJECTS": {
@@ -41,11 +42,19 @@
       "DURATION": "3 weeks",
       "ROLE": "Solo Project"
     },
+    "BOOKSTORE": {
+      "TITLE": "Bookstore",
+      "TECH": "Angular 21 | SSR | TypeScript | Three.js | Docker",
+      "DESCRIPTION": "A bilingual bookstore with server-side rendering. Visitors browse a curated catalogue, pan across a Three.js wall of covers and ask for books by mood, for example \"something dreamy for a rainy day\".",
+      "IMPLEMENTATION": "Angular 21 with SSR and hydration, signal-based stores and strictly typed code throughout. The recommender works in three tiers: first an AI endpoint, then an embedding model running locally on the server when no key is available, and finally a keyword search. Every query gets an answer, even when the external service is unreachable. The API key stays in the backend and never reaches the browser. Accessibility is audited automatically with axe against WCAG AA, alongside unit tests, end-to-end tests and Lighthouse budgets in CI. Deployed in Docker behind a Caddy reverse proxy.",
+      "DURATION": "Ongoing project",
+      "ROLE": "Solo Project"
+    },
     "CODERR": {
       "TITLE": "Coderr",
-      "TECH": "Python | Django REST | Token Auth | Docker",
-      "DESCRIPTION": "A Fiverr-style service marketplace: business users create offers in three package tiers, customers order and review, with profiles, filters and order management.",
-      "IMPLEMENTATION": "A full DRF API built from six Django apps: token authentication, role-based permissions (business/customer), nested serializers, filtering, pagination and DB annotations for sorting. Orders snapshot the offer conditions at purchase time. Backed by 88 tests at 98% coverage. The frontend was provided as a course template. The entire API is my own work.",
+      "TECH": "Python | Django REST | PostgreSQL | Docker",
+      "DESCRIPTION": "Coderr is a service marketplace where businesses create offers and customers order and review the work.",
+      "IMPLEMENTATION": "I built the complete Django REST API. It covers role-based permissions, nested serializers, filtering, pagination and database annotations. Orders store the agreed offer conditions as an immutable snapshot. 88 automated tests cover the core API flows. The production application runs on PostgreSQL, Docker, Gunicorn and Caddy. The frontend was provided as a course template.",
       "DURATION": "5 weeks",
       "ROLE": "Solo Project"
     },
@@ -87,7 +96,7 @@
   "CONTACT": {
     "LABEL": "GET IN TOUCH",
     "TITLE": "Contact",
-    "DESCRIPTION": "Got a problem worth solving or an ambitious idea to build? I'd love to hear it. Reach out about projects, collaborations, or your next challenge, and let's make it happen.",
+    "DESCRIPTION": "Do you have an open role, a project, or a question about my work? Send me a message and I will get back to you.",
     "NAME_LABEL": "What's your name?",
     "NAME_PLACEHOLDER": "Your name goes here",
     "EMAIL_LABEL": "What's your email?",

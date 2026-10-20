@@ -23,8 +23,18 @@
   position: relative;
   display: flex;
   width: 100%;
+  aspect-ratio: 640 / 426;
+}
+
+.project-card__image-clip {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
   border-radius: $radius-lg;
+  box-shadow: $shadow-lg;
+  transition: box-shadow $transition-base;
 
   &::after {
     content: '';
@@ -38,25 +48,174 @@
     transition: opacity $transition-base;
     z-index: 1;
   }
-
-  &:hover::after {
-    opacity: 1;
-  }
-
-  &:hover .project-card__image {
-    transform: scale(1.1);
-  }
-
-  &:hover .project-card__hover-link {
-    opacity: 1;
-  }
 }
 
-.project-card__image-float {
+.project-card__image-wrapper:hover .project-card__image-clip::after {
+  opacity: 1;
+}
+
+.project-card__image-wrapper:hover .project-card__image {
+  transform: scale(1.1);
+}
+
+.project-card__image-wrapper:hover .project-card__hover-link {
+  opacity: 1;
+}
+
+.project-card__image-inner {
   position: relative;
   width: 100%;
   height: 100%;
   z-index: 0;
+}
+
+// ========================================
+// FRAME EXPERIMENTS — one treatment per project, for comparison.
+// Each decorative element is hidden by default and only enabled
+// for its assigned #project-<id>.
+// ========================================
+
+.project-card__tape,
+.project-card__bracket,
+.project-card__chrome-bar,
+.project-card__caption {
+  display: none;
+}
+
+// ---- 1. Videoflix — animated gradient glow border ----
+#project-videoflix .project-card__image-wrapper {
+  overflow: hidden;
+  border-radius: calc(#{$radius-lg} + 4px);
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: conic-gradient(from 0deg, $primary-blue, $coral-orange, $bright-yellow, $primary-blue);
+    z-index: -1;
+    animation: project-card-spin-glow 5s linear infinite;
+  }
+}
+
+#project-videoflix .project-card__image-clip {
+  position: absolute;
+  inset: 4px;
+  width: auto;
+  height: auto;
+}
+
+@keyframes project-card-spin-glow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #project-videoflix .project-card__image-wrapper::before {
+    animation: none;
+  }
+}
+
+// ---- 2. Coderr — neubrutalist hard-shadow border ----
+#project-coderr .project-card__image-clip {
+  border: 2px solid $text-dark;
+  box-shadow: 6px 6px 0px $text-dark;
+  transition: box-shadow $transition-base, transform $transition-base;
+}
+
+#project-coderr .project-card__image-wrapper:hover .project-card__image-clip {
+  box-shadow: 3px 3px 0px $text-dark;
+  transform: translate(3px, 3px);
+}
+
+// ---- 3. Quizly — content-matched neon glow (Quizly's own brand green, not the portfolio palette) ----
+$quizly-green: #3ddc97;
+
+#project-quizly .project-card__image-clip {
+  border: 2px solid $quizly-green;
+  box-shadow: 0 0 0 1px rgba($quizly-green, 0.3), 0 0 20px rgba($quizly-green, 0.5), 0 0 40px rgba($quizly-green, 0.25);
+  transition: box-shadow $transition-base;
+}
+
+#project-quizly .project-card__image-wrapper:hover .project-card__image-clip {
+  box-shadow: 0 0 0 1px rgba($quizly-green, 0.5), 0 0 28px rgba($quizly-green, 0.7), 0 0 56px rgba($quizly-green, 0.35);
+}
+
+// ---- 4. Join — washi tape corners ----
+#project-join .project-card__tape {
+  display: block;
+  position: absolute;
+  width: 62px;
+  height: 24px;
+  z-index: 3;
+  background: rgba($bright-yellow, 0.82);
+  box-shadow: 0 2px 3px rgba($text-dark, 0.2);
+  pointer-events: none;
+
+  &--a {
+    top: -10px;
+    left: 26px;
+    transform: rotate(-10deg);
+  }
+
+  &--b {
+    bottom: -10px;
+    right: 26px;
+    transform: rotate(10deg);
+  }
+}
+
+#project-join .project-card__image-clip {
+  box-shadow: none;
+}
+
+// ---- 5. El Pollo Loco — polaroid print frame ----
+#project-pollo-loco .project-card__image-clip {
+  border: 10px solid $outline-white;
+  border-bottom-width: 34px;
+  box-shadow: $shadow-lg;
+  transition: box-shadow $transition-base, transform $transition-base;
+}
+
+#project-pollo-loco .project-card__image-wrapper:hover .project-card__image-clip {
+  box-shadow: 0 16px 28px rgba($text-dark, 0.25);
+  transform: rotate(-1.5deg);
+}
+
+#project-pollo-loco .project-card__caption {
+  display: block;
+  position: absolute;
+  bottom: 6px;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  text-align: center;
+  font-family: $font-handwriting;
+  font-size: 15px;
+  color: $text-dark;
+  opacity: 0;
+  transition: opacity $transition-base;
+}
+
+#project-pollo-loco .project-card__image-wrapper:hover .project-card__caption {
+  opacity: 1;
+}
+
+// ---- 6. Pokedex — torn-edge snapshot ----
+#project-pokedex .project-card__image-clip {
+  border-radius: 0;
+  box-shadow: none;
+  clip-path: polygon(
+    0% 2%, 4% 0%, 9% 1.5%, 16% 0%, 26% 1%, 36% 0%, 50% 1.5%, 64% 0%, 79% 1%, 91% 0%, 100% 2%,
+    99% 12%, 100% 27%, 98.5% 41%, 100% 56%, 99% 71%, 100% 86%, 98% 95%, 100% 98%,
+    95% 100%, 84% 99%, 71% 100%, 56% 98.5%, 41% 100%, 26% 99%, 12% 100%, 0% 98%,
+    1% 89%, 0% 74%, 1.5% 59%, 0% 44%, 1% 29%, 0% 14%
+  );
+  filter: drop-shadow(3px 4px 3px rgba($text-dark, 0.35));
+}
+
+#project-pokedex .project-card__image {
+  border-radius: 0;
 }
 
 #project-join .project-card__image-float {
@@ -82,11 +241,16 @@
 
 .project-card__image {
   width: 100%;
-  height: auto;
+  height: 100%;
   border-radius: $radius-lg;
   object-fit: cover;
+  object-position: center;
   display: block;
   transition: transform $transition-slower;
+}
+
+#project-join .project-card__image {
+  object-position: left center;
 }
 
 .project-card__hover-link {
@@ -172,14 +336,18 @@
   }
 
   .project-card__image-wrapper {
-    &::after,
-    &:hover::after {
+    &:hover .project-card__image-clip::after {
       display: none;
     }
 
     &:hover .project-card__image {
       transform: none;
     }
+  }
+
+  #project-pollo-loco .project-card__image-wrapper:hover .project-card__image-clip,
+  #project-coderr .project-card__image-wrapper:hover .project-card__image-clip {
+    transform: none;
   }
 
   .project-card__hover-link {

@@ -28,6 +28,17 @@
   position: relative;
   min-height: 500px;
   width: 50%;
+  // The container aligns its children to the top. Stretching this column to the
+  // row height makes the 50% anchor below centre the stack against the text
+  // instead of against an empty 500px box parked at the top.
+  align-self: stretch;
+
+  // The three stickers are absolutely positioned 100px apart, so the group is
+  // roughly 331px tall (rotation included) inside a 500px box. Anchored to the
+  // top edge it hugs the top and leaves ~180px of dead space underneath, which
+  // reads as misaligned next to the text column. Half the group height, used
+  // below to hang the stack off the vertical centre instead.
+  --sticker-stack-offset: -156px;
 }
 
 .about-me__sticker {
@@ -35,7 +46,7 @@
   @include flex-center;
 
   &--yellow {
-    top: 0;
+    top: calc(50% + var(--sticker-stack-offset));
     left: 0;
     transform: rotate(-3deg);
     z-index: 3;
@@ -46,14 +57,14 @@
   }
 
   &--blue {
-    top: 100px;
+    top: calc(50% + var(--sticker-stack-offset) + 100px);
     left: 20px;
     transform: rotate(2deg);
     z-index: 2;
   }
 
   &--orange {
-    top: 200px;
+    top: calc(50% + var(--sticker-stack-offset) + 200px);
     left: 20px;
     transform: rotate(5deg);
     z-index: 1;

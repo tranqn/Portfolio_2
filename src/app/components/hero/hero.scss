@@ -95,8 +95,8 @@
 
 .hero__title--top {
   text-align: left;
-  // Reserve width for one letter expanding to uppercase on hover
-  min-width: 4.5em;
+  // Reserve width so lowercase hover doesn't shrink the title (natural width is ~4.9em)
+  min-width: 5em;
 }
 
 .hero__title--bottom {

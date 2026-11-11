@@ -1,51 +1,44 @@
 <footer class="footer">
-  <div class="footer__container">
-    <!-- Top: Logo + Copyright -->
-    <div class="footer__top">
-      <div class="footer__logo">
-        <span class="footer__logo-image" role="img" aria-label="QT Logo"></span>
-      </div>
-      <span class="footer__copyright">&copy; Quoc Nam Tran 2026</span>
+  <div class="footer__inner">
+    <div class="footer__brand">
+      <a routerLink="/" class="footer__logo">Nam</a>
+      <p class="footer__tagline">{{ 'FOOTER.TAGLINE' | translate }}</p>
+      <p class="footer__copyright">&copy; Quóc Nam Tràn {{ year }}</p>
     </div>
 
-    <!-- Bottom: 4 link columns -->
-    <div class="footer__links">
-      <!-- Legal Notice (clip-path hover) -->
-      <a routerLink="/legal-notice" class="footer__link footer__link--legal">
-        {{ 'FOOTER.LEGAL_NOTICE' | translate }}
-      </a>
+    <nav class="footer__nav" aria-label="Footer">
+      <ul>
+        <li><a href="mailto:tran.qn@protonmail.com">{{ 'FOOTER.EMAIL' | translate }}</a></li>
+        <li>
+          <a href="https://www.linkedin.com/in/tranqn/" target="_blank" rel="noopener noreferrer">
+            {{ 'FOOTER.LINKEDIN' | translate }} <span aria-hidden="true">↗</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/tranqn" target="_blank" rel="noopener noreferrer">
+            GitHub <span aria-hidden="true">↗</span>
+          </a>
+        </li>
+      </ul>
+      <ul>
+        <li><a routerLink="/legal-notice">{{ 'FOOTER.LEGAL_NOTICE' | translate }}</a></li>
+        <li><a routerLink="/privacy-policy">{{ 'FOOTER.PRIVACY' | translate }}</a></li>
+      </ul>
+    </nav>
 
-      <!-- GitHub (blue circle expand hover) -->
-      <div class="footer__button-container">
-        <img [src]="images.FOOTER.GITHUB" alt="GitHub icon" class="footer__button-icon">
-        <a
-          href="https://github.com/tranqn"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="footer__button">
-          <span class="footer__button-text">{{ 'FOOTER.GITHUB' | translate }}</span>
-        </a>
-      </div>
-
-      <!-- LinkedIn (blue circle expand hover) -->
-      <div class="footer__button-container">
-        <img [src]="images.SHARED.LINKEDIN_PLAIN" alt="LinkedIn icon" class="footer__button-icon">
-        <a
-          href="https://www.linkedin.com/in/tranqn/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="footer__button">
-          <span class="footer__button-text">{{ 'FOOTER.LINKEDIN' | translate }}</span>
-        </a>
-      </div>
-
-      <!-- Email (blue circle expand hover) -->
-      <div class="footer__button-container">
-        <img [src]="images.FOOTER.EMAIL" alt="Email icon" class="footer__button-icon">
-        <a href="mailto:tran.qn@protonmail.com" class="footer__button">
-          <span class="footer__button-text">Email</span>
-        </a>
-      </div>
+    <div class="footer__motion">
+      @if (motion.systemReduced()) {
+        <p class="footer__motion-note">{{ 'FOOTER.MOTION_SYSTEM' | translate }}</p>
+      } @else {
+        <button
+          type="button"
+          class="footer__motion-toggle"
+          [attr.aria-pressed]="motion.userReduced()"
+          (click)="motion.toggleUserPreference()">
+          <span class="footer__switch" aria-hidden="true"></span>
+          {{ 'FOOTER.MOTION_REDUCE' | translate }}
+        </button>
+      }
     </div>
   </div>
 </footer>

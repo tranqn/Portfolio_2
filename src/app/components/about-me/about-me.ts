@@ -1,18 +1,39 @@
 import { Component } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
-import { CtaButton } from '../../shared/components/cta-button/cta-button';
-import { IMAGE_PATHS } from '../../shared/constants';
+import { Reveal } from '../../shared/directives/reveal.directive';
+
+/** Technologies that appear in at least one project on this page. */
+const USED_IN_PROJECTS = [
+  'TypeScript',
+  'JavaScript',
+  'Angular',
+  'React',
+  'Next.js',
+  'Vue 3',
+  'Node.js',
+  'Python',
+  'Django REST',
+  'PostgreSQL',
+  'InfluxDB',
+  'Redis',
+  'Docker',
+  'Caddy',
+  'Playwright',
+  'Git',
+  'GitHub Actions',
+  'GitLab CI',
+];
 
 @Component({
   selector: 'app-about-me',
-  imports: [TranslateModule, CtaButton],
+  imports: [TranslateModule, Reveal],
   templateUrl: './about-me.html',
   styleUrl: './about-me.scss',
 })
 /**
- * "About Me" section with a short bio, location/remote/relocation stickers,
- * and a CTA linking to the contact form.
+ * "About me": short bio, where I want to work, how I approach tasks and the
+ * technologies that appear in the projects above.
  */
 export class AboutMe {
-  protected readonly images = IMAGE_PATHS.ABOUT_ME;
+  protected readonly tools = USED_IN_PROJECTS;
 }

@@ -1,3 +1,4 @@
+import { DOCUMENT } from '@angular/common';
 import { Injectable, inject, signal } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -25,27 +26,42 @@ type Language = (typeof SUPPORTED_LANGUAGES)[number];
  */
 export class TranslationService {
   private readonly translate = inject(TranslateService);
+  private readonly document = inject(DOCUMENT);
 
   /** Reactive signal holding the active language code. */
   readonly currentLang = signal<Language>('de');
 
   constructor() {
     const initialLang = this.detectLanguage();
-    this.currentLang.set(initialLang);
-    this.translate.use(initialLang);
+    this.apply(initialLang);
   }
 
   /** Toggles between German and English, persisting the choice to localStorage. */
   switchLanguage(): void {
     const next: Language = this.currentLang() === 'de' ? 'en' : 'de';
-    this.currentLang.set(next);
-    this.translate.use(next);
-    localStorage.setItem(STORAGE_KEY, next);
+    this.apply(next);
+    try {
+      localStorage.setItem(STORAGE_KEY, next);
+    } catch {
+      // Storage can be blocked; the choice then lasts for this visit only.
+    }
+  }
+
+  /** Activates a language and keeps `<html lang>` in sync for assistive tech and CSS. */
+  private apply(lang: Language): void {
+    this.currentLang.set(lang);
+    this.translate.use(lang);
+    this.document.documentElement.lang = lang;
   }
 
   /** Reads stored or browser language preference. */
   private detectLanguage(): Language {
-    const stored = localStorage.getItem(STORAGE_KEY);
+    let stored: string | null = null;
+    try {
+      stored = localStorage.getItem(STORAGE_KEY);
+    } catch {
+      // Storage blocked: fall back to the browser language.
+    }
     if (stored && this.isSupportedLanguage(stored)) {
       return stored;
     }

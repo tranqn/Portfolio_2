@@ -21,7 +21,7 @@
 
 .toast-container {
   position: fixed;
-  top: $spacing-lg;
+  top: 80px;
   left: 50%;
   transform: translateX(-50%);
   z-index: $z-modal;
@@ -36,7 +36,7 @@
   align-items: center;
   padding: $spacing-sm $spacing-md;
   border-radius: $radius-md;
-  color: $white;
+  color: $paper;
   font-family: $font-primary;
   font-size: $font-size-base;
   font-weight: $font-weight-medium;
@@ -46,10 +46,10 @@
   max-width: 400px;
 
   &--success {
-    background-color: #2e7d32;
+    background-color: $ink;
   }
 
   &--error {
-    background-color: $coral-orange;
+    background-color: #b3261e;
   }
 }

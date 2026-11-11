@@ -1,0 +1,79 @@
+<div class="terminals" role="img" [attr.aria-label]="'HERO.DESK.LABEL' | translate">
+  <app-mac-window title="Terminal — portfolio">
+    <div class="terminals__panes">
+      <div class="term term--claude">
+        <p class="term__tab"><span class="term__mark">✻</span> claude</p>
+        <div class="term__body">
+          <p class="term__line term__line--prompt" style="--d: 500ms">
+            <span class="term__sigil">&gt;</span>
+            <span class="term__typed">{{ 'HERO.DESK.CLAUDE_TASK' | translate }}</span>
+          </p>
+          <p class="term__line" style="--d: 2000ms">
+            <span class="term__tool">●</span> Read
+            <span class="term__dim">skills.ts, showcase.service.ts</span>
+          </p>
+          <p class="term__line" style="--d: 2700ms">
+            <span class="term__tool">●</span> Update
+            <span class="term__dim">skills.ts</span>&ngsp;&ngsp;<span class="term__add">+14</span
+            >&ngsp;<span class="term__del">−2</span>
+          </p>
+          <p class="term__line" style="--d: 3400ms">
+            <span class="term__tool">●</span> Bash <span class="term__dim">ng test</span>
+          </p>
+          <p class="term__line term__line--result" style="--d: 4200ms">
+            <span class="term__dim">⎿</span>&ngsp;<span class="term__ok">{{
+              'HERO.DESK.CLAUDE_TESTS' | translate
+            }}</span>
+          </p>
+          <div class="term__status" style="--from: 2000ms; --span: 3000ms; --d: 5000ms">
+            <p class="term__line term__working">
+              <span class="term__spin">✻</span> {{ 'HERO.DESK.CLAUDE_WORKING' | translate }}
+            </p>
+            <p class="term__line term__done">
+              <span class="term__mark">✻</span> {{ 'HERO.DESK.CLAUDE_DONE' | translate }}
+            </p>
+          </div>
+          <p class="term__line term__line--input" style="--d: 5200ms">
+            <span class="term__sigil">&gt;</span>&ngsp;<span class="term__cursor"></span>
+          </p>
+        </div>
+      </div>
+
+      <div class="term term--codex">
+        <p class="term__tab"><span class="term__mark">›_</span> codex</p>
+        <div class="term__body">
+          <p class="term__line term__line--prompt" style="--d: 2400ms">
+            <span class="term__sigil">›</span>
+            <span class="term__typed">{{ 'HERO.DESK.CODEX_TASK' | translate }}</span>
+          </p>
+          <p class="term__line" style="--d: 3800ms">
+            <span class="term__tool">•</span> Explored
+            <span class="term__dim">skills.ts, projects.ts</span>
+          </p>
+          <p class="term__line" style="--d: 4500ms">
+            <span class="term__tool">•</span> Ran <span class="term__dim">npx ng build</span>
+          </p>
+          <p class="term__line term__line--result" style="--d: 5300ms">
+            <span class="term__dim">└</span>&ngsp;<span class="term__ok">{{
+              'HERO.DESK.CODEX_BUILD' | translate
+            }}</span>
+          </p>
+          <p class="term__line" style="--d: 5900ms">
+            <span class="term__tool">•</span> {{ 'HERO.DESK.CODEX_NOTE' | translate }}
+          </p>
+          <div class="term__status" style="--from: 3800ms; --span: 2900ms; --d: 6700ms">
+            <p class="term__line term__working">
+              <span class="term__spin">•</span> {{ 'HERO.DESK.CODEX_WORKING' | translate }}
+            </p>
+            <p class="term__line term__done">
+              <span class="term__ok">✓</span> {{ 'HERO.DESK.CODEX_DONE' | translate }}
+            </p>
+          </div>
+          <p class="term__line term__line--input" style="--d: 6900ms">
+            <span class="term__sigil">›</span>&ngsp;<span class="term__cursor"></span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </app-mac-window>
+</div>

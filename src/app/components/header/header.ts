@@ -1,75 +1,79 @@
 import { DOCUMENT } from '@angular/common';
-import { Component, inject, Renderer2, signal } from '@angular/core';
-import { ActivatedRoute, Router, RouterLink } from '@angular/router';
-import { toSignal } from '@angular/core/rxjs-interop';
+import { Component, ElementRef, inject, signal, viewChild } from '@angular/core';
+import { Router, RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
-import { map } from 'rxjs';
-import { SocialLinks } from '../../shared/components/social-links/social-links';
+import { MotionService } from '../../shared/services/motion.service';
 import { TranslationService } from '../../shared/services/translation.service';
-import { createRouteChange$, getNestedRouteData } from '../../shared/utils/route.utils';
+
+/** Sections reachable from the navigation, in page order. */
+const NAV_ITEMS = [
+  { fragment: 'skills', key: 'HEADER.SKILLS' },
+  { fragment: 'projects', key: 'HEADER.PROJECTS' },
+  { fragment: 'about', key: 'HEADER.ABOUT' },
+  { fragment: 'contact', key: 'HEADER.CONTACT' },
+] as const;
 
 @Component({
   selector: 'app-header',
-  imports: [RouterLink, TranslateModule, SocialLinks],
+  imports: [RouterLink, TranslateModule],
   templateUrl: './header.html',
   styleUrl: './header.scss',
   host: {
-    '[class.project]': 'isProject()',
-    '[class.contact]': 'isContact()',
+    '(document:keydown.escape)': 'closeMenu(true)',
   },
 })
 /**
- * Site-wide header with navigation links, language toggle, and responsive burger menu.
+ * Compact floating navigation (pill) with the DE/EN switch.
  *
- * Applies host classes based on route data:
- * - `.project` — project-detail pages (alternate nav styling)
- * - `.contact` — shows a contact CTA instead of the full nav
- *
- * The burger menu locks body scroll via a `no-scroll` CSS class.
+ * On the home page, section links scroll in place (smoothly only when motion is
+ * allowed) and move focus to the section; from other pages they navigate to
+ * `/#fragment`. Below 760px the links collapse into a small dropdown menu.
  */
 export class Header {
   protected readonly translationService = inject(TranslationService);
-  /** Whether the mobile overlay menu is currently open. */
+  protected readonly navItems = NAV_ITEMS;
+  /** Whether the mobile dropdown menu is open. */
   protected readonly menuOpen = signal(false);
 
-  private readonly renderer = inject(Renderer2);
-  private readonly document = inject(DOCUMENT);
   private readonly router = inject(Router);
-  private readonly route = inject(ActivatedRoute);
+  private readonly document = inject(DOCUMENT);
+  private readonly motion = inject(MotionService);
+  private readonly menuButton = viewChild<ElementRef<HTMLButtonElement>>('menuButton');
 
-  private readonly routeChange$ = createRouteChange$(this.router);
-
-  /** `true` when the current route has `headerProject` data (project-detail pages). */
-  protected readonly isProject = toSignal(
-    this.routeChange$.pipe(map(() => !!getNestedRouteData(this.route, 'headerProject'))),
-    { initialValue: false },
-  );
-
-  /** `true` when the current route has `headerContact` data. */
-  protected readonly isContact = toSignal(
-    this.routeChange$.pipe(map(() => !!getNestedRouteData(this.route, 'headerContact'))),
-    { initialValue: false },
-  );
-
-  /** Opens or closes the mobile overlay menu. */
-  toggleMenu(): void {
-    const isOpen = !this.menuOpen();
-    this.menuOpen.set(isOpen);
-    this.toggleBodyScroll(isOpen);
+  /** Opens or closes the mobile dropdown menu. */
+  protected toggleMenu(): void {
+    this.menuOpen.update((open) => !open);
   }
 
-  /** Closes the mobile overlay menu (e.g. on nav-link click). */
-  closeMenu(): void {
+  /** Closes the menu; optionally returns focus to the menu button (Escape). */
+  closeMenu(restoreFocus = false): void {
+    if (!this.menuOpen()) return;
     this.menuOpen.set(false);
-    this.toggleBodyScroll(false);
+    if (restoreFocus) this.menuButton()?.nativeElement.focus();
   }
 
-  /** Adds or removes the `no-scroll` class on `<body>` to prevent background scrolling. */
-  private toggleBodyScroll(lock: boolean): void {
-    if (lock) {
-      this.renderer.addClass(this.document.body, 'no-scroll');
-    } else {
-      this.renderer.removeClass(this.document.body, 'no-scroll');
-    }
+  /**
+   * Handles a section link. On the home page it scrolls in place, so repeated
+   * clicks work and reduced motion is respected; elsewhere the router navigates.
+   */
+  protected goTo(event: MouseEvent, fragment: string): void {
+    this.menuOpen.set(false);
+    const onHome = this.router.url.split('#')[0].split('?')[0] === '/';
+    const target = this.document.getElementById(fragment);
+    if (!onHome || !target) return;
+
+    event.preventDefault();
+    this.motion.scrollTo(target);
+    target.focus({ preventScroll: true });
+    history.replaceState(history.state, '', `/#${fragment}`);
+  }
+
+  /** Returns to the top of the home page. */
+  protected goHome(event: MouseEvent): void {
+    this.menuOpen.set(false);
+    if (this.router.url.split('#')[0] !== '/') return;
+    event.preventDefault();
+    this.document.defaultView?.scrollTo({ top: 0, behavior: this.motion.reduced() ? 'auto' : 'smooth' });
+    history.replaceState(history.state, '', '/');
   }
 }

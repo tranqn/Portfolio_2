@@ -1,6 +1,16 @@
 import { computed, Injectable, signal } from '@angular/core';
-import { Project } from '../models';
+import { Project, ProjectMediaAsset } from '../models';
 import { IMAGE_PATHS } from '../constants';
+
+/** Builds the video/poster pair converted from a project's original GIF. */
+function recording(name: string, width: number, height: number): ProjectMediaAsset {
+  return {
+    video: `media/projects/${name}.mp4`,
+    poster: `media/projects/${name}.jpg`,
+    width,
+    height,
+  };
+}
 
 @Injectable({
   providedIn: 'root',
@@ -25,6 +35,7 @@ export class ProjectDataService {
         { name: 'REST-API', icon: IMAGE_PATHS.SKILLS.REST_API },
       ],
       image: IMAGE_PATHS.PROJECTS.PRAXIS_UI_LAB,
+      media: recording('praxis-ui-lab', 960, 640),
       featured: false,
       duration: 'PROJECTS.PRAXIS_UI_LAB.DURATION',
       role: 'PROJECTS.PRAXIS_UI_LAB.ROLE',
@@ -44,6 +55,7 @@ export class ProjectDataService {
         { name: 'Docker', icon: IMAGE_PATHS.SKILLS.DOCKER },
       ],
       image: IMAGE_PATHS.PROJECTS.STADTPULS,
+      media: recording('stadtpuls', 960, 640),
       featured: false,
       duration: 'PROJECTS.STADTPULS.DURATION',
       role: 'PROJECTS.STADTPULS.ROLE',
@@ -63,6 +75,7 @@ export class ProjectDataService {
         { name: 'Docker', icon: IMAGE_PATHS.SKILLS.DOCKER },
       ],
       image: IMAGE_PATHS.PROJECTS.VIDEOFLIX,
+      media: recording('videoflix', 640, 320),
       featured: false,
       duration: 'PROJECTS.VIDEOFLIX.DURATION',
       role: 'PROJECTS.VIDEOFLIX.ROLE',
@@ -82,6 +95,7 @@ export class ProjectDataService {
         { name: 'Docker', icon: IMAGE_PATHS.SKILLS.DOCKER },
       ],
       image: IMAGE_PATHS.PROJECTS.BOOKSTORE,
+      media: recording('bookstore', 640, 320),
       featured: false,
       duration: 'PROJECTS.BOOKSTORE.DURATION',
       role: 'PROJECTS.BOOKSTORE.ROLE',
@@ -101,6 +115,7 @@ export class ProjectDataService {
         { name: 'Docker', icon: IMAGE_PATHS.SKILLS.DOCKER },
       ],
       image: IMAGE_PATHS.PROJECTS.CODERR,
+      media: recording('coderr', 640, 320),
       featured: false,
       duration: 'PROJECTS.CODERR.DURATION',
       role: 'PROJECTS.CODERR.ROLE',
@@ -120,6 +135,7 @@ export class ProjectDataService {
         { name: 'Docker', icon: IMAGE_PATHS.SKILLS.DOCKER },
       ],
       image: IMAGE_PATHS.PROJECTS.QUIZLY,
+      media: recording('quizly', 640, 320),
       featured: false,
       duration: 'PROJECTS.QUIZLY.DURATION',
       role: 'PROJECTS.QUIZLY.ROLE',
@@ -139,6 +155,7 @@ export class ProjectDataService {
         { name: 'JavaScript', icon: IMAGE_PATHS.SKILLS.JAVASCRIPT },
       ],
       image: IMAGE_PATHS.PROJECTS.JOIN,
+      media: recording('join', 640, 320),
       featured: false,
       duration: 'PROJECTS.JOIN.DURATION',
       role: 'PROJECTS.JOIN.ROLE',
@@ -157,6 +174,7 @@ export class ProjectDataService {
         { name: 'JavaScript', icon: IMAGE_PATHS.SKILLS.JAVASCRIPT },
       ],
       image: IMAGE_PATHS.PROJECTS.POLLO_LOCO,
+      media: recording('pollo-loco', 640, 422),
       featured: false,
       duration: 'PROJECTS.POLLO.DURATION',
       role: 'PROJECTS.POLLO.ROLE',
@@ -177,6 +195,7 @@ export class ProjectDataService {
         { name: 'Three.js', icon: IMAGE_PATHS.SKILLS.THREEJS },
       ],
       image: IMAGE_PATHS.PROJECTS.POKEDEX,
+      media: recording('pokedex', 640, 320),
       featured: false,
       duration: 'PROJECTS.POKEDEX.DURATION',
       role: 'PROJECTS.POKEDEX.ROLE',

@@ -1,0 +1,32 @@
+<div
+  class="project-media"
+  [class.project-media--contain]="fit() === 'contain'"
+  [style.aspect-ratio]="fit() === 'natural' ? media().width + ' / ' + media().height : null">
+  <video
+    #video
+    class="project-media__video"
+    [src]="media().video"
+    [poster]="media().poster"
+    [width]="media().width"
+    [height]="media().height"
+    [attr.aria-label]="label()"
+    muted
+    loop
+    playsinline
+    preload="none"
+    (play)="playing.set(true)"
+    (pause)="playing.set(false)"></video>
+
+  <button
+    type="button"
+    class="project-media__toggle"
+    (click)="toggle()">
+    @if (playing()) {
+      <svg viewBox="0 0 16 16" aria-hidden="true"><rect x="3.5" y="2.5" width="3" height="11" rx="1" /><rect x="9.5" y="2.5" width="3" height="11" rx="1" /></svg>
+    } @else {
+      <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4.5 2.8v10.4a.6.6 0 0 0 .9.5l8.3-5.2a.6.6 0 0 0 0-1L5.4 2.3a.6.6 0 0 0-.9.5Z" /></svg>
+    }
+    <span class="project-media__toggle-text">{{ (playing() ? 'MEDIA.PAUSE' : 'MEDIA.PLAY') | translate }}</span>
+    <span class="sr-only">{{ 'MEDIA.RECORDING' | translate }}</span>
+  </button>
+</div>

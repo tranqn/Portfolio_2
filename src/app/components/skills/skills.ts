@@ -1,26 +1,66 @@
-import { Component, inject, signal } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { Component, inject } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
-import { IMAGE_PATHS } from '../../shared/constants';
-import { SkillDataService } from '../../shared/services/skill-data.service';
+import { Reveal } from '../../shared/directives/reveal.directive';
+import { MotionService } from '../../shared/services/motion.service';
+import { ShowcaseService } from '../../shared/services/showcase.service';
+
+/** A competence area with the showcase entries that back it up (may be none). */
+interface CompetenceArea {
+  key: string;
+  references: { showcaseId: string; nameKey: string }[];
+}
+
+const AREAS: CompetenceArea[] = [
+  {
+    key: 'SKILLS.WEB',
+    references: [
+      { showcaseId: 'praxis', nameKey: 'SHOWCASE.PRAXIS.NAME' },
+      { showcaseId: 'zyklus', nameKey: 'SHOWCASE.ZYKLUS.NAME' },
+    ],
+  },
+  {
+    key: 'SKILLS.DATA',
+    references: [
+      { showcaseId: 'stadtpuls', nameKey: 'SHOWCASE.STADTPULS.NAME' },
+      { showcaseId: 'coderr', nameKey: 'SHOWCASE.CODERR.NAME' },
+    ],
+  },
+  {
+    key: 'SKILLS.AI',
+    references: [],
+  },
+  {
+    key: 'SKILLS.HOSTING',
+    references: [],
+  },
+];
 
 @Component({
   selector: 'app-skills',
-  imports: [TranslateModule],
+  imports: [TranslateModule, Reveal],
   templateUrl: './skills.html',
   styleUrl: './skills.scss',
 })
 /**
- * Skills section displaying a grid of technology icons with an interactive
- * "peel" badge animation toggled by {@link toggleBadge}.
+ * The four competence areas shown in the hero (`#skills`).
+ *
+ * Each reference selects the matching project in the showcase, scrolls to the
+ * projects section and moves keyboard focus to the selected project.
  */
 export class Skills {
-  protected readonly skillDataService = inject(SkillDataService);
-  /** Whether the badge sticker is in its "peeled" (revealed) state. */
-  protected readonly isPeeled = signal(false);
-  protected readonly images = IMAGE_PATHS.SKILLS;
+  protected readonly areas = AREAS;
 
-  /** Toggles the badge between default and peeled states. */
-  toggleBadge(): void {
-    this.isPeeled.update((v) => !v);
+  private readonly showcase = inject(ShowcaseService);
+  private readonly motion = inject(MotionService);
+  private readonly document = inject(DOCUMENT);
+
+  /** Selects a showcase entry and brings the projects section into view. */
+  protected showProject(showcaseId: string): void {
+    this.showcase.select(showcaseId);
+    this.motion.scrollTo(this.document.getElementById('projects'));
+    this.document
+      .getElementById(`project-choice-${showcaseId}`)
+      ?.focus({ preventScroll: true });
   }
 }

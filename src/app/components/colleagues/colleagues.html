@@ -1,36 +1,30 @@
-<section id="colleagues" class="colleagues">
-  <div class="colleagues__container">
-    <!-- Top row: Arrow animation (left) + Subheadline (right) -->
-    <div class="colleagues__top">
-      <img [src]="underlinePath" alt="Decorative arrow" class="colleagues__arrow">
-      <span class="colleagues__label">{{ 'COLLEAGUES.LABEL' | translate }}</span>
-    </div>
+<section id="colleagues" class="colleagues" aria-labelledby="colleagues-heading">
+  <header class="colleagues__head" appReveal>
+    <p class="eyebrow">{{ 'COLLEAGUES.LABEL' | translate }}</p>
+    <h2 id="colleagues-heading" class="colleagues__title">{{ 'COLLEAGUES.TITLE' | translate }}</h2>
+  </header>
 
-    <!-- Middle row: Headline -->
-    <h2 class="colleagues__title">{{ 'COLLEAGUES.TITLE' | translate }}</h2>
-
-    <!-- Bottom row: 3 cards side by side, slightly overlapping -->
-    <div class="colleagues__cards">
-      @for (colleague of colleagueDataService.allColleagues(); track colleague.name) {
-        <div class="colleagues__card">
-          <p class="colleagues__card-text">{{ colleague.textKey | translate }}</p>
-          <div class="colleagues__card-bottom">
-            <div class="colleagues__card-author">
-              <span class="colleagues__card-name">{{ colleague.name }}</span>
-              <span class="colleagues__card-position">{{ colleague.positionKey | translate }}</span>
-            </div>
+  <ul class="colleagues__list">
+    @for (colleague of colleagueDataService.allColleagues(); track colleague.name; let i = $index) {
+      <li class="colleagues__card" appReveal [revealDelay]="i * 80">
+        <figure>
+          <blockquote class="colleagues__quote">
+            <p>{{ colleague.textKey | translate }}</p>
+          </blockquote>
+          <figcaption class="colleagues__author">
+            <span class="colleagues__name">{{ colleague.name }}</span>
+            <span class="colleagues__position">{{ colleague.positionKey | translate }}</span>
             <a
               [href]="colleague.linkedInUrl"
               target="_blank"
               rel="noopener noreferrer"
-              class="colleagues__card-profile"
-              [attr.aria-label]="'LinkedIn profile of ' + colleague.name">
-              <img [src]="linkedInIcon" alt="LinkedIn icon" class="colleagues__card-profile-icon">
-              <span class="colleagues__card-profile-text">{{ 'COLLEAGUES.PROFILE' | translate }}</span>
+              class="colleagues__profile">
+              {{ 'COLLEAGUES.PROFILE' | translate }}<span class="sr-only">: {{ colleague.name }}</span>
+              <span aria-hidden="true">↗</span>
             </a>
-          </div>
-        </div>
-      }
-    </div>
-  </div>
+          </figcaption>
+        </figure>
+      </li>
+    }
+  </ul>
 </section>

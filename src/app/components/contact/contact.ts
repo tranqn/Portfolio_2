@@ -5,12 +5,11 @@ import { TranslateModule } from '@ngx-translate/core';
 import { ContactForm } from '../../shared/models';
 import { ContactService } from '../../shared/services/contact.service';
 import { ToastService } from '../../shared/services/toast.service';
-import { CtaButton } from '../../shared/components/cta-button/cta-button';
-import { IMAGE_PATHS } from '../../shared/constants';
+import { Reveal } from '../../shared/directives/reveal.directive';
 
 @Component({
   selector: 'app-contact',
-  imports: [FormsModule, RouterLink, TranslateModule, CtaButton],
+  imports: [FormsModule, RouterLink, TranslateModule, Reveal],
   templateUrl: './contact.html',
   styleUrl: './contact.scss',
 })
@@ -26,9 +25,6 @@ export class Contact {
   private readonly contactService = inject(ContactService);
   private readonly toastService = inject(ToastService);
 
-  protected readonly underlinePath = IMAGE_PATHS.CONTACT.UNDERLINE;
-  protected readonly checkPath = IMAGE_PATHS.SHARED.CHECK;
-  protected readonly stickerPath = IMAGE_PATHS.CONTACT.STICKER;
   /** Prevents double-submission while the HTTP request is in-flight. */
   protected readonly isSubmitting = signal(false);
 

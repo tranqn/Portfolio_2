@@ -17,7 +17,8 @@
 // HTML & Body
 html {
   font-size: 16px;
-  scroll-behavior: smooth;
+  color-scheme: only light;
+  background-color: $page-bg;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -28,9 +29,9 @@ body {
   font-family: $font-primary;
   font-size: $font-size-base;
   font-weight: $font-weight-normal;
-  line-height: $line-height-normal;
-  color: $text-primary;
-  background-color: $white;
+  line-height: 1.6;
+  color: $ink;
+  background-color: $page-bg;
 }
 
 // Scrollbar
@@ -39,22 +40,22 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: $dark-bg;
+  background: $page-bg;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: $primary-blue;
+  background: $line;
   border-radius: $radius-sm;
 
   &:hover {
-    background: color.adjust($primary-blue, $lightness: 10%);
+    background: color.adjust($line, $lightness: -12%);
   }
 }
 
 // Firefox scrollbar
 html {
   scrollbar-width: thin;
-  scrollbar-color: $primary-blue $dark-bg;
+  scrollbar-color: $line $page-bg;
 }
 
 // Headings
@@ -64,40 +65,27 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: $font-heading;
-  font-weight: $font-weight-bold;
-  line-height: $line-height-tight;
+  font-family: $font-display;
+  font-weight: $font-weight-medium;
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+  // Long German compounds (Implementierungsdetails) must not push past 320px
+  overflow-wrap: break-word;
+  hyphens: auto;
   margin: 0;
   padding: 0;
 }
 
 h1 {
-  font-size: $font-size-5xl;
-  font-weight: $font-weight-black;
-
-  @media (max-width: $breakpoint-md) {
-    font-size: $font-size-4xl;
-  }
-
-  @media (max-width: $breakpoint-sm) {
-    font-size: $font-size-3xl;
-  }
+  font-size: clamp(40px, 6vw, 72px);
 }
 
 h2 {
-  font-size: $font-size-3xl;
-
-  @media (max-width: $breakpoint-md) {
-    font-size: $font-size-2xl;
-  }
+  font-size: clamp(32px, 4vw, 48px);
 }
 
 h3 {
-  font-size: $font-size-2xl;
-
-  @media (max-width: $breakpoint-md) {
-    font-size: $font-size-xl;
-  }
+  font-size: clamp(24px, 2.4vw, 30px);
 }
 
 h4 {
@@ -123,12 +111,18 @@ p {
 
 // Links
 a {
-  color: $primary-blue;
+  color: $accent;
   text-decoration: none;
   transition: color $transition-base;
 
   &:hover {
-    color: color.adjust($primary-blue, $lightness: 10%);
+    color: $ink;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $accent;
+    outline-offset: 3px;
+    border-radius: 2px;
   }
 }
 
@@ -153,8 +147,8 @@ button {
   cursor: pointer;
 
   &:focus-visible {
-    outline: 2px solid $primary-blue;
-    outline-offset: 2px;
+    outline: 2px solid $accent;
+    outline-offset: 3px;
   }
 
   &:focus:not(:focus-visible) {
@@ -176,7 +170,7 @@ select {
   line-height: inherit;
 
   &:focus-visible {
-    outline: 2px solid $primary-blue;
+    outline: 2px solid $accent;
     outline-offset: 2px;
   }
 
@@ -214,8 +208,8 @@ strong {
 
 // Selection
 ::selection {
-  background-color: $primary-blue;
-  color: $white;
+  background-color: $lemon;
+  color: $ink;
 }
 
 // Remove autofill background color (Webkit browsers)
@@ -225,7 +219,7 @@ input:-webkit-autofill:focus,
 textarea:-webkit-autofill,
 textarea:-webkit-autofill:hover,
 textarea:-webkit-autofill:focus {
-  -webkit-text-fill-color: $text-primary;
-  -webkit-box-shadow: 0 0 0px 1000px $dark-bg inset;
+  -webkit-text-fill-color: $ink;
+  -webkit-box-shadow: 0 0 0px 1000px $paper inset;
   transition: background-color 5000s ease-in-out 0s;
 }

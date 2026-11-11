@@ -1,16 +1,121 @@
-<section id="projects" class="projects">
-  <div class="projects__container">
-    <!-- Header (takes 50% width on desktop) -->
-    <div class="projects__header">
-      <span class="projects__label">{{ 'PROJECTS.LABEL' | translate }}</span>
-      <h2 class="projects__title">{{ 'PROJECTS.TITLE' | translate }}</h2>
-      <img [src]="underlinePath" alt="Decorative underline" class="projects__underline">
-      <p class="projects__description">{{ 'PROJECTS.DESCRIPTION' | translate }}</p>
+<section id="projects" class="projects" tabindex="-1" aria-labelledby="projects-heading">
+  <header class="projects__head" appReveal>
+    <p class="eyebrow">{{ 'SHOWCASE.LABEL' | translate }}</p>
+    <h2 id="projects-heading" class="projects__title">{{ 'SHOWCASE.TITLE' | translate }}</h2>
+    <p class="projects__subtitle">{{ 'SHOWCASE.SUBTITLE' | translate }}</p>
+  </header>
+
+  <div class="showcase">
+    <div class="showcase__menu" role="group" [attr.aria-label]="'SHOWCASE.LIST_LABEL' | translate" appReveal>
+      @for (item of showcase.allItems(); track item.id; let i = $index) {
+        <button
+          type="button"
+          class="showcase__choice"
+          [id]="'project-choice-' + item.id"
+          [attr.aria-pressed]="item.id === selected().id"
+          aria-controls="showcase-panel"
+          (click)="select(item.id)">
+          <span class="showcase__choice-index" aria-hidden="true">0{{ i + 1 }}</span>
+          <strong>{{ item.i18nKey + '.NAME' | translate }}</strong>
+          <small>{{ item.i18nKey + '.TAGLINE' | translate }}</small>
+        </button>
+      }
     </div>
 
-    <!-- Project Cards (each 50% width on desktop) -->
-    @for (project of projectDataService.allProjects(); track project.id) {
-      <app-project-card [project]="project" />
-    }
+    <div id="showcase-panel" class="showcase__panel">
+      <div class="showcase__stage" appReveal="window">
+        <div #windowEl class="showcase__window">
+          <app-mac-window [title]="selected().i18nKey + '.NAME' | translate">
+            <div class="showcase__screen">
+              @if (selectedMedia(); as media) {
+                <app-project-media
+                  [media]="media"
+                  [label]="selected().i18nKey + '.MEDIA_LABEL' | translate"
+                  fit="contain" />
+              } @else {
+                <div class="showcase__overview">
+                  <p class="showcase__overview-tag">{{ 'SHOWCASE.OVERVIEW_TAG' | translate }}</p>
+                  <p class="showcase__overview-name">{{ selected().i18nKey + '.NAME' | translate }}</p>
+                  <ul>
+                    @for (i of overviewIndexes(); track i) {
+                      <li>{{ selected().i18nKey + '.OVERVIEW.' + i | translate }}</li>
+                    }
+                  </ul>
+                </div>
+              }
+            </div>
+          </app-mac-window>
+        </div>
+      </div>
+
+      <div #captionEl class="showcase__caption">
+        <div aria-live="polite">
+          <p class="showcase__stack">{{ selected().i18nKey + '.STACK' | translate }}</p>
+          <h3 class="showcase__title">{{ selected().i18nKey + '.TITLE' | translate }}</h3>
+        </div>
+        <p class="showcase__summary">{{ selected().i18nKey + '.SUMMARY' | translate }}</p>
+        <p class="showcase__contribution">
+          <strong>{{ 'SHOWCASE.CONTRIBUTION' | translate }}:</strong>
+          {{ selected().i18nKey + '.CONTRIBUTION' | translate }}
+        </p>
+
+        @if (selectedProject() || selected().liveUrl || selected().code) {
+          <ul class="showcase__links">
+            @if (selectedProject(); as project) {
+              <li>
+                <a class="showcase__link showcase__link--primary" [routerLink]="'/projects/' + project.id">
+                  {{ 'SHOWCASE.LINK_DETAILS' | translate }} <span aria-hidden="true">→</span>
+                </a>
+              </li>
+            }
+            @if (selected().liveUrl; as liveUrl) {
+              <li>
+                <a class="showcase__link" [href]="liveUrl" target="_blank" rel="noopener noreferrer">
+                  {{ 'SHOWCASE.LINK_LIVE' | translate }} <span aria-hidden="true">↗</span>
+                </a>
+              </li>
+            }
+            @if (selected().code; as code) {
+              <li>
+                <a class="showcase__link" [href]="code.url" target="_blank" rel="noopener noreferrer">
+                  {{ 'SHOWCASE.LINK_CODE' | translate: { host: code.host } }} <span aria-hidden="true">↗</span>
+                </a>
+              </li>
+            }
+          </ul>
+        } @else {
+          <p class="showcase__no-link">{{ selected().i18nKey + '.NO_LINK' | translate }}</p>
+        }
+
+        <details class="showcase__story" (toggle)="onStoryToggle($event)">
+          <summary>
+            {{ 'SHOWCASE.STORY' | translate }}
+            <span class="showcase__story-icon" aria-hidden="true">+</span>
+          </summary>
+          <dl #storyText class="showcase__story-text">
+            @for (part of ['PROBLEM', 'TECH', 'DECISION', 'RESULT']; track part) {
+              <div>
+                <dt>{{ 'SHOWCASE.' + part | translate }}</dt>
+                <dd>{{ selected().i18nKey + '.' + part | translate }}</dd>
+              </div>
+            }
+          </dl>
+        </details>
+      </div>
+    </div>
+  </div>
+
+  <div class="more">
+    <div class="more__head" appReveal>
+      <h3 class="more__title">{{ 'SHOWCASE.MORE_TITLE' | translate }}</h3>
+      <p class="more__text">{{ 'SHOWCASE.MORE_TEXT' | translate }}</p>
+    </div>
+    <ul class="more__grid">
+      @for (project of moreProjects(); track project.id; let i = $index) {
+        <li appReveal [revealDelay]="(i % 3) * 70">
+          <app-project-card [project]="project" />
+        </li>
+      }
+    </ul>
   </div>
 </section>

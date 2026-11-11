@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { ViewportScroller } from '@angular/common';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Header } from './components/header/header';
 import { Footer } from './components/footer/footer';
@@ -16,4 +17,10 @@ import { Toast } from './shared/components/toast/toast';
  * Renders the shared header, a `<router-outlet>` for page content,
  * the shared footer, and the global toast overlay.
  */
-export class App {}
+export class App {
+  constructor() {
+    // Router anchor scrolling uses window.scrollTo, which ignores CSS scroll-padding:
+    // keep `/#section` targets clear of the floating navigation.
+    inject(ViewportScroller).setOffset([0, 96]);
+  }
+}

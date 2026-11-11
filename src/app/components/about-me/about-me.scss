@@ -1,233 +1,124 @@
 @use '../../../styles/variables' as *;
-@use '../../../styles/mixins' as *;
 
-// ========================================
-// ABOUT ME SECTION
-// ========================================
-
-.about-me {
-  position: relative;
-  padding: $spacing-4xl 0;
-}
-
-.about-me__container {
-  @include flex-center;
-  align-items: start;
-  gap: $spacing-3xl;
-  max-width: $container-max-width;
-  margin: 0 auto;
-  padding-left: $container-padding-x;
-  padding-right: $container-padding-x;
-}
-
-// ========================================
-// STICKERS (Left side)
-// ========================================
-
-.about-me__stickers {
-  position: relative;
-  min-height: 500px;
-  width: 50%;
-  // The container aligns its children to the top. Stretching this column to the
-  // row height makes the 50% anchor below centre the stack against the text
-  // instead of against an empty 500px box parked at the top.
-  align-self: stretch;
-
-  // The three stickers are absolutely positioned 100px apart, so the group is
-  // roughly 331px tall (rotation included) inside a 500px box. Anchored to the
-  // top edge it hugs the top and leaves ~180px of dead space underneath, which
-  // reads as misaligned next to the text column. Half the group height, used
-  // below to hang the stack off the vertical centre instead.
-  --sticker-stack-offset: -156px;
-}
-
-.about-me__sticker {
-  position: absolute;
-  @include flex-center;
-
-  &--yellow {
-    top: calc(50% + var(--sticker-stack-offset));
-    left: 0;
-    transform: rotate(-3deg);
-    z-index: 3;
-
-    .about-me__sticker-content {
-      top: 40%;
-    }
-  }
-
-  &--blue {
-    top: calc(50% + var(--sticker-stack-offset) + 100px);
-    left: 20px;
-    transform: rotate(2deg);
-    z-index: 2;
-  }
-
-  &--orange {
-    top: calc(50% + var(--sticker-stack-offset) + 200px);
-    left: 20px;
-    transform: rotate(5deg);
-    z-index: 1;
-
-    .about-me__sticker-text {
-      transform: rotate(4deg);
-    }
-  }
-}
-
-.about-me__sticker-bg {
-  width: 550px;
-  height: auto;
+:host {
   display: block;
 }
 
-.about-me__sticker-content {
-  @include abs-center;
-  @include flex-center;
-  gap: $spacing-xs;
-  width: 100%;
-  height: 100%;
-  padding: $spacing-md;
-}
+.about {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 72px 40px 40px;
 
-.about-me__sticker-icon {
-  object-fit: contain;
-}
-
-.about-me__sticker-text {
-  font-size: $font-size-md;
-  font-weight: $font-weight-semibold;
-  color: $text-primary;
-  text-align: center;
-  line-height: $line-height-normal;
-}
-
-// ========================================
-// CONTENT (Right side)
-// ========================================
-
-.about-me__content {
-  @include flex-column;
-  gap: $spacing-md;
-  max-width: 50%;
-}
-
-.about-me__label {
-  font-size: $font-size-lg;
-  font-weight: $font-weight-semibold;
-  color: $text-dark;
-  text-transform: uppercase;
-  letter-spacing: $letter-spacing-wide;
-}
-
-.about-me__title {
-  font-size: $font-size-4xl;
-  font-weight: $font-weight-black;
-  color: $text-dark;
-  margin: 0;
-}
-
-@include underline-reveal-keyframes;
-
-.about-me__underline {
-  @include underline-reveal(300px);
-  margin-top: -$spacing-sm;
-  margin-bottom: $spacing-md;
-}
-
-.about-me__text {
-  font-size: $font-size-base;
-  font-weight: $font-weight-normal;
-  line-height: $line-height-relaxed;
-  color: $text-dark;
-  margin: 0;
-}
-
-.about-me__cta {
-  display: flex;
-  justify-content: end;
-  margin-top: $spacing-sm;
-}
-
-// ========================================
-// RESPONSIVE
-// ========================================
-
-@include mobile {
-  .about-me {
-    padding: $spacing-xl 0;
+  &:focus {
+    outline: none;
   }
+}
 
-  .about-me__container {
-    flex-direction: column;
-    padding-left: $container-padding-x-mobile;
-    padding-right: $container-padding-x-mobile;
-    gap: $spacing-lg;
-    align-items: center;
-  }
+.about__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: 56px;
+  padding-top: 56px;
+  border-top: 1px solid $line;
+}
 
-  .about-me__stickers {
-    width: 100%;
-    min-height: 200px;
+.about__title {
+  margin-top: 14px;
+}
+
+.about__facts {
+  display: grid;
+  gap: 10px;
+  margin-top: 28px;
+
+  li {
     display: flex;
-    justify-content: center;
-    position: relative;
-    order: 2;
-  }
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
 
-  .about-me__sticker {
-    width: 280px;
-
-    &--yellow {
-      left: 50%;
-      top: 0;
-      transform: translateX(-50%) rotate(-3deg);
-    }
-
-    &--blue {
-      left: 50%;
-      top: 60px;
-      transform: translateX(-50%) rotate(2deg);
-    }
-
-    &--orange {
-      left: 50%;
-      top: 120px;
-      transform: translateX(-50%) rotate(5deg);
+    &::before {
+      content: '';
+      flex: none;
+      width: 10px;
+      height: 10px;
+      background: $honey;
+      border-radius: 50%;
     }
   }
+}
 
-  .about-me__sticker-bg {
-    width: 100%;
-    max-width: 400px;
+.about__text {
+  p {
+    margin: 0 0 18px;
+    font-size: 17px;
+    line-height: 1.7;
+    color: $ink-muted;
+  }
+}
+
+.about__tools-title {
+  margin-top: 32px;
+  font-family: $font-primary;
+  font-size: 15px;
+  font-weight: $font-weight-semibold;
+  letter-spacing: 0;
+}
+
+.about__tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+
+  li {
+    padding: 6px 12px;
+    font-size: 14px;
+    background: $paper;
+    border: 1px solid $line;
+    border-radius: 999px;
+  }
+}
+
+.about__method {
+  max-width: 640px;
+  margin: 88px auto 0;
+  padding: 48px 0 24px;
+  text-align: center;
+  border-top: 1px solid $line;
+}
+
+.about__method-title {
+  margin: 14px 0 0;
+  font: 500 clamp(30px, 4vw, 48px)/1.12 $font-display;
+  letter-spacing: -0.01em;
+
+  em {
+    font-style: normal;
+    font-weight: $font-weight-normal;
+    color: $accent;
+  }
+}
+
+.about__method-text {
+  margin: 18px auto 0;
+  max-width: 480px;
+  font-size: 17px;
+  color: $ink-muted;
+}
+
+@media (max-width: 860px) {
+  .about {
+    padding: 48px 20px 24px;
   }
 
-  .about-me__content {
-    max-width: 100%;
-    text-align: start;
-    align-self: flex-start;
-    order: 1;
+  .about__grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+    padding-top: 40px;
   }
 
-  .about-me__label {
-    font-size: $font-size-base;
-  }
-
-  .about-me__title {
-    font-size: $font-size-3xl-mobile;
-  }
-
-  .about-me__underline {
-    width: 100%;
-    max-width: 250px;
-    align-self: flex-start;
-  }
-
-  .about-me__sticker-text {
-    font-size: $font-size-md;
-  }
-
-  .about-me__cta {
-    justify-content: end;
+  .about__method {
+    margin-top: 56px;
   }
 }

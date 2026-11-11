@@ -10,6 +10,25 @@ $deploy-path: '';
 // COLOR PALETTE
 // ----------------------------------------
 
+// Light "Dia" palette — the whole site stays light, regardless of OS dark mode
+$page-bg: #fbf9f3;
+$paper: #fffefa;
+$ink: #29281e;
+$ink-muted: #66604f;
+$line: #ded9c7;
+$honey: #f4cb4e;
+$lemon: #fff0b1;
+$hero-bg: #fff5d5;
+$accent: #535a32;
+$glass: rgba(255, 255, 255, 0.74);
+$shadow-warm: rgba(116, 96, 33, 0.12);
+$traffic-red: #ed756b;
+$traffic-yellow: #e2b34e;
+$traffic-green: #70ab78;
+
+// Height reserved for the floating navigation (anchors and focus scroll below it)
+$nav-space: 96px;
+
 // Primary Colors
 $dark-bg: #0e1013;
 $white: #f8f9fa;
@@ -41,11 +60,13 @@ $shadow-dark: rgba(0, 0, 0, 0.24);
 // ----------------------------------------
 
 // Font Families
-$font-primary: 'Bricolage Grotesque', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-  sans-serif;
-$font-heading: 'Bricolage Grotesque', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-  sans-serif;
+// Free stand-ins for the Dia site's licensed faces: Geist for ABC Oracle,
+// Geist Mono for ABC Favorit Mono. Headings are sans too (no serif display face).
+$font-primary: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+$font-heading: $font-primary;
 $font-handwriting: 'Kalam', cursive;
+$font-display: $font-primary;
+$font-mono: 'Geist Mono', ui-monospace, 'SF Mono', Menlo, monospace;
 
 // Font Sizes (ascending)
 $font-size-xs: 16px;
@@ -138,6 +159,11 @@ $shadow-lg: 0 8px 16px $shadow-dark;
 $shadow-card: 0 4px 8px $shadow-medium;
 $shadow-button: 2px 4px 0px $text-primary;
 $shadow-button-dark: 2px 4px 0px $outline-dark;
+$shadow-float: 0 3px 14px $shadow-warm;
+$shadow-window: 0 24px 40px -14px rgba(116, 96, 33, 0.22), 0 3px 10px $shadow-warm;
+
+// Motion
+$ease-out-soft: cubic-bezier(0.22, 0.7, 0.25, 1);
 
 // Z-index layers
 $z-base: 1;

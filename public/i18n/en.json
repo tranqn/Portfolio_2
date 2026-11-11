@@ -3,31 +3,84 @@
     "ABOUT": "About me",
     "SKILLS": "Skills",
     "PROJECTS": "Projects",
-    "CONTACT": "Contact"
+    "CONTACT": "Contact",
+    "HOME": "Back to top",
+    "MENU": "Menu",
+    "MENU_CLOSE": "Close menu",
+    "NAV_LABEL": "Main navigation",
+    "LANG_SWITCH": "Deutsch",
+    "LANG_SWITCH_LABEL": "Auf Deutsch wechseln",
+    "SKIP": "Skip to content"
   },
   "HERO": {
     "HELLO": "Hello World",
     "HELLO_HOVER": "I'M QUOC NAM TRAN",
     "FRONTEND": "FULLSTACK",
     "DEVELOPER": "DEVELOPER",
-    "GET_IN_TOUCH": "Get in Touch"
+    "GET_IN_TOUCH": "Get in Touch",
+    "EYEBROW": "Curiosity with a result.",
+    "TITLE_1": "Understand fast.",
+    "TITLE_2": "Improve with purpose.",
+    "INTRO": "I get to know new codebases, carry proven approaches over and keep ideas moving. With JavaScript, Python and AI as my tools.",
+    "ROLE": "Fullstack Developer",
+    "STACK": "JavaScript · Python · AI",
+    "LOCATION": "Saxony · remote across Germany",
+    "CONTACT_LINK": "Get in touch",
+    "POLAROID_ALT": "Polaroid photo of Quóc Nam Tràn",
+    "DESK": {
+      "LABEL": "Terminal window: Claude Code implements a task on this portfolio while Codex reviews the change. An illustration of how I work.",
+      "CLAUDE_TASK": "Skill links should open the matching project",
+      "CLAUDE_TESTS": "11 of 11 tests passed",
+      "CLAUDE_WORKING": "Working …",
+      "CLAUDE_DONE": "Done: the link selects the project, scrolls there and moves focus.",
+      "CODEX_TASK": "Review the changes to skills.ts",
+      "CODEX_BUILD": "Build succeeded",
+      "CODEX_NOTE": "Note: move focus only after scrolling.",
+      "CODEX_WORKING": "Reviewing …",
+      "CODEX_DONE": "No blockers found."
+    }
   },
   "ABOUT": {
-    "LABEL": "WHO'S NAM?",
-    "TITLE": "About me",
+    "LABEL": "About me",
+    "TITLE": "Who's Nam?",
     "TEXT_1": "I am Nam, a fullstack developer. I build complete web applications with modern interfaces, secure REST APIs and reliable deployments. I recently completed a practical fullstack development program at Developer Akademie. During this time, I built Join, Coderr, Videoflix and Quizly through individual and team projects.",
     "TEXT_2": "Before writing code, I want to understand the problem. I start with a clear specification, build an early working prototype and validate the important assumptions. I use Claude Code daily for analysis, implementation and testing. I am also expanding my workflow with Codex. I remain responsible for the technical decisions and final quality.",
     "TEXT_3": "I also help others adopt modern AI tools by explaining suitable use cases, safe workflows and clear review procedures.",
     "BUTTON": "Get in touch",
     "LOCATION": "Based in Saxony",
     "RELOCATE": "Open to relocate",
-    "REMOTE": "Open to remote work"
+    "REMOTE": "Remote anywhere in Germany",
+    "HYBRID": "Hybrid in Leipzig, Dresden or Chemnitz",
+    "METHOD_LABEL": "How I approach a task",
+    "METHOD_TITLE_1": "Understand. Try.",
+    "METHOD_TITLE_2": "Verify. Improve.",
+    "METHOD_TEXT": "New technology becomes tangible when I apply it to a concrete task and check the result.",
+    "TOOLS_TITLE": "Used in projects"
   },
   "SKILLS": {
     "LABEL": "MY STACK",
     "TITLE": "Skill set",
     "DESCRIPTION": "Every one of these technologies sits in a project I built, tested and shipped. Where it mattered, I dug deeper into how they work, for example FFmpeg transcoding, refresh-token rotation and database query optimisation.",
-    "BADGE": "Also, I'm interested in diving into:"
+    "BADGE": "Also, I'm interested in diving into:",
+    "HEADING": "Four areas of work",
+    "REFERENCES": "References",
+    "SHOW_PROJECT": "show in projects",
+    "WEB": {
+      "TITLE": "Designing web applications",
+      "TOOLS": "React · Angular · Vue · mobile interfaces"
+    },
+    "DATA": {
+      "TITLE": "Connecting systems and data",
+      "TOOLS": "Python/Django · Node.js · APIs · PostgreSQL"
+    },
+    "AI": {
+      "TITLE": "Building and automating with AI",
+      "TOOLS": "Code analysis · skills · agent orchestration"
+    },
+    "HOSTING": {
+      "TITLE": "Setting up servers and hosting",
+      "TOOLS": "My own Hetzner server for my live demos"
+    }
   },
   "PROJECTS": {
     "LABEL": "MY CRAFT",
@@ -111,8 +164,8 @@
     "GITLAB": "GitLab"
   },
   "CONTACT": {
-    "LABEL": "GET IN TOUCH",
-    "TITLE": "Contact",
+    "LABEL": "Let's build something",
+    "TITLE": "A task for me?",
     "DESCRIPTION": "Do you have an open role, a project, or a question about my work? Send me a message and I will get back to you.",
     "NAME_LABEL": "What's your name?",
     "NAME_PLACEHOLDER": "Your name goes here",
@@ -131,12 +184,14 @@
     "ERROR_EMAIL_INVALID": "Oops! That email address doesn't look valid",
     "ERROR_MESSAGE_REQUIRED": "Oops! Your message is empty",
     "ERROR_MESSAGE_MINLENGTH": "Please enter at least 4 characters",
-    "ERROR_PRIVACY_REQUIRED": "Please accept the privacy policy"
+    "ERROR_PRIVACY_REQUIRED": "Please accept the privacy policy",
+    "DIRECT": "Or directly:",
+    "SENDING": "Sending …"
   },
   "COLLEAGUES": {
-    "LABEL": "in Their Words:",
-    "TITLE": "What Colleagues Say",
-    "PROFILE": "Profile",
+    "LABEL": "Feedback from team work",
+    "TITLE": "What teammates say",
+    "PROFILE": "LinkedIn profile",
     "CHRISTIAN": {
       "POSITION": "Frontend Developer",
       "TEXT": "Nam significantly contributed to the on-time success of the 'Join' project with his expertise. Particularly noteworthy are his clear communication and the patience with which he explained complex code logic and worked through it together as a team. Thanks to his oversight and structured task distribution in sprints, he was a pillar of our collaboration. I value Nam as a helpful and professionally excellent colleague and recommend him without reservation."
@@ -156,16 +211,18 @@
     "IMPLEMENTATION": "Implementation Details",
     "DURATION": "Duration",
     "ROLE": "Role",
-    "NEXT_PROJECT": "Next Project"
+    "NEXT_PROJECT": "Next Project",
+    "STACK": "Technology",
+    "LINKS": "Links"
   },
   "LEGAL_NOTICE": {
     "TITLE": "Legal Notice",
-    "IMPRINT": "Information pursuant to \u00A7 5 DDG",
+    "IMPRINT": "Information pursuant to § 5 DDG",
     "IMPRINT_TEXT": "Quoc Nam Tran<br>Niedermarkt 35<br>04736 Waldheim<br>Germany",
     "CONTACT": "Contact",
     "CONTACT_TEXT": "Email: <a href=\"mailto:info@quocnamtran.com\">info@quocnamtran.com</a>",
     "LIABILITY_CONTENT": "Liability for content",
-    "LIABILITY_CONTENT_TEXT": "As a service provider, I am responsible for my own content on these pages in accordance with general legislation pursuant to \u00A7 7 (1) DDG. According to \u00A7\u00A7 8 to 10 DDG, however, I am not obligated as a service provider to monitor transmitted or stored third-party information or to investigate circumstances that indicate illegal activity. Obligations to remove or block the use of information under general law remain unaffected. However, liability in this regard is only possible from the point in time at which a concrete infringement of the law becomes known. If I become aware of any such infringements, I will remove this content immediately.",
+    "LIABILITY_CONTENT_TEXT": "As a service provider, I am responsible for my own content on these pages in accordance with general legislation pursuant to § 7 (1) DDG. According to §§ 8 to 10 DDG, however, I am not obligated as a service provider to monitor transmitted or stored third-party information or to investigate circumstances that indicate illegal activity. Obligations to remove or block the use of information under general law remain unaffected. However, liability in this regard is only possible from the point in time at which a concrete infringement of the law becomes known. If I become aware of any such infringements, I will remove this content immediately.",
     "LIABILITY_LINKS": "Liability for links",
     "LIABILITY_LINKS_TEXT": "This website contains links to external third-party websites over whose content I have no influence. Therefore, I cannot accept any liability for this third-party content. The respective provider or operator of the linked pages is always responsible for the content of those pages. The linked pages were checked for possible legal violations at the time of linking. Illegal content was not recognizable at the time of linking. However, permanent monitoring of the content of the linked pages is not reasonable without concrete evidence of a legal violation. If I become aware of any infringements, I will remove such links immediately.",
     "COPYRIGHT": "Copyright",
@@ -201,6 +258,93 @@
   "FOOTER": {
     "LEGAL_NOTICE": "Legal Notice",
     "GITHUB": "Github",
-    "LINKEDIN": "LinkedIn"
+    "LINKEDIN": "LinkedIn",
+    "PRIVACY": "Privacy",
+    "EMAIL": "Email",
+    "MOTION_REDUCE": "Reduce motion",
+    "MOTION_SYSTEM": "Motion reduced by system setting",
+    "TAGLINE": "Fullstack developer in Saxony"
+  },
+  "SHOWCASE": {
+    "LABEL": "Selected work",
+    "TITLE": "A look into my projects.",
+    "SUBTITLE": "From the interface to my own server. Pick a project to see its recording, my part and the links.",
+    "LIST_LABEL": "Choose a project",
+    "CONTRIBUTION": "My part",
+    "STORY": "Project story",
+    "PROBLEM": "Starting point",
+    "TECH": "Technology",
+    "DECISION": "Key decision",
+    "RESULT": "Verifiable result",
+    "OVERVIEW_TAG": "Overview",
+    "LINK_DETAILS": "Project page",
+    "LINK_LIVE": "Live demo",
+    "LINK_CODE": "Code on {{host}}",
+    "MORE_TITLE": "More projects",
+    "MORE_TEXT": "Course and personal projects, each with its own project page.",
+    "PRAXIS": {
+      "NAME": "Praxis UI Lab",
+      "TAGLINE": "Making workflows easy to follow.",
+      "STACK": "Angular · Signals · TypeScript · synthetic data",
+      "TITLE": "A day list that makes workflows easy to follow.",
+      "SUMMARY": "A demo for a medical practice: appointments move by click or keyboard from \"planned\" to \"completed\", and waiting times and warnings are visible at a glance. All patient data is synthetic.",
+      "CONTRIBUTION": "Solo project. Concept, interface, domain logic and tests are mine.",
+      "PROBLEM": "How can a day list show the state of every appointment without losing concurrent edits or stale data?",
+      "TECH": "Angular 22 without Zone.js, signal stores, an OpenAPI contract, Mock Service Worker, Playwright with axe.",
+      "DECISION": "The domain logic lives framework-free in its own layer: a state machine for appointments and time logic for Europe/Berlin. The interface reports conflicts (409) and stale versions (412) separately.",
+      "RESULT": "Live demo with synthetic data. Unit tests run in GitLab CI, Playwright checks workflows and accessibility.",
+      "MEDIA_LABEL": "Screen recording: in the Praxis UI Lab day list a patient is selected and called in, followed by search, the command palette with compact density and the history."
+    },
+    "STADTPULS": {
+      "NAME": "StadtPuls",
+      "TAGLINE": "Connecting systems and data.",
+      "STACK": "Node.js · Moleculer · Vue 3 · PostgreSQL · InfluxDB",
+      "TITLE": "From a reading to an application.",
+      "SUMMARY": "An IoT platform for municipal utilities: LoRaWAN readings from meters and sensors are validated and land in a dashboard with a site tree, a map and consumption charts. Each tenant only sees their own assets.",
+      "CONTRIBUTION": "Ongoing solo project. Services, API, storage, dashboard and pipeline are mine.",
+      "PROBLEM": "Readings arrive twice, late or broken. Time series still have to be correct and tenants cleanly separated.",
+      "TECH": "Node.js services with Moleculer and RabbitMQ, PostgreSQL for master data, InfluxDB 2 for readings, Keycloak (OIDC), Vue 3.",
+      "DECISION": "Measurement time and arrival time stay separate so no false time series appear. Incoming data is validated, de-duplicated and decoded in an isolated driver runtime.",
+      "RESULT": "253 automated tests, 9 browser tests against the production bundle and a GitLab pipeline with 15 jobs. Live demo and code are public.",
+      "MEDIA_LABEL": "Screen recording of StadtPuls with demo data: overview with map, the Hafen site with consumption over 7 and 30 days, then the device list filtered to water meters."
+    },
+    "ZYKLUS": {
+      "NAME": "Zyklus",
+      "TAGLINE": "A product for everyday life.",
+      "STACK": "React · PWA · offline sync · Hono API",
+      "TITLE": "Training and nutrition, even offline.",
+      "SUMMARY": "A mobile training app with a plan generator, set logging, a food diary and progress views. Installable, usable offline and available in three languages.",
+      "CONTRIBUTION": "Personal project. I modelled the feature set on an existing training app and built it entirely myself.",
+      "PROBLEM": "Gyms often have poor reception. Entries still need to be saved immediately and synced between devices later.",
+      "TECH": "React PWA, custom sync layer, API with Hono and node:sqlite, Vitest and Playwright in a mobile viewport.",
+      "DECISION": "Plan generator, progression and calorie targets live outside React in a tested domain layer. Sync conflicts are merged per entry.",
+      "RESULT": "Runs live on my server. Using it requires an account.",
+      "OVERVIEW": {
+        "0": "Plan generator with mesocycles and a deload week",
+        "1": "Set logging with a rest timer",
+        "2": "Nutrition with barcode scanner and offline food data",
+        "3": "Sync between devices, works offline",
+        "4": "German, English and Vietnamese"
+      },
+      "MEDIA_LABEL": "Screen recording of Zyklus with a demo account: on the left a workout with set logging and rest timer, on the right an exercise animation, the muscle map and the weekly planner."
+    },
+    "CODERR": {
+      "NAME": "Coderr",
+      "TAGLINE": "A REST API with clear roles.",
+      "STACK": "Python · Django REST · PostgreSQL · Docker",
+      "TITLE": "A service marketplace as a clean API.",
+      "SUMMARY": "Businesses publish offers, customers order and review services. I built the complete Django REST backend.",
+      "CONTRIBUTION": "Backend and deployment are mine. The frontend was provided as a course template.",
+      "PROBLEM": "A finished frontend expects a precisely defined API with roles, filters, pagination and reviews.",
+      "TECH": "Django REST Framework, PostgreSQL, Docker, Gunicorn, Caddy.",
+      "DECISION": "Orders store the agreed offer terms as an immutable snapshot, so later changes to an offer never alter past orders.",
+      "RESULT": "88 automated tests cover the central API flows. Live demo and code are public.",
+      "MEDIA_LABEL": "Screen recording: offer overview of the Coderr marketplace."
+    }
+  },
+  "MEDIA": {
+    "PAUSE": "Pause",
+    "PLAY": "Play",
+    "RECORDING": "project recording"
   }
 }

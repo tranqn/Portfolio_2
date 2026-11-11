@@ -1,33 +1,86 @@
 {
   "HEADER": {
     "ABOUT": "Über mich",
-    "SKILLS": "Fähigkeiten",
+    "SKILLS": "Kompetenzen",
     "PROJECTS": "Projekte",
-    "CONTACT": "Kontakt"
+    "CONTACT": "Kontakt",
+    "HOME": "Zum Seitenanfang",
+    "MENU": "Menü",
+    "MENU_CLOSE": "Menü schließen",
+    "NAV_LABEL": "Hauptnavigation",
+    "LANG_SWITCH": "English",
+    "LANG_SWITCH_LABEL": "Switch to English",
+    "SKIP": "Zum Inhalt springen"
   },
   "HERO": {
     "HELLO": "Hallo World",
     "HELLO_HOVER": "ICH BIN QUOC NAM TRAN",
     "FRONTEND": "FULLSTACK",
     "DEVELOPER": "ENTWICKLER",
-    "GET_IN_TOUCH": "Kontakt aufnehmen"
+    "GET_IN_TOUCH": "Kontakt aufnehmen",
+    "EYEBROW": "Neugier mit einem Ergebnis.",
+    "TITLE_1": "Schnell verstehen.",
+    "TITLE_2": "Gezielt weiterentwickeln.",
+    "INTRO": "Ich erschließe neue Codebasen, übertrage bewährte Ansätze und entwickle Ideen weiter. Mit JavaScript, Python und KI als Werkzeug.",
+    "ROLE": "Fullstack Developer",
+    "STACK": "JavaScript · Python · KI",
+    "LOCATION": "Sachsen · remote in Deutschland",
+    "CONTACT_LINK": "Kontakt aufnehmen",
+    "POLAROID_ALT": "Polaroid-Foto von Quóc Nam Tràn",
+    "DESK": {
+      "LABEL": "Terminal-Fenster: Claude Code setzt eine Aufgabe am Portfolio um, Codex prüft die Änderung. Beispielhafte Darstellung meines Arbeitsablaufs.",
+      "CLAUDE_TASK": "Kompetenz-Links sollen das passende Projekt öffnen",
+      "CLAUDE_TESTS": "11 von 11 Tests bestanden",
+      "CLAUDE_WORKING": "Arbeitet …",
+      "CLAUDE_DONE": "Fertig: Link wählt das Projekt, scrollt hin und setzt den Fokus.",
+      "CODEX_TASK": "Review der Änderungen an skills.ts",
+      "CODEX_BUILD": "Build erfolgreich",
+      "CODEX_NOTE": "Hinweis: Fokus erst nach dem Scrollen setzen.",
+      "CODEX_WORKING": "Prüft …",
+      "CODEX_DONE": "Keine Blocker gefunden."
+    }
   },
   "ABOUT": {
-    "LABEL": "WER IST NAM?",
-    "TITLE": "Über mich",
+    "LABEL": "Über mich",
+    "TITLE": "Wer ist Nam?",
     "TEXT_1": "Ich bin Nam, Fullstack Developer. Ich entwickle vollständige Webanwendungen mit modernen Frontends, sicheren REST-APIs und stabilen Deployments. Zuletzt habe ich eine praxisorientierte Fullstack-Weiterbildung bei der Developer Akademie abgeschlossen. In dieser Zeit entstanden Join, Coderr, Videoflix und Quizly als Einzel- und Teamprojekte.",
     "TEXT_2": "Bevor ich Code schreibe, möchte ich das Problem verstehen. Deshalb beginne ich mit einer klaren Spezifikation, entwickle früh einen funktionierenden Prototyp und prüfe die wichtigsten Annahmen. Claude Code nutze ich täglich für Analyse, Umsetzung und Tests. Parallel vertiefe ich meinen Einsatz von Codex. Die technischen Entscheidungen und die abschließende Qualitätsprüfung verantworte ich selbst.",
     "TEXT_3": "Darüber hinaus unterstütze ich andere beim Einstieg in moderne KI-Tools. Dabei vermittle ich passende Einsatzbereiche, sichere Arbeitsweisen und klare Verfahren zur Prüfung der Ergebnisse.",
     "BUTTON": "Kontakt aufnehmen",
     "LOCATION": "Ansässig in Sachsen",
     "RELOCATE": "Bereit zum Umzug",
-    "REMOTE": "Offen für Remote-Arbeit"
+    "REMOTE": "Remote in ganz Deutschland",
+    "HYBRID": "Hybrid in Leipzig, Dresden oder Chemnitz",
+    "METHOD_LABEL": "So gehe ich an Aufgaben heran",
+    "METHOD_TITLE_1": "Verstehen. Ausprobieren.",
+    "METHOD_TITLE_2": "Prüfen. Weiterentwickeln.",
+    "METHOD_TEXT": "Neue Technologien werden greifbar, wenn ich sie an einer konkreten Aufgabe einsetze und das Ergebnis überprüfe.",
+    "TOOLS_TITLE": "In Projekten eingesetzt"
   },
   "SKILLS": {
     "LABEL": "MEIN STACK",
     "TITLE": "Fähigkeiten",
     "DESCRIPTION": "Jede dieser Technologien steckt in einem Projekt, das ich gebaut, getestet und ausgeliefert habe. Wo es nötig war, habe ich mich tiefer eingearbeitet, etwa in FFmpeg-Transcoding, Refresh-Token-Rotation und die Optimierung von Datenbankabfragen.",
-    "BADGE": "Au\u00DFerdem interessiere ich mich f\u00FCr:"
+    "BADGE": "Außerdem interessiere ich mich für:",
+    "HEADING": "Vier Kompetenzbereiche",
+    "REFERENCES": "Referenzen",
+    "SHOW_PROJECT": "im Projektbereich zeigen",
+    "WEB": {
+      "TITLE": "Webanwendungen gestalten",
+      "TOOLS": "React · Angular · Vue · mobile Oberflächen"
+    },
+    "DATA": {
+      "TITLE": "Systeme und Daten verbinden",
+      "TOOLS": "Python/Django · Node.js · APIs · PostgreSQL"
+    },
+    "AI": {
+      "TITLE": "Mit KI entwickeln und automatisieren",
+      "TOOLS": "Codeanalyse · Skills · Agenten-Orchestrierung"
+    },
+    "HOSTING": {
+      "TITLE": "Server und Hosting einrichten",
+      "TOOLS": "Eigener Hetzner-Server für meine Live-Demos"
+    }
   },
   "PROJECTS": {
     "LABEL": "MEINE ARBEIT",
@@ -111,8 +164,8 @@
     "PROJECT_DETAILS": "Projektdetails"
   },
   "CONTACT": {
-    "LABEL": "KONTAKTIEREN SIE MICH",
-    "TITLE": "Kontakt",
+    "LABEL": "Gemeinsam etwas entwickeln",
+    "TITLE": "Eine Aufgabe für mich?",
     "DESCRIPTION": "Sie haben eine offene Stelle, ein Projekt oder eine Frage zu meiner Arbeit? Schreiben Sie mir, ich melde mich zurück.",
     "NAME_LABEL": "Wie heißen Sie?",
     "NAME_PLACEHOLDER": "Ihr Name",
@@ -131,15 +184,17 @@
     "ERROR_EMAIL_INVALID": "Hoppla! Ihre E-Mail-Adresse ist ungültig",
     "ERROR_MESSAGE_REQUIRED": "Hoppla! Ihre Nachricht fehlt noch",
     "ERROR_MESSAGE_MINLENGTH": "Bitte geben Sie mindestens 4 Zeichen ein",
-    "ERROR_PRIVACY_REQUIRED": "Bitte akzeptieren Sie die Datenschutzerklärung"
+    "ERROR_PRIVACY_REQUIRED": "Bitte akzeptieren Sie die Datenschutzerklärung",
+    "DIRECT": "Oder direkt:",
+    "SENDING": "Wird gesendet …"
   },
   "COLLEAGUES": {
-    "LABEL": "in ihren Worten:",
-    "TITLE": "Was Kollegen sagen",
-    "PROFILE": "Profil",
+    "LABEL": "Rückmeldungen aus der Teamarbeit",
+    "TITLE": "Was Teamkollegen sagen",
+    "PROFILE": "LinkedIn-Profil",
     "CHRISTIAN": {
       "POSITION": "Frontend Developer",
-      "TEXT": "Nam trug mit seinem Fachwissen maßgeblich zum termingerechten Erfolg des Projekts \u201EJoin\u201C bei. Besonders hervorzuheben sind seine klare Kommunikation und die Geduld, mit der er komplexe Code-Logiken erklärt und gemeinsam im Team erarbeitet. Dank seiner Übersicht und der strukturierten Aufgabenverteilung in den Sprints war er eine tragende Säule unserer Zusammenarbeit. Ich schätze Nam als hilfsbereiten sowie fachlich exzellenten Kollegen und empfehle ihn uneingeschränkt weiter."
+      "TEXT": "Nam trug mit seinem Fachwissen maßgeblich zum termingerechten Erfolg des Projekts „Join“ bei. Besonders hervorzuheben sind seine klare Kommunikation und die Geduld, mit der er komplexe Code-Logiken erklärt und gemeinsam im Team erarbeitet. Dank seiner Übersicht und der strukturierten Aufgabenverteilung in den Sprints war er eine tragende Säule unserer Zusammenarbeit. Ich schätze Nam als hilfsbereiten sowie fachlich exzellenten Kollegen und empfehle ihn uneingeschränkt weiter."
     },
     "DANIEL": {
       "POSITION": "Frontend Developer",
@@ -151,56 +206,145 @@
     }
   },
   "PROJECT_DETAIL": {
-    "GO_BACK": "Zur\u00FCck",
+    "GO_BACK": "Zurück",
     "DESCRIPTION": "Beschreibung",
     "IMPLEMENTATION": "Implementierungsdetails",
     "DURATION": "Dauer",
     "ROLE": "Rolle",
-    "NEXT_PROJECT": "N\u00E4chstes Projekt"
+    "NEXT_PROJECT": "Nächstes Projekt",
+    "STACK": "Technik",
+    "LINKS": "Links"
   },
   "LEGAL_NOTICE": {
     "TITLE": "Impressum",
-    "IMPRINT": "Angaben gem\u00E4\u00DF \u00A7 5 DDG",
+    "IMPRINT": "Angaben gemäß § 5 DDG",
     "IMPRINT_TEXT": "Quoc Nam Tran<br>Niedermarkt 35<br>04736 Waldheim<br>Deutschland",
     "CONTACT": "Kontakt",
     "CONTACT_TEXT": "E-Mail: <a href=\"mailto:info@quocnamtran.com\">info@quocnamtran.com</a>",
-    "LIABILITY_CONTENT": "Haftung f\u00FCr Inhalte",
-    "LIABILITY_CONTENT_TEXT": "Als Diensteanbieter bin ich gem\u00E4\u00DF \u00A7 7 Abs. 1 DDG f\u00FCr eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach \u00A7\u00A7 8 bis 10 DDG bin ich als Diensteanbieter jedoch nicht verpflichtet, \u00FCbermittelte oder gespeicherte fremde Informationen zu \u00FCberwachen oder nach Umst\u00E4nden zu forschen, die auf eine rechtswidrige T\u00E4tigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unber\u00FChrt. Eine diesbez\u00FCgliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung m\u00F6glich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werde ich diese Inhalte umgehend entfernen.",
-    "LIABILITY_LINKS": "Haftung f\u00FCr Links",
-    "LIABILITY_LINKS_TEXT": "Diese Website enth\u00E4lt Links zu externen Websites Dritter, auf deren Inhalte ich keinen Einfluss habe. Deshalb kann ich f\u00FCr diese fremden Inhalte auch keine Gew\u00E4hr \u00FCbernehmen. F\u00FCr die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf m\u00F6gliche Rechtsverst\u00F6\u00DFe \u00FCberpr\u00FCft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werde ich derartige Links umgehend entfernen.",
+    "LIABILITY_CONTENT": "Haftung für Inhalte",
+    "LIABILITY_CONTENT_TEXT": "Als Diensteanbieter bin ich gemäß § 7 Abs. 1 DDG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 DDG bin ich als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werde ich diese Inhalte umgehend entfernen.",
+    "LIABILITY_LINKS": "Haftung für Links",
+    "LIABILITY_LINKS_TEXT": "Diese Website enthält Links zu externen Websites Dritter, auf deren Inhalte ich keinen Einfluss habe. Deshalb kann ich für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werde ich derartige Links umgehend entfernen.",
     "COPYRIGHT": "Urheberrecht",
-    "COPYRIGHT_TEXT": "Die durch den Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielf\u00E4ltigung, Bearbeitung, Verbreitung und jede Art der Verwertung au\u00DFerhalb der Grenzen des Urheberrechtes bed\u00FCrfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur f\u00FCr den privaten, nicht kommerziellen Gebrauch gestattet."
+    "COPYRIGHT_TEXT": "Die durch den Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet."
   },
   "PRIVACY_POLICY": {
-    "TITLE": "Datenschutzerkl\u00E4rung",
+    "TITLE": "Datenschutzerklärung",
     "OVERVIEW_TITLE": "1. Datenschutz auf einen Blick",
-    "OVERVIEW_TEXT": "Die folgenden Hinweise geben einen einfachen \u00DCberblick dar\u00FCber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie pers\u00F6nlich identifiziert werden k\u00F6nnen.",
+    "OVERVIEW_TEXT": "Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können.",
     "CONTROLLER_TITLE": "2. Verantwortliche Stelle",
-    "CONTROLLER_TEXT": "Verantwortlich f\u00FCr die Datenverarbeitung auf dieser Website ist:<br><br>Quoc Nam Tran<br>Niedermarkt 35<br>04736 Waldheim<br><br>E-Mail: <a href=\"mailto:info@quocnamtran.com\">info@quocnamtran.com</a>",
+    "CONTROLLER_TEXT": "Verantwortlich für die Datenverarbeitung auf dieser Website ist:<br><br>Quoc Nam Tran<br>Niedermarkt 35<br>04736 Waldheim<br><br>E-Mail: <a href=\"mailto:info@quocnamtran.com\">info@quocnamtran.com</a>",
     "HOSTING_TITLE": "3. Hosting",
-    "HOSTING_TEXT": "Diese Website wird bei IONOS SE, Elgendorfer Str. 57, 56410 Montabaur, Deutschland gehostet. Die personenbezogenen Daten, die auf dieser Website erfasst werden, werden auf den Servern von IONOS gespeichert. Hierbei kann es sich insbesondere um IP-Adressen, Kontaktanfragen, Meta- und Kommunikationsdaten, Vertragsdaten, Kontaktdaten, Namen, Websitezugriffe und sonstige Daten handeln, die \u00FCber eine Website generiert werden. Der Einsatz von IONOS erfolgt im Interesse einer sicheren, schnellen und effizienten Bereitstellung unseres Online-Angebots durch einen professionellen Anbieter (Art. 6 Abs. 1 lit. f DSGVO).",
-    "SSL_TITLE": "4. SSL- bzw. TLS-Verschl\u00FCsselung",
-    "SSL_TEXT": "Diese Seite nutzt aus Sicherheitsgr\u00FCnden und zum Schutz der \u00DCbertragung vertraulicher Inhalte, wie zum Beispiel Anfragen, die Sie an mich als Seitenbetreiber senden, eine SSL- bzw. TLS-Verschl\u00FCsselung. Eine verschl\u00FCsselte Verbindung erkennen Sie daran, dass die Adresszeile des Browsers von \u201Ehttp://\u201C auf \u201Ehttps://\u201C wechselt und an dem Schloss-Symbol in Ihrer Browserzeile. Wenn die SSL- bzw. TLS-Verschl\u00FCsselung aktiviert ist, k\u00F6nnen die Daten, die Sie an mich \u00FCbermitteln, nicht von Dritten mitgelesen werden.",
+    "HOSTING_TEXT": "Diese Website wird bei IONOS SE, Elgendorfer Str. 57, 56410 Montabaur, Deutschland gehostet. Die personenbezogenen Daten, die auf dieser Website erfasst werden, werden auf den Servern von IONOS gespeichert. Hierbei kann es sich insbesondere um IP-Adressen, Kontaktanfragen, Meta- und Kommunikationsdaten, Vertragsdaten, Kontaktdaten, Namen, Websitezugriffe und sonstige Daten handeln, die über eine Website generiert werden. Der Einsatz von IONOS erfolgt im Interesse einer sicheren, schnellen und effizienten Bereitstellung unseres Online-Angebots durch einen professionellen Anbieter (Art. 6 Abs. 1 lit. f DSGVO).",
+    "SSL_TITLE": "4. SSL- bzw. TLS-Verschlüsselung",
+    "SSL_TEXT": "Diese Seite nutzt aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher Inhalte, wie zum Beispiel Anfragen, die Sie an mich als Seitenbetreiber senden, eine SSL- bzw. TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennen Sie daran, dass die Adresszeile des Browsers von „http://“ auf „https://“ wechselt und an dem Schloss-Symbol in Ihrer Browserzeile. Wenn die SSL- bzw. TLS-Verschlüsselung aktiviert ist, können die Daten, die Sie an mich übermitteln, nicht von Dritten mitgelesen werden.",
     "CONTACT_FORM_TITLE": "5. Kontaktformular",
-    "CONTACT_FORM_TEXT": "Wenn Sie mir per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten (Name, E-Mail-Adresse, Nachricht) zwecks Bearbeitung der Anfrage und f\u00FCr den Fall von Anschlussfragen bei mir gespeichert. Diese Daten gebe ich nicht ohne Ihre Einwilligung weiter. Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit der Erf\u00FCllung eines Vertrags zusammenh\u00E4ngt oder zur Durchf\u00FChrung vorvertraglicher Ma\u00DFnahmen erforderlich ist. In allen \u00FCbrigen F\u00E4llen beruht die Verarbeitung auf meinem berechtigten Interesse an der effektiven Bearbeitung der an mich gerichteten Anfragen (Art. 6 Abs. 1 lit. f DSGVO).",
+    "CONTACT_FORM_TEXT": "Wenn Sie mir per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten (Name, E-Mail-Adresse, Nachricht) zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei mir gespeichert. Diese Daten gebe ich nicht ohne Ihre Einwilligung weiter. Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit der Erfüllung eines Vertrags zusammenhängt oder zur Durchführung vorvertraglicher Maßnahmen erforderlich ist. In allen übrigen Fällen beruht die Verarbeitung auf meinem berechtigten Interesse an der effektiven Bearbeitung der an mich gerichteten Anfragen (Art. 6 Abs. 1 lit. f DSGVO).",
     "RIGHTS_TITLE": "6. Ihre Rechte",
-    "RIGHTS_TEXT": "Sie haben im Rahmen der geltenden gesetzlichen Bestimmungen jederzeit folgende Rechte bez\u00FCglich Ihrer personenbezogenen Daten:",
+    "RIGHTS_TEXT": "Sie haben im Rahmen der geltenden gesetzlichen Bestimmungen jederzeit folgende Rechte bezüglich Ihrer personenbezogenen Daten:",
     "RIGHT_ACCESS": "Recht auf Auskunft",
-    "RIGHT_ACCESS_TEXT": "Sie haben das Recht, gem\u00E4\u00DF Art. 15 DSGVO Auskunft \u00FCber Ihre von mir verarbeiteten personenbezogenen Daten zu verlangen.",
+    "RIGHT_ACCESS_TEXT": "Sie haben das Recht, gemäß Art. 15 DSGVO Auskunft über Ihre von mir verarbeiteten personenbezogenen Daten zu verlangen.",
     "RIGHT_RECTIFICATION": "Recht auf Berichtigung",
-    "RIGHT_RECTIFICATION_TEXT": "Sie haben das Recht, gem\u00E4\u00DF Art. 16 DSGVO unverz\u00FCglich die Berichtigung unrichtiger oder die Vervollst\u00E4ndigung Ihrer bei mir gespeicherten personenbezogenen Daten zu verlangen.",
-    "RIGHT_DELETION": "Recht auf L\u00F6schung",
-    "RIGHT_DELETION_TEXT": "Sie haben das Recht, gem\u00E4\u00DF Art. 17 DSGVO die L\u00F6schung Ihrer bei mir gespeicherten personenbezogenen Daten zu verlangen, soweit nicht die Verarbeitung zur Aus\u00FCbung des Rechts auf freie Meinungs\u00E4u\u00DFerung und Information, zur Erf\u00FCllung einer rechtlichen Verpflichtung oder aus Gr\u00FCnden des \u00F6ffentlichen Interesses erforderlich ist.",
-    "RIGHT_COMPLAINT": "Beschwerderecht bei der Aufsichtsbeh\u00F6rde",
-    "RIGHT_COMPLAINT_TEXT": "Wenn Sie der Ansicht sind, dass die Verarbeitung Ihrer personenbezogenen Daten gegen die DSGVO verst\u00F6\u00DFt, haben Sie das Recht, sich gem\u00E4\u00DF Art. 77 DSGVO bei einer Aufsichtsbeh\u00F6rde zu beschweren. Die f\u00FCr mich zust\u00E4ndige Aufsichtsbeh\u00F6rde ist der S\u00E4chsische Datenschutzbeauftragte."
+    "RIGHT_RECTIFICATION_TEXT": "Sie haben das Recht, gemäß Art. 16 DSGVO unverzüglich die Berichtigung unrichtiger oder die Vervollständigung Ihrer bei mir gespeicherten personenbezogenen Daten zu verlangen.",
+    "RIGHT_DELETION": "Recht auf Löschung",
+    "RIGHT_DELETION_TEXT": "Sie haben das Recht, gemäß Art. 17 DSGVO die Löschung Ihrer bei mir gespeicherten personenbezogenen Daten zu verlangen, soweit nicht die Verarbeitung zur Ausübung des Rechts auf freie Meinungsäußerung und Information, zur Erfüllung einer rechtlichen Verpflichtung oder aus Gründen des öffentlichen Interesses erforderlich ist.",
+    "RIGHT_COMPLAINT": "Beschwerderecht bei der Aufsichtsbehörde",
+    "RIGHT_COMPLAINT_TEXT": "Wenn Sie der Ansicht sind, dass die Verarbeitung Ihrer personenbezogenen Daten gegen die DSGVO verstößt, haben Sie das Recht, sich gemäß Art. 77 DSGVO bei einer Aufsichtsbehörde zu beschweren. Die für mich zuständige Aufsichtsbehörde ist der Sächsische Datenschutzbeauftragte."
   },
   "NOT_FOUND": {
     "TITLE": "Projekt nicht gefunden",
-    "TEXT": "Das gesuchte Projekt existiert leider nicht. Bitte kehren Sie zur Projekt\u00FCbersicht zur\u00FCck."
+    "TEXT": "Das gesuchte Projekt existiert leider nicht. Bitte kehren Sie zur Projektübersicht zurück."
   },
   "FOOTER": {
     "LEGAL_NOTICE": "Impressum",
     "GITHUB": "Github",
-    "LINKEDIN": "LinkedIn"
+    "LINKEDIN": "LinkedIn",
+    "PRIVACY": "Datenschutz",
+    "EMAIL": "E-Mail",
+    "MOTION_REDUCE": "Bewegung reduzieren",
+    "MOTION_SYSTEM": "Bewegung durch Systemeinstellung reduziert",
+    "TAGLINE": "Fullstack Developer in Sachsen"
+  },
+  "SHOWCASE": {
+    "LABEL": "Ausgewählte Arbeiten",
+    "TITLE": "Ein Blick in meine Projekte.",
+    "SUBTITLE": "Von der Oberfläche bis zum eigenen Server. Wählen Sie ein Projekt, um Aufnahme, Beitrag und Links zu sehen.",
+    "LIST_LABEL": "Projekt auswählen",
+    "CONTRIBUTION": "Mein Beitrag",
+    "STORY": "Projektgeschichte",
+    "PROBLEM": "Ausgangslage",
+    "TECH": "Technik",
+    "DECISION": "Wesentliche Entscheidung",
+    "RESULT": "Überprüfbares Ergebnis",
+    "OVERVIEW_TAG": "Überblick",
+    "LINK_DETAILS": "Projektseite",
+    "LINK_LIVE": "Live-Demo",
+    "LINK_CODE": "Code auf {{host}}",
+    "MORE_TITLE": "Weitere Projekte",
+    "MORE_TEXT": "Kurs- und Eigenprojekte mit eigener Projektseite.",
+    "PRAXIS": {
+      "NAME": "Praxis UI Lab",
+      "TAGLINE": "Abläufe verständlich gestalten.",
+      "STACK": "Angular · Signals · TypeScript · synthetische Daten",
+      "TITLE": "Eine Tagesliste, die Abläufe verständlich macht.",
+      "SUMMARY": "Demo für den Praxisalltag: Termine wandern per Klick oder Tastatur von „Geplant“ bis „Abgeschlossen“, Wartezeiten und Hinweise sind sofort sichtbar. Alle Patientendaten sind synthetisch.",
+      "CONTRIBUTION": "Einzelprojekt. Konzept, Oberfläche, Fachlogik und Tests stammen von mir.",
+      "PROBLEM": "Wie zeigt eine Tagesliste den Stand jedes Termins, ohne dass parallele Änderungen oder veraltete Daten untergehen?",
+      "TECH": "Angular 22 ohne Zone.js, Signal-Stores, OpenAPI-Vertrag, Mock Service Worker, Playwright mit axe.",
+      "DECISION": "Die Fachlogik liegt framework-frei in einer eigenen Domänenschicht: ein Statusautomat für Termine und eine Zeitlogik für Europe/Berlin. Konflikte (409) und veraltete Stände (412) meldet die Oberfläche getrennt.",
+      "RESULT": "Live-Demo mit synthetischen Daten. Unit-Tests laufen in der GitLab-CI, Playwright prüft Abläufe und Barrierefreiheit.",
+      "MEDIA_LABEL": "Bildschirmaufnahme: In der Tagesliste von Praxis UI Lab wird eine Patientin ausgewählt und ins Zimmer gerufen, danach folgen Suche, Befehlspalette mit kompakter Dichte und der Verlauf."
+    },
+    "STADTPULS": {
+      "NAME": "StadtPuls",
+      "TAGLINE": "Systeme und Daten verbinden.",
+      "STACK": "Node.js · Moleculer · Vue 3 · PostgreSQL · InfluxDB",
+      "TITLE": "Vom Messwert zur Anwendung.",
+      "SUMMARY": "IoT-Plattform für Stadtwerke: LoRaWAN-Messwerte von Zählern und Sensoren landen geprüft in einem Dashboard mit Standortbaum, Karte und Verbrauchskurven. Jeder Mandant sieht nur seine eigenen Anlagen.",
+      "CONTRIBUTION": "Laufendes Einzelprojekt. Dienste, API, Datenhaltung, Dashboard und Pipeline stammen von mir.",
+      "PROBLEM": "Messwerte kommen doppelt, verspätet oder fehlerhaft an. Trotzdem müssen Zeitreihen stimmen und Mandanten sauber getrennt bleiben.",
+      "TECH": "Node.js-Dienste mit Moleculer und RabbitMQ, PostgreSQL für Stammdaten, InfluxDB 2 für Messwerte, Keycloak (OIDC), Vue 3.",
+      "DECISION": "Messzeit und Eingangszeit bleiben getrennt, damit keine falschen Zeitreihen entstehen. Eingehende Daten werden geprüft, dedupliziert und in einer abgeschotteten Treiber-Laufzeit dekodiert.",
+      "RESULT": "253 automatisierte Tests, 9 Browser-Tests gegen das Produktions-Bundle und eine GitLab-Pipeline mit 15 Jobs. Live-Demo und Code sind öffentlich.",
+      "MEDIA_LABEL": "Bildschirmaufnahme von StadtPuls mit Demo-Daten: Übersicht mit Karte, Standort Hafen mit Verbrauchsverlauf über 7 und 30 Tage, danach die Geräteliste gefiltert nach Wasserzählern."
+    },
+    "ZYKLUS": {
+      "NAME": "Zyklus",
+      "TAGLINE": "Ein Produkt für den Alltag.",
+      "STACK": "React · PWA · Offline-Sync · Hono-API",
+      "TITLE": "Training und Ernährung, auch ohne Netz.",
+      "SUMMARY": "Mobile Trainings-App mit Plangenerator, Satz-Logging, Ernährungstagebuch und Fortschrittsansicht. Installierbar, offline nutzbar und dreisprachig.",
+      "CONTRIBUTION": "Eigenes Projekt. Den Funktionsumfang habe ich an einer bestehenden Trainings-App ausgerichtet und vollständig selbst umgesetzt.",
+      "PROBLEM": "Im Fitnessstudio ist das Netz oft schlecht. Einträge müssen trotzdem sofort gespeichert und später zwischen Geräten abgeglichen werden.",
+      "TECH": "React-PWA, eigene Synchronisierung, API mit Hono und node:sqlite, Vitest und Playwright im mobilen Viewport.",
+      "DECISION": "Plangenerator, Progression und Kalorienziele liegen getrennt von React in einer getesteten Domänenschicht. Konflikte beim Synchronisieren werden pro Eintrag zusammengeführt.",
+      "RESULT": "Läuft live auf meinem Server. Für die Nutzung ist ein Konto nötig.",
+      "OVERVIEW": {
+        "0": "Plangenerator mit Mesozyklen und Deload-Woche",
+        "1": "Satz-Logging mit Pausen-Timer",
+        "2": "Ernährung mit Barcode-Scanner und Offline-Lebensmitteldaten",
+        "3": "Synchronisierung zwischen Geräten, offline-fähig",
+        "4": "Deutsch, Englisch und Vietnamesisch"
+      },
+      "MEDIA_LABEL": "Bildschirmaufnahme von Zyklus mit einem Demo-Konto: links ein Training mit Satzerfassung und Pausentimer, rechts Übungsanimation, Muskel-Map und Wochenplaner."
+    },
+    "CODERR": {
+      "NAME": "Coderr",
+      "TAGLINE": "Eine REST-API mit klaren Rollen.",
+      "STACK": "Python · Django REST · PostgreSQL · Docker",
+      "TITLE": "Ein Service-Marktplatz als saubere API.",
+      "SUMMARY": "Unternehmen erstellen Angebote, Kunden bestellen und bewerten Leistungen. Ich habe das komplette Django-REST-Backend entwickelt.",
+      "CONTRIBUTION": "Backend und Deployment stammen von mir. Das Frontend war als Kursvorlage vorgegeben.",
+      "PROBLEM": "Ein fertiges Frontend erwartet eine genau definierte API mit Rollen, Filtern, Pagination und Bewertungen.",
+      "TECH": "Django REST Framework, PostgreSQL, Docker, Gunicorn, Caddy.",
+      "DECISION": "Bestellungen speichern die vereinbarten Angebotsbedingungen als unveränderlichen Snapshot. Spätere Änderungen am Angebot verfälschen alte Bestellungen nicht.",
+      "RESULT": "88 automatisierte Tests sichern die zentralen API-Abläufe. Live-Demo und Code sind öffentlich.",
+      "MEDIA_LABEL": "Bildschirmaufnahme: Angebotsübersicht des Coderr-Marktplatzes."
+    }
+  },
+  "MEDIA": {
+    "PAUSE": "Pause",
+    "PLAY": "Abspielen",
+    "RECORDING": "Projektaufnahme"
   }
 }

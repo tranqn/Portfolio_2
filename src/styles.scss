@@ -21,6 +21,24 @@
   font-display: swap;
 }
 
+// Geist — text face, free stand-in for Dia's ABC Oracle (OFL, self-hosted)
+@font-face {
+  font-family: 'Geist';
+  src: url('#{$deploy-path}/fonts/Geist/Geist-latin-wght-normal.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+// Geist Mono — labels and indices, free stand-in for Dia's ABC Favorit Mono (OFL, self-hosted)
+@font-face {
+  font-family: 'Geist Mono';
+  src: url('#{$deploy-path}/fonts/GeistMono/GeistMono-latin-wght-normal.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 // Kalam — handwriting font (regular + bold)
 @font-face {
   font-family: 'Kalam';
@@ -40,9 +58,41 @@
 // GLOBAL STYLES
 // ----------------------------------------
 
-// Offset scroll position for fixed header
+// Keep anchors and keyboard focus clear of the floating navigation
 html {
-  scroll-padding-top: 80px;
+  scroll-padding-top: $nav-space;
+}
+
+// Smooth scrolling only when motion is welcome (OS setting and footer toggle)
+@media (prefers-reduced-motion: no-preference) {
+  html:not(.motion-reduced) {
+    scroll-behavior: smooth;
+  }
+}
+
+// Reduced motion: no animations, no transitions, no smooth scrolling
+html.motion-reduced *,
+html.motion-reduced *::before,
+html.motion-reduced *::after {
+  animation: none !important;
+  transition: none !important;
+  scroll-behavior: auto !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+// Programmatic focus targets (skip link, section navigation) need no ring
+main[tabindex='-1']:focus,
+section[tabindex='-1']:focus {
+  outline: none;
 }
 
 // App root wrapper
@@ -54,4 +104,13 @@ app-root {
 // Hide Angular router-outlet element
 router-outlet {
   display: none;
+}
+
+// Small uppercase label above section headings, set in mono like Dia's labels
+.eyebrow {
+  display: block;
+  font: 400 12px/1.4 $font-mono;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $ink-muted;
 }

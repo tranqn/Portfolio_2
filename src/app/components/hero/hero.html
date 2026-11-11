@@ -1,60 +1,48 @@
 <section id="home" class="hero">
-  <div class="hero__container">
-    <app-social-links class="hero__social" />
-
-    <div class="hero__content-center">
-      <div class="hero__content">
-      <div class="hero__content-top">
-        <div class="hero__content-left">
-          <div class="hero__button-container">
-            <img [src]="wavingHandPath" alt="Waving hand" class="hero__button-icon" />
-            <button class="hero__button">
-              <span class="hero__button-text">{{ 'HERO.HELLO' | translate }}</span>
-              <span class="hero__button-text-hover">{{ 'HERO.HELLO_HOVER' | translate }}</span>
-            </button>
-          </div>
-          <div class="hero__letters-container hero__letters-container--top">
-            <h1 class="hero__title hero__title--top">
-              @for (letter of fullstackLetters; track $index) {
-                <span class="hero__letter" [attr.data-uppercase]="letter.isUpperCase" >
-                  {{ letter.char }}
-                </span>
-              }
-            </h1>
-          </div>
-        </div>
-        <div class="hero__content-right">
-          <div class="hero__polaroid-wrapper hero__polaroid-wrapper--desktop">
-            <img [src]="photoPath" alt="Nam" class="hero__polaroid-photo" />
-            <img [src]="polaroidFramePath" alt="Polaroid Frame" class="hero__polaroid" />
-            <span class="hero__polaroid-text hero__polaroid-text--default">Nam :)</span>
-            <span class="hero__polaroid-text hero__polaroid-text--hover">Nam :D</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="hero__content-bottom">
-        <div class="hero__letters-container hero__letters-container--bottom">
-          <h1 class="hero__title hero__title--bottom">
-            @for (letter of developerLetters; track $index) {
-              <span class="hero__letter" [attr.data-uppercase]="letter.isUpperCase">
-                {{ letter.char }}
-              </span>
-            }
-          </h1>
-        </div>
-        <div class="hero__cta-container">
-          <app-cta-button [translateKey]="'HERO.GET_IN_TOUCH'" fragment="contact" />
-        </div>
-      </div>
-
-      <div class="hero__polaroid-wrapper hero__polaroid-wrapper--mobile">
-        <img [src]="photoPath" alt="Nam" class="hero__polaroid-photo" />
-        <img [src]="polaroidFramePath" alt="Polaroid Frame" class="hero__polaroid" />
-        <span class="hero__polaroid-text hero__polaroid-text--default">Nam :)</span>
-        <span class="hero__polaroid-text hero__polaroid-text--hover">Nam :D</span>
-      </div>
-      </div>
+  <div class="hero__inner">
+    <div class="hero__copy">
+      <p class="eyebrow" appReveal [revealDelay]="0">{{ 'HERO.EYEBROW' | translate }}</p>
+      <h1 class="hero__title" appReveal [revealDelay]="60">
+        {{ 'HERO.TITLE_1' | translate }}<br />
+        <em>{{ 'HERO.TITLE_2' | translate }}</em>
+      </h1>
+      <p class="hero__intro" appReveal [revealDelay]="140">{{ 'HERO.INTRO' | translate }}</p>
     </div>
+
+    <div class="hero__desk">
+      <div class="hero__profile" appReveal [revealDelay]="200">
+        <figure class="polaroid">
+          <picture class="polaroid__photo">
+            <source [srcset]="portrait.webp" type="image/webp" />
+            <img
+              [src]="portrait.jpg"
+              [width]="portrait.width"
+              [height]="portrait.height"
+              [alt]="'HERO.POLAROID_ALT' | translate"
+              fetchpriority="high" />
+          </picture>
+          <img class="polaroid__frame" [src]="polaroidFrame" alt="" width="417" height="500" />
+          <span class="polaroid__caption" aria-hidden="true">
+            <span class="polaroid__caption-default">Nam :)</span>
+            <span class="polaroid__caption-hover">Nam :D</span>
+          </span>
+        </figure>
+
+        <div class="hero__identity">
+          <p class="hero__name">Quóc Nam Tràn</p>
+          <p class="hero__role">
+            {{ 'HERO.ROLE' | translate }}<br />{{ 'HERO.STACK' | translate }}
+          </p>
+          <p class="hero__location">{{ 'HERO.LOCATION' | translate }}</p>
+          <a routerLink="/" fragment="contact" class="hero__contact">
+            {{ 'HERO.CONTACT_LINK' | translate }} <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+
+      <app-hero-terminals class="hero__terminals" appReveal="window" [revealDelay]="260" />
+    </div>
+
+    <app-skills />
   </div>
 </section>

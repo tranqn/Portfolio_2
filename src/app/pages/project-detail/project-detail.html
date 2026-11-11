@@ -1,106 +1,99 @@
-<main class="project-detail">
+<main id="main-content" class="project-detail" tabindex="-1">
   <div class="project-detail__container">
-    <!-- Breadcrumb Navigation -->
-    <nav class="project-detail__breadcrumb">
-      <a routerLink="/" fragment="projects" class="project-detail__back-link">
-        <img [src]="breadcrumbArrow" alt="" class="project-detail__back-arrow" />
-        {{ 'PROJECT_DETAIL.GO_BACK' | translate }}
+    <nav class="project-detail__breadcrumb" aria-label="Breadcrumb">
+      <a routerLink="/" fragment="projects" class="project-detail__back">
+        <span aria-hidden="true">←</span> {{ 'PROJECT_DETAIL.GO_BACK' | translate }}
       </a>
     </nav>
 
     @if (project(); as proj) {
-      <!-- Main Content Grid -->
-      <div class="project-detail__content">
-        <!-- Left Column: Project Details -->
-        <div class="project-detail__details">
-          <h1 class="project-detail__title">
-            {{ proj.title | translate }}
-            <span class="project-detail__title-underline"></span>
-          </h1>
+      <header class="project-detail__head">
+        <h1 class="project-detail__title">{{ proj.title | translate }}</h1>
+        <ul class="project-detail__stack" [attr.aria-label]="'PROJECT_DETAIL.STACK' | translate">
+          @for (tech of proj.techStack; track tech.name) {
+            <li>
+              <img [src]="tech.icon" alt="" width="18" height="18" />
+              {{ tech.name }}
+            </li>
+          }
+        </ul>
+      </header>
 
-          <section class="project-detail__section">
-            <h2 class="project-detail__section-title">{{ 'PROJECT_DETAIL.DESCRIPTION' | translate }}</h2>
-            <p class="project-detail__text">{{ proj.description | translate }}</p>
+      <div class="project-detail__content">
+        <div class="project-detail__preview">
+          <app-mac-window [title]="proj.title | translate">
+            @if (proj.media; as media) {
+              <app-project-media [media]="media" [label]="proj.title | translate" />
+            } @else {
+              <img [src]="proj.image" alt="" class="project-detail__image" />
+            }
+          </app-mac-window>
+
+          <ul class="project-detail__links" [attr.aria-label]="'PROJECT_DETAIL.LINKS' | translate">
+            @if (proj.liveUrl) {
+              <li>
+                <a class="project-detail__link project-detail__link--primary" [href]="proj.liveUrl" target="_blank" rel="noopener noreferrer">
+                  {{ 'PROJECTS.LIVE_TEST' | translate }} <span aria-hidden="true">↗</span>
+                </a>
+              </li>
+            }
+            @if (proj.githubUrl) {
+              <li>
+                <a class="project-detail__link" [href]="proj.githubUrl" target="_blank" rel="noopener noreferrer">
+                  {{ 'PROJECTS.GITHUB' | translate }} <span aria-hidden="true">↗</span>
+                </a>
+              </li>
+            }
+            @if (proj.gitlabUrl) {
+              <li>
+                <a class="project-detail__link" [href]="proj.gitlabUrl" target="_blank" rel="noopener noreferrer">
+                  {{ 'PROJECTS.GITLAB' | translate }} <span aria-hidden="true">↗</span>
+                </a>
+              </li>
+            }
+          </ul>
+        </div>
+
+        <div class="project-detail__details">
+          <section id="beschreibung" class="project-detail__section">
+            <h2>{{ 'PROJECT_DETAIL.DESCRIPTION' | translate }}</h2>
+            <p>{{ proj.description | translate }}</p>
           </section>
 
           @if (proj.implementationDetails) {
-            <section class="project-detail__section">
-              <h2 class="project-detail__section-title">{{ 'PROJECT_DETAIL.IMPLEMENTATION' | translate }}</h2>
-              <p class="project-detail__text">{{ proj.implementationDetails | translate }}</p>
+            <section id="umsetzung" class="project-detail__section">
+              <h2>{{ 'PROJECT_DETAIL.IMPLEMENTATION' | translate }}</h2>
+              <p>{{ proj.implementationDetails | translate }}</p>
             </section>
           }
 
-          @if (proj.duration) {
-            <div class="project-detail__meta">
-              <strong>{{ 'PROJECT_DETAIL.DURATION' | translate }}:</strong> {{ proj.duration | translate }}
-            </div>
-          }
-
-          @if (proj.role) {
-            <div class="project-detail__meta">
-              <strong>{{ 'PROJECT_DETAIL.ROLE' | translate }}:</strong> {{ proj.role | translate }}
-            </div>
-          }
-
-          <div class="project-detail__tech-stack">
-            @for (tech of proj.techStack; track tech.name) {
-              <div class="project-detail__tech-item">
-                <img [src]="tech.icon" [alt]="tech.name" class="project-detail__tech-icon" />
-                <span class="project-detail__tech-name">{{ tech.name }}</span>
+          <dl class="project-detail__meta">
+            @if (proj.duration) {
+              <div>
+                <dt>{{ 'PROJECT_DETAIL.DURATION' | translate }}</dt>
+                <dd>{{ proj.duration | translate }}</dd>
               </div>
             }
-          </div>
-        </div>
-
-        <!-- Right Column: Project Preview -->
-        <div class="project-detail__preview">
-          <div class="project-detail__image-wrapper">
-            <img [src]="proj.image" [alt]="proj.title | translate" class="project-detail__image" />
-            @if (proj.featured) {
-              <img [src]="featuredIcon" alt="Featured" class="project-detail__sticker" />
+            @if (proj.role) {
+              <div>
+                <dt>{{ 'PROJECT_DETAIL.ROLE' | translate }}</dt>
+                <dd>{{ proj.role | translate }}</dd>
+              </div>
             }
-          </div>
-
-          <div class="project-detail__actions">
-            @if (proj.githubUrl) {
-              <app-cta-button
-                [translateKey]="'PROJECTS.GITHUB'"
-                [href]="proj.githubUrl" />
-            }
-            @if (proj.gitlabUrl) {
-              <app-cta-button
-                [translateKey]="'PROJECTS.GITLAB'"
-                [href]="proj.gitlabUrl" />
-            }
-            @if (proj.liveUrl) {
-              <app-cta-button
-                [translateKey]="'PROJECTS.LIVE_TEST'"
-                [href]="proj.liveUrl" />
-            }
-          </div>
-
-          <div class="project-detail__nav-row">
-            <a routerLink="/" fragment="projects" class="project-detail__back-link project-detail__back-link--mobile">
-              <img [src]="breadcrumbArrow" alt="" class="project-detail__back-arrow" />
-              {{ 'PROJECT_DETAIL.GO_BACK' | translate }}
-            </a>
-            @if (nextProject(); as next) {
-              <a [routerLink]="nextProjectRoute()" class="project-detail__next">
-                {{ 'PROJECT_DETAIL.NEXT_PROJECT' | translate }}
-                <img [src]="nextArrow" alt="" class="project-detail__next-arrow" />
-              </a>
-            }
-          </div>
+          </dl>
         </div>
       </div>
+
+      @if (nextProject(); as next) {
+        <a [routerLink]="nextProjectRoute()" class="project-detail__next">
+          <span class="eyebrow">{{ 'PROJECT_DETAIL.NEXT_PROJECT' | translate }}</span>
+          <span class="project-detail__next-title">{{ next.title | translate }} <span aria-hidden="true">→</span></span>
+        </a>
+      }
     } @else {
       <div class="project-detail__not-found">
         <h1>{{ 'NOT_FOUND.TITLE' | translate }}</h1>
         <p>{{ 'NOT_FOUND.TEXT' | translate }}</p>
-        <a routerLink="/" fragment="projects" class="project-detail__back-link">
-          <img [src]="breadcrumbArrow" alt="" class="project-detail__back-arrow" />
-          {{ 'PROJECT_DETAIL.GO_BACK' | translate }}
-        </a>
       </div>
     }
   </div>

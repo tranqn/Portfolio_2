@@ -5,12 +5,12 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { map } from 'rxjs';
 import { ProjectDataService } from '../../shared/services/project-data.service';
 import { SeoService } from '../../shared/services/seo.service';
-import { CtaButton } from '../../shared/components/cta-button/cta-button';
-import { IMAGE_PATHS } from '../../shared/constants';
+import { MacWindow } from '../../shared/components/mac-window/mac-window';
+import { ProjectMedia } from '../../shared/components/project-media/project-media';
 
 @Component({
   selector: 'app-project-detail',
-  imports: [RouterLink, TranslateModule, CtaButton],
+  imports: [RouterLink, TranslateModule, MacWindow, ProjectMedia],
   templateUrl: './project-detail.html',
   styleUrl: './project-detail.scss',
 })
@@ -27,10 +27,6 @@ export class ProjectDetail {
   private readonly projectDataService = inject(ProjectDataService);
   private readonly seoService = inject(SeoService);
   private readonly translate = inject(TranslateService);
-
-  protected readonly breadcrumbArrow = IMAGE_PATHS.PROJECT_PAGES.BREADCRUMB_ARROW;
-  protected readonly nextArrow = IMAGE_PATHS.PROJECT_PAGES.NEXT_PROJECT_ARROW;
-  protected readonly featuredIcon = IMAGE_PATHS.SHARED.FEATURED;
 
   /** Reactive project slug extracted from the `:projectId` route param. */
   private readonly projectId = toSignal(

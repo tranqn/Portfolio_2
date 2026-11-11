@@ -1,22 +1,26 @@
-import { Component, input } from '@angular/core';
+import { Component, computed, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { Project } from '../../models';
-import { CtaButton } from '../cta-button/cta-button';
+import { MacWindow } from '../mac-window/mac-window';
 
 @Component({
   selector: 'app-project-card',
-  imports: [RouterLink, TranslateModule, CtaButton],
+  imports: [RouterLink, TranslateModule, MacWindow],
   templateUrl: './project-card.html',
   styleUrl: './project-card.scss',
 })
 /**
- * Card component for the projects grid section.
+ * Compact card for projects outside the showcase.
  *
- * Displays a project image, title, tech stack icons, and a "View project" CTA
- * linking to the project detail page.
+ * Shows only the poster frame in a small macOS window (lazy-loaded, no video),
+ * so the page never loads or plays every recording at once. The whole card
+ * links to the project's detail page.
  */
 export class ProjectCard {
   /** The project data to render. */
   readonly project = input.required<Project>();
+
+  /** i18n key of the one-line tech summary (`PROJECTS.X.TECH`). */
+  protected readonly techKey = computed(() => this.project().title.replace(/\.TITLE$/, '.TECH'));
 }

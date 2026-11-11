@@ -1,413 +1,256 @@
 @use '../../../styles/variables' as *;
-@use '../../../styles/mixins' as *;
 
-// ========================================
-// HERO SECTION — Shared background with header
-// ========================================
+:host {
+  display: block;
+}
 
 .hero {
-  // Responsive tokens — scale with viewport height
-  --hero-title-size: clamp(64px, 13vh, #{$font-size-5xl});
-  --hero-content-gap: clamp(16px, 3vh, #{$spacing-lg});
-  --hero-top-gap: clamp(32px, 8vh, #{$spacing-3xl});
-  --hero-polaroid-width: clamp(120px, 20vh, 180px);
-  --hero-button-font: #{$font-size-md};
-  --hero-button-padding: 6px 20px;
-
-  min-height: 100vh;
-  background-image: url('#{$deploy-path}/img/hero/hero-bg.png');
-  background-size: cover;
-  background-position: bottom;
-  background-repeat: no-repeat;
-  padding-top: 60px;
-}
-
-.hero__container {
-  display: flex;
-  align-items: center;
-  max-width: $container-max-width;
-  margin: 0 auto clamp(40px, 10vh, 22vh) auto;
-  padding-left: $container-padding-x;
-  padding-right: $container-padding-x;
-}
-
-.hero__content-center {
-  flex: 1;
-  @include flex-center;
-}
-
-// Social icons (uses shared component with CSS variable overrides)
-.hero__social {
-  --social-height: 70vh;
-}
-
-// ========================================
-// MAIN CONTENT
-// ========================================
-
-.hero__content {
-  @include flex-column;
-  gap: var(--hero-content-gap);
-  padding-top: $spacing-xl;
-  width: fit-content;
-}
-
-.hero__content-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  gap: var(--hero-top-gap);
-}
-
-.hero__content-left {
-  @include flex-column;
-  justify-content: flex-end;
-  align-items: flex-start;
-  gap: $spacing-sm;
-  flex: 1;
-  min-width: 0;
-}
-
-.hero__content-right {
-  @include flex-center;
-  flex-shrink: 0;
-}
-
-.hero__content-bottom {
-  @include flex-column;
-  align-items: end;
-  align-self: flex-end;
-  gap: var(--hero-content-gap);
-}
-
-// ========================================
-// TITLE LETTERS
-// ========================================
-
-.hero__title {
-  margin: 0;
-  font-size: var(--hero-title-size);
-  font-weight: $font-weight-black;
-  line-height: $line-height-tight;
-  letter-spacing: $letter-spacing-tight;
-  color: $text-primary;
-}
-
-.hero__title--top {
-  text-align: left;
-  // Reserve width so lowercase hover doesn't shrink the title (natural width is ~4.9em)
-  min-width: 5em;
-}
-
-.hero__title--bottom {
-  text-align: center;
-  // Reserve width so lowercase hover doesn't shrink the title
-  min-width: 5.8em;
-}
-
-.hero__letters-container {
-  @include flex-center;
-  flex: 1;
-  min-height: clamp(60px, 15vh, 150px);
-
-  &--top {
-    justify-content: flex-start;
-  }
-
-  &--bottom {
-    justify-content: flex-end;
-  }
-}
-
-.hero__letter {
-  display: inline-block;
-  transition: color 200ms ease, transform 200ms ease;
-  cursor: default;
-
-  &:hover {
-    color: $bright-yellow;
-
-    &[data-uppercase='true'] {
-      text-transform: lowercase;
-    }
-
-    &[data-uppercase='false'] {
-      text-transform: uppercase;
-    }
-  }
-}
-
-// ========================================
-// HELLO WORLD BUTTON
-// ========================================
-
-.hero__button-container {
-  @include flex-center;
   position: relative;
-
-  &:hover .hero__button-icon {
-    transform: translateX(0) rotate(360deg);
-    opacity: 1;
-  }
-}
-
-.hero__button-icon {
-  position: absolute;
-  top: -42px;
-  right: 0;
-  width: 40px;
-  height: 40px;
-  z-index: 4;
-  opacity: 0;
-  transition: transform $transition-expand, opacity $transition-expand;
-  pointer-events: none;
-  transform-origin: center;
-}
-
-.hero__button {
-  @include button-reset;
-  display: inline-grid;
-  border: 1px solid $outline-white;
-  padding: var(--hero-button-padding);
-  border-radius: $radius-full;
-  color: $outline-white;
-  font-family: $font-primary;
-  font-weight: $font-weight-medium;
-  font-size: var(--hero-button-font);
-  line-height: $line-height-normal;
-  background: transparent;
-  width: fit-content;
-  transition: border-color $transition-expand, transform 100ms ease;
-  cursor: pointer;
-  text-decoration: none;
-  position: relative;
-  white-space: nowrap;
+  isolation: isolate;
   overflow: hidden;
+  padding: calc(#{$nav-space} + 28px) 48px 88px;
+  background: $page-bg;
 
-  // Blue circle expanding from bottom center
-  &::after {
+  // One-off light sweep across the plain page background. It fades out to
+  // nothing, so the resting state (and the reduced-motion state) is plain white.
+  &::before {
     content: '';
     position: absolute;
-    width: 300px;
-    height: 300px;
-    background-color: $primary-blue;
-    border-radius: 50%;
-    bottom: 0;
-    left: 50%;
-    transform: translate(-50%, 50%) scale(0.1);
-    transform-origin: center bottom;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background: radial-gradient(ellipse at 22% 30%, rgba(244, 203, 78, 0.22), transparent 46%);
     opacity: 0;
-    transition: transform $transition-fade-in, opacity $transition-fade-out;
-    z-index: 1;
+    animation: hero-light 4200ms cubic-bezier(0.22, 0.61, 0.36, 1) both;
   }
+}
 
-  &:hover::after {
-    transform: translate(-50%, 50%) scale(1);
-    opacity: 1;
-    transition: transform $transition-fade-in, opacity $transition-fade-in;
-  }
-
-  &:hover .hero__button-text {
-    max-width: 0;
+@keyframes hero-light {
+  0% {
+    transform: translateX(-12%) scale(1.08);
     opacity: 0;
   }
 
-  &:hover .hero__button-text-hover {
-    max-width: 500px;
+  35% {
     opacity: 1;
   }
-}
 
-.hero__button-text,
-.hero__button-text-hover {
-  grid-area: 1 / 1;
-  overflow: hidden;
-  white-space: nowrap;
-}
-
-.hero__button-text {
-  max-width: 500px;
-  opacity: 1;
-  transition: max-width $transition-expand, opacity 150ms ease;
-  z-index: 2;
-}
-
-.hero__button-text-hover {
-  max-width: 0;
-  opacity: 0;
-  color: $text-primary;
-  transition: max-width $transition-expand, opacity 400ms ease-in-out;
-  z-index: 3;
-}
-
-// ========================================
-// POLAROID
-// ========================================
-
-.hero__polaroid-wrapper {
-  position: relative;
-  width: var(--hero-polaroid-width);
-  height: auto;
-  transform: rotate(8deg);
-
-  &--desktop {
-    display: block;
-  }
-
-  &--mobile {
-    display: none;
+  100% {
+    transform: translateX(28%);
+    opacity: 0;
   }
 }
 
-.hero__polaroid-photo {
-  position: absolute;
-  top: 6px;
-  left: 6px;
-  width: calc(100% - 14px);
-  height: auto;
-  object-fit: cover;
-  z-index: 1;
-  filter: grayscale(100%);
-  transition: filter $transition-slow;
-
-  .hero__polaroid-wrapper:hover & {
-    filter: grayscale(0%);
-  }
+.hero__inner {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.hero__polaroid {
+.hero__copy {
+  max-width: 960px;
+}
+
+.hero__desk {
+  display: grid;
+  grid-template-columns: 236px minmax(0, 1fr);
+  align-items: start;
+  gap: 56px;
+  margin-top: 56px;
+}
+
+// Polaroid: original frame artwork over the portrait, tilted like a print on a desk
+.polaroid {
   position: relative;
   width: 100%;
-  height: auto;
-  object-fit: contain;
-  filter: drop-shadow($shadow-card);
-  z-index: 2;
+  max-width: 220px;
+  margin: 0;
+  transform: rotate(-4deg);
+  transition: transform 400ms $ease-out-soft;
 }
 
-.hero__polaroid-text {
+.polaroid__photo img {
   position: absolute;
-  bottom: 4%;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 3;
-  font-family: $font-handwriting;
-  font-size: clamp(16px, 2vh, 20px);
-  font-weight: $font-weight-bold;
-  color: $text-dark;
-  white-space: nowrap;
-  transition: opacity $transition-base;
+  top: 6.6%;
+  left: 7.7%;
+  width: 84.6%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: 50% 18%;
+  filter: grayscale(100%);
+  transition: filter 500ms ease;
+}
 
-  &--default {
-    opacity: 1;
-  }
+.polaroid__frame {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 14px 22px rgba(41, 40, 30, 0.16));
+  pointer-events: none;
+}
 
-  &--hover {
-    opacity: 0;
+.polaroid__caption {
+  position: absolute;
+  z-index: 2;
+  bottom: 6%;
+  left: 0;
+  right: 0;
+  display: grid;
+  font: 700 20px/1 $font-handwriting;
+  color: $ink;
+  text-align: center;
+
+  > span {
+    grid-area: 1 / 1;
+    transition: opacity 250ms ease;
   }
 }
 
-.hero__polaroid-wrapper:hover .hero__polaroid-text--default {
+.polaroid__caption-hover {
   opacity: 0;
 }
 
-.hero__polaroid-wrapper:hover .hero__polaroid-text--hover {
-  opacity: 1;
+@media (hover: hover) and (pointer: fine) {
+  .polaroid:hover {
+    transform: rotate(-1deg) translateY(-4px);
+
+    .polaroid__photo img {
+      filter: none;
+    }
+
+    .polaroid__caption-default {
+      opacity: 0;
+    }
+
+    .polaroid__caption-hover {
+      opacity: 1;
+    }
+  }
 }
 
-// CTA container
-.hero__cta-container {
-  @include flex-center;
+.hero__name {
+  margin: 28px 0 0;
+  font: 600 26px/1.15 $font-display;
+  letter-spacing: -0.03em;
 }
 
-// ========================================
-// RESPONSIVE
-// ========================================
+.hero__role {
+  margin: 8px 0 0;
+  font-size: 16px;
+  line-height: 1.5;
+  color: $ink-muted;
+}
 
-@include mobile {
+.hero__location {
+  margin: 14px 0 0;
+  font-size: 15px;
+  color: $ink-muted;
+}
+
+.hero__contact {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  margin-top: 6px;
+  white-space: nowrap;
+  font-weight: $font-weight-semibold;
+  text-decoration: underline;
+  text-decoration-color: $line;
+  text-underline-offset: 5px;
+}
+
+.hero__title {
+  margin-top: 16px;
+  font-size: clamp(36px, 4.8vw, 66px);
+  line-height: 1.04;
+  letter-spacing: -0.045em;
+
+  // Second line set apart by weight and colour, not by an italic
+  em {
+    font-style: normal;
+    font-weight: $font-weight-normal;
+    color: $accent;
+  }
+}
+
+.hero__intro {
+  max-width: 560px;
+  margin: 22px 0 0;
+  font-size: 18px;
+  line-height: 1.6;
+  color: $ink-muted;
+}
+
+@media (max-width: 960px) {
   .hero {
-    --hero-title-size: clamp(36px, 12vw, 100px);
-    --hero-content-gap: clamp(8px, 3vh, 48px);
-    --hero-top-gap: clamp(8px, 3vh, 32px);
-    --hero-polaroid-width: clamp(120px, 30vw, 280px);
-    --hero-button-font: clamp(12px, 3vw, #{$font-size-base});
-    --hero-button-padding: clamp(6px, 1.5vh, 12px) clamp(12px, 3vw, 24px);
-
-    padding-top: 60px;
+    padding: calc(#{$nav-space} + 12px) 32px 64px;
   }
 
-  .hero__container {
-    flex-direction: column;
-    padding-left: $container-padding-x-mobile;
-    padding-right: $container-padding-x-mobile;
-    padding-top: 0;
-    margin: 0 auto;
-    min-height: calc(100vh - 60px);
-    justify-content: center;
+  .hero__desk {
+    grid-template-columns: 180px minmax(0, 1fr);
+    gap: 36px;
+    margin-top: 44px;
+  }
+}
+
+@media (max-width: 720px) {
+  .hero {
+    padding: calc(#{$nav-space} - 8px) 20px 52px;
   }
 
-  .hero__social {
-    display: none;
+  .hero__desk {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+    margin-top: 32px;
   }
 
-  .hero__content-center {
-    width: 100%;
+  .hero__profile {
+    display: grid;
+    grid-template-columns: 128px minmax(0, 1fr);
+    align-items: center;
+    gap: 22px;
   }
 
-  .hero__content {
-    padding-top: 0;
+  .polaroid__caption {
+    font-size: 15px;
   }
 
-  .hero__content-top {
-    flex-direction: column;
-    align-items: flex-start;
+  .hero__name {
+    margin-top: 0;
+    font-size: 26px;
   }
 
-  .hero__content-bottom {
-    align-items: flex-start;
-    align-self: flex-start;
+  .hero__role {
+    margin-top: 4px;
+    font-size: 15px;
   }
 
-  .hero__cta-container {
-    align-self: flex-end;
+  .hero__location {
+    margin-top: 6px;
+    font-size: 14px;
   }
 
-  .hero__content-left {
-    align-items: flex-start;
-  }
-
-  .hero__content-right {
-    display: none;
+  .hero__contact {
+    min-height: 40px;
+    margin-top: 0;
+    font-size: 15px;
   }
 
   .hero__title {
-    text-align: left;
+    font-size: clamp(30px, 8.6vw, 40px);
   }
 
-  .hero__letters-container {
-    min-height: auto;
-
-    &--top,
-    &--bottom {
-      width: 100%;
-      justify-content: flex-start;
-    }
+  .hero__intro {
+    font-size: 17px;
   }
+}
 
-  .hero__button-icon {
-    width: 28px;
-    height: 28px;
-    top: -30px;
-  }
-
-  .hero__polaroid-wrapper {
-    &--desktop {
-      display: none;
-    }
-
-    &--mobile {
-      display: block;
-      align-self: center;
-      margin-top: clamp(8px, 3vh, 40px);
-    }
+@media (max-width: 360px) {
+  .hero__profile {
+    grid-template-columns: 104px minmax(0, 1fr);
+    gap: 16px;
   }
 }

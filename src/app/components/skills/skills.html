@@ -1,78 +1,26 @@
-<section id="skills" class="skills">
-  <div class="skills__container">
-    <!-- Left column: Subheadline + Headline with circle animation -->
-    <div class="skills__header">
-      <span class="skills__label">{{ 'SKILLS.LABEL' | translate }}</span>
-      <div class="skills__title-container">
-        <div class="skills__title-bg-wrapper">
-          <img
-            [src]="images.UNDERLINE"
-            alt="Decorative circle animation behind headline"
-            class="skills__title-bg">
-        </div>
-        <h2 class="skills__title">{{ 'SKILLS.TITLE' | translate }}</h2>
-      </div>
-    </div>
-
-    <!-- Right column: Description, icons grid, and peelable badge -->
-    <div class="skills__content">
-      <!-- Torn paper graphic with description text overlaid -->
-      <div class="skills__description">
-        <p class="skills__text">{{ 'SKILLS.DESCRIPTION' | translate }}</p>
-      </div>
-
-      <div class="skills__icon-container">
-        <!-- Skill icons grid (grayscale default, color on hover) -->
-        <div class="skills__icons">
-          @for (skill of skillDataService.allSkills(); track skill.name) {
-            <div class="skills__icon">
-              <img [src]="skill.icon" [alt]="skill.name + ' icon'" class="skills__icon-image">
-              <span class="skills__icon-name">{{ skill.name }}</span>
-            </div>
+<section id="skills" class="skills" tabindex="-1" aria-labelledby="skills-heading">
+  <h2 id="skills-heading" class="sr-only">{{ 'SKILLS.HEADING' | translate }}</h2>
+  <ol class="skills__list">
+    @for (area of areas; track area.key; let i = $index) {
+      <li class="skills__item" appReveal [revealDelay]="300 + i * 70">
+        <span class="skills__index" aria-hidden="true">0{{ i + 1 }}</span>
+        <div>
+          <h3 class="skills__title">{{ area.key + '.TITLE' | translate }}</h3>
+          <p class="skills__tools">{{ area.key + '.TOOLS' | translate }}</p>
+          @if (area.references.length) {
+            <p class="skills__refs">
+              <span class="sr-only">{{ 'SKILLS.REFERENCES' | translate }}:</span>
+              @for (ref of area.references; track ref.showcaseId) {
+                <button type="button" class="skills__ref" (click)="showProject(ref.showcaseId)">
+                  {{ ref.nameKey | translate }}
+                  <span class="sr-only">{{ 'SKILLS.SHOW_PROJECT' | translate }}</span>
+                  <span aria-hidden="true">↘</span>
+                </button>
+              }
+            </p>
           }
         </div>
-
-        <!-- Peelable sticker badge (3-layer system) -->
-        <div
-          class="skills__badge"
-          [class.peeled]="isPeeled()"
-          (click)="toggleBadge()"
-          (keydown.enter)="toggleBadge()"
-          (keydown.space)="toggleBadge(); $event.preventDefault()"
-          role="button"
-          tabindex="0"
-          [attr.aria-label]="'SKILLS.BADGE' | translate">
-          <!-- Layer 1 (z-index: 1): Final revealed state -->
-          <img
-            [src]="images.BADGE_FINAL"
-            alt="Badge final layer"
-            class="skills__badge-layer skills__badge-layer--final">
-          <!-- Badge content: text + React/Vue icons -->
-          <div class="skills__badge-content">
-            <span class="skills__badge-text">{{ 'SKILLS.BADGE' | translate }}</span>
-            <div class="skills__badge-icons">
-              <div class="skills__badge-icon">
-                <img src="img/skills/badge/react.svg" alt="React icon" class="skills__badge-icon-svg">
-                <span class="skills__badge-icon-label">React</span>
-              </div>
-              <div class="skills__badge-icon">
-                <img src="img/skills/badge/vue.svg" alt="Vue.js icon" class="skills__badge-icon-svg">
-                <span class="skills__badge-icon-label">Vue.js</span>
-              </div>
-            </div>
-          </div>
-          <!-- Layer 2 (z-index: 2): Transition layer -->
-          <img
-            [src]="images.BADGE_TRANSITION"
-            alt="Badge transition layer"
-            class="skills__badge-layer skills__badge-layer--transition">
-          <!-- Layer 3 (z-index: 3): Default top layer -->
-          <img
-            [src]="images.BADGE_DEFAULT"
-            alt="Badge default layer"
-            class="skills__badge-layer skills__badge-layer--default">
-        </div>
-      </div>
-    </div>
-  </div>
+      </li>
+    }
+  </ol>
 </section>

@@ -1,0 +1,70 @@
+@use '../../../../styles/variables' as *;
+
+:host {
+  display: block;
+}
+
+.project-media {
+  position: relative;
+  width: 100%;
+  background: #f3f0e6;
+}
+
+.project-media--contain {
+  height: 100%;
+}
+
+.project-media__video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.project-media__toggle {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 36px;
+  padding: 0 12px 0 10px;
+  font-size: 13px;
+  font-weight: $font-weight-medium;
+  color: $paper;
+  background: rgba(41, 40, 30, 0.78);
+  border-radius: 999px;
+  box-shadow: 0 2px 8px rgba(41, 40, 30, 0.2);
+  transition: background-color 200ms ease, transform 200ms ease;
+
+  svg {
+    width: 14px;
+    height: 14px;
+    fill: currentColor;
+  }
+
+  &:hover {
+    background: $ink;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $paper;
+    box-shadow: 0 0 0 4px $ink;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-media__toggle-text {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+  }
+
+  .project-media__toggle {
+    padding: 0 11px;
+    min-width: 36px;
+  }
+}

@@ -1,400 +1,191 @@
 @use '../../../styles/variables' as *;
-@use '../../../styles/mixins' as *;
 
-// ========================================
-// CONTACT SECTION — Full background image
-// ========================================
+:host {
+  display: block;
+  padding: 0 16px 24px;
+}
 
 .contact {
-  position: relative;
-  background-image: url('#{$deploy-path}/img/contact/contact-bg.png');
-  background-size: 100% 100%;
-  background-position: bottom;
-  background-repeat: no-repeat;
-  padding: $spacing-4xl 0 200px 0;
-  overflow: clip;
-}
-
-.contact__container {
-  @include flex-center;
-  align-items: flex-start;
-  gap: $spacing-3xl;
-  max-width: $container-max-width;
-  width: 100%;
+  max-width: 1240px;
   margin: 0 auto;
-  padding-top: $container-padding-x;
-  padding-left: $container-padding-x;
-  padding-right: $container-padding-x;
-  position: relative;
-}
+  padding: 72px 56px;
+  background:
+    radial-gradient(ellipse at 0% 0%, rgba(244, 203, 78, 0.55), transparent 50%),
+    radial-gradient(ellipse at 100% 100%, $lemon, transparent 60%),
+    $hero-bg;
+  border-radius: 32px;
 
-// ========================================
-// STICKER OVERLAY — TODO: uncomment when sticker image is available
-// ========================================
-
-.contact__sticker {
-  position: absolute;
-  width: clamp(100px, 12vw, 160px);
-  height: clamp(100px, 12vw, 160px);
-  right: 10%;
-  top: -$spacing-2xl;
-  transform: rotate(12deg);
-  pointer-events: none;
-  z-index: $z-sticky;
-}
-
-.contact__sticker-bg {
-  width: 100%;
-  height: 100%;
-  transform: rotate(90deg);
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.contact__sticker-logo {
-  @include abs-center;
-  width: 50%;
-  height: 50%;
-  background-color: $text-dark;
-  mask-image: url('#{$deploy-path}/logo/qt_logo_transparent.png');
-  mask-size: contain;
-  mask-repeat: no-repeat;
-  mask-position: center;
-}
-
-.contact__sticker-text {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-
-  text {
-    fill: $text-dark;
-    font-size: 16px;
-    font-weight: $font-weight-bold;
-    font-family: $font-primary;
+  &:focus {
+    outline: none;
   }
 }
 
-// ========================================
-// LEFT COLUMN: Content
-// ========================================
-
-.contact__left {
-  @include flex-column;
-  gap: $spacing-3xl;
-  max-width: 60%;
-}
-
-.contact__content {
-  @include flex-column;
-  gap: $spacing-md;
-  max-width: 600px;
-}
-
-.contact__label {
-  font-size: $font-size-sm;
-  font-weight: $font-weight-semibold;
-  color: $text-secondary;
-  text-transform: uppercase;
-  letter-spacing: $letter-spacing-wide;
+.contact__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 56px;
 }
 
 .contact__title {
-  font-size: $font-size-4xl;
-  font-weight: $font-weight-black;
-  color: $text-primary;
-  margin: 0;
-  line-height: $line-height-tight;
+  margin-top: 14px;
 }
 
 .contact__description {
-  font-size: $font-size-base;
-  font-weight: $font-weight-normal;
-  line-height: $line-height-relaxed;
-  color: $text-primary;
+  margin: 18px 0 0;
+  font-size: 17px;
+  line-height: 1.6;
+  color: $ink-muted;
 }
 
-@include underline-reveal-keyframes;
-
-.contact__underline {
-  @include underline-reveal(300px);
-  margin-top: $spacing-sm;
-  margin-bottom: $spacing-md;
-  align-self: flex-end;
+.contact__direct-label {
+  margin: 28px 0 6px;
+  font-size: 15px;
+  font-weight: $font-weight-semibold;
 }
 
-// Desktop: show left-column arrow, hide mobile arrow
-.contact__underline--mobile {
-  display: none;
-}
+.contact__direct {
+  display: grid;
 
-// ========================================
-// RIGHT COLUMN: Form
-// ========================================
-
-.contact__right {
-  @include flex-center;
-  width: 40%;
-  position: relative;
+  a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    min-height: 44px;
+    font-weight: $font-weight-semibold;
+    text-decoration: underline;
+    text-decoration-color: rgba(83, 90, 50, 0.35);
+    text-underline-offset: 5px;
+    overflow-wrap: anywhere;
+  }
 }
 
 .contact__form {
-  @include flex-column;
-  width: 100%;
-  max-width: 600px;
+  padding: 28px;
+  background: $paper;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 22px;
+  box-shadow: $shadow-window;
+}
+
+.contact__field {
+  display: grid;
+  gap: 6px;
 
   label {
-    font-size: $font-size-base;
-    font-weight: $font-weight-normal;
-    color: $text-primary;
-    display: block;
-    padding-left: $spacing-sm;
+    font-size: 15px;
+    font-weight: $font-weight-semibold;
   }
 
   input,
   textarea {
     width: 100%;
-    padding: $spacing-sm 0 $spacing-sm $spacing-sm;
-    background-color: transparent;
-    border: none;
-    border-bottom: 2px solid $bright-yellow;
-    border-radius: 0;
-    color: $text-primary;
-    font-size: $font-size-base;
-    font-family: $font-primary;
-    transition: border-color $transition-base;
+    padding: 12px 14px;
+    font-size: 16px;
+    color: $ink;
+    background: $page-bg;
+    border: 1px solid $line;
+    border-radius: 12px;
+    transition: border-color 200ms ease;
 
     &::placeholder {
-      color: rgba($text-primary, 0.5);
+      color: #736d5b;
     }
 
-    &:focus {
-      outline: none;
-      border-bottom-color: $primary-blue;
-    }
-
-    &:hover {
-      border-bottom-color: $primary-blue;
-    }
-
-    &.contact__form-input--error {
-      border-bottom-color: $coral-orange;
-      color: transparent;
-
-      &::placeholder {
-        color: transparent;
-      }
-
-      &:focus {
-        color: $text-primary;
-
-        &::placeholder {
-          color: rgba($text-primary, 0.5);
-        }
-      }
+    &:focus-visible {
+      border-color: $accent;
+      outline: 2px solid $accent;
+      outline-offset: 1px;
     }
   }
 
   textarea {
     resize: vertical;
-    min-height: 100px;
-    padding-top: $spacing-sm;
+    min-height: 130px;
   }
 }
 
-.contact__form-group {
-  position: relative;
-  margin-bottom: $spacing-sm;
-
-  &--textarea .contact__form-error {
-    bottom: auto;
-    top: $spacing-sm + $spacing-sm;
-  }
+.contact__input--error {
+  border-color: #b3261e !important;
 }
 
-.contact__form-error {
-  position: absolute;
-  left: $spacing-sm;
-  bottom: $spacing-sm;
-  color: $coral-orange;
-  font-size: $font-size-sm;
-  font-weight: $font-weight-medium;
-  pointer-events: none;
-
-  input:focus ~ &,
-  textarea:focus ~ & {
-    visibility: hidden;
-  }
+.contact__error {
+  min-height: 22px;
+  margin: 2px 0 8px;
+  font-size: 14px;
+  color: #b3261e;
 }
 
-// Form actions row (CTA right-aligned on desktop, arrow + CTA on mobile)
-.contact__form-actions {
+.contact__privacy {
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 4px;
 
-  app-cta-button {
-    --cta-min-width: 120px;
-    --cta-padding: 6px 24px;
-  }
-}
-
-// ========================================
-// CUSTOM CHECKBOX
-// ========================================
-
-.contact__form-checkbox-wrapper {
-  margin: $spacing-md 0;
-}
-
-.contact__form-checkbox {
-  display: flex;
-  align-items: center;
-  position: relative;
-
-  // Blue border box (overlay)
-  &::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 24px;
-    height: 24px;
-    border: 2px solid $primary-blue;
-    border-radius: $radius-sm;
-    background-color: transparent;
-    pointer-events: none;
-  }
-
-  // Checkmark image (overlay)
-  &::after {
-    content: '';
-    position: absolute;
-    left: 12px;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 24px;
-    height: 24px;
-    background-image: url('#{$deploy-path}/img/shared/check.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    opacity: 0;
-    transition: opacity $transition-base;
-    pointer-events: none;
-  }
-
-  &:has(input:checked)::after {
-    opacity: 1;
-  }
-
-  input[type='checkbox'] {
-    position: relative;
-    display: flex;
-    align-items: center;
-    width: 24px;
-    height: 24px;
-    min-width: 24px;
-    margin-bottom: 0;
-    opacity: 0;
-    cursor: pointer;
+  input {
+    flex: none;
+    width: 22px;
+    height: 22px;
+    margin-top: 2px;
+    accent-color: $ink;
   }
 
   label {
-    font-size: $font-size-sm;
-    font-weight: $font-weight-normal;
-    color: $text-primary;
-    line-height: $line-height-relaxed;
-    cursor: pointer;
+    font-size: 15px;
+    line-height: 1.5;
+    color: $ink-muted;
+  }
 
-    a {
-      color: $primary-blue;
-      text-decoration: none;
-      transition: opacity $transition-base;
-
-      &:hover {
-        opacity: 0.8;
-      }
-    }
+  a {
+    font-weight: $font-weight-semibold;
+    text-decoration: underline;
+    text-underline-offset: 3px;
   }
 }
 
-.contact__form-checkbox-error {
-  width: 100%;
-  // Reserve space for up to two lines of text (the German message wraps on
-  // narrow viewports) so the submit button below never shifts when the error
-  // toggles. 2 lines × ($font-size-sm × $line-height-relaxed) + vertical padding.
-  min-height: calc(2 * #{$font-size-sm} * #{$line-height-relaxed} + 2 * #{$spacing-xs});
-  padding: $spacing-xs 0;
-  color: $coral-orange;
-  font-size: $font-size-sm;
-  font-weight: $font-weight-medium;
-  line-height: $line-height-relaxed;
+.contact__submit {
+  min-height: 50px;
+  margin-top: 4px;
+  padding: 0 28px;
+  font-size: 16px;
+  font-weight: $font-weight-semibold;
+  color: $page-bg;
+  background: $ink;
+  border-radius: 999px;
+  transition: transform 220ms ease, box-shadow 220ms ease;
+
+  &:focus-visible {
+    outline: 2px solid $ink;
+    outline-offset: 3px;
+  }
+
+  &:disabled {
+    opacity: 0.45;
+  }
 }
 
-// ========================================
-// RESPONSIVE
-// ========================================
+@media (hover: hover) and (pointer: fine) {
+  .contact__submit:not(:disabled):hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px $shadow-warm;
+  }
+}
 
-@include mobile {
+@media (max-width: 900px) {
+  :host {
+    padding: 0 8px 16px;
+  }
+
   .contact {
-    padding: $spacing-xl 0 200px 0;
-    background-size: auto 100%;
+    padding: 48px 16px 20px;
+    border-radius: 24px;
   }
 
-  .contact__container {
-    flex-direction: column;
-    padding-left: $container-padding-x-mobile;
-    padding-right: $container-padding-x-mobile;
-    gap: $spacing-md;
-    align-items: center;
+  .contact__inner {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
   }
 
-  .contact__left,
-  .contact__right {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .contact__label {
-    font-size: $font-size-xs;
-  }
-
-  .contact__title {
-    font-size: $font-size-3xl-mobile;
-  }
-
-  .contact__description {
-    font-size: $font-size-sm;
-  }
-
-  .contact__sticker {
-    left: auto;
-    right: $container-padding-x-mobile;
-    top: $spacing-lg;
-    width: clamp(80px, 25vw, 120px);
-    height: clamp(80px, 25vw, 120px);
-
-    @media (max-width: 360px) {
-    top: $spacing-xs;
-  }
-  }
-
-  // Mobile: hide desktop arrow, show mobile arrow
-  .contact__underline--desktop {
-    display: none;
-  }
-
-  .contact__underline--mobile {
-    display: block;
-    width: clamp(100px, 40%, 200px);
-  }
-
-  // Arrow + CTA side by side
-  .contact__form-actions {
-    justify-content: space-between;
+  .contact__form {
+    padding: 20px 16px;
   }
 }

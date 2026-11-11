@@ -1,128 +1,53 @@
-<header class="header" [attr.data-lang]="translationService.currentLang()">
-  <nav class="header__container">
-    <a routerLink="/" class="header__logo">
-      <span class="header__logo-image" role="img" aria-label="QT Logo"></span>
+<a class="skip-link" href="#main-content">{{ 'HEADER.SKIP' | translate }}</a>
+
+<header class="header">
+  <nav class="header__pill" [attr.aria-label]="'HEADER.NAV_LABEL' | translate">
+    <a routerLink="/" class="header__brand" (click)="goHome($event)">
+      <span aria-hidden="true">Nam</span>
+      <span class="sr-only">{{ 'HEADER.HOME' | translate }}</span>
     </a>
 
-    <!-- Desktop Navigation -->
-    <div class="header__desktop-nav">
-      <a routerLink="/" fragment="about" class="header__nav-link header__nav-link--about">
-        {{ 'HEADER.ABOUT' | translate }}
-      </a>
-      <a routerLink="/" fragment="skills" class="header__nav-link header__nav-link--skills">
-        {{ 'HEADER.SKILLS' | translate }}
-      </a>
-      <a routerLink="/" fragment="projects" class="header__nav-link header__nav-link--projects">
-        {{ 'HEADER.PROJECTS' | translate }}
-      </a>
-      <a routerLink="/" fragment="contact" class="header__nav-link header__nav-link--contact">
-        {{ 'HEADER.CONTACT' | translate }}
-      </a>
+    <ul class="header__links">
+      @for (item of navItems; track item.fragment) {
+        <li>
+          <a routerLink="/" [fragment]="item.fragment" class="header__link" (click)="goTo($event, item.fragment)">
+            {{ item.key | translate }}
+          </a>
+        </li>
+      }
+    </ul>
 
-      <div class="header__lang">
-        <span
-          class="header__lang-option header__nav-link header__nav-link--en"
-          [class.header__lang-option--active]="translationService.currentLang() === 'en'"
-          (click)="translationService.currentLang() !== 'en' && translationService.switchLanguage()"
-          (keydown.enter)="translationService.currentLang() !== 'en' && translationService.switchLanguage()"
-          (keydown.space)="translationService.currentLang() !== 'en' && translationService.switchLanguage(); $event.preventDefault()"
-          role="button"
-          tabindex="0"
-          aria-label="Switch to English">
-          EN
-        </span>
-        <span
-          class="header__lang-toggle"
-          [class.header__lang-toggle--de]="translationService.currentLang() === 'de'"
-          (click)="translationService.switchLanguage()"
-          (keydown.enter)="translationService.switchLanguage()"
-          (keydown.space)="translationService.switchLanguage(); $event.preventDefault()"
-          role="button"
-          tabindex="0"
-          aria-label="Toggle language">
-          <span class="header__lang-toggle-thumb"></span>
-        </span>
-        <span
-          class="header__lang-option header__nav-link header__nav-link--de"
-          [class.header__lang-option--active]="translationService.currentLang() === 'de'"
-          (click)="translationService.currentLang() !== 'de' && translationService.switchLanguage()"
-          (keydown.enter)="translationService.currentLang() !== 'de' && translationService.switchLanguage()"
-          (keydown.space)="translationService.currentLang() !== 'de' && translationService.switchLanguage(); $event.preventDefault()"
-          role="button"
-          tabindex="0"
-          aria-label="Zu Deutsch wechseln">
-          DE
-        </span>
-      </div>
-    </div>
-
-    <!-- Burger Menu Button (Mobile) -->
     <button
-      class="header__burger"
-      [class.header__burger--active]="menuOpen()"
-      (click)="toggleMenu()"
-      aria-label="Toggle menu">
-      <span class="header__burger-line"></span>
-      <span class="header__burger-line"></span>
-      <span class="header__burger-line"></span>
+      type="button"
+      class="header__lang"
+      [attr.lang]="translationService.currentLang() === 'de' ? 'en' : 'de'"
+      [attr.aria-label]="'HEADER.LANG_SWITCH_LABEL' | translate"
+      (click)="translationService.switchLanguage()">
+      <span aria-hidden="true">{{ translationService.currentLang() === 'de' ? 'EN' : 'DE' }}</span>
+    </button>
+
+    <button
+      #menuButton
+      type="button"
+      class="header__menu-button"
+      aria-controls="header-menu"
+      [attr.aria-expanded]="menuOpen()"
+      (click)="toggleMenu()">
+      {{ (menuOpen() ? 'HEADER.MENU_CLOSE' : 'HEADER.MENU') | translate }}
     </button>
   </nav>
 
-  <!-- Mobile Overlay Menu -->
-  <div class="header__overlay" [class.header__overlay--open]="menuOpen()">
-    <div class="header__overlay-content">
-      <nav class="header__mobile-nav">
-        <a routerLink="/" fragment="about" class="header__mobile-link" (click)="closeMenu()">
-          {{ 'HEADER.ABOUT' | translate }}
-        </a>
-        <a routerLink="/" fragment="skills" class="header__mobile-link" (click)="closeMenu()">
-          {{ 'HEADER.SKILLS' | translate }}
-        </a>
-        <a routerLink="/" fragment="projects" class="header__mobile-link" (click)="closeMenu()">
-          {{ 'HEADER.PROJECTS' | translate }}
-        </a>
-        <a routerLink="/" fragment="contact" class="header__mobile-link" (click)="closeMenu()">
-          {{ 'HEADER.CONTACT' | translate }}
-        </a>
-
-        <div class="header__mobile-lang">
-          <span
-            class="header__lang-option"
-            [class.header__lang-option--active]="translationService.currentLang() === 'en'"
-            (click)="translationService.currentLang() !== 'en' && translationService.switchLanguage()"
-            (keydown.enter)="translationService.currentLang() !== 'en' && translationService.switchLanguage()"
-            (keydown.space)="translationService.currentLang() !== 'en' && translationService.switchLanguage(); $event.preventDefault()"
-            role="button"
-            tabindex="0"
-            aria-label="Switch to English">
-            EN
-          </span>
-          <span
-            class="header__lang-toggle"
-            [class.header__lang-toggle--de]="translationService.currentLang() === 'de'"
-            (click)="translationService.switchLanguage()"
-            (keydown.enter)="translationService.switchLanguage()"
-            (keydown.space)="translationService.switchLanguage(); $event.preventDefault()"
-            role="button"
-            tabindex="0"
-            aria-label="Toggle language">
-            <span class="header__lang-toggle-thumb"></span>
-          </span>
-          <span
-            class="header__lang-option"
-            [class.header__lang-option--active]="translationService.currentLang() === 'de'"
-            (click)="translationService.currentLang() !== 'de' && translationService.switchLanguage()"
-            (keydown.enter)="translationService.currentLang() !== 'de' && translationService.switchLanguage()"
-            (keydown.space)="translationService.currentLang() !== 'de' && translationService.switchLanguage(); $event.preventDefault()"
-            role="button"
-            tabindex="0"
-            aria-label="Zu Deutsch wechseln">
-            DE
-          </span>
-        </div>
-      </nav>
-
-      <app-social-links class="header__mobile-social" />
+  @if (menuOpen()) {
+    <div id="header-menu" class="header__menu">
+      <ul>
+        @for (item of navItems; track item.fragment) {
+          <li>
+            <a routerLink="/" [fragment]="item.fragment" class="header__menu-link" (click)="goTo($event, item.fragment)">
+              {{ item.key | translate }}
+            </a>
+          </li>
+        }
+      </ul>
     </div>
-  </div>
+  }
 </header>

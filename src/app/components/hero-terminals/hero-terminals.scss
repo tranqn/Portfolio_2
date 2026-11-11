@@ -1,0 +1,207 @@
+@use '../../../styles/variables' as *;
+
+$term-bg: #fffefa;
+$term-tab-bg: #f6f3ea;
+$claude-clay: #a8502b;
+$term-ok: #2f6b34;
+$term-del: #b3261e;
+
+:host {
+  display: block;
+}
+
+// Same stage as the project showcase: the window floats on a soft lemon field
+.terminals {
+  padding: 26px 18px 32px;
+  background:
+    radial-gradient(ellipse at 8% 10%, $lemon, transparent 66%),
+    radial-gradient(ellipse at 96% 94%, rgba(244, 203, 78, 0.8), transparent 70%);
+  border-radius: 24px;
+}
+
+// ---- Terminal panes ----
+
+.terminals__panes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  background: $term-bg;
+}
+
+.term + .term {
+  border-left: 1px solid $line;
+}
+
+.term__tab {
+  margin: 0;
+  padding: 8px 16px;
+  font: 500 12px/1.4 $font-mono;
+  color: $ink-muted;
+  background: $term-tab-bg;
+  border-bottom: 1px solid $line;
+}
+
+.term__body {
+  min-height: 268px;
+  padding: 16px 16px 18px;
+  font: 400 12.5px/1.65 $font-mono;
+  color: $ink;
+}
+
+.term__line {
+  margin: 0;
+  overflow-wrap: anywhere;
+  // Resting state is the final frame; the delay hides each line until its turn
+  animation: term-in 320ms $ease-out-soft var(--d, 0ms) backwards;
+}
+
+.term__line--prompt {
+  display: flex;
+  gap: 1ch;
+  margin-bottom: 10px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: $term-tab-bg;
+}
+
+.term__line--result {
+  padding-left: 2ch;
+}
+
+.term__line--input {
+  margin-top: 10px;
+}
+
+.term__typed {
+  animation: term-type 1100ms steps(32, end) var(--d, 0ms) backwards;
+}
+
+.term__sigil,
+.term__dim {
+  color: $ink-muted;
+}
+
+.term__tool {
+  color: $term-ok;
+}
+
+.term--claude .term__mark {
+  color: $claude-clay;
+}
+
+.term--codex .term__mark {
+  color: $ink;
+  font-weight: 600;
+}
+
+.term__ok,
+.term__add {
+  color: $term-ok;
+}
+
+.term__del {
+  color: $term-del;
+}
+
+// Working and finished status share one grid cell, so nothing shifts
+.term__status {
+  display: grid;
+  margin-top: 6px;
+
+  > .term__line {
+    grid-area: 1 / 1;
+  }
+}
+
+.term__working {
+  opacity: 0;
+  color: $ink-muted;
+  animation: term-flash var(--span) linear var(--from) both;
+}
+
+.term__done {
+  animation: term-in 320ms $ease-out-soft var(--d) backwards;
+}
+
+.term__spin {
+  display: inline-block;
+  color: $claude-clay;
+  animation: term-spin 900ms linear var(--from) 3;
+}
+
+.term__cursor {
+  display: inline-block;
+  width: 0.6em;
+  height: 1.1em;
+  vertical-align: -0.2em;
+  background: $ink;
+  // Blinks briefly, then rests solid (WCAG 2.2.2 keeps blinking under five seconds)
+  animation: term-blink 1s steps(1, end) var(--d, 0ms) 4;
+}
+
+@keyframes term-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+}
+
+@keyframes term-type {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes term-flash {
+  0%,
+  100% {
+    opacity: 0;
+  }
+
+  3%,
+  97% {
+    opacity: 1;
+  }
+}
+
+@keyframes term-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes term-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 860px) {
+  .terminals__panes {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .term + .term {
+    border-left: 0;
+    border-top: 1px solid $line;
+  }
+
+  .term__body {
+    min-height: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .terminals {
+    padding: 14px 6px 18px;
+    border-radius: 18px;
+  }
+
+  .term__body {
+    padding: 12px 12px 14px;
+    font-size: 11.5px;
+  }
+}

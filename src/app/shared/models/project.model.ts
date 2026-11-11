@@ -1,3 +1,4 @@
+import { ProjectMediaAsset } from './project-media.model';
 import { Technology } from './technology.model';
 
 /** Portfolio project displayed in the projects grid and detail pages. */
@@ -12,8 +13,10 @@ export interface Project {
   implementationDetails?: string;
   /** Technologies used in this project. */
   techStack: Technology[];
-  /** Path to the project preview image/illustration. */
+  /** Path to the project preview image/illustration (original GIF). */
   image: string;
+  /** Video version of the recording with poster, used inside the macOS window. */
+  media?: ProjectMediaAsset;
   /** i18n translation key for development duration. */
   duration?: string;
   /** i18n translation key for the developer's role. */

@@ -18,17 +18,17 @@
     "FRONTEND": "FULLSTACK",
     "DEVELOPER": "ENTWICKLER",
     "GET_IN_TOUCH": "Kontakt aufnehmen",
-    "EYEBROW": "Neugier mit einem Ergebnis.",
-    "TITLE_1": "Schnell verstehen.",
-    "TITLE_2": "Gezielt weiterentwickeln.",
-    "INTRO": "Ich erschließe neue Codebasen, übertrage bewährte Ansätze und entwickle Ideen weiter. Mit JavaScript, Python und KI als Werkzeug.",
+    "EYEBROW": "Agentisch entwickeln. Selbst prüfen.",
+    "TITLE_1": "Agenten setzen um.",
+    "TITLE_2": "Ich prüfe mit geübtem Blick.",
+    "INTRO": "Ich arbeite gern agentisch: Claude Code und Codex übernehmen Analyse, Umsetzung und Tests. Ich gebe das Ziel vor und nehme jede Änderung ab. Den Blick dafür habe ich mir in intensiven Praxisprojekten geschärft, von der REST-API bis zur IoT-Plattform.",
     "ROLE": "Fullstack Developer",
-    "STACK": "JavaScript · Python · KI",
+    "STACK": "JavaScript · Python · KI-Agenten",
     "LOCATION": "Sachsen · remote in Deutschland",
     "CONTACT_LINK": "Kontakt aufnehmen",
     "POLAROID_ALT": "Polaroid-Foto von Quóc Nam Tràn",
     "DESK": {
-      "LABEL": "Terminal-Fenster: Claude Code setzt eine Aufgabe am Portfolio um, Codex prüft die Änderung. Beispielhafte Darstellung meines Arbeitsablaufs.",
+      "LABEL": "Terminal-Fenster: Claude Code setzt eine Aufgabe am Portfolio um, Codex prüft die Änderung gegen. Die Abnahme bleibt bei mir. Beispielhafte Darstellung meines Arbeitsablaufs.",
       "CLAUDE_TASK": "Kompetenz-Links sollen das passende Projekt öffnen",
       "CLAUDE_TESTS": "11 von 11 Tests bestanden",
       "CLAUDE_WORKING": "Arbeitet …",
@@ -44,17 +44,17 @@
     "LABEL": "Über mich",
     "TITLE": "Wer ist Nam?",
     "TEXT_1": "Ich bin Nam, Fullstack Developer. Ich entwickle vollständige Webanwendungen mit modernen Frontends, sicheren REST-APIs und stabilen Deployments. Zuletzt habe ich eine praxisorientierte Fullstack-Weiterbildung bei der Developer Akademie abgeschlossen. In dieser Zeit entstanden Join, Coderr, Videoflix und Quizly als Einzel- und Teamprojekte.",
-    "TEXT_2": "Bevor ich Code schreibe, möchte ich das Problem verstehen. Deshalb beginne ich mit einer klaren Spezifikation, entwickle früh einen funktionierenden Prototyp und prüfe die wichtigsten Annahmen. Claude Code nutze ich täglich für Analyse, Umsetzung und Tests. Parallel vertiefe ich meinen Einsatz von Codex. Die technischen Entscheidungen und die abschließende Qualitätsprüfung verantworte ich selbst.",
-    "TEXT_3": "Darüber hinaus unterstütze ich andere beim Einstieg in moderne KI-Tools. Dabei vermittle ich passende Einsatzbereiche, sichere Arbeitsweisen und klare Verfahren zur Prüfung der Ergebnisse.",
+    "TEXT_2": "Am liebsten arbeite ich agentisch. Claude Code und Codex übernehmen Analyse, Umsetzung und Tests, oft parallel und mit gegenseitigem Review. Ich schreibe vorher die Spezifikation und übernehme danach die Qualitätssicherung: Ich lese jede Änderung, teste sie im Browser und auf kleinen Bildschirmen, prüfe die Barrierefreiheit und entscheide, was ausgeliefert wird.",
+    "TEXT_3": "Den Blick dafür haben mir meine Praxisprojekte geschärft. Ich weiß, wo Software gern bricht: bei Rollen und Rechten, bei Zeitzonen, bei doppelten Daten und beim Deployment. Dort schaue ich zuerst hin, auch wenn ein Agent meldet, dass alles grün ist.",
     "BUTTON": "Kontakt aufnehmen",
     "LOCATION": "Ansässig in Sachsen",
     "RELOCATE": "Bereit zum Umzug",
     "REMOTE": "Remote in ganz Deutschland",
     "HYBRID": "Hybrid in Leipzig, Dresden oder Chemnitz",
     "METHOD_LABEL": "So gehe ich an Aufgaben heran",
-    "METHOD_TITLE_1": "Verstehen. Ausprobieren.",
-    "METHOD_TITLE_2": "Prüfen. Weiterentwickeln.",
-    "METHOD_TEXT": "Neue Technologien werden greifbar, wenn ich sie an einer konkreten Aufgabe einsetze und das Ergebnis überprüfe.",
+    "METHOD_TITLE_1": "Spezifizieren. Delegieren.",
+    "METHOD_TITLE_2": "Prüfen. Abnehmen.",
+    "METHOD_TEXT": "Agenten liefern schnell. Ob das Ergebnis trägt, zeigt erst die Prüfung danach. Die bleibt bei mir.",
     "TOOLS_TITLE": "In Projekten eingesetzt"
   },
   "SKILLS": {
@@ -74,8 +74,8 @@
       "TOOLS": "Python/Django · Node.js · APIs · PostgreSQL"
     },
     "AI": {
-      "TITLE": "Mit KI entwickeln und automatisieren",
-      "TOOLS": "Codeanalyse · Skills · Agenten-Orchestrierung"
+      "TITLE": "Agentisch entwickeln und prüfen",
+      "TOOLS": "Claude Code · Codex · Review · Tests"
     },
     "HOSTING": {
       "TITLE": "Server und Hosting einrichten",

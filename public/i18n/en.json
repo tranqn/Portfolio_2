@@ -18,17 +18,17 @@
     "FRONTEND": "FULLSTACK",
     "DEVELOPER": "DEVELOPER",
     "GET_IN_TOUCH": "Get in Touch",
-    "EYEBROW": "Curiosity with a result.",
-    "TITLE_1": "Understand fast.",
-    "TITLE_2": "Improve with purpose.",
-    "INTRO": "I get to know new codebases, carry proven approaches over and keep ideas moving. With JavaScript, Python and AI as my tools.",
+    "EYEBROW": "Agentic development. My own review.",
+    "TITLE_1": "Agents build.",
+    "TITLE_2": "I review with a trained eye.",
+    "INTRO": "I like working agentically: Claude Code and Codex take on analysis, implementation and tests. I set the goal and sign off every change. I sharpened the eye for it in intensive hands-on projects, from REST APIs to an IoT platform.",
     "ROLE": "Fullstack Developer",
-    "STACK": "JavaScript · Python · AI",
+    "STACK": "JavaScript · Python · AI agents",
     "LOCATION": "Saxony · remote across Germany",
     "CONTACT_LINK": "Get in touch",
     "POLAROID_ALT": "Polaroid photo of Quóc Nam Tràn",
     "DESK": {
-      "LABEL": "Terminal window: Claude Code implements a task on this portfolio while Codex reviews the change. An illustration of how I work.",
+      "LABEL": "Terminal window: Claude Code implements a task on this portfolio while Codex double-checks the change. The sign-off stays with me. An illustration of how I work.",
       "CLAUDE_TASK": "Skill links should open the matching project",
       "CLAUDE_TESTS": "11 of 11 tests passed",
       "CLAUDE_WORKING": "Working …",
@@ -44,17 +44,17 @@
     "LABEL": "About me",
     "TITLE": "Who's Nam?",
     "TEXT_1": "I am Nam, a fullstack developer. I build complete web applications with modern interfaces, secure REST APIs and reliable deployments. I recently completed a practical fullstack development program at Developer Akademie. During this time, I built Join, Coderr, Videoflix and Quizly through individual and team projects.",
-    "TEXT_2": "Before writing code, I want to understand the problem. I start with a clear specification, build an early working prototype and validate the important assumptions. I use Claude Code daily for analysis, implementation and testing. I am also expanding my workflow with Codex. I remain responsible for the technical decisions and final quality.",
-    "TEXT_3": "I also help others adopt modern AI tools by explaining suitable use cases, safe workflows and clear review procedures.",
+    "TEXT_2": "I like working agentically best. Claude Code and Codex take on analysis, implementation and tests, often in parallel and reviewing each other. I write the specification first and handle quality assurance afterwards: I read every change, test it in the browser and on small screens, check accessibility and decide what ships.",
+    "TEXT_3": "My hands-on projects sharpened that eye. I know where software tends to break: roles and permissions, time zones, duplicate data and deployment. That is where I look first, even when an agent reports that everything is green.",
     "BUTTON": "Get in touch",
     "LOCATION": "Based in Saxony",
     "RELOCATE": "Open to relocate",
     "REMOTE": "Remote anywhere in Germany",
     "HYBRID": "Hybrid in Leipzig, Dresden or Chemnitz",
     "METHOD_LABEL": "How I approach a task",
-    "METHOD_TITLE_1": "Understand. Try.",
-    "METHOD_TITLE_2": "Verify. Improve.",
-    "METHOD_TEXT": "New technology becomes tangible when I apply it to a concrete task and check the result.",
+    "METHOD_TITLE_1": "Specify. Delegate.",
+    "METHOD_TITLE_2": "Review. Sign off.",
+    "METHOD_TEXT": "Agents deliver fast. Whether the result holds up only shows in the review afterwards. That part stays with me.",
     "TOOLS_TITLE": "Used in projects"
   },
   "SKILLS": {
@@ -74,8 +74,8 @@
       "TOOLS": "Python/Django · Node.js · APIs · PostgreSQL"
     },
     "AI": {
-      "TITLE": "Building and automating with AI",
-      "TOOLS": "Code analysis · skills · agent orchestration"
+      "TITLE": "Building and reviewing with agents",
+      "TOOLS": "Claude Code · Codex · review · tests"
     },
     "HOSTING": {
       "TITLE": "Setting up servers and hosting",

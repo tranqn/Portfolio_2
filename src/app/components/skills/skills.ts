@@ -13,6 +13,10 @@ interface CompetenceArea {
 
 const AREAS: CompetenceArea[] = [
   {
+    key: 'SKILLS.AI',
+    references: [],
+  },
+  {
     key: 'SKILLS.WEB',
     references: [
       { showcaseId: 'praxis', nameKey: 'SHOWCASE.PRAXIS.NAME' },
@@ -25,10 +29,6 @@ const AREAS: CompetenceArea[] = [
       { showcaseId: 'stadtpuls', nameKey: 'SHOWCASE.STADTPULS.NAME' },
       { showcaseId: 'coderr', nameKey: 'SHOWCASE.CODERR.NAME' },
     ],
-  },
-  {
-    key: 'SKILLS.AI',
-    references: [],
   },
   {
     key: 'SKILLS.HOSTING',

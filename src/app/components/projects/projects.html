@@ -23,8 +23,8 @@
     </div>
 
     <div id="showcase-panel" class="showcase__panel">
-      <div class="showcase__stage" appReveal="window">
-        <div #windowEl class="showcase__window">
+      <div class="showcase__stage glass-backdrop" appReveal="window">
+        <div #windowEl class="showcase__window liquid-glass">
           <app-mac-window [title]="selected().i18nKey + '.NAME' | translate">
             <div class="showcase__screen">
               @if (selectedMedia(); as media) {

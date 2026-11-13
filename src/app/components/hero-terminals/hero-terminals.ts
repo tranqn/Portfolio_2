@@ -9,8 +9,8 @@ import { MacWindow } from '../../shared/components/mac-window/mac-window';
   styleUrl: './hero-terminals.scss',
 })
 /**
- * macOS terminal window with two panes on the same lemon stage as the
- * project showcase: Claude Code implements a task, Codex reviews it.
+ * macOS terminal window with two panes on the same liquid glass stage as
+ * the project showcase: Claude Code implements a task, Codex reviews it.
  * Purely illustrative, exposed to assistive technology as one image with
  * a describing label.
  *

@@ -23,13 +23,13 @@
 @media (hover: hover) and (pointer: fine) {
   .project-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 16px 30px -12px rgba(116, 96, 33, 0.25);
+    box-shadow: 0 16px 30px -12px $shadow-strong;
   }
 }
 
 .project-card__media {
   aspect-ratio: 2 / 1;
-  background: #f3f0e6;
+  background: $hero-bg;
 
   img {
     width: 100%;

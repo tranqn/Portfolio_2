@@ -2,7 +2,6 @@
 // CSS RESET & BASE STYLES
 // ========================================
 
-@use 'sass:color';
 @use 'variables' as *;
 
 // Box sizing reset
@@ -48,7 +47,7 @@ body {
   border-radius: $radius-sm;
 
   &:hover {
-    background: color.adjust($line, $lightness: -12%);
+    background: $line-strong;
   }
 }
 

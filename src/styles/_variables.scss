@@ -10,18 +10,33 @@ $deploy-path: '';
 // COLOR PALETTE
 // ----------------------------------------
 
-// Light "Dia" palette — the whole site stays light, regardless of OS dark mode
-$page-bg: #fbf9f3;
-$paper: #fffefa;
-$ink: #29281e;
-$ink-muted: #66604f;
-$line: #ded9c7;
-$honey: #f4cb4e;
-$lemon: #fff0b1;
-$hero-bg: #fff5d5;
-$accent: #535a32;
-$glass: rgba(255, 255, 255, 0.74);
-$shadow-warm: rgba(116, 96, 33, 0.12);
+// Colour scheme: values live as CSS custom properties on :root (src/styles.scss),
+// so the whole palette can be swapped in one place. The site stays light,
+// regardless of OS dark mode.
+$page-bg: var(--c-page-bg);
+$paper: var(--c-paper);
+$ink: var(--c-ink);
+$ink-muted: var(--c-ink-muted);
+$line: var(--c-line);
+$line-strong: var(--c-line-strong);
+$accent: var(--c-accent);
+// Soft accent tint for hover and selected states (formerly yellow)
+$hero-bg: var(--c-tint);
+$lemon: var(--c-tint-strong);
+$honey: var(--c-dot);
+// Liquid glass: coloured blobs behind, translucent pane in front
+$blob-1: var(--c-blob-1);
+$blob-2: var(--c-blob-2);
+$blob-3: var(--c-blob-3);
+$glass: var(--c-glass);
+$glass-rim: var(--c-glass-rim);
+// Colour band of the hero headline sweep
+$sweep-1: var(--c-sweep-1);
+$sweep-2: var(--c-sweep-2);
+$sweep-3: var(--c-sweep-3);
+$sweep-4: var(--c-sweep-4);
+$shadow-warm: var(--c-shadow);
+$shadow-strong: var(--c-shadow-strong);
 $traffic-red: #ed756b;
 $traffic-yellow: #e2b34e;
 $traffic-green: #70ab78;
@@ -160,7 +175,7 @@ $shadow-card: 0 4px 8px $shadow-medium;
 $shadow-button: 2px 4px 0px $text-primary;
 $shadow-button-dark: 2px 4px 0px $outline-dark;
 $shadow-float: 0 3px 14px $shadow-warm;
-$shadow-window: 0 24px 40px -14px rgba(116, 96, 33, 0.22), 0 3px 10px $shadow-warm;
+$shadow-window: 0 24px 40px -14px $shadow-strong, 0 3px 10px $shadow-warm;
 
 // Motion
 $ease-out-soft: cubic-bezier(0.22, 0.7, 0.25, 1);

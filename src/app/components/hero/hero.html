@@ -3,8 +3,8 @@
     <div class="hero__copy">
       <p class="eyebrow" appReveal [revealDelay]="0">{{ 'HERO.EYEBROW' | translate }}</p>
       <h1 class="hero__title" appReveal [revealDelay]="60">
-        {{ 'HERO.TITLE_1' | translate }}<br />
-        <em>{{ 'HERO.TITLE_2' | translate }}</em>
+        <span class="hero__line">{{ 'HERO.TITLE_1' | translate }}</span><br />
+        <em class="hero__line hero__line--second">{{ 'HERO.TITLE_2' | translate }}</em>
       </h1>
       <p class="hero__intro" appReveal [revealDelay]="140">{{ 'HERO.INTRO' | translate }}</p>
     </div>

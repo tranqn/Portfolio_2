@@ -5,6 +5,7 @@
 
 // Import partials (@use must come first)
 @use 'styles/variables' as *;
+@use 'styles/mixins' as *;
 @use 'styles/reset';
 @use 'styles/utilities';
 
@@ -52,6 +53,37 @@
   src: url('#{$deploy-path}/fonts/Kalam/Kalam-Bold.ttf') format('truetype');
   font-weight: 700;
   font-display: swap;
+}
+
+// ----------------------------------------
+// COLOUR SCHEME "AQUA"
+// ----------------------------------------
+// Cool white with a petrol accent; sky, mint and lilac blobs give the
+// liquid glass panes something to bend. All tokens in _variables.scss
+// point here.
+
+:root {
+  --c-page-bg: #f5f8fb;
+  --c-paper: #ffffff;
+  --c-ink: #16202c;
+  --c-ink-muted: #516072;
+  --c-line: #d6dee8;
+  --c-line-strong: #b4c1d1;
+  --c-accent: #0f5e8c;
+  --c-tint: #e3eef8;
+  --c-tint-strong: #cfe2f3;
+  --c-dot: #2f8fcf;
+  --c-blob-1: #92ceff;
+  --c-blob-2: #a3efd6;
+  --c-blob-3: #cbbcff;
+  --c-glass: rgba(255, 255, 255, 0.46);
+  --c-glass-rim: rgba(255, 255, 255, 0.85);
+  --c-shadow: rgba(28, 56, 94, 0.12);
+  --c-shadow-strong: rgba(28, 56, 94, 0.22);
+  --c-sweep-1: #7d6bff;
+  --c-sweep-2: #36a9ff;
+  --c-sweep-3: #3fdcb8;
+  --c-sweep-4: #a9ecff;
 }
 
 // ----------------------------------------
@@ -113,4 +145,22 @@ router-outlet {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: $ink-muted;
+}
+
+// ----------------------------------------
+// LIQUID GLASS
+// ----------------------------------------
+// Global classes so the glass is defined once; components only set padding
+// and radius. --solid is for panes that carry body text or controls.
+
+.glass-backdrop {
+  @include glass-backdrop;
+}
+
+.liquid-glass {
+  @include liquid-glass;
+}
+
+.liquid-glass--solid {
+  @include liquid-glass(72%);
 }

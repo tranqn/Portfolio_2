@@ -115,7 +115,7 @@ export class ProjectDataService {
         { name: 'Docker', icon: IMAGE_PATHS.SKILLS.DOCKER },
       ],
       image: IMAGE_PATHS.PROJECTS.CODERR,
-      media: recording('coderr', 640, 320),
+      media: recording('coderr', 960, 640),
       featured: false,
       duration: 'PROJECTS.CODERR.DURATION',
       role: 'PROJECTS.CODERR.ROLE',

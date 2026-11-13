@@ -121,8 +121,8 @@
     "CODERR": {
       "TITLE": "Coderr",
       "TECH": "Python | Django REST | PostgreSQL | Docker",
-      "DESCRIPTION": "Coderr ist ein Service-Marktplatz, auf dem Unternehmen Angebote erstellen und Kunden Leistungen bestellen und bewerten können.",
-      "IMPLEMENTATION": "Ich entwickelte die vollständige Django-REST-API. Dazu gehören rollenbasierte Berechtigungen, verschachtelte Serializer, Filter, Pagination und Datenbankannotationen. Bestellungen speichern die vereinbarten Angebotsbedingungen als unveränderlichen Snapshot. 88 automatisierte Tests sichern die zentralen API-Abläufe ab. Die produktive Anwendung nutzt PostgreSQL, Docker, Gunicorn und Caddy. Das Frontend wurde als Kursvorlage bereitgestellt.",
+      "DESCRIPTION": "Coderr ist ein IT-Marktplatz im Stil von Fiverr. Anbieter stellen Pakete ein, Kunden filtern, bestellen, bewerten und schreiben Anbietern direkt.",
+      "IMPLEMENTATION": "Ich entwickelte die vollständige Django-REST-API. Dazu gehören rollenbasierte Berechtigungen, verschachtelte Serializer, Filter, Pagination und Datenbankannotationen. Bestellungen speichern die vereinbarten Angebotsbedingungen als unveränderlichen Snapshot. Im November 2026 bekam Coderr ein Facelift: Kategorien und Filter, Angebotsseiten mit Galerie und Paketvergleich, eine Merkliste und einen Chat. Der Server ist knapp bemessen. Deshalb läuft der Chat per Polling statt über WebSockets, Bilder werden einmal beim Upload in WebP umgerechnet und Bewertungen landen als Subqueries in einer einzigen Abfrage. 136 automatisierte Tests sichern die API ab. Die produktive Anwendung nutzt PostgreSQL, Docker, Gunicorn und Caddy.",
       "DURATION": "5 Wochen",
       "ROLE": "Einzelprojekt"
     },
@@ -330,16 +330,16 @@
     },
     "CODERR": {
       "NAME": "Coderr",
-      "TAGLINE": "Eine REST-API mit klaren Rollen.",
+      "TAGLINE": "Ein Marktplatz, der mit wenig Server auskommt.",
       "STACK": "Python · Django REST · PostgreSQL · Docker",
       "TITLE": "Ein Service-Marktplatz als saubere API.",
-      "SUMMARY": "Unternehmen erstellen Angebote, Kunden bestellen und bewerten Leistungen. Ich habe das komplette Django-REST-Backend entwickelt.",
-      "CONTRIBUTION": "Backend und Deployment stammen von mir. Das Frontend war als Kursvorlage vorgegeben.",
-      "PROBLEM": "Ein fertiges Frontend erwartet eine genau definierte API mit Rollen, Filtern, Pagination und Bewertungen.",
-      "TECH": "Django REST Framework, PostgreSQL, Docker, Gunicorn, Caddy.",
-      "DECISION": "Bestellungen speichern die vereinbarten Angebotsbedingungen als unveränderlichen Snapshot. Spätere Änderungen am Angebot verfälschen alte Bestellungen nicht.",
-      "RESULT": "88 automatisierte Tests sichern die zentralen API-Abläufe. Live-Demo und Code sind öffentlich.",
-      "MEDIA_LABEL": "Bildschirmaufnahme: Angebotsübersicht des Coderr-Marktplatzes."
+      "SUMMARY": "Anbieter erstellen Angebote, Kunden filtern, bestellen, bewerten und schreiben Anbietern direkt. Ich habe das komplette Django-REST-Backend entwickelt.",
+      "CONTRIBUTION": "Backend und Deployment stammen von mir. Das Frontend aus der Kursvorlage habe ich im November 2026 durch ein eigenes Frontend im Fiverr-Stil ersetzt.",
+      "PROBLEM": "Ein Marktplatz braucht Suche, Filter, Bilder und Nachrichten. Der Server teilt sich aber 2 CPU-Kerne und 3,7 GB Arbeitsspeicher mit neun anderen Projekten.",
+      "TECH": "Django REST Framework, PostgreSQL, Docker, Gunicorn, Caddy, Vanilla JS ohne Build-Schritt.",
+      "DECISION": "Kein Redis, kein Celery, keine WebSockets. Der Chat fragt per HTTP nach neuen Nachrichten und pausiert in Hintergrund-Tabs. Bestellungen speichern die Angebotsbedingungen als unveränderlichen Snapshot.",
+      "RESULT": "136 automatisierte Tests, Lighthouse 100 bei Barrierefreiheit. App und Datenbank brauchen zusammen rund 120 MB. Live-Demo und Code sind öffentlich.",
+      "MEDIA_LABEL": "Bildschirmaufnahme: Startseite, Filter und Angebotsseite von Coderr."
     }
   },
   "MEDIA": {

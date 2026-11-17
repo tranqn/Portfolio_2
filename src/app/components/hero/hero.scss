@@ -170,60 +170,12 @@
   }
 }
 
-// Colour sweep: each line is written in from left to right, a band of the
-// scheme's sweep colours runs along the leading edge. The gradient is three
-// times as wide as the text; its first third is the final text colour, its
-// last third transparent. The resting position shows the first third, so with
-// animations off (reduced motion) the headline is simply there.
+// Each headline line is written in by the shared sweep (Sweep directive and
+// the global .sweep class); inline-block keeps each line its own gradient box.
 .hero__line {
-  --line-color: #{$ink};
   display: inline-block;
   padding: 0 0.08em 0.1em 0;
   margin-right: -0.08em;
-  background-image: linear-gradient(
-    90deg,
-    var(--line-color) 0,
-    var(--line-color) 33.33%,
-    $sweep-1 40%,
-    $sweep-2 46%,
-    $sweep-3 53%,
-    $sweep-4 60%,
-    transparent 66.67%,
-    transparent
-  );
-  background-size: 300% 100%;
-  background-position: 0 0;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-  animation: hero-sweep 1100ms ease-in-out 450ms backwards;
-}
-
-.hero__line--second {
-  --line-color: #{$accent};
-  animation-delay: 850ms;
-}
-
-@keyframes hero-sweep {
-  from {
-    background-position: 100% 0;
-    filter: blur(2px);
-  }
-
-  to {
-    background-position: 0 0;
-    filter: blur(0);
-  }
-}
-
-// Windows high contrast: plain system text instead of clipped gradients
-@media (forced-colors: active) {
-  .hero__line {
-    background: none;
-    -webkit-text-fill-color: currentColor;
-    color: CanvasText;
-  }
 }
 
 .hero__intro {

@@ -1,33 +1,33 @@
 <main id="main-content" class="legal-notice-page" tabindex="-1">
   <section class="legal-header" aria-label="Legal Notice">
     <div class="legal-header__container">
-      <h1 class="legal-header__title">{{ 'LEGAL_NOTICE.TITLE' | translate }}</h1>
+      <h1 class="legal-header__title"><span appSweep>{{ 'LEGAL_NOTICE.TITLE' | translate }}</span></h1>
     </div>
   </section>
 
   <div class="legal-content">
     <section aria-labelledby="imprint-heading">
-      <h2 id="imprint-heading">{{ 'LEGAL_NOTICE.IMPRINT' | translate }}</h2>
+      <h2 id="imprint-heading"><span appSweep>{{ 'LEGAL_NOTICE.IMPRINT' | translate }}</span></h2>
       <address [innerHTML]="'LEGAL_NOTICE.IMPRINT_TEXT' | translate"></address>
     </section>
 
     <section aria-labelledby="contact-heading">
-      <h2 id="contact-heading">{{ 'LEGAL_NOTICE.CONTACT' | translate }}</h2>
+      <h2 id="contact-heading"><span appSweep>{{ 'LEGAL_NOTICE.CONTACT' | translate }}</span></h2>
       <address [innerHTML]="'LEGAL_NOTICE.CONTACT_TEXT' | translate"></address>
     </section>
 
     <section aria-labelledby="liability-content-heading">
-      <h2 id="liability-content-heading">{{ 'LEGAL_NOTICE.LIABILITY_CONTENT' | translate }}</h2>
+      <h2 id="liability-content-heading"><span appSweep>{{ 'LEGAL_NOTICE.LIABILITY_CONTENT' | translate }}</span></h2>
       <p>{{ 'LEGAL_NOTICE.LIABILITY_CONTENT_TEXT' | translate }}</p>
     </section>
 
     <section aria-labelledby="liability-links-heading">
-      <h2 id="liability-links-heading">{{ 'LEGAL_NOTICE.LIABILITY_LINKS' | translate }}</h2>
+      <h2 id="liability-links-heading"><span appSweep>{{ 'LEGAL_NOTICE.LIABILITY_LINKS' | translate }}</span></h2>
       <p>{{ 'LEGAL_NOTICE.LIABILITY_LINKS_TEXT' | translate }}</p>
     </section>
 
     <section aria-labelledby="copyright-heading">
-      <h2 id="copyright-heading">{{ 'LEGAL_NOTICE.COPYRIGHT' | translate }}</h2>
+      <h2 id="copyright-heading"><span appSweep>{{ 'LEGAL_NOTICE.COPYRIGHT' | translate }}</span></h2>
       <p>{{ 'LEGAL_NOTICE.COPYRIGHT_TEXT' | translate }}</p>
     </section>
   </div>

@@ -7,10 +7,11 @@ import { ProjectDataService } from '../../shared/services/project-data.service';
 import { SeoService } from '../../shared/services/seo.service';
 import { MacWindow } from '../../shared/components/mac-window/mac-window';
 import { ProjectMedia } from '../../shared/components/project-media/project-media';
+import { Sweep } from '../../shared/directives/sweep.directive';
 
 @Component({
   selector: 'app-project-detail',
-  imports: [RouterLink, TranslateModule, MacWindow, ProjectMedia],
+  imports: [RouterLink, TranslateModule, MacWindow, ProjectMedia, Sweep],
   templateUrl: './project-detail.html',
   styleUrl: './project-detail.scss',
 })

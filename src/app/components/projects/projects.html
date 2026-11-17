@@ -1,7 +1,7 @@
 <section id="projects" class="projects" tabindex="-1" aria-labelledby="projects-heading">
   <header class="projects__head" appReveal>
     <p class="eyebrow">{{ 'SHOWCASE.LABEL' | translate }}</p>
-    <h2 id="projects-heading" class="projects__title">{{ 'SHOWCASE.TITLE' | translate }}</h2>
+    <h2 id="projects-heading" class="projects__title"><span appSweep>{{ 'SHOWCASE.TITLE' | translate }}</span></h2>
     <p class="projects__subtitle">{{ 'SHOWCASE.SUBTITLE' | translate }}</p>
   </header>
 
@@ -51,7 +51,12 @@
       <div #captionEl class="showcase__caption">
         <div aria-live="polite">
           <p class="showcase__stack">{{ selected().i18nKey + '.STACK' | translate }}</p>
-          <h3 class="showcase__title">{{ selected().i18nKey + '.TITLE' | translate }}</h3>
+          <h3 class="showcase__title">
+            <!-- Keyed on the project, so the sweep plays again after each switch -->
+            @for (key of [selected().id]; track key) {
+              <span appSweep>{{ selected().i18nKey + '.TITLE' | translate }}</span>
+            }
+          </h3>
         </div>
         <p class="showcase__summary">{{ selected().i18nKey + '.SUMMARY' | translate }}</p>
         <p class="showcase__contribution">
@@ -107,7 +112,7 @@
 
   <div class="more">
     <div class="more__head" appReveal>
-      <h3 class="more__title">{{ 'SHOWCASE.MORE_TITLE' | translate }}</h3>
+      <h3 class="more__title"><span appSweep>{{ 'SHOWCASE.MORE_TITLE' | translate }}</span></h3>
       <p class="more__text">{{ 'SHOWCASE.MORE_TEXT' | translate }}</p>
     </div>
     <ul class="more__grid">

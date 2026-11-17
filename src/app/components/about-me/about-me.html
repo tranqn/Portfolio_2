@@ -2,7 +2,7 @@
   <div class="about__grid">
     <div class="about__intro" appReveal>
       <p class="eyebrow">{{ 'ABOUT.LABEL' | translate }}</p>
-      <h2 id="about-heading" class="about__title">{{ 'ABOUT.TITLE' | translate }}</h2>
+      <h2 id="about-heading" class="about__title"><span appSweep>{{ 'ABOUT.TITLE' | translate }}</span></h2>
       <ul class="about__facts">
         <li>{{ 'ABOUT.LOCATION' | translate }}</li>
         <li>{{ 'ABOUT.REMOTE' | translate }}</li>
@@ -14,7 +14,7 @@
       <p>{{ 'ABOUT.TEXT_2' | translate }}</p>
       <p>{{ 'ABOUT.TEXT_3' | translate }}</p>
 
-      <h3 class="about__tools-title">{{ 'ABOUT.TOOLS_TITLE' | translate }}</h3>
+      <h3 class="about__tools-title"><span appSweep>{{ 'ABOUT.TOOLS_TITLE' | translate }}</span></h3>
       <ul class="about__tools">
         @for (tool of tools; track tool) {
           <li>{{ tool }}</li>
@@ -26,8 +26,8 @@
   <div class="about__method" appReveal>
     <p class="eyebrow">{{ 'ABOUT.METHOD_LABEL' | translate }}</p>
     <p class="about__method-title">
-      {{ 'ABOUT.METHOD_TITLE_1' | translate }}<br />
-      <em>{{ 'ABOUT.METHOD_TITLE_2' | translate }}</em>
+      <span appSweep>{{ 'ABOUT.METHOD_TITLE_1' | translate }}</span><br />
+      <em appSweep [sweepDelay]="400">{{ 'ABOUT.METHOD_TITLE_2' | translate }}</em>
     </p>
     <p class="about__method-text">{{ 'ABOUT.METHOD_TEXT' | translate }}</p>
   </div>

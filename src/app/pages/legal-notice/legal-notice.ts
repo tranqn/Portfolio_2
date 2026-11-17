@@ -1,10 +1,11 @@
 import { Component, effect, inject } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { SeoService } from '../../shared/services/seo.service';
+import { Sweep } from '../../shared/directives/sweep.directive';
 
 @Component({
   selector: 'app-legal-notice',
-  imports: [TranslateModule],
+  imports: [TranslateModule, Sweep],
   templateUrl: './legal-notice.html',
   styleUrl: './legal-notice.scss',
 })

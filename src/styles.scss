@@ -164,3 +164,38 @@ router-outlet {
 .liquid-glass--solid {
   @include liquid-glass(72%);
 }
+
+// ----------------------------------------
+// HEADING SWEEP (Sweep directive)
+// ----------------------------------------
+// The gradient is three times as wide as the text: its first third is the
+// text colour (currentColor), then a band of sweep colours, then transparent.
+// The resting position shows the first third, so the heading reads normally
+// whenever the animation does not run.
+
+.sweep {
+  background-image: linear-gradient(
+    90deg,
+    currentColor 0,
+    currentColor 33.33%,
+    $sweep-1 40%,
+    $sweep-2 46%,
+    $sweep-3 53%,
+    $sweep-4 60%,
+    transparent 66.67%,
+    transparent
+  );
+  background-size: 300% 100%;
+  background-position: 0 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+// Windows high contrast: plain system text instead of a clipped gradient
+@media (forced-colors: active) {
+  .sweep {
+    background: none;
+    -webkit-text-fill-color: currentColor;
+  }
+}

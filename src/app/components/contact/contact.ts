@@ -6,10 +6,11 @@ import { ContactForm } from '../../shared/models';
 import { ContactService } from '../../shared/services/contact.service';
 import { ToastService } from '../../shared/services/toast.service';
 import { Reveal } from '../../shared/directives/reveal.directive';
+import { Sweep } from '../../shared/directives/sweep.directive';
 
 @Component({
   selector: 'app-contact',
-  imports: [FormsModule, RouterLink, TranslateModule, Reveal],
+  imports: [FormsModule, RouterLink, TranslateModule, Reveal, Sweep],
   templateUrl: './contact.html',
   styleUrl: './contact.scss',
 })

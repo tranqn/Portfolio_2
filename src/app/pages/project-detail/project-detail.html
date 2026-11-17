@@ -8,7 +8,7 @@
 
     @if (project(); as proj) {
       <header class="project-detail__head">
-        <h1 class="project-detail__title">{{ proj.title | translate }}</h1>
+        <h1 class="project-detail__title"><span appSweep>{{ proj.title | translate }}</span></h1>
         <ul class="project-detail__stack" [attr.aria-label]="'PROJECT_DETAIL.STACK' | translate">
           @for (tech of proj.techStack; track tech.name) {
             <li>
@@ -56,13 +56,13 @@
 
         <div class="project-detail__details">
           <section id="beschreibung" class="project-detail__section">
-            <h2>{{ 'PROJECT_DETAIL.DESCRIPTION' | translate }}</h2>
+            <h2><span appSweep>{{ 'PROJECT_DETAIL.DESCRIPTION' | translate }}</span></h2>
             <p>{{ proj.description | translate }}</p>
           </section>
 
           @if (proj.implementationDetails) {
             <section id="umsetzung" class="project-detail__section">
-              <h2>{{ 'PROJECT_DETAIL.IMPLEMENTATION' | translate }}</h2>
+              <h2><span appSweep>{{ 'PROJECT_DETAIL.IMPLEMENTATION' | translate }}</span></h2>
               <p>{{ proj.implementationDetails | translate }}</p>
             </section>
           }
@@ -92,7 +92,7 @@
       }
     } @else {
       <div class="project-detail__not-found">
-        <h1>{{ 'NOT_FOUND.TITLE' | translate }}</h1>
+        <h1><span appSweep>{{ 'NOT_FOUND.TITLE' | translate }}</span></h1>
         <p>{{ 'NOT_FOUND.TEXT' | translate }}</p>
       </div>
     }

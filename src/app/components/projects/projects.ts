@@ -8,10 +8,11 @@ import { Reveal } from '../../shared/directives/reveal.directive';
 import { MotionService } from '../../shared/services/motion.service';
 import { ProjectDataService } from '../../shared/services/project-data.service';
 import { ShowcaseService } from '../../shared/services/showcase.service';
+import { Sweep } from '../../shared/directives/sweep.directive';
 
 @Component({
   selector: 'app-projects',
-  imports: [TranslateModule, RouterLink, MacWindow, ProjectMedia, ProjectCard, Reveal],
+  imports: [TranslateModule, RouterLink, MacWindow, ProjectMedia, ProjectCard, Reveal, Sweep],
   templateUrl: './projects.html',
   styleUrl: './projects.scss',
 })

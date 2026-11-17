@@ -2,10 +2,11 @@ import { Component, inject } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { Reveal } from '../../shared/directives/reveal.directive';
 import { ColleagueDataService } from '../../shared/services/colleague-data.service';
+import { Sweep } from '../../shared/directives/sweep.directive';
 
 @Component({
   selector: 'app-colleagues',
-  imports: [TranslateModule, Reveal],
+  imports: [TranslateModule, Reveal, Sweep],
   templateUrl: './colleagues.html',
   styleUrl: './colleagues.scss',
 })

@@ -4,10 +4,11 @@ import { TranslateModule } from '@ngx-translate/core';
 import { Skills } from '../skills/skills';
 import { Reveal } from '../../shared/directives/reveal.directive';
 import { HeroTerminals } from '../hero-terminals/hero-terminals';
+import { Sweep } from '../../shared/directives/sweep.directive';
 
 @Component({
   selector: 'app-hero',
-  imports: [TranslateModule, RouterLink, Skills, Reveal, HeroTerminals],
+  imports: [TranslateModule, RouterLink, Skills, Reveal, HeroTerminals, Sweep],
   templateUrl: './hero.html',
   styleUrl: './hero.scss',
 })

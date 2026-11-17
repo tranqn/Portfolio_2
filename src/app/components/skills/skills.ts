@@ -4,6 +4,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { Reveal } from '../../shared/directives/reveal.directive';
 import { MotionService } from '../../shared/services/motion.service';
 import { ShowcaseService } from '../../shared/services/showcase.service';
+import { Sweep } from '../../shared/directives/sweep.directive';
 
 /** A competence area with the showcase entries that back it up (may be none). */
 interface CompetenceArea {
@@ -38,7 +39,7 @@ const AREAS: CompetenceArea[] = [
 
 @Component({
   selector: 'app-skills',
-  imports: [TranslateModule, Reveal],
+  imports: [TranslateModule, Reveal, Sweep],
   templateUrl: './skills.html',
   styleUrl: './skills.scss',
 })

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { Reveal } from '../../shared/directives/reveal.directive';
+import { Sweep } from '../../shared/directives/sweep.directive';
 
 /** Technologies that appear in at least one project on this page. */
 const USED_IN_PROJECTS = [
@@ -26,7 +27,7 @@ const USED_IN_PROJECTS = [
 
 @Component({
   selector: 'app-about-me',
-  imports: [TranslateModule, Reveal],
+  imports: [TranslateModule, Reveal, Sweep],
   templateUrl: './about-me.html',
   styleUrl: './about-me.scss',
 })

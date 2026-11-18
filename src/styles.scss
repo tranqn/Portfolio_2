@@ -199,3 +199,25 @@ router-outlet {
     -webkit-text-fill-color: currentColor;
   }
 }
+
+// ----------------------------------------
+// QUIET LINK
+// ----------------------------------------
+// Text links read like part of the copy: regular weight, ink colour, a thin
+// underline, no arrow. The accent colour only appears on hover and focus.
+
+.quiet-link {
+  font-weight: $font-weight-normal;
+  color: $ink;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-decoration-color: $line-strong;
+  text-underline-offset: 4px;
+  transition: color 200ms ease, text-decoration-color 200ms ease;
+
+  &:hover,
+  &:focus-visible {
+    color: $accent;
+    text-decoration-color: $accent;
+  }
+}

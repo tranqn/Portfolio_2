@@ -5,6 +5,7 @@ import { Skills } from '../skills/skills';
 import { Reveal } from '../../shared/directives/reveal.directive';
 import { HeroTerminals } from '../hero-terminals/hero-terminals';
 import { Sweep } from '../../shared/directives/sweep.directive';
+import { IMAGE_PATHS } from '../../shared/constants';
 
 @Component({
   selector: 'app-hero',
@@ -14,18 +15,19 @@ import { Sweep } from '../../shared/directives/sweep.directive';
 })
 /**
  * Light hero in the Dia order: statement first, then a "desk" with the
- * polaroid portrait (name, role, location beside it) and a terminal window
- * where Claude Code and Codex work, then the four competence areas.
+ * illustrated portrait (about a quarter of the width, name, role and location
+ * below it) and a terminal window where Claude Code and Codex work, then the
+ * four competence areas.
  *
  * A one-off light sweep (CSS, about four seconds) and staggered entrances
  * play only when motion is allowed.
  */
 export class Hero {
+  /** Faceted illustration; its background matches the page colour. */
   protected readonly portrait = {
-    webp: 'img/hero/portrait-720.webp',
-    jpg: 'img/hero/pb.jpg',
-    width: 928,
-    height: 1025,
+    webp: IMAGE_PATHS.HERO.PORTRAIT_WEBP,
+    jpg: IMAGE_PATHS.HERO.PORTRAIT_JPG,
+    width: 720,
+    height: 781,
   };
-  protected readonly polaroidFrame = 'img/hero/polaroid-frame.png';
 }

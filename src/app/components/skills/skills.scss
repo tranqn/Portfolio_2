@@ -43,38 +43,28 @@
   color: $ink-muted;
 }
 
+// "Referenzen: Praxis UI Lab, Zyklus" as one quiet line of text
 .skills__refs {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0 18px;
-  margin: 4px 0 0;
+  margin: 6px 0 0;
+  font-size: 15px;
+  line-height: 1.5;
+  color: $ink-muted;
+}
+
+.skills__refs-label {
+  margin-right: 6px;
 }
 
 .skills__ref {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  min-height: 40px;
-  padding: 0;
+  display: inline;
+  padding: 3px 0;
   font-size: 15px;
-  font-weight: $font-weight-semibold;
-  color: $accent;
+  line-height: inherit;
   background: transparent;
-  text-decoration: underline;
-  text-decoration-color: $line;
-  text-underline-offset: 5px;
-  transition: color 200ms ease, transform 220ms ease, text-decoration-color 200ms ease;
-
-  &:hover {
-    color: $ink;
-    text-decoration-color: $honey;
-  }
 }
 
-@media (hover: hover) and (pointer: fine) {
-  .skills__ref:hover {
-    transform: translateY(-2px);
-  }
+.skills__sep {
+  margin-right: 6px;
 }
 
 @media (max-width: 1100px) {
@@ -92,9 +82,5 @@
 @media (max-width: 720px) {
   :host {
     margin-top: 24px;
-  }
-
-  .skills__ref {
-    min-height: 44px;
   }
 }

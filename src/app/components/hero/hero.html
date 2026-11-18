@@ -1,46 +1,38 @@
 <section id="home" class="hero">
   <div class="hero__inner">
-    <div class="hero__copy">
-      <p class="eyebrow" appReveal [revealDelay]="0">{{ 'HERO.EYEBROW' | translate }}</p>
-      <h1 class="hero__title" appReveal [revealDelay]="60">
-        <span class="hero__line" appSweep [sweepDelay]="450">{{ 'HERO.TITLE_1' | translate }}</span><br />
-        <em class="hero__line" appSweep [sweepDelay]="850">{{ 'HERO.TITLE_2' | translate }}</em>
-      </h1>
-      <p class="hero__intro" appReveal [revealDelay]="140">{{ 'HERO.INTRO' | translate }}</p>
-    </div>
+    <div class="hero__main">
+      <div class="hero__aside">
+        <picture class="hero__portrait" appReveal [revealDelay]="0">
+          <source [srcset]="portrait.webp" type="image/webp" />
+          <img
+            [src]="portrait.jpg"
+            [width]="portrait.width"
+            [height]="portrait.height"
+            [alt]="'HERO.PORTRAIT_ALT' | translate"
+            fetchpriority="high" />
+        </picture>
 
-    <div class="hero__desk">
-      <div class="hero__profile" appReveal [revealDelay]="200">
-        <figure class="polaroid">
-          <picture class="polaroid__photo">
-            <source [srcset]="portrait.webp" type="image/webp" />
-            <img
-              [src]="portrait.jpg"
-              [width]="portrait.width"
-              [height]="portrait.height"
-              [alt]="'HERO.POLAROID_ALT' | translate"
-              fetchpriority="high" />
-          </picture>
-          <img class="polaroid__frame" [src]="polaroidFrame" alt="" width="417" height="500" />
-          <span class="polaroid__caption" aria-hidden="true">
-            <span class="polaroid__caption-default">Nam :)</span>
-            <span class="polaroid__caption-hover">Nam :D</span>
-          </span>
-        </figure>
-
-        <div class="hero__identity">
+        <div class="hero__identity" appReveal [revealDelay]="180">
           <p class="hero__name">Quóc Nam Tràn</p>
-          <p class="hero__role">
-            {{ 'HERO.ROLE' | translate }}<br />{{ 'HERO.STACK' | translate }}
-          </p>
+          <p class="hero__role">{{ 'HERO.ROLE' | translate }} · {{ 'HERO.STACK' | translate }}</p>
           <p class="hero__location">{{ 'HERO.LOCATION' | translate }}</p>
-          <a routerLink="/" fragment="contact" class="hero__contact">
-            {{ 'HERO.CONTACT_LINK' | translate }} <span aria-hidden="true">→</span>
+          <a routerLink="/" fragment="contact" class="hero__contact quiet-link">
+            {{ 'HERO.CONTACT_LINK' | translate }}
           </a>
         </div>
       </div>
 
-      <app-hero-terminals class="hero__terminals" appReveal="window" [revealDelay]="260" />
+      <div class="hero__content">
+        <div class="hero__copy">
+          <h1 class="hero__title" appReveal [revealDelay]="60">
+            <span class="hero__line" appSweep [sweepDelay]="450">{{ 'HERO.TITLE_1' | translate }}</span><br />
+            <em class="hero__line" appSweep [sweepDelay]="850">{{ 'HERO.TITLE_2' | translate }}</em>
+          </h1>
+          <p class="hero__intro" appReveal [revealDelay]="140">{{ 'HERO.INTRO' | translate }}</p>
+        </div>
+
+        <app-hero-terminals class="hero__terminals" appReveal="window" [revealDelay]="200" />
+      </div>
     </div>
 
     <app-skills />

@@ -15,6 +15,8 @@ export const IMAGE_PATHS = {
     BACKGROUND: 'img/hero/hero-bg.png',
     POLAROID_FRAME: 'img/hero/polaroid-frame.png',
     PHOTO: 'img/hero/pb.jpg',
+    PORTRAIT_WEBP: 'img/hero/portrait-illustration-720.webp',
+    PORTRAIT_JPG: 'img/hero/portrait-illustration-720.jpg',
     WAVING_HAND: 'img/hero/waving_hand.svg',
   },
   ABOUT_ME: {

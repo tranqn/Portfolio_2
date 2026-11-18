@@ -9,13 +9,14 @@
           <p class="skills__tools">{{ area.key + '.TOOLS' | translate }}</p>
           @if (area.references.length) {
             <p class="skills__refs">
-              <span class="sr-only">{{ 'SKILLS.REFERENCES' | translate }}:</span>
-              @for (ref of area.references; track ref.showcaseId) {
-                <button type="button" class="skills__ref" (click)="showProject(ref.showcaseId)">
-                  {{ ref.nameKey | translate }}
-                  <span class="sr-only">{{ 'SKILLS.SHOW_PROJECT' | translate }}</span>
-                  <span aria-hidden="true">↘</span>
+              <span class="skills__refs-label">{{ 'SKILLS.REFERENCES' | translate }}:</span>
+              @for (ref of area.references; track ref.showcaseId; let last = $last) {
+                <button type="button" class="skills__ref quiet-link" (click)="showProject(ref.showcaseId)">
+                  {{ ref.nameKey | translate }}<span class="sr-only">&ngsp;{{ 'SKILLS.SHOW_PROJECT' | translate }}</span>
                 </button>
+                @if (!last) {
+                  <span class="skills__sep" aria-hidden="true">,</span>
+                }
               }
             </p>
           }

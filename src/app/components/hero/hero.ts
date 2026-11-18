@@ -23,10 +23,10 @@ import { IMAGE_PATHS } from '../../shared/constants';
  * play only when motion is allowed.
  */
 export class Hero {
-  /** Faceted illustration; its background matches the page colour. */
+  /** Faceted illustration with a transparent background. */
   protected readonly portrait = {
     webp: IMAGE_PATHS.HERO.PORTRAIT_WEBP,
-    jpg: IMAGE_PATHS.HERO.PORTRAIT_JPG,
+    png: IMAGE_PATHS.HERO.PORTRAIT_PNG,
     width: 720,
     height: 781,
   };

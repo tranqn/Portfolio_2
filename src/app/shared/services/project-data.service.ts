@@ -149,10 +149,10 @@ export class ProjectDataService {
       description: 'PROJECTS.JOIN.DESCRIPTION',
       implementationDetails: 'PROJECTS.JOIN.IMPLEMENTATION',
       techStack: [
-        { name: 'CSS', icon: IMAGE_PATHS.SKILLS.CSS },
-        { name: 'HTML', icon: IMAGE_PATHS.SKILLS.HTML },
+        { name: 'Angular', icon: IMAGE_PATHS.SKILLS.ANGULAR },
+        { name: 'TypeScript', icon: IMAGE_PATHS.SKILLS.TYPESCRIPT },
         { name: 'Firebase', icon: IMAGE_PATHS.SKILLS.FIREBASE },
-        { name: 'JavaScript', icon: IMAGE_PATHS.SKILLS.JAVASCRIPT },
+        { name: 'CSS', icon: IMAGE_PATHS.SKILLS.CSS },
       ],
       image: IMAGE_PATHS.PROJECTS.JOIN,
       media: recording('join', 640, 320),

@@ -1,6 +1,15 @@
 import { computed, Injectable, signal } from '@angular/core';
 import { ShowcaseItem } from '../models';
 
+/** Evidence links are pinned to a commit, so line anchors stay on the right test. */
+const STADTPULS_CODE =
+  'https://gitlab.com/nam.qt/stadtpuls/-/blob/e5d8298fd2910c574e7d0f9374be7aeea062c11f/';
+const CODERR_CODE =
+  'https://github.com/tranqn/coderr/blob/1823dfe6d0bf063cb7deacd15fe146f600b6c1c4/';
+
+/** Praxis demo settings page where 409, 412 and 500 can be triggered on purpose. */
+export const PRAXIS_TRY_URL = 'https://praxis-ui-lab.quocnamtran.com/einstellungen';
+
 @Injectable({
   providedIn: 'root',
 })
@@ -24,11 +33,17 @@ export class ShowcaseService {
       evidence: {
         diagram: 'stadtpuls-ingest',
         links: [
-          { labelKey: 'SHOWCASE.STADTPULS.EVIDENCE.LINK_ADR', url: 'https://gitlab.com/nam.qt/stadtpuls/-/blob/main/docs/adr/03-two-datastores.md' },
-          { labelKey: 'SHOWCASE.STADTPULS.EVIDENCE.LINK_TIME', url: 'https://gitlab.com/nam.qt/stadtpuls/-/blob/main/packages/core/time.spec.ts' },
+          {
+            labelKey: 'SHOWCASE.STADTPULS.EVIDENCE.LINK_ADR',
+            url: `${STADTPULS_CODE}docs/adr/03-two-datastores.md`,
+          },
+          {
+            labelKey: 'SHOWCASE.STADTPULS.EVIDENCE.LINK_TIME',
+            url: `${STADTPULS_CODE}packages/core/time.spec.ts`,
+          },
           {
             labelKey: 'SHOWCASE.STADTPULS.EVIDENCE.LINK_TENANT',
-            url: 'https://gitlab.com/nam.qt/stadtpuls/-/blob/main/services/api/src/api.integration.spec.ts#L272',
+            url: `${STADTPULS_CODE}services/api/src/api.integration.spec.ts#L272`,
           },
         ],
       },
@@ -42,7 +57,7 @@ export class ShowcaseService {
         links: [
           {
             labelKey: 'SHOWCASE.PRAXIS.EVIDENCE.LINK_TRY',
-            url: 'https://praxis-ui-lab.quocnamtran.com/einstellungen',
+            url: PRAXIS_TRY_URL,
           },
         ],
       },
@@ -55,9 +70,18 @@ export class ShowcaseService {
       code: { url: 'https://github.com/tranqn/coderr', host: 'GitHub' },
       evidence: {
         links: [
-          { labelKey: 'SHOWCASE.CODERR.EVIDENCE.LINK_POLL', url: 'https://github.com/tranqn/coderr/blob/main/backend/message_app/tests.py#L48' },
-          { labelKey: 'SHOWCASE.CODERR.EVIDENCE.LINK_CLIENT', url: 'https://github.com/tranqn/coderr/blob/main/frontend/scripts/messages.js' },
-          { labelKey: 'SHOWCASE.CODERR.EVIDENCE.LINK_SNAPSHOT', url: 'https://github.com/tranqn/coderr/blob/main/backend/order_app/tests.py#L75' },
+          {
+            labelKey: 'SHOWCASE.CODERR.EVIDENCE.LINK_POLL',
+            url: `${CODERR_CODE}backend/message_app/tests.py#L48`,
+          },
+          {
+            labelKey: 'SHOWCASE.CODERR.EVIDENCE.LINK_CLIENT',
+            url: `${CODERR_CODE}frontend/scripts/messages.js`,
+          },
+          {
+            labelKey: 'SHOWCASE.CODERR.EVIDENCE.LINK_SNAPSHOT',
+            url: `${CODERR_CODE}backend/order_app/tests.py#L75`,
+          },
         ],
       },
     },

@@ -11,7 +11,11 @@
 
   <div class="how__grid">
     <figure class="how__terminal" appReveal="window">
-      <app-hero-terminals />
+      @defer (on viewport) {
+        <app-hero-terminals />
+      } @placeholder {
+        <div class="how__terminal-placeholder"></div>
+      }
       <figcaption>{{ 'HOW.TERMINAL_CAPTION' | translate }}</figcaption>
     </figure>
 

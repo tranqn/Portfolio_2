@@ -19,6 +19,7 @@
     } @else {
       <a [href]="href()" class="project-card__link" target="_blank" rel="noopener noreferrer">
         {{ entry().titleKey | translate }}
+        <span class="sr-only">, {{ (entry().liveNeedsLogin ? 'SHOWCASE.LIVE_LOGIN' : 'SHOWCASE.LINK_LIVE') | translate }}</span>
       </a>
     }
   </h4>
@@ -27,7 +28,7 @@
     @if (route()) {
       {{ 'SHOWCASE.LINK_DETAILS' | translate }} →
     } @else {
-      {{ 'SHOWCASE.LIVE_LOGIN' | translate }} ↗
+      {{ (entry().liveNeedsLogin ? 'SHOWCASE.LIVE_LOGIN' : 'SHOWCASE.LINK_LIVE') | translate }} ↗
     }
   </p>
   @if (entry().walkthrough; as walkthrough) {

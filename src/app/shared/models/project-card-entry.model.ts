@@ -15,6 +15,8 @@ export interface ProjectCardEntry {
   height: number;
   /** Highlighted card, e.g. the team project. */
   highlight?: boolean;
+  /** External live demo needs a sign-in (shown in the card and to screen readers). */
+  liveNeedsLogin?: boolean;
   /** Recording opened in the browser's own player (controls, seeking). */
   walkthrough?: string;
   /** Either an internal detail route or an external live URL. */

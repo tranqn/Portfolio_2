@@ -21,6 +21,7 @@ const ZYKLUS_CARD: ProjectCardEntry = {
   width: 960,
   height: 640,
   walkthrough: 'media/projects/zyklus.mp4',
+  liveNeedsLogin: true,
   link: { href: 'https://mci.quocnamtran.com' },
 };
 

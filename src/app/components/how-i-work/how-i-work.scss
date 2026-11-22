@@ -62,6 +62,12 @@
   }
 }
 
+// Reserves roughly the terminal's height until it is loaded in view
+.how__terminal-placeholder {
+  min-height: 620px;
+  border-radius: 30px;
+}
+
 .how__example {
   padding: 28px;
   background: $paper;
@@ -126,7 +132,13 @@
     gap: 28px;
   }
 
-  .how__example {
+  // Reserves roughly the terminal's height until it is loaded in view
+.how__terminal-placeholder {
+  min-height: 620px;
+  border-radius: 30px;
+}
+
+.how__example {
     padding: 20px;
   }
 }

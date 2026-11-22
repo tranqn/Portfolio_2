@@ -26,7 +26,7 @@
             <a routerLink="/" fragment="projects" class="pill-link pill-link--primary">
               {{ 'HERO.CTA_PROJECTS' | translate }}
             </a>
-            <a class="pill-link" [href]="'HERO.CV_FILE' | translate" download>
+            <a class="pill-link" [href]="cvFile()" download>
               {{ 'HERO.CTA_CV' | translate }}
               <span class="pill-link__meta">{{ 'HERO.CV_META' | translate }}</span>
             </a>

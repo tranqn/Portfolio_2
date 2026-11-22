@@ -2,7 +2,7 @@ import { Component, computed, inject } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { takeUntilDestroyed, toObservable, toSignal } from '@angular/core/rxjs-interop';
-import { EMPTY, map, switchMap } from 'rxjs';
+import { map, switchMap } from 'rxjs';
 import { ProjectDataService } from '../../shared/services/project-data.service';
 import { SeoService, SITE_NAME } from '../../shared/services/seo.service';
 import { ShowcaseService } from '../../shared/services/showcase.service';
@@ -55,17 +55,29 @@ export class ProjectDetail {
     toObservable(this.project)
       .pipe(
         switchMap((proj) => {
-          if (!proj) return EMPTY;
+          if (!proj) {
+            // Unknown id: never keep the previous project's tags.
+            const path = `/projects/${this.projectId() ?? ''}`;
+            return this.translate
+              .stream(['NOT_FOUND.TITLE', 'NOT_FOUND.TEXT'])
+              .pipe(map((t: Record<string, string>) => ({ path, title: t['NOT_FOUND.TITLE'], description: t['NOT_FOUND.TEXT'] })));
+          }
           const showcaseKey = this.showcase.allItems().find((item) => item.projectId === proj.id)?.i18nKey;
           const descriptionKey = showcaseKey ? `${showcaseKey}.SUMMARY` : proj.description;
           return this.translate
             .stream([proj.title, descriptionKey])
-            .pipe(map((t: Record<string, string>) => ({ proj, title: t[proj.title], description: t[descriptionKey] })));
+            .pipe(
+              map((t: Record<string, string>) => ({
+                path: `/projects/${proj.id}`,
+                title: t[proj.title],
+                description: t[descriptionKey],
+              })),
+            );
         }),
         takeUntilDestroyed(),
       )
-      .subscribe(({ proj, title, description }) =>
-        this.seoService.setPage({ title: `${title} | ${SITE_NAME}`, description, path: `/projects/${proj.id}` }),
+      .subscribe(({ path, title, description }) =>
+        this.seoService.setPage({ title: `${title} | ${SITE_NAME}`, description, path }),
       );
   }
 

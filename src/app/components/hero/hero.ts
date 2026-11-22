@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { Skills } from '../skills/skills';
 import { Reveal } from '../../shared/directives/reveal.directive';
 import { Sweep } from '../../shared/directives/sweep.directive';
 import { IMAGE_PATHS } from '../../shared/constants';
+import { TranslationService } from '../../shared/services/translation.service';
 
 @Component({
   selector: 'app-hero',
@@ -23,6 +24,13 @@ import { IMAGE_PATHS } from '../../shared/constants';
  * play only when motion is allowed.
  */
 export class Hero {
+  private readonly language = inject(TranslationService);
+
+  /** Public CV in the page language; a fixed path, so it never depends on the JSON having loaded. */
+  protected readonly cvFile = computed(() =>
+    this.language.currentLang() === 'en' ? 'cv/Quoc-Nam-Tran-CV-en.pdf' : 'cv/Quoc-Nam-Tran-Lebenslauf.pdf',
+  );
+
   /** Faceted illustration with a transparent background. */
   protected readonly portrait = {
     webp: IMAGE_PATHS.HERO.PORTRAIT_WEBP,

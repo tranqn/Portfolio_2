@@ -16,10 +16,10 @@
   "HERO": {
     "ROLE": "Fullstack Developer",
     "INTRO": "Ich baue und betreibe Webanwendungen mit Angular, TypeScript und Python/Django, von der Oberfläche über die API bis zum Hosting.",
-    "LOCATION": "Sachsen · remote in Deutschland · hybrid in Leipzig, Dresden, Chemnitz oder Berlin",
+    "LOCATION": "Vor Ort oder hybrid in Sachsen und Berlin · remote bundesweit · umzugsbereit innerhalb Sachsens und nach Berlin",
     "CTA_PROJECTS": "Projekte ansehen",
     "CTA_CV": "Lebenslauf",
-    "CV_META": "PDF · 180 KB",
+    "CV_META": "PDF · 520 KB",
     "CONTACT_LINK": "Kontakt aufnehmen",
     "PORTRAIT_ALT": "Illustriertes Porträt von Quóc Nam Tràn",
     "DESK": {
@@ -51,9 +51,9 @@
     "TEXT_1": "Ich bin Nam, Fullstack Developer. Ich entwickle vollständige Webanwendungen mit modernen Frontends, sicheren REST-APIs und stabilen Deployments. Zuletzt habe ich eine praxisorientierte Fullstack-Weiterbildung bei der Developer Akademie abgeschlossen. In dieser Zeit entstanden Join, Coderr, Videoflix und Quizly als Einzel- und Teamprojekte.",
     "BUTTON": "Kontakt aufnehmen",
     "LOCATION": "Ansässig in Sachsen",
-    "RELOCATE": "Bereit zum Umzug",
-    "REMOTE": "Remote in ganz Deutschland",
-    "HYBRID": "Hybrid in Leipzig, Dresden, Chemnitz oder Berlin",
+    "RELOCATE": "Umzugsbereit innerhalb Sachsens und nach Berlin",
+    "REMOTE": "Remote bundesweit",
+    "HYBRID": "Vor Ort oder hybrid in Sachsen und Berlin",
     "TOOLS_TITLE": "In Projekten eingesetzt"
   },
   "SKILLS": {
@@ -142,7 +142,7 @@
       "TITLE": "Join",
       "TECH": "Angular | TypeScript | HTML | CSS | Firebase",
       "DESCRIPTION": "Task-Manager inspiriert vom Kanban-System. Erstellen und organisieren Sie Aufgaben mithilfe von Drag-and-Drop-Funktionen, weisen Sie Benutzer und Kategorien zu.",
-      "IMPLEMENTATION": "Als Frontend-Entwickler im Team habe ich die Benutzerinteraktionen entworfen und umgesetzt und die App durchgehend responsive gehalten. Das Frontend habe ich in jeder Phase eigenständig verantwortet.",
+      "IMPLEMENTATION": "Join entstand im Viererteam, ich habe das Frontend mitentwickelt. Mein größter Baustein war das Add-Task-Formular: Validierung, Unteraufgaben mit Inline-Bearbeitung, eine Datumsauswahl mit PrimeNG und eine Komponente, die als eigene Seite und als Modal läuft und beim Öffnen aus einer Board-Spalte den Status vorbelegt. Nach dem Kurs habe ich das Projekt allein abgesichert: Firestore-Regeln trennen Kontakte und Aufgaben pro angemeldetem Nutzer, dazu kamen Tests für Guards, Validatoren und Benachrichtigungen.",
       "DURATION": "5 Wochen",
       "ROLE": "Teamprojekt"
     },
@@ -399,9 +399,9 @@
       "SPEC_TERM": "Festgelegt",
       "SPEC": "Beide Fälle rollen die Änderung sichtbar zurück und werden für Screenreader angesagt. Bei 412 lädt die Tagesliste den Termin neu und zeigt den echten Stand. Bei 409 bleibt die eingegebene Begründung stehen, damit ein zweiter Versuch ohne Neueingabe klappt.",
       "AGENT_TERM": "Agent",
-      "AGENT": "Claude Code hat die Fehlerbehandlung im Board-Store und die Tests nach dieser Vorgabe umgesetzt, Codex hat die Änderung gegengelesen.",
+      "AGENT": "Claude Sonnet hat die Umsetzung nach dem freigegebenen Plan geschrieben. Codex hat sie in drei Runden als Gegenprüfer angegriffen, Claude Opus hat abschließend begutachtet.",
       "REVIEW_TERM": "Meine Prüfung",
-      "REVIEW": "Ich habe beide Fälle in der Demo ausgelöst und darauf geachtet, dass nach einem 412 nie der abgelehnte Zielstatus stehen bleibt.",
+      "REVIEW": "Ich habe den Plan freigegeben, bevor Code entstand, und abgenommen wurde erst, als kein blockierender Befund aus den Reviews mehr offen war.",
       "PROOF_TERM": "Nachweis",
       "PROOF": "Ein Unit-Test prüft, dass nach einem 412 der echte Serverstand angezeigt wird. Ein Playwright-Test prüft, dass nach einem 409 die Begründung erhalten bleibt und der zweite Versuch gelingt.",
       "TRY": "Selbst ausprobieren: 409 oder 412 in der Demo auslösen"

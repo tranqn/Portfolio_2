@@ -16,10 +16,10 @@
   "HERO": {
     "ROLE": "Fullstack Developer",
     "INTRO": "I build and deploy web applications with Angular, TypeScript and Python/Django, from user workflows to APIs and hosting.",
-    "LOCATION": "Based in Saxony · remote across Germany · hybrid in Leipzig, Dresden, Chemnitz or Berlin",
+    "LOCATION": "On site or hybrid in Saxony and Berlin · remote anywhere in Germany · willing to relocate within Saxony and to Berlin",
     "CTA_PROJECTS": "View selected projects",
     "CTA_CV": "Download CV",
-    "CV_META": "PDF · 180 KB",
+    "CV_META": "PDF · 520 KB",
     "CONTACT_LINK": "Get in touch",
     "PORTRAIT_ALT": "Illustrated portrait of Quóc Nam Tràn",
     "DESK": {
@@ -51,9 +51,9 @@
     "TEXT_1": "I am Nam, a fullstack developer. I build complete web applications with modern interfaces, secure REST APIs and reliable deployments. I recently completed a practical fullstack development program at Developer Akademie. During this time, I built Join, Coderr, Videoflix and Quizly through individual and team projects.",
     "BUTTON": "Get in touch",
     "LOCATION": "Based in Saxony",
-    "RELOCATE": "Open to relocate",
+    "RELOCATE": "Willing to relocate within Saxony and to Berlin",
     "REMOTE": "Remote anywhere in Germany",
-    "HYBRID": "Hybrid in Leipzig, Dresden, Chemnitz or Berlin",
+    "HYBRID": "On site or hybrid in Saxony and Berlin",
     "TOOLS_TITLE": "Used in projects"
   },
   "SKILLS": {
@@ -143,7 +143,7 @@
       "TITLE": "Join",
       "TECH": "Angular | TypeScript | HTML | CSS | Firebase",
       "DESCRIPTION": "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.",
-      "IMPLEMENTATION": "As the team's frontend developer, I designed and built the user interactions and kept the app fully responsive, owning the frontend independently at every stage.",
+      "IMPLEMENTATION": "Join was built by a team of four, and I worked on the frontend. My largest piece was the add-task form: validation, subtasks with inline editing, a PrimeNG date picker, and one component that works as its own page and as a modal, presetting the status when opened from a board column. After the course I hardened the project on my own: Firestore rules separate contacts and tasks per signed-in user, plus tests for guards, validators and notifications.",
       "DURATION": "5 weeks",
       "ROLE": "Team Project"
     },
@@ -399,9 +399,9 @@
       "SPEC_TERM": "Specified",
       "SPEC": "Both cases visibly roll back the change and are announced to screen readers. On 412 the day list reloads the appointment and shows its real state. On 409 the entered reason stays in place, so a second attempt works without retyping.",
       "AGENT_TERM": "Agent",
-      "AGENT": "Claude Code implemented the error handling in the board store and the tests from this specification, Codex reviewed the change.",
+      "AGENT": "Claude Sonnet wrote the implementation from the approved plan. Codex attacked it in three rounds as an adversarial reviewer, and Claude Opus did the final review.",
       "REVIEW_TERM": "My review",
-      "REVIEW": "I triggered both cases in the demo and checked that the rejected target status never stays on screen after a 412.",
+      "REVIEW": "I approved the plan before any code was written, and I only signed off once no blocking review finding was left open.",
       "PROOF_TERM": "Evidence",
       "PROOF": "A unit test checks that the real server state is shown after a 412. A Playwright test checks that the reason survives a 409 and the second attempt succeeds.",
       "TRY": "Try it yourself: trigger 409 or 412 in the demo"

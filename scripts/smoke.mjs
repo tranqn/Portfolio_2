@@ -34,7 +34,8 @@ const server = createServer(async (req, res) => {
   const file = await resolveFile(req.url);
   if (!file) {
     res.writeHead(404, { 'content-type': 'text/html' });
-    return res.end(await readFile(join(root, '404/index.html')));
+    const notFound = req.url.startsWith('/en/') ? 'en/404/index.html' : '404/index.html';
+    return res.end(await readFile(join(root, notFound)).catch(() => 'Not found'));
   }
   res.writeHead(200, { 'content-type': types[extname(file)] ?? 'application/octet-stream' });
   res.end(await readFile(file));

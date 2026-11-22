@@ -76,6 +76,7 @@ export class ProjectDetail {
                   title: t['NOT_FOUND.TITLE'],
                   description: t['NOT_FOUND.TEXT'],
                   image: undefined as string | undefined,
+                  noindex: true,
                 })),
               );
           }
@@ -87,6 +88,7 @@ export class ProjectDetail {
               map((t: Record<string, string>) => ({
                 path: `/projects/${proj.id}`,
                 image: proj.media?.poster,
+                noindex: false,
                 title: t[proj.title],
                 description: t[descriptionKey],
               })),
@@ -94,8 +96,8 @@ export class ProjectDetail {
         }),
         takeUntilDestroyed(),
       )
-      .subscribe(({ path, title, description, image }) =>
-        this.seoService.setPage({ title: `${title} | ${SITE_NAME}`, description, path, image }),
+      .subscribe(({ path, title, description, image, noindex }) =>
+        this.seoService.setPage({ title: `${title} | ${SITE_NAME}`, description, path, image, noindex }),
       );
   }
 

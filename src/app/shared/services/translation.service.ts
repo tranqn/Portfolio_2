@@ -56,12 +56,20 @@ export class TranslationService {
     return path.startsWith('/en/') ? path.slice(3) : path || '/';
   }
 
-  /** Navigates to the same page in the other language, keeping the fragment. */
+  /**
+   * Navigates to the same page in the other language. Query string and
+   * section fragment are kept; the fragment comes from `location.hash`
+   * because in-page section links only update the address via
+   * `history.replaceState`, which the router does not see.
+   */
   switchLanguage(): void {
     const next: Language = this.currentLang() === 'de' ? 'en' : 'de';
-    const fragment = this.router.url.split('#')[1];
-    void this.router.navigateByUrl(
-      this.localize(this.neutralPath(this.router.url), next) + (fragment ? `#${fragment}` : ''),
-    );
+    const query = this.router.url.split('#')[0].split('?')[1];
+    const hash = this.document.location?.hash ?? '';
+    void this.router
+      .navigateByUrl(
+        this.localize(this.neutralPath(this.router.url), next) + (query ? `?${query}` : '') + hash,
+      )
+      .catch(() => this.document.location.assign(this.localize(this.neutralPath(this.router.url), next)));
   }
 }

@@ -6,13 +6,19 @@ import { TranslationService } from './translation.service';
 
 describe('TranslationService URLs', () => {
   let service: TranslationService;
+  let originalLang: string;
 
   beforeEach(() => {
+    originalLang = document.documentElement.lang;
     TestBed.configureTestingModule({
       imports: [TranslateModule.forRoot()],
       providers: [provideZonelessChangeDetection(), provideRouter([])],
     });
     service = TestBed.inject(TranslationService);
+  });
+
+  afterEach(() => {
+    document.documentElement.lang = originalLang;
   });
 
   it('keeps German paths at the root and prefixes English ones without a trailing slash', () => {

@@ -90,10 +90,11 @@ export class SeoService {
     this.meta.updateTag({ name: 'twitter:description', content: page.description });
     this.meta.updateTag({ name: 'twitter:image', content: image });
 
-    this.setLink('canonical', url);
     if (page.noindex) {
-      this.removeAlternates();
+      // A 404 is served for many URLs: no canonical, no alternates.
+      this.removeLinks('link[rel="canonical"], link[rel="alternate"][hreflang]');
     } else {
+      this.setLink('canonical', url);
       for (const alt of SUPPORTED_LANGUAGES) {
         this.setLink('alternate', SITE_ORIGIN + this.language.localize(page.path, alt), alt);
       }
@@ -113,9 +114,7 @@ export class SeoService {
     link.setAttribute('href', href);
   }
 
-  private removeAlternates(): void {
-    this.document.head
-      .querySelectorAll('link[rel="alternate"][hreflang]')
-      .forEach((link) => link.remove());
+  private removeLinks(selector: string): void {
+    this.document.head.querySelectorAll(selector).forEach((link) => link.remove());
   }
 }

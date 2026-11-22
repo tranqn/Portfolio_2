@@ -3,7 +3,11 @@ import {
   provideBrowserGlobalErrorListeners,
   provideZonelessChangeDetection,
 } from '@angular/core';
-import { provideRouter, withInMemoryScrolling } from '@angular/router';
+import {
+  provideRouter,
+  withEnabledBlockingInitialNavigation,
+  withInMemoryScrolling,
+} from '@angular/router';
 import { provideHttpClient, withFetch } from '@angular/common/http';
 import { provideTranslateService, TranslateLoader } from '@ngx-translate/core';
 import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
@@ -27,7 +31,10 @@ export const appConfig: ApplicationConfig = {
       withInMemoryScrolling({
         anchorScrolling: 'enabled',
         scrollPositionRestoration: 'enabled',
-      })
+      }),
+      // Hydrate only after the language resolver has loaded the translations,
+      // so the prerendered header never flashes empty or in the wrong language.
+      withEnabledBlockingInitialNavigation(),
     ),
     provideHttpClient(withFetch()),
     provideClientHydration(withEventReplay()),

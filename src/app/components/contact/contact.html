@@ -101,7 +101,7 @@
           required />
         <label for="privacy">
           {{ 'CONTACT.PRIVACY_TEXT' | translate }}
-          <a routerLink="/privacy-policy">{{ 'CONTACT.PRIVACY_LINK' | translate }}</a>
+          <a [routerLink]="'/privacy-policy' | localize">{{ 'CONTACT.PRIVACY_LINK' | translate }}</a>
           {{ 'CONTACT.PRIVACY_TEXT_2' | translate }}
         </label>
       </div>

@@ -1,15 +1,35 @@
-# Force HTTPS
+# Pages are prerendered to <path>/index.html (Angular static output).
+# Canonical URLs have no trailing slash: /projects/coderr, /en, /en/projects/coderr.
+# Apache must not append a slash to directory URLs itself (DirectorySlash Off)
+# and must not list directories that have no index.html.
+DirectorySlash Off
+DirectoryIndex index.html
+Options -Indexes
+
 RewriteEngine On
+RewriteBase /
+
+# Force HTTPS
 RewriteCond %{HTTPS} off
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-# Let PHP files execute directly — skip SPA fallback
+# Let PHP files execute directly
 RewriteRule \.php$ - [L]
 
-# Serve static files directly, fallback to index.html for Angular SPA
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^ /index.html [L]
+# A typed .../index.html goes to its canonical URL (only for requests from
+# outside, never for our own internal rewrite below)
+RewriteCond %{THE_REQUEST} \s/+(\S*?/)?index\.html[\s?]
+RewriteRule ^(.*?)/?index\.html$ /$1 [L,R=301]
+
+# Trailing slash goes to the form without (the root / stays)
+RewriteRule ^(.+)/$ /$1 [L,R=301]
+
+# Serve the prerendered page for a clean URL
+RewriteCond %{REQUEST_FILENAME}/index.html -f
+RewriteRule ^(.+)$ $1/index.html [L]
+
+# Everything else that does not exist is a real 404 with the prerendered page
+ErrorDocument 404 /404/index.html
 
 # Ensure PHP is handled
 AddHandler application/x-httpd-php .php

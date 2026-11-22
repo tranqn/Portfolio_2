@@ -23,7 +23,7 @@
           <p class="hero__location" appReveal [revealDelay]="180">{{ 'HERO.LOCATION' | translate }}</p>
 
           <div class="hero__actions" appReveal [revealDelay]="220">
-            <a routerLink="/" fragment="projects" class="pill-link pill-link--primary">
+            <a [routerLink]="'/' | localize" fragment="projects" class="pill-link pill-link--primary">
               {{ 'HERO.CTA_PROJECTS' | translate }}
             </a>
             <a class="pill-link" [href]="cvFile()" download>
@@ -31,7 +31,7 @@
               <span class="pill-link__meta">{{ 'HERO.CV_META' | translate }}</span>
             </a>
           </div>
-          <a routerLink="/" fragment="contact" class="hero__contact quiet-link" appReveal [revealDelay]="260">
+          <a [routerLink]="'/' | localize" fragment="contact" class="hero__contact quiet-link" appReveal [revealDelay]="260">
             {{ 'HERO.CONTACT_LINK' | translate }}
           </a>
         </div>

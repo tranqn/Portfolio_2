@@ -1,15 +1,195 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://quocnamtran.com/</loc><lastmod>2026-11-11</lastmod><priority>1.0</priority></url>
-  <url><loc>https://quocnamtran.com/projects/praxis-ui-lab</loc><lastmod>2026-11-11</lastmod><priority>0.8</priority></url>
-  <url><loc>https://quocnamtran.com/projects/stadtpuls</loc><lastmod>2026-11-11</lastmod><priority>0.8</priority></url>
-  <url><loc>https://quocnamtran.com/projects/videoflix</loc><lastmod>2026-11-11</lastmod><priority>0.8</priority></url>
-  <url><loc>https://quocnamtran.com/projects/bookstore</loc><lastmod>2026-11-11</lastmod><priority>0.8</priority></url>
-  <url><loc>https://quocnamtran.com/projects/coderr</loc><lastmod>2026-11-11</lastmod><priority>0.8</priority></url>
-  <url><loc>https://quocnamtran.com/projects/quizly</loc><lastmod>2026-11-11</lastmod><priority>0.8</priority></url>
-  <url><loc>https://quocnamtran.com/projects/join</loc><lastmod>2026-11-11</lastmod><priority>0.8</priority></url>
-  <url><loc>https://quocnamtran.com/projects/pollo-loco</loc><lastmod>2026-11-11</lastmod><priority>0.8</priority></url>
-  <url><loc>https://quocnamtran.com/projects/pokedex</loc><lastmod>2026-11-11</lastmod><priority>0.8</priority></url>
-  <url><loc>https://quocnamtran.com/legal-notice</loc><lastmod>2026-11-11</lastmod><priority>0.3</priority></url>
-  <url><loc>https://quocnamtran.com/privacy-policy</loc><lastmod>2026-11-11</lastmod><priority>0.3</priority></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://quocnamtran.com/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://quocnamtran.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://quocnamtran.com/en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://quocnamtran.com/"/>
+    <lastmod>2026-11-22</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://quocnamtran.com/en</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://quocnamtran.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://quocnamtran.com/en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://quocnamtran.com/"/>
+    <lastmod>2026-11-22</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://quocnamtran.com/projects/praxis-ui-lab</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://quocnamtran.com/projects/praxis-ui-lab"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://quocnamtran.com/en/projects/praxis-ui-lab"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://quocnamtran.com/projects/praxis-ui-lab"/>
+    <lastmod>2026-11-22</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://quocnamtran.com/en/projects/praxis-ui-lab</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://quocnamtran.com/projects/praxis-ui-lab"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://quocnamtran.com/en/projects/praxis-ui-lab"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://quocnamtran.com/projects/praxis-ui-lab"/>
+    <lastmod>2026-11-22</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://quocnamtran.com/projects/stadtpuls</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://quocnamtran.com/projects/stadtpuls"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://quocnamtran.com/en/projects/stadtpuls"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://quocnamtran.com/projects/stadtpuls"/>
+    <lastmod>2026-11-22</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://quocnamtran.com/en/projects/stadtpuls</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://quocnamtran.com/projects/stadtpuls"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://quocnamtran.com/en/projects/stadtpuls"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://quocnamtran.com/projects/stadtpuls"/>
+    <lastmod>2026-11-22</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://quocnamtran.com/projects/videoflix</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://quocnamtran.com/projects/videoflix"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://quocnamtran.com/en/projects/videoflix"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://quocnamtran.com/projects/videoflix"/>
+    <lastmod>2026-11-22</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://quocnamtran.com/en/projects/videoflix</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://quocnamtran.com/projects/videoflix"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://quocnamtran.com/en/projects/videoflix"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://quocnamtran.com/projects/videoflix"/>
+    <lastmod>2026-11-22</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://quocnamtran.com/projects/bookstore</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://quocnamtran.com/projects/bookstore"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://quocnamtran.com/en/projects/bookstore"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://quocnamtran.com/projects/bookstore"/>
+    <lastmod>2026-11-22</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://quocnamtran.com/en/projects/bookstore</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://quocnamtran.com/projects/bookstore"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://quocnamtran.com/en/projects/bookstore"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://quocnamtran.com/projects/bookstore"/>
+    <lastmod>2026-11-22</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://quocnamtran.com/projects/coderr</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://quocnamtran.com/projects/coderr"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://quocnamtran.com/en/projects/coderr"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://quocnamtran.com/projects/coderr"/>
+    <lastmod>2026-11-22</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://quocnamtran.com/en/projects/coderr</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://quocnamtran.com/projects/coderr"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://quocnamtran.com/en/projects/coderr"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://quocnamtran.com/projects/coderr"/>
+    <lastmod>2026-11-22</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://quocnamtran.com/projects/quizly</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://quocnamtran.com/projects/quizly"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://quocnamtran.com/en/projects/quizly"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://quocnamtran.com/projects/quizly"/>
+    <lastmod>2026-11-22</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://quocnamtran.com/en/projects/quizly</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://quocnamtran.com/projects/quizly"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://quocnamtran.com/en/projects/quizly"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://quocnamtran.com/projects/quizly"/>
+    <lastmod>2026-11-22</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://quocnamtran.com/projects/join</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://quocnamtran.com/projects/join"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://quocnamtran.com/en/projects/join"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://quocnamtran.com/projects/join"/>
+    <lastmod>2026-11-22</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://quocnamtran.com/en/projects/join</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://quocnamtran.com/projects/join"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://quocnamtran.com/en/projects/join"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://quocnamtran.com/projects/join"/>
+    <lastmod>2026-11-22</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://quocnamtran.com/projects/pollo-loco</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://quocnamtran.com/projects/pollo-loco"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://quocnamtran.com/en/projects/pollo-loco"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://quocnamtran.com/projects/pollo-loco"/>
+    <lastmod>2026-11-22</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://quocnamtran.com/en/projects/pollo-loco</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://quocnamtran.com/projects/pollo-loco"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://quocnamtran.com/en/projects/pollo-loco"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://quocnamtran.com/projects/pollo-loco"/>
+    <lastmod>2026-11-22</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://quocnamtran.com/projects/pokedex</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://quocnamtran.com/projects/pokedex"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://quocnamtran.com/en/projects/pokedex"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://quocnamtran.com/projects/pokedex"/>
+    <lastmod>2026-11-22</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://quocnamtran.com/en/projects/pokedex</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://quocnamtran.com/projects/pokedex"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://quocnamtran.com/en/projects/pokedex"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://quocnamtran.com/projects/pokedex"/>
+    <lastmod>2026-11-22</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://quocnamtran.com/legal-notice</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://quocnamtran.com/legal-notice"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://quocnamtran.com/en/legal-notice"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://quocnamtran.com/legal-notice"/>
+    <lastmod>2026-11-22</lastmod>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://quocnamtran.com/en/legal-notice</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://quocnamtran.com/legal-notice"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://quocnamtran.com/en/legal-notice"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://quocnamtran.com/legal-notice"/>
+    <lastmod>2026-11-22</lastmod>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://quocnamtran.com/privacy-policy</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://quocnamtran.com/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://quocnamtran.com/en/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://quocnamtran.com/privacy-policy"/>
+    <lastmod>2026-11-22</lastmod>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://quocnamtran.com/en/privacy-policy</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://quocnamtran.com/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://quocnamtran.com/en/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://quocnamtran.com/privacy-policy"/>
+    <lastmod>2026-11-22</lastmod>
+    <priority>0.3</priority>
+  </url>
 </urlset>

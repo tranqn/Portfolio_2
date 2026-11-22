@@ -1,7 +1,7 @@
 <footer class="footer">
   <div class="footer__inner">
     <div class="footer__brand">
-      <a routerLink="/" class="footer__logo">Nam</a>
+      <a [routerLink]="'/' | localize" class="footer__logo">Nam</a>
       <p class="footer__tagline">{{ 'FOOTER.TAGLINE' | translate }}</p>
       <p class="footer__copyright">&copy; Quóc Nam Tràn {{ year }}</p>
     </div>
@@ -21,8 +21,8 @@
         </li>
       </ul>
       <ul>
-        <li><a routerLink="/legal-notice">{{ 'FOOTER.LEGAL_NOTICE' | translate }}</a></li>
-        <li><a routerLink="/privacy-policy">{{ 'FOOTER.PRIVACY' | translate }}</a></li>
+        <li><a [routerLink]="'/legal-notice' | localize">{{ 'FOOTER.LEGAL_NOTICE' | translate }}</a></li>
+        <li><a [routerLink]="'/privacy-policy' | localize">{{ 'FOOTER.PRIVACY' | translate }}</a></li>
       </ul>
     </nav>
 

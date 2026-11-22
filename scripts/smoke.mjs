@@ -1,5 +1,7 @@
-// Smoke check: serves dist/Portfolio_2/browser, opens key routes in DE and EN at
-// 375 and 1440 px, records console errors and the SEO tags, saves screenshots.
+// Smoke check: serves dist/Portfolio_2/browser like the .htaccess does (clean
+// URL -> <path>/index.html, unknown -> 404 page), opens key routes in DE (root)
+// and EN (/en) at 375 and 1440 px, records console errors (incl. hydration
+// warnings) and the SEO tags, saves screenshots.
 // Usage: npm run build && node scripts/smoke.mjs [outDir]
 import { chromium } from '@playwright/test';
 import { createServer } from 'node:http';
@@ -25,12 +27,15 @@ async function resolveFile(urlPath) {
       if ((await stat(file)).isFile()) return file;
     } catch {}
   }
-  return extname(clean) ? null : join(root, 'index.html'); // SPA fallback like .htaccess
+  return null;
 }
 
 const server = createServer(async (req, res) => {
   const file = await resolveFile(req.url);
-  if (!file) return res.writeHead(404).end();
+  if (!file) {
+    res.writeHead(404, { 'content-type': 'text/html' });
+    return res.end(await readFile(join(root, '404/index.html')));
+  }
   res.writeHead(200, { 'content-type': types[extname(file)] ?? 'application/octet-stream' });
   res.end(await readFile(file));
 }).listen(0);
@@ -44,15 +49,15 @@ let failures = 0;
 for (const lang of langs) {
   for (const width of widths) {
     const context = await browser.newContext({ viewport: { width, height: 900 }, reducedMotion: 'reduce' });
-    await context.addInitScript((l) => localStorage.setItem('portfolio-language', l), lang);
     const page = await context.newPage();
     for (const route of routes) {
       const errors = [];
       page.removeAllListeners('console');
       page.removeAllListeners('pageerror');
-      page.on('console', (m) => m.type() === 'error' && errors.push(m.text()));
+      page.on('console', (m) => (m.type() === 'error' || /NG0\d+|hydrat/i.test(m.text())) && errors.push(m.text()));
       page.on('pageerror', (e) => errors.push(String(e)));
-      await page.goto(base + route, { waitUntil: 'networkidle' });
+      const url = lang === 'en' ? (route === '/' ? '/en' : `/en${route}`) : route;
+      await page.goto(base + url, { waitUntil: 'networkidle' });
       await page.waitForTimeout(400);
       const meta = await page.evaluate(() => ({
         title: document.title,
@@ -60,10 +65,12 @@ for (const lang of langs) {
         ogUrl: document.querySelector('meta[property="og:url"]')?.getAttribute('content') ?? null,
         description: document.querySelector('meta[name=description]')?.getAttribute('content') ?? null,
         overflowX: document.documentElement.scrollWidth > window.innerWidth,
+        htmlLang: document.documentElement.lang,
       }));
       const rawKey = /[A-Z_]+\.[A-Z_]+/.test(meta.title);
-      if (errors.length || rawKey || meta.overflowX) failures++;
-      report.push({ lang, width, route, ...meta, rawKey, errors });
+      const wrongLang = meta.htmlLang !== lang;
+      if (errors.length || rawKey || meta.overflowX || wrongLang) failures++;
+      report.push({ lang, width, route, ...meta, rawKey, wrongLang, errors });
       const name = `${lang}-${width}-${route.replace(/\W+/g, '_') || 'home'}.png`;
       await page.screenshot({ path: join(outDir, name), fullPage: route === '/' });
       if (route === '/') await page.screenshot({ path: join(outDir, name.replace('.png', '-top.png')) });
@@ -76,7 +83,7 @@ await browser.close();
 server.close();
 await writeFile(join(outDir, 'report.json'), JSON.stringify(report, null, 2));
 for (const r of report) {
-  const flags = [r.rawKey && 'RAW-KEY', r.overflowX && 'OVERFLOW-X', r.errors.length && `${r.errors.length} ERR`]
+  const flags = [r.rawKey && 'RAW-KEY', r.wrongLang && 'WRONG-LANG', r.overflowX && 'OVERFLOW-X', r.errors.length && `${r.errors.length} ERR`]
     .filter(Boolean).join(' ');
   console.log(`${r.lang} ${String(r.width).padStart(4)} ${r.route.padEnd(26)} ${r.title} | canonical=${r.canonical} ${flags}`);
 }

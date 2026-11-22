@@ -1,76 +1,67 @@
 import { DOCUMENT } from '@angular/common';
 import { Injectable, inject, signal } from '@angular/core';
+import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-
-/** localStorage key used to persist the user's language choice. */
-const STORAGE_KEY = 'portfolio-language';
+import { Observable } from 'rxjs';
 
 /** Tuple of languages the portfolio supports. */
-const SUPPORTED_LANGUAGES = ['de', 'en'] as const;
+export const SUPPORTED_LANGUAGES = ['de', 'en'] as const;
 
 /** Union type derived from {@link SUPPORTED_LANGUAGES}. */
-type Language = (typeof SUPPORTED_LANGUAGES)[number];
+export type Language = (typeof SUPPORTED_LANGUAGES)[number];
+
+/** URL prefix per language: German lives at the root, English under `/en`. */
+const PREFIX: Record<Language, string> = { de: '', en: '/en' };
 
 @Injectable({
   providedIn: 'root',
 })
 /**
- * Manages the active UI language (DE/EN) for the portfolio.
- *
- * On construction the language is resolved in priority order:
- * 1. Previously persisted choice in localStorage
- * 2. Browser `navigator.language`
- * 3. Fallback to German (`de`)
- *
- * Exposes a {@link currentLang} signal so templates can react to language changes.
+ * Active UI language (DE/EN). The URL decides it: `/…` is German, `/en/…`
+ * English. The language resolver on the two parent routes calls {@link use},
+ * so prerendered pages and client navigation always agree, and every page has
+ * its own stable, shareable URL per language. Nothing is read from the
+ * browser (no storage, no `navigator.language`), which keeps server and
+ * client output identical.
  */
 export class TranslationService {
   private readonly translate = inject(TranslateService);
   private readonly document = inject(DOCUMENT);
+  private readonly router = inject(Router);
 
   /** Reactive signal holding the active language code. */
   readonly currentLang = signal<Language>('de');
 
-  constructor() {
-    const initialLang = this.detectLanguage();
-    this.apply(initialLang);
+  /** Activates a language; the returned observable completes once its file is loaded. */
+  use(lang: Language): Observable<unknown> {
+    this.currentLang.set(lang);
+    this.document.documentElement.lang = lang;
+    return this.translate.use(lang);
   }
 
-  /** Toggles between German and English, persisting the choice to localStorage. */
+  /**
+   * Prefixes a language-neutral path (`/projects/coderr`, `/`) for a language.
+   * German has no prefix; the English home page is `/en` (no trailing slash).
+   */
+  localize(path: string, lang: Language = this.currentLang()): string {
+    const prefix = PREFIX[lang];
+    if (!prefix) return path;
+    return path === '/' ? prefix : prefix + path;
+  }
+
+  /** Strips the language prefix from a URL path, giving the neutral path. */
+  neutralPath(url: string): string {
+    const path = url.split('#')[0].split('?')[0];
+    if (path === '/en') return '/';
+    return path.startsWith('/en/') ? path.slice(3) : path || '/';
+  }
+
+  /** Navigates to the same page in the other language, keeping the fragment. */
   switchLanguage(): void {
     const next: Language = this.currentLang() === 'de' ? 'en' : 'de';
-    this.apply(next);
-    try {
-      localStorage.setItem(STORAGE_KEY, next);
-    } catch {
-      // Storage can be blocked; the choice then lasts for this visit only.
-    }
-  }
-
-  /** Activates a language and keeps `<html lang>` in sync for assistive tech and CSS. */
-  private apply(lang: Language): void {
-    this.currentLang.set(lang);
-    this.translate.use(lang);
-    this.document.documentElement.lang = lang;
-  }
-
-  /** Reads stored or browser language preference. */
-  private detectLanguage(): Language {
-    let stored: string | null = null;
-    try {
-      stored = localStorage.getItem(STORAGE_KEY);
-    } catch {
-      // Storage blocked: fall back to the browser language.
-    }
-    if (stored && this.isSupportedLanguage(stored)) {
-      return stored;
-    }
-    const browserLang = navigator.language.split('-')[0];
-    return this.isSupportedLanguage(browserLang) ? browserLang : 'de';
-  }
-
-  /** Type-guard that narrows a string to the {@link Language} union. */
-  private isSupportedLanguage(lang: string): lang is Language {
-    return SUPPORTED_LANGUAGES.includes(lang as Language);
+    const fragment = this.router.url.split('#')[1];
+    void this.router.navigateByUrl(
+      this.localize(this.neutralPath(this.router.url), next) + (fragment ? `#${fragment}` : ''),
+    );
   }
 }

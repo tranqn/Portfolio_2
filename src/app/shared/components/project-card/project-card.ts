@@ -3,10 +3,11 @@ import { RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { ProjectCardEntry } from '../../models';
 import { MacWindow } from '../mac-window/mac-window';
+import { LocalizePipe } from '../../utils/localize.pipe';
 
 @Component({
   selector: 'app-project-card',
-  imports: [RouterLink, TranslateModule, MacWindow],
+  imports: [RouterLink, TranslateModule, MacWindow, LocalizePipe],
   templateUrl: './project-card.html',
   styleUrl: './project-card.scss',
 })

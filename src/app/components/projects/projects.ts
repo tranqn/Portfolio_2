@@ -9,6 +9,7 @@ import { MotionService } from '../../shared/services/motion.service';
 import { ProjectDataService } from '../../shared/services/project-data.service';
 import { ShowcaseService } from '../../shared/services/showcase.service';
 import { Sweep } from '../../shared/directives/sweep.directive';
+import { LocalizePipe } from '../../shared/utils/localize.pipe';
 import { Project, ProjectCardEntry } from '../../shared/models';
 
 /** Zyklus has no detail page; its card opens the live app. */
@@ -41,7 +42,7 @@ function toCardEntry(project: Project): ProjectCardEntry {
 
 @Component({
   selector: 'app-projects',
-  imports: [TranslateModule, RouterLink, MacWindow, ProjectMedia, ProjectCard, Reveal, Sweep],
+  imports: [TranslateModule, RouterLink, MacWindow, ProjectMedia, ProjectCard, Reveal, Sweep, LocalizePipe],
   templateUrl: './projects.html',
   styleUrl: './projects.scss',
 })

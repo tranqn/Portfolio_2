@@ -2,6 +2,7 @@ import { DOCUMENT } from '@angular/common';
 import { Component, ElementRef, inject, signal, viewChild } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
+import { LocalizePipe } from '../../shared/utils/localize.pipe';
 import { MotionService } from '../../shared/services/motion.service';
 import { TranslationService } from '../../shared/services/translation.service';
 
@@ -16,7 +17,7 @@ const NAV_ITEMS = [
 
 @Component({
   selector: 'app-header',
-  imports: [RouterLink, TranslateModule],
+  imports: [RouterLink, TranslateModule, LocalizePipe],
   templateUrl: './header.html',
   styleUrl: './header.scss',
   host: {
@@ -59,22 +60,22 @@ export class Header {
    */
   protected goTo(event: MouseEvent, fragment: string): void {
     this.menuOpen.set(false);
-    const onHome = this.router.url.split('#')[0].split('?')[0] === '/';
+    const onHome = this.translationService.neutralPath(this.router.url) === '/';
     const target = this.document.getElementById(fragment);
     if (!onHome || !target) return;
 
     event.preventDefault();
     this.motion.scrollTo(target);
     target.focus({ preventScroll: true });
-    history.replaceState(history.state, '', `/#${fragment}`);
+    history.replaceState(history.state, '', `${this.translationService.localize('/')}#${fragment}`);
   }
 
   /** Returns to the top of the home page. */
   protected goHome(event: MouseEvent): void {
     this.menuOpen.set(false);
-    if (this.router.url.split('#')[0] !== '/') return;
+    if (this.translationService.neutralPath(this.router.url) !== '/') return;
     event.preventDefault();
     this.document.defaultView?.scrollTo({ top: 0, behavior: this.motion.reduced() ? 'auto' : 'smooth' });
-    history.replaceState(history.state, '', '/');
+    history.replaceState(history.state, '', this.translationService.localize('/'));
   }
 }

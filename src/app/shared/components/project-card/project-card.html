@@ -15,7 +15,7 @@
   }
   <h4 class="project-card__title">
     @if (route(); as route) {
-      <a [routerLink]="route" class="project-card__link">{{ entry().titleKey | translate }}</a>
+      <a [routerLink]="route | localize" class="project-card__link">{{ entry().titleKey | translate }}</a>
     } @else {
       <a [href]="href()" class="project-card__link" target="_blank" rel="noopener noreferrer">
         {{ entry().titleKey | translate }}

@@ -1,6 +1,7 @@
 import { Component, computed, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
+import { LocalizePipe } from '../../shared/utils/localize.pipe';
 import { Skills } from '../skills/skills';
 import { Reveal } from '../../shared/directives/reveal.directive';
 import { Sweep } from '../../shared/directives/sweep.directive';
@@ -9,7 +10,7 @@ import { TranslationService } from '../../shared/services/translation.service';
 
 @Component({
   selector: 'app-hero',
-  imports: [TranslateModule, RouterLink, Skills, Reveal, Sweep],
+  imports: [TranslateModule, RouterLink, Skills, Reveal, Sweep, LocalizePipe],
   templateUrl: './hero.html',
   styleUrl: './hero.scss',
 })

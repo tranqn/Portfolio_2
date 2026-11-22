@@ -5,7 +5,11 @@
  * project that no longer exists (dabubble) and was missing five real ones.
  * Deriving it from project-data.service.ts keeps it honest.
  *
- * Run: node scripts/generate-sitemap.mjs
+ * Every page exists in German (root) and English (/en). Each URL lists both
+ * versions plus x-default as xhtml:link alternates, matching the hreflang tags
+ * the SeoService writes into the prerendered HTML.
+ *
+ * Runs automatically before `npm run build` (prebuild).
  */
 import { readFileSync, writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
@@ -32,16 +36,34 @@ const urls = [
   { loc: '/privacy-policy', priority: '0.3' },
 ];
 
+const localize = (path, lang) => (lang === 'en' ? (path === '/' ? '/en' : `/en${path}`) : path);
+const alternates = (path) =>
+  [
+    ['de', localize(path, 'de')],
+    ['en', localize(path, 'en')],
+    ['x-default', localize(path, 'de')],
+  ]
+    .map(([lang, loc]) => `    <xhtml:link rel="alternate" hreflang="${lang}" href="${ORIGIN}${loc}"/>`)
+    .join('\n');
+
 const xml = [
   '<?xml version="1.0" encoding="UTF-8"?>',
-  '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
-  ...urls.map(
-    ({ loc, priority }) =>
-      `  <url><loc>${ORIGIN}${loc}</loc><lastmod>${today}</lastmod><priority>${priority}</priority></url>`,
+  '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">',
+  ...urls.flatMap(({ loc, priority }) =>
+    ['de', 'en'].map((lang) =>
+      [
+        '  <url>',
+        `    <loc>${ORIGIN}${localize(loc, lang)}</loc>`,
+        alternates(loc),
+        `    <lastmod>${today}</lastmod>`,
+        `    <priority>${priority}</priority>`,
+        '  </url>',
+      ].join('\n'),
+    ),
   ),
   '</urlset>',
   '',
 ].join('\n');
 
 writeFileSync(join(ROOT, 'public/sitemap.xml'), xml, 'utf8');
-console.log(`Sitemap geschrieben: ${urls.length} URLs (${projectIds.length} Projekte)`);
+console.log(`Sitemap geschrieben: ${urls.length * 2} URLs (${projectIds.length} Projekte, DE und EN)`);

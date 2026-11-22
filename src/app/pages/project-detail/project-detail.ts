@@ -6,6 +6,8 @@ import { map, switchMap } from 'rxjs';
 import { ProjectDataService } from '../../shared/services/project-data.service';
 import { SeoService, SITE_NAME } from '../../shared/services/seo.service';
 import { ShowcaseService } from '../../shared/services/showcase.service';
+import { TranslationService } from '../../shared/services/translation.service';
+import { LocalizePipe } from '../../shared/utils/localize.pipe';
 import { MacWindow } from '../../shared/components/mac-window/mac-window';
 import { ProjectMedia } from '../../shared/components/project-media/project-media';
 import { Sweep } from '../../shared/directives/sweep.directive';
@@ -13,7 +15,7 @@ import { IngestDiagram } from '../../shared/components/ingest-diagram/ingest-dia
 
 @Component({
   selector: 'app-project-detail',
-  imports: [RouterLink, TranslateModule, MacWindow, ProjectMedia, Sweep, IngestDiagram],
+  imports: [RouterLink, TranslateModule, MacWindow, ProjectMedia, Sweep, IngestDiagram, LocalizePipe],
   templateUrl: './project-detail.html',
   styleUrl: './project-detail.scss',
 })
@@ -31,6 +33,7 @@ export class ProjectDetail {
   private readonly seoService = inject(SeoService);
   private readonly translate = inject(TranslateService);
   private readonly showcase = inject(ShowcaseService);
+  private readonly language = inject(TranslationService);
 
   /** Reactive project slug extracted from the `:projectId` route param. */
   private readonly projectId = toSignal(
@@ -67,7 +70,14 @@ export class ProjectDetail {
             const path = `/projects/${this.projectId() ?? ''}`;
             return this.translate
               .stream(['NOT_FOUND.TITLE', 'NOT_FOUND.TEXT'])
-              .pipe(map((t: Record<string, string>) => ({ path, title: t['NOT_FOUND.TITLE'], description: t['NOT_FOUND.TEXT'] })));
+              .pipe(
+                map((t: Record<string, string>) => ({
+                  path,
+                  title: t['NOT_FOUND.TITLE'],
+                  description: t['NOT_FOUND.TEXT'],
+                  image: undefined as string | undefined,
+                })),
+              );
           }
           const showcaseKey = this.showcase.allItems().find((item) => item.projectId === proj.id)?.i18nKey;
           const descriptionKey = showcaseKey ? `${showcaseKey}.SUMMARY` : proj.description;
@@ -76,6 +86,7 @@ export class ProjectDetail {
             .pipe(
               map((t: Record<string, string>) => ({
                 path: `/projects/${proj.id}`,
+                image: proj.media?.poster,
                 title: t[proj.title],
                 description: t[descriptionKey],
               })),
@@ -83,14 +94,14 @@ export class ProjectDetail {
         }),
         takeUntilDestroyed(),
       )
-      .subscribe(({ path, title, description }) =>
-        this.seoService.setPage({ title: `${title} | ${SITE_NAME}`, description, path }),
+      .subscribe(({ path, title, description, image }) =>
+        this.seoService.setPage({ title: `${title} | ${SITE_NAME}`, description, path, image }),
       );
   }
 
   /** Builds the router path for the next project, falling back to home. */
   protected nextProjectRoute(): string {
     const next = this.nextProject();
-    return next ? `/projects/${next.id}` : '/';
+    return this.language.localize(next ? `/projects/${next.id}` : '/');
   }
 }

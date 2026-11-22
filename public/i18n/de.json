@@ -257,7 +257,10 @@
   },
   "NOT_FOUND": {
     "TITLE": "Projekt nicht gefunden",
-    "TEXT": "Das gesuchte Projekt existiert leider nicht. Bitte kehren Sie zur Projektübersicht zurück."
+    "TEXT": "Das gesuchte Projekt existiert leider nicht. Bitte kehren Sie zur Projektübersicht zurück.",
+    "PAGE_TITLE": "Seite nicht gefunden",
+    "PAGE_TEXT": "Diese Adresse gibt es auf meiner Website nicht. Vielleicht hilft der Weg zurück zur Startseite.",
+    "HOME": "Zur Startseite"
   },
   "FOOTER": {
     "LEGAL_NOTICE": "Impressum",

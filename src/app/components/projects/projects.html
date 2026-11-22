@@ -69,7 +69,7 @@
           <ul class="showcase__links">
             @if (selectedProject(); as project) {
               <li>
-                <a class="showcase__link showcase__link--primary" [routerLink]="'/projects/' + project.id">
+                <a class="showcase__link showcase__link--primary" [routerLink]="'/projects/' + project.id | localize">
                   {{ 'SHOWCASE.LINK_DETAILS' | translate }} <span aria-hidden="true">→</span>
                 </a>
               </li>

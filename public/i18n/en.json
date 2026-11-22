@@ -257,7 +257,10 @@
   },
   "NOT_FOUND": {
     "TITLE": "Project not found",
-    "TEXT": "The project you are looking for does not exist. Please go back to the projects overview."
+    "TEXT": "The project you are looking for does not exist. Please go back to the projects overview.",
+    "PAGE_TITLE": "Page not found",
+    "PAGE_TEXT": "This address does not exist on my website. The home page might help.",
+    "HOME": "Back to the home page"
   },
   "FOOTER": {
     "LEGAL_NOTICE": "Legal Notice",

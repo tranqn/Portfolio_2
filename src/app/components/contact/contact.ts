@@ -2,6 +2,7 @@ import { Component, inject, signal } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
+import { LocalizePipe } from '../../shared/utils/localize.pipe';
 import { ContactForm } from '../../shared/models';
 import { ContactService } from '../../shared/services/contact.service';
 import { ToastService } from '../../shared/services/toast.service';
@@ -10,7 +11,7 @@ import { Sweep } from '../../shared/directives/sweep.directive';
 
 @Component({
   selector: 'app-contact',
-  imports: [FormsModule, RouterLink, TranslateModule, Reveal, Sweep],
+  imports: [FormsModule, RouterLink, TranslateModule, Reveal, Sweep, LocalizePipe],
   templateUrl: './contact.html',
   styleUrl: './contact.scss',
 })

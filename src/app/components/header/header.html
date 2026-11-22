@@ -2,7 +2,7 @@
 
 <header class="header">
   <nav class="header__pill liquid-glass liquid-glass--solid" [attr.aria-label]="'HEADER.NAV_LABEL' | translate">
-    <a routerLink="/" class="header__brand" (click)="goHome($event)">
+    <a [routerLink]="'/' | localize" class="header__brand" (click)="goHome($event)">
       <span aria-hidden="true">Nam</span>
       <span class="sr-only">{{ 'HEADER.HOME' | translate }}</span>
     </a>
@@ -10,7 +10,7 @@
     <ul class="header__links">
       @for (item of navItems; track item.fragment) {
         <li>
-          <a routerLink="/" [fragment]="item.fragment" class="header__link" (click)="goTo($event, item.fragment)">
+          <a [routerLink]="'/' | localize" [fragment]="item.fragment" class="header__link" (click)="goTo($event, item.fragment)">
             {{ item.key | translate }}
           </a>
         </li>
@@ -42,7 +42,7 @@
       <ul>
         @for (item of navItems; track item.fragment) {
           <li>
-            <a routerLink="/" [fragment]="item.fragment" class="header__menu-link" (click)="goTo($event, item.fragment)">
+            <a [routerLink]="'/' | localize" [fragment]="item.fragment" class="header__menu-link" (click)="goTo($event, item.fragment)">
               {{ item.key | translate }}
             </a>
           </li>

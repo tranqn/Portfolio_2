@@ -1,7 +1,7 @@
 <main id="main-content" class="project-detail" tabindex="-1">
   <div class="project-detail__container">
     <nav class="project-detail__breadcrumb" aria-label="Breadcrumb">
-      <a routerLink="/" fragment="projects" class="project-detail__back">
+      <a [routerLink]="'/' | localize" fragment="projects" class="project-detail__back">
         <span aria-hidden="true">←</span> {{ 'PROJECT_DETAIL.GO_BACK' | translate }}
       </a>
     </nav>

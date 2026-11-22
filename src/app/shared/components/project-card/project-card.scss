@@ -38,6 +38,18 @@
   }
 }
 
+.project-card--highlight {
+  border-color: $ink;
+}
+
+.project-card__role {
+  margin: 14px 4px 0;
+  font: 12px/1.3 $font-mono;
+  letter-spacing: 0.02em;
+  color: $ink-muted;
+  text-transform: uppercase;
+}
+
 .project-card__title {
   margin: 16px 4px 0;
   font-size: 26px;
@@ -74,4 +86,8 @@
   font-size: 15px;
   font-weight: $font-weight-semibold;
   color: $accent;
+}
+
+.project-card__role + .project-card__title {
+  margin-top: 4px;
 }

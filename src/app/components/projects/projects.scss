@@ -70,6 +70,13 @@
     font-size: 15px;
   }
 
+  .showcase__choice-role {
+    display: block;
+    margin-top: 6px;
+    font: 12px/1.4 $font-mono;
+    color: $ink-muted;
+  }
+
   &:hover {
     color: $ink;
   }

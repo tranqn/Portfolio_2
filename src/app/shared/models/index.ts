@@ -2,6 +2,7 @@ export type { Colleague } from './colleague.model';
 export type { ContactForm } from './contact-form.model';
 export type { Letter } from './letter.model';
 export type { Project } from './project.model';
+export type { ProjectCardEntry } from './project-card-entry.model';
 export type { ProjectMediaAsset } from './project-media.model';
 export type { ShowcaseItem } from './showcase-item.model';
 export type { SkillItem } from './skill-item.model';

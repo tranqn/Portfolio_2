@@ -1,7 +1,7 @@
 import { Component, computed, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
-import { Project } from '../../models';
+import { ProjectCardEntry } from '../../models';
 import { MacWindow } from '../mac-window/mac-window';
 
 @Component({
@@ -15,12 +15,18 @@ import { MacWindow } from '../mac-window/mac-window';
  *
  * Shows only the poster frame in a small macOS window (lazy-loaded, no video),
  * so the page never loads or plays every recording at once. The whole card
- * links to the project's detail page.
+ * links to the project's detail page, or to the live demo when there is none.
  */
 export class ProjectCard {
-  /** The project data to render. */
-  readonly project = input.required<Project>();
+  readonly entry = input.required<ProjectCardEntry>();
 
-  /** i18n key of the one-line tech summary (`PROJECTS.X.TECH`). */
-  protected readonly techKey = computed(() => this.project().title.replace(/\.TITLE$/, '.TECH'));
+  protected readonly route = computed(() => {
+    const link = this.entry().link;
+    return 'route' in link ? link.route : null;
+  });
+
+  protected readonly href = computed(() => {
+    const link = this.entry().link;
+    return 'href' in link ? link.href : null;
+  });
 }

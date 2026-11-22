@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { SeoService } from '../../shared/services/seo.service';
 import { Hero } from '../../components/hero/hero';
 import { AboutMe } from '../../components/about-me/about-me';
 import { Projects } from '../../components/projects/projects';
@@ -15,4 +16,13 @@ import { Contact } from '../../components/contact/contact';
  * Home page composing all single-page sections in order:
  * Hero (with the competence areas), Projects, About Me, Colleagues, Contact.
  */
-export class Main {}
+export class Main {
+  constructor() {
+    inject(SeoService).bindPage({
+      titleKey: 'SEO.HOME_TITLE',
+      descriptionKey: 'SEO.HOME_DESCRIPTION',
+      path: '/',
+      appendName: false,
+    });
+  }
+}

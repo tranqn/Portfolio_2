@@ -46,22 +46,17 @@
   margin: 0 auto;
 }
 
-// Large portrait on the left (about a third), name and contact in small
-// type below it; statement, intro and terminal on the right
+// Large portrait on the left (about a third); name, role, intro, location
+// and the two main actions on the right
 .hero__main {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
-  align-items: start;
+  align-items: center;
   gap: 56px;
 }
 
 .hero__copy {
   max-width: 820px;
-}
-
-.hero__terminals {
-  display: block;
-  margin-top: 48px;
 }
 
 // Illustrated portrait, cropped just above the hair so the head starts
@@ -79,31 +74,30 @@
   }
 }
 
-// Name, role, location and contact in small type under the portrait
-.hero__identity {
-  margin-top: 28px;
-
-  p {
-    margin: 0;
-  }
-}
-
-.hero__name {
+// Name above the role, set small so the role carries the headline
+.hero__eyebrow {
+  margin: 0 0 12px;
   font: 600 20px/1.25 $font-display;
   letter-spacing: -0.02em;
 }
 
-.hero__role,
 .hero__location {
-  margin-top: 4px;
+  margin: 14px 0 0;
   font-size: 15px;
   line-height: 1.5;
   color: $ink-muted;
 }
 
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
+}
+
 .hero__contact {
   display: inline-block;
-  margin-top: 8px;
+  margin-top: 14px;
   padding: 6px 0;
   font-size: 15px;
 }
@@ -113,13 +107,6 @@
   font-size: clamp(36px, 4.8vw, 66px);
   line-height: 1.04;
   letter-spacing: -0.045em;
-
-  // Second line set apart by weight and colour, not by an italic
-  em {
-    font-style: normal;
-    font-weight: $font-weight-normal;
-    color: $accent;
-  }
 }
 
 // Each headline line is written in by the shared sweep (Sweep directive and
@@ -143,8 +130,7 @@
     padding: calc(#{$nav-space} + 12px) 32px 64px;
   }
 
-  // Narrow screens: portrait and name on top at a modest size, the
-  // statement and terminal below
+  // Narrow screens: portrait on top at a modest size, the statement below
   .hero__main {
     grid-template-columns: minmax(0, 1fr);
     gap: 28px;
@@ -153,19 +139,11 @@
   .hero__portrait {
     width: min(260px, 64%);
   }
-
-  .hero__terminals {
-    margin-top: 40px;
-  }
 }
 
 @media (max-width: 720px) {
   .hero {
     padding: calc(#{$nav-space} - 8px) 20px 52px;
-  }
-
-  .hero__terminals {
-    margin-top: 32px;
   }
 
   .hero__title {

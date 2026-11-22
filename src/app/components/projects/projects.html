@@ -18,6 +18,7 @@
           <span class="showcase__choice-index" aria-hidden="true">0{{ i + 1 }}</span>
           <strong>{{ item.i18nKey + '.NAME' | translate }}</strong>
           <small>{{ item.i18nKey + '.TAGLINE' | translate }}</small>
+          <span class="showcase__choice-role">{{ item.i18nKey + '.ROLE_SHORT' | translate }}</span>
         </button>
       }
     </div>
@@ -116,9 +117,9 @@
       <p class="more__text">{{ 'SHOWCASE.MORE_TEXT' | translate }}</p>
     </div>
     <ul class="more__grid">
-      @for (project of moreProjects(); track project.id; let i = $index) {
+      @for (entry of moreEntries(); track entry.id; let i = $index) {
         <li appReveal [revealDelay]="(i % 3) * 70">
-          <app-project-card [project]="project" />
+          <app-project-card [entry]="entry" />
         </li>
       }
     </ul>

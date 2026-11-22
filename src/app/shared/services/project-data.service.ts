@@ -40,7 +40,7 @@ export class ProjectDataService {
       duration: 'PROJECTS.PRAXIS_UI_LAB.DURATION',
       role: 'PROJECTS.PRAXIS_UI_LAB.ROLE',
       liveUrl: 'https://praxis-ui-lab.quocnamtran.com',
-      nextProjectId: 'stadtpuls',
+      nextProjectId: 'coderr',
     },
     {
       id: 'stadtpuls',
@@ -61,7 +61,7 @@ export class ProjectDataService {
       role: 'PROJECTS.STADTPULS.ROLE',
       gitlabUrl: 'https://gitlab.com/nam.qt/stadtpuls',
       liveUrl: 'https://stadtpuls.quocnamtran.com',
-      nextProjectId: 'videoflix',
+      nextProjectId: 'praxis-ui-lab',
     },
     {
       id: 'videoflix',
@@ -101,7 +101,7 @@ export class ProjectDataService {
       role: 'PROJECTS.BOOKSTORE.ROLE',
       githubUrl: 'https://github.com/tranqn/bookstore',
       liveUrl: 'https://bookstore.quocnamtran.com',
-      nextProjectId: 'coderr',
+      nextProjectId: 'quizly',
     },
     {
       id: 'coderr',
@@ -121,7 +121,7 @@ export class ProjectDataService {
       role: 'PROJECTS.CODERR.ROLE',
       githubUrl: 'https://github.com/tranqn/coderr',
       liveUrl: 'https://coderr.quocnamtran.com',
-      nextProjectId: 'quizly',
+      nextProjectId: 'join',
     },
     {
       id: 'quizly',
@@ -141,7 +141,7 @@ export class ProjectDataService {
       role: 'PROJECTS.QUIZLY.ROLE',
       githubUrl: 'https://github.com/tranqn/quizly',
       liveUrl: 'https://quizly.quocnamtran.com',
-      nextProjectId: 'join',
+      nextProjectId: 'pollo-loco',
     },
     {
       id: 'join',
@@ -161,7 +161,7 @@ export class ProjectDataService {
       role: 'PROJECTS.JOIN.ROLE',
       githubUrl: 'https://github.com/tranqn/join',
       liveUrl: 'https://join.quocnamtran.com',
-      nextProjectId: 'pollo-loco',
+      nextProjectId: 'videoflix',
     },
     {
       id: 'pollo-loco',
@@ -201,7 +201,7 @@ export class ProjectDataService {
       role: 'PROJECTS.POKEDEX.ROLE',
       githubUrl: 'https://github.com/tranqn/pokedex-holo-tcg',
       liveUrl: 'https://pokedex.quocnamtran.com',
-      nextProjectId: 'praxis-ui-lab',
+      nextProjectId: 'stadtpuls',
     },
   ]);
 

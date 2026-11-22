@@ -12,13 +12,8 @@ import { ShowcaseItem } from '../models';
  * Only links that were checked to resolve are listed; private work has none.
  */
 export class ShowcaseService {
+  /** Order for general fullstack roles: architecture, then UI workflows, then API and hosting. */
   private readonly items = signal<ShowcaseItem[]>([
-    {
-      id: 'praxis',
-      projectId: 'praxis-ui-lab',
-      i18nKey: 'SHOWCASE.PRAXIS',
-      liveUrl: 'https://praxis-ui-lab.quocnamtran.com',
-    },
     {
       id: 'stadtpuls',
       projectId: 'stadtpuls',
@@ -27,16 +22,10 @@ export class ShowcaseService {
       code: { url: 'https://gitlab.com/nam.qt/stadtpuls', host: 'GitLab' },
     },
     {
-      id: 'zyklus',
-      i18nKey: 'SHOWCASE.ZYKLUS',
-      liveUrl: 'https://mci.quocnamtran.com',
-      media: {
-        video: 'media/projects/zyklus.mp4',
-        poster: 'media/projects/zyklus.jpg',
-        width: 960,
-        height: 640,
-      },
-      overviewPoints: 5,
+      id: 'praxis',
+      projectId: 'praxis-ui-lab',
+      i18nKey: 'SHOWCASE.PRAXIS',
+      liveUrl: 'https://praxis-ui-lab.quocnamtran.com',
     },
     {
       id: 'coderr',
@@ -50,7 +39,7 @@ export class ShowcaseService {
   /** All showcase entries in display order. */
   readonly allItems = computed(() => this.items());
   /** Id of the selected entry. */
-  readonly selectedId = signal('praxis');
+  readonly selectedId = signal('stadtpuls');
   /** The selected entry (falls back to the first one). */
   readonly selected = computed(
     () => this.items().find((item) => item.id === this.selectedId()) ?? this.items()[0],

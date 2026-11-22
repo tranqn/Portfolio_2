@@ -1,4 +1,4 @@
-import { Component, effect, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { SeoService } from '../../shared/services/seo.service';
 import { Sweep } from '../../shared/directives/sweep.directive';
@@ -14,8 +14,10 @@ export class LegalNotice {
   private readonly seoService = inject(SeoService);
 
   constructor() {
-    effect(() => {
-      this.seoService.updateTags({ title: 'Impressum | Quoc Nam Tran' });
+    this.seoService.bindPage({
+      titleKey: 'LEGAL_NOTICE.TITLE',
+      descriptionKey: 'SEO.LEGAL_NOTICE_DESCRIPTION',
+      path: '/legal-notice',
     });
   }
 }

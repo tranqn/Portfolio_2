@@ -66,6 +66,7 @@ for (const lang of langs) {
       report.push({ lang, width, route, ...meta, rawKey, errors });
       const name = `${lang}-${width}-${route.replace(/\W+/g, '_') || 'home'}.png`;
       await page.screenshot({ path: join(outDir, name), fullPage: route === '/' });
+      if (route === '/') await page.screenshot({ path: join(outDir, name.replace('.png', '-top.png')) });
     }
     await context.close();
   }

@@ -13,17 +13,13 @@
     "SKIP": "Zum Inhalt springen"
   },
   "HERO": {
-    "HELLO": "Hallo World",
-    "HELLO_HOVER": "ICH BIN QUOC NAM TRAN",
-    "FRONTEND": "FULLSTACK",
-    "DEVELOPER": "ENTWICKLER",
-    "GET_IN_TOUCH": "Kontakt aufnehmen",
-    "TITLE_1": "Agenten setzen um.",
-    "TITLE_2": "Ich prüfe mit geübtem Blick.",
-    "INTRO": "Ich arbeite gern agentisch: Claude Code und Codex übernehmen Analyse, Umsetzung und Tests. Den Blick dafür habe ich mir in intensiven Praxisprojekten geschärft. Heute leite und beobachte ich die Orchestrierung der Agenten, damit Projekte sicher aufgebaut und gewartet werden.",
     "ROLE": "Fullstack Developer",
-    "STACK": "JavaScript · Python · KI-Agenten",
-    "LOCATION": "Sachsen · remote in Deutschland",
+    "INTRO": "Ich baue und betreibe Webanwendungen mit Angular, TypeScript und Python/Django, von der Oberfläche über die API bis zum Hosting.",
+    "LOCATION": "Sachsen · remote in Deutschland · hybrid in Leipzig, Dresden, Chemnitz oder Berlin",
+    "CTA_PROJECTS": "Projekte ansehen",
+    "CTA_CV": "Lebenslauf",
+    "CV_FILE": "cv/Quoc-Nam-Tran-Lebenslauf.pdf",
+    "CV_META": "PDF · 180 KB",
     "CONTACT_LINK": "Kontakt aufnehmen",
     "PORTRAIT_ALT": "Illustriertes Porträt von Quóc Nam Tràn",
     "DESK": {
@@ -59,7 +55,7 @@
     "LOCATION": "Ansässig in Sachsen",
     "RELOCATE": "Bereit zum Umzug",
     "REMOTE": "Remote in ganz Deutschland",
-    "HYBRID": "Hybrid in Leipzig, Dresden oder Chemnitz",
+    "HYBRID": "Hybrid in Leipzig, Dresden, Chemnitz oder Berlin",
     "METHOD_LABEL": "So gehe ich an Aufgaben heran",
     "METHOD_TITLE_1": "Spezifizieren. Delegieren.",
     "METHOD_TITLE_2": "Prüfen. Abnehmen.",
@@ -141,6 +137,11 @@
       "DESCRIPTION": "Verwandelt jedes YouTube-Video in ein Multiple-Choice-Quiz: URL einreichen, die KI-Pipeline transkribiert das Audio mit Whisper und generiert mit Google Gemini ein Quiz mit zehn Fragen.",
       "IMPLEMENTATION": "Django-REST-Backend mit kompletter KI-Pipeline: Audio-Download, Whisper-Transkription und Gemini-Quiz-Generierung. Authentifizierung über JWT in HttpOnly-Cookies mit Refresh-Token-Rotation und Blacklisting. Das statische Frontend war als Kursvorlage vorgegeben. Backend, KI-Anbindung und Docker-Deployment sind Eigenentwicklung.",
       "DURATION": "2 Wochen",
+      "ROLE": "Einzelprojekt"
+    },
+    "ZYKLUS": {
+      "TITLE": "Zyklus",
+      "TECH": "React | PWA | Offline-Sync | Hono-API",
       "ROLE": "Einzelprojekt"
     },
     "JOIN": {
@@ -290,10 +291,10 @@
     "LINK_LIVE": "Live-Demo",
     "LINK_CODE": "Code auf {{host}}",
     "MORE_TITLE": "Weitere Projekte",
-    "MORE_TEXT": "Kurs- und Eigenprojekte mit eigener Projektseite.",
+    "MORE_TEXT": "Ein Teamprojekt sowie Kurs- und Eigenprojekte.",
     "PRAXIS": {
       "NAME": "Praxis UI Lab",
-      "TAGLINE": "Abläufe verständlich gestalten.",
+      "TAGLINE": "Der Tagesablauf einer Arztpraxis als Angular-App.",
       "STACK": "Angular · Signals · TypeScript · synthetische Daten",
       "TITLE": "Eine Tagesliste, die Abläufe verständlich macht.",
       "SUMMARY": "Demo für den Praxisalltag: Termine wandern per Klick oder Tastatur von „Geplant“ bis „Abgeschlossen“, Wartezeiten und Hinweise sind sofort sichtbar. Alle Patientendaten sind synthetisch.",
@@ -302,11 +303,12 @@
       "TECH": "Angular 22 ohne Zone.js, Signal-Stores, OpenAPI-Vertrag, Mock Service Worker, Playwright mit axe.",
       "DECISION": "Die Fachlogik liegt framework-frei in einer eigenen Domänenschicht: ein Statusautomat für Termine und eine Zeitlogik für Europe/Berlin. Konflikte (409) und veraltete Stände (412) meldet die Oberfläche getrennt.",
       "RESULT": "Live-Demo mit synthetischen Daten. Unit-Tests laufen in der GitLab-CI, Playwright prüft Abläufe und Barrierefreiheit.",
-      "MEDIA_LABEL": "Bildschirmaufnahme: In der Tagesliste von Praxis UI Lab wird eine Patientin ausgewählt und ins Zimmer gerufen, danach folgen Suche, Befehlspalette mit kompakter Dichte und der Verlauf."
+      "MEDIA_LABEL": "Bildschirmaufnahme: In der Tagesliste von Praxis UI Lab wird eine Patientin ausgewählt und ins Zimmer gerufen, danach folgen Suche, Befehlspalette mit kompakter Dichte und der Verlauf.",
+      "ROLE_SHORT": "Allein umgesetzt: Konzept, Oberfläche, Fachlogik, Tests"
     },
     "STADTPULS": {
       "NAME": "StadtPuls",
-      "TAGLINE": "Systeme und Daten verbinden.",
+      "TAGLINE": "IoT-Plattform vom Messwert bis zum Dashboard.",
       "STACK": "Node.js · Moleculer · Vue 3 · PostgreSQL · InfluxDB",
       "TITLE": "Vom Messwert zur Anwendung.",
       "SUMMARY": "IoT-Plattform für Stadtwerke: LoRaWAN-Messwerte von Zählern und Sensoren landen geprüft in einem Dashboard mit Standortbaum, Karte und Verbrauchskurven. Jeder Mandant sieht nur seine eigenen Anlagen.",
@@ -315,7 +317,8 @@
       "TECH": "Node.js-Dienste mit Moleculer und RabbitMQ, PostgreSQL für Stammdaten, InfluxDB 2 für Messwerte, Keycloak (OIDC), Vue 3.",
       "DECISION": "Messzeit und Eingangszeit bleiben getrennt, damit keine falschen Zeitreihen entstehen. Eingehende Daten werden geprüft, dedupliziert und in einer abgeschotteten Treiber-Laufzeit dekodiert.",
       "RESULT": "253 automatisierte Tests, 9 Browser-Tests gegen das Produktions-Bundle und eine GitLab-Pipeline mit 15 Jobs. Live-Demo und Code sind öffentlich.",
-      "MEDIA_LABEL": "Bildschirmaufnahme von StadtPuls mit Demo-Daten: Übersicht mit Karte, Standort Hafen mit Verbrauchsverlauf über 7 und 30 Tage, danach die Geräteliste gefiltert nach Wasserzählern."
+      "MEDIA_LABEL": "Bildschirmaufnahme von StadtPuls mit Demo-Daten: Übersicht mit Karte, Standort Hafen mit Verbrauchsverlauf über 7 und 30 Tage, danach die Geräteliste gefiltert nach Wasserzählern.",
+      "ROLE_SHORT": "Allein umgesetzt: Dienste, API, Dashboard, Pipeline"
     },
     "ZYKLUS": {
       "NAME": "Zyklus",
@@ -348,12 +351,19 @@
       "TECH": "Django REST Framework, PostgreSQL, Docker, Gunicorn, Caddy, Vanilla JS ohne Build-Schritt.",
       "DECISION": "Kein Redis, kein Celery, keine WebSockets. Der Chat fragt per HTTP nach neuen Nachrichten und pausiert in Hintergrund-Tabs. Bestellungen speichern die Angebotsbedingungen als unveränderlichen Snapshot.",
       "RESULT": "136 automatisierte Tests, Lighthouse 100 bei Barrierefreiheit. App und Datenbank brauchen zusammen rund 120 MB. Live-Demo und Code sind öffentlich.",
-      "MEDIA_LABEL": "Bildschirmaufnahme: Startseite, Filter und Angebotsseite von Coderr."
+      "MEDIA_LABEL": "Bildschirmaufnahme: Startseite, Filter und Angebotsseite von Coderr.",
+      "ROLE_SHORT": "Von mir: Backend, eigenes Frontend, Deployment"
     }
   },
   "MEDIA": {
     "PAUSE": "Pause",
     "PLAY": "Abspielen",
     "RECORDING": "Projektaufnahme"
+  },
+  "SEO": {
+    "HOME_TITLE": "Quóc Nam Tràn | Fullstack Developer",
+    "HOME_DESCRIPTION": "Quóc Nam Tràn, Fullstack Developer aus Sachsen: Webanwendungen mit Angular, TypeScript und Python/Django, von der Oberfläche über die API bis zum Hosting. Projekte, Lebenslauf und Kontakt.",
+    "LEGAL_NOTICE_DESCRIPTION": "Impressum der Portfolio-Website von Quóc Nam Tràn.",
+    "PRIVACY_POLICY_DESCRIPTION": "Datenschutzerklärung der Portfolio-Website von Quóc Nam Tràn."
   }
 }

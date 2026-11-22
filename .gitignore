@@ -44,3 +44,6 @@ Thumbs.db
 
 # Claude
 CLAUDE.md
+
+# CV render output (published copies live in public/cv)
+/cv/*.pdf

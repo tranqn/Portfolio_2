@@ -13,17 +13,13 @@
     "SKIP": "Skip to content"
   },
   "HERO": {
-    "HELLO": "Hello World",
-    "HELLO_HOVER": "I'M QUOC NAM TRAN",
-    "FRONTEND": "FULLSTACK",
-    "DEVELOPER": "DEVELOPER",
-    "GET_IN_TOUCH": "Get in Touch",
-    "TITLE_1": "Agents build.",
-    "TITLE_2": "I review with a trained eye.",
-    "INTRO": "I like working agentically: Claude Code and Codex take on analysis, implementation and tests. I sharpened the eye for it in intensive hands-on projects. Today I lead and monitor how the agents are orchestrated, so projects are built and maintained safely.",
     "ROLE": "Fullstack Developer",
-    "STACK": "JavaScript · Python · AI agents",
-    "LOCATION": "Saxony · remote across Germany",
+    "INTRO": "I build and deploy web applications with Angular, TypeScript and Python/Django, from user workflows to APIs and hosting.",
+    "LOCATION": "Based in Saxony · remote across Germany · hybrid in Leipzig, Dresden, Chemnitz or Berlin",
+    "CTA_PROJECTS": "View selected projects",
+    "CTA_CV": "Download CV",
+    "CV_FILE": "cv/Quoc-Nam-Tran-CV-en.pdf",
+    "CV_META": "PDF · 180 KB",
     "CONTACT_LINK": "Get in touch",
     "PORTRAIT_ALT": "Illustrated portrait of Quóc Nam Tràn",
     "DESK": {
@@ -59,7 +55,7 @@
     "LOCATION": "Based in Saxony",
     "RELOCATE": "Open to relocate",
     "REMOTE": "Remote anywhere in Germany",
-    "HYBRID": "Hybrid in Leipzig, Dresden or Chemnitz",
+    "HYBRID": "Hybrid in Leipzig, Dresden, Chemnitz or Berlin",
     "METHOD_LABEL": "How I approach a task",
     "METHOD_TITLE_1": "Specify. Delegate.",
     "METHOD_TITLE_2": "Review. Sign off.",
@@ -143,6 +139,11 @@
       "IMPLEMENTATION": "Django REST backend with a complete AI pipeline: audio download, Whisper transcription and Gemini quiz generation. Authentication uses JWTs in HttpOnly cookies with refresh token rotation and blacklisting. The static frontend was provided as a course template. Backend, AI integration and Docker deployment are my own work.",
       "DURATION": "2 weeks",
       "ROLE": "Solo Project"
+    },
+    "ZYKLUS": {
+      "TITLE": "Zyklus",
+      "TECH": "React | PWA | Offline sync | Hono API",
+      "ROLE": "Solo project"
     },
     "JOIN": {
       "TITLE": "Join",
@@ -290,10 +291,10 @@
     "LINK_LIVE": "Live demo",
     "LINK_CODE": "Code on {{host}}",
     "MORE_TITLE": "More projects",
-    "MORE_TEXT": "Course and personal projects, each with its own project page.",
+    "MORE_TEXT": "One team project plus course and personal projects.",
     "PRAXIS": {
       "NAME": "Praxis UI Lab",
-      "TAGLINE": "Making workflows easy to follow.",
+      "TAGLINE": "A medical practice's day as an Angular app.",
       "STACK": "Angular · Signals · TypeScript · synthetic data",
       "TITLE": "A day list that makes workflows easy to follow.",
       "SUMMARY": "A demo for a medical practice: appointments move by click or keyboard from \"planned\" to \"completed\", and waiting times and warnings are visible at a glance. All patient data is synthetic.",
@@ -302,11 +303,12 @@
       "TECH": "Angular 22 without Zone.js, signal stores, an OpenAPI contract, Mock Service Worker, Playwright with axe.",
       "DECISION": "The domain logic lives framework-free in its own layer: a state machine for appointments and time logic for Europe/Berlin. The interface reports conflicts (409) and stale versions (412) separately.",
       "RESULT": "Live demo with synthetic data. Unit tests run in GitLab CI, Playwright checks workflows and accessibility.",
-      "MEDIA_LABEL": "Screen recording: in the Praxis UI Lab day list a patient is selected and called in, followed by search, the command palette with compact density and the history."
+      "MEDIA_LABEL": "Screen recording: in the Praxis UI Lab day list a patient is selected and called in, followed by search, the command palette with compact density and the history.",
+      "ROLE_SHORT": "Built solo: concept, UI, domain logic, tests"
     },
     "STADTPULS": {
       "NAME": "StadtPuls",
-      "TAGLINE": "Connecting systems and data.",
+      "TAGLINE": "IoT platform from sensor reading to dashboard.",
       "STACK": "Node.js · Moleculer · Vue 3 · PostgreSQL · InfluxDB",
       "TITLE": "From a reading to an application.",
       "SUMMARY": "An IoT platform for municipal utilities: LoRaWAN readings from meters and sensors are validated and land in a dashboard with a site tree, a map and consumption charts. Each tenant only sees their own assets.",
@@ -315,7 +317,8 @@
       "TECH": "Node.js services with Moleculer and RabbitMQ, PostgreSQL for master data, InfluxDB 2 for readings, Keycloak (OIDC), Vue 3.",
       "DECISION": "Measurement time and arrival time stay separate so no false time series appear. Incoming data is validated, de-duplicated and decoded in an isolated driver runtime.",
       "RESULT": "253 automated tests, 9 browser tests against the production bundle and a GitLab pipeline with 15 jobs. Live demo and code are public.",
-      "MEDIA_LABEL": "Screen recording of StadtPuls with demo data: overview with map, the Hafen site with consumption over 7 and 30 days, then the device list filtered to water meters."
+      "MEDIA_LABEL": "Screen recording of StadtPuls with demo data: overview with map, the Hafen site with consumption over 7 and 30 days, then the device list filtered to water meters.",
+      "ROLE_SHORT": "Built solo: services, API, dashboard, pipeline"
     },
     "ZYKLUS": {
       "NAME": "Zyklus",
@@ -348,12 +351,19 @@
       "TECH": "Django REST Framework, PostgreSQL, Docker, Gunicorn, Caddy, vanilla JS without a build step.",
       "DECISION": "No Redis, no Celery, no WebSockets. The chat polls over HTTP and pauses in background tabs. Orders store the agreed offer terms as an immutable snapshot.",
       "RESULT": "136 automated tests and a Lighthouse accessibility score of 100. App and database use about 120 MB together. Live demo and code are public.",
-      "MEDIA_LABEL": "Screen recording: start page, filters and offer page of Coderr."
+      "MEDIA_LABEL": "Screen recording: start page, filters and offer page of Coderr.",
+      "ROLE_SHORT": "Mine: backend, own frontend, deployment"
     }
   },
   "MEDIA": {
     "PAUSE": "Pause",
     "PLAY": "Play",
     "RECORDING": "project recording"
+  },
+  "SEO": {
+    "HOME_TITLE": "Quóc Nam Tràn | Fullstack Developer",
+    "HOME_DESCRIPTION": "Quóc Nam Tràn, fullstack developer based in Saxony: web applications with Angular, TypeScript and Python/Django, from user workflows to APIs and hosting. Projects, CV and contact.",
+    "LEGAL_NOTICE_DESCRIPTION": "Legal notice of the portfolio website of Quóc Nam Tràn.",
+    "PRIVACY_POLICY_DESCRIPTION": "Privacy policy of the portfolio website of Quóc Nam Tràn."
   }
 }

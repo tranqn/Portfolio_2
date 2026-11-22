@@ -1,4 +1,4 @@
-import { Component, effect, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { SeoService } from '../../shared/services/seo.service';
 import { Sweep } from '../../shared/directives/sweep.directive';
@@ -14,8 +14,10 @@ export class PrivacyPolicy {
   private readonly seoService = inject(SeoService);
 
   constructor() {
-    effect(() => {
-      this.seoService.updateTags({ title: 'Datenschutzerklärung | Quoc Nam Tran' });
+    this.seoService.bindPage({
+      titleKey: 'PRIVACY_POLICY.TITLE',
+      descriptionKey: 'SEO.PRIVACY_POLICY_DESCRIPTION',
+      path: '/privacy-policy',
     });
   }
 }

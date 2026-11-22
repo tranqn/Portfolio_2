@@ -11,27 +11,30 @@
             [alt]="'HERO.PORTRAIT_ALT' | translate"
             fetchpriority="high" />
         </picture>
-
-        <div class="hero__identity" appReveal [revealDelay]="180">
-          <p class="hero__name">Quóc Nam Tràn</p>
-          <p class="hero__role">{{ 'HERO.ROLE' | translate }} · {{ 'HERO.STACK' | translate }}</p>
-          <p class="hero__location">{{ 'HERO.LOCATION' | translate }}</p>
-          <a routerLink="/" fragment="contact" class="hero__contact quiet-link">
-            {{ 'HERO.CONTACT_LINK' | translate }}
-          </a>
-        </div>
       </div>
 
       <div class="hero__content">
         <div class="hero__copy">
+          <p class="hero__eyebrow" appReveal [revealDelay]="40">Quóc Nam Tràn</p>
           <h1 class="hero__title" appReveal [revealDelay]="60">
-            <span class="hero__line" appSweep [sweepDelay]="450">{{ 'HERO.TITLE_1' | translate }}</span><br />
-            <em class="hero__line" appSweep [sweepDelay]="850">{{ 'HERO.TITLE_2' | translate }}</em>
+            <span class="hero__line" appSweep [sweepDelay]="450">{{ 'HERO.ROLE' | translate }}</span>
           </h1>
           <p class="hero__intro" appReveal [revealDelay]="140">{{ 'HERO.INTRO' | translate }}</p>
-        </div>
+          <p class="hero__location" appReveal [revealDelay]="180">{{ 'HERO.LOCATION' | translate }}</p>
 
-        <app-hero-terminals class="hero__terminals" appReveal="window" [revealDelay]="200" />
+          <div class="hero__actions" appReveal [revealDelay]="220">
+            <a routerLink="/" fragment="projects" class="pill-link pill-link--primary">
+              {{ 'HERO.CTA_PROJECTS' | translate }}
+            </a>
+            <a class="pill-link" [href]="'HERO.CV_FILE' | translate" download>
+              {{ 'HERO.CTA_CV' | translate }}
+              <span class="pill-link__meta">{{ 'HERO.CV_META' | translate }}</span>
+            </a>
+          </div>
+          <a routerLink="/" fragment="contact" class="hero__contact quiet-link" appReveal [revealDelay]="260">
+            {{ 'HERO.CONTACT_LINK' | translate }}
+          </a>
+        </div>
       </div>
     </div>
 

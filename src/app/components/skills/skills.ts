@@ -12,17 +12,11 @@ interface CompetenceArea {
   references: { showcaseId: string; nameKey: string }[];
 }
 
+// What I build comes first; working with agents closes the list.
 const AREAS: CompetenceArea[] = [
   {
-    key: 'SKILLS.AI',
-    references: [],
-  },
-  {
     key: 'SKILLS.WEB',
-    references: [
-      { showcaseId: 'praxis', nameKey: 'SHOWCASE.PRAXIS.NAME' },
-      { showcaseId: 'zyklus', nameKey: 'SHOWCASE.ZYKLUS.NAME' },
-    ],
+    references: [{ showcaseId: 'praxis', nameKey: 'SHOWCASE.PRAXIS.NAME' }],
   },
   {
     key: 'SKILLS.DATA',
@@ -33,6 +27,10 @@ const AREAS: CompetenceArea[] = [
   },
   {
     key: 'SKILLS.HOSTING',
+    references: [],
+  },
+  {
+    key: 'SKILLS.AI',
     references: [],
   },
 ];

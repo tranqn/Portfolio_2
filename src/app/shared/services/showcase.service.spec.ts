@@ -11,21 +11,25 @@ describe('ShowcaseService', () => {
     service = TestBed.inject(ShowcaseService);
   });
 
+  it('lists the three flagship projects in the order recruiters should see them', () => {
+    expect(service.allItems().map((item) => item.id)).toEqual(['stadtpuls', 'praxis', 'coderr']);
+  });
+
   it('starts with the first project selected', () => {
-    expect(service.selected().id).toBe('praxis');
+    expect(service.selected().id).toBe('stadtpuls');
   });
 
   it('keeps only the last of several rapid selections', () => {
+    service.select('praxis');
     service.select('stadtpuls');
-    service.select('zyklus');
     service.select('coderr');
     expect(service.selected().id).toBe('coderr');
   });
 
   it('ignores unknown ids instead of clearing the selection', () => {
-    service.select('stadtpuls');
+    service.select('praxis');
     service.select('does-not-exist');
-    expect(service.selected().id).toBe('stadtpuls');
+    expect(service.selected().id).toBe('praxis');
   });
 
   it('links every showcase entry with a detail page to an existing project', () => {

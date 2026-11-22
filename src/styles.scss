@@ -201,6 +201,54 @@ router-outlet {
 }
 
 // ----------------------------------------
+// PILL LINK
+// ----------------------------------------
+// Main actions (hero): rounded outline pill, the primary one filled in ink.
+
+.pill-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 0 22px;
+  font-size: 16px;
+  font-weight: $font-weight-semibold;
+  color: $ink;
+  border: 1px solid $line-strong;
+  border-radius: 999px;
+  transition: transform 220ms ease, box-shadow 220ms ease, background-color 200ms ease;
+
+  &:hover {
+    color: $ink;
+    background: $hero-bg;
+  }
+
+  &--primary {
+    color: $page-bg;
+    background: $ink;
+    border-color: $ink;
+
+    &:hover {
+      color: $page-bg;
+      background: #000;
+    }
+  }
+}
+
+.pill-link__meta {
+  font-size: 13px;
+  font-weight: $font-weight-normal;
+  color: $ink-muted;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .pill-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px $shadow-warm;
+  }
+}
+
+// ----------------------------------------
 // QUIET LINK
 // ----------------------------------------
 // Text links read like part of the copy: regular weight, ink colour, a thin

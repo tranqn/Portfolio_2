@@ -3,21 +3,21 @@ import { RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { Skills } from '../skills/skills';
 import { Reveal } from '../../shared/directives/reveal.directive';
-import { HeroTerminals } from '../hero-terminals/hero-terminals';
 import { Sweep } from '../../shared/directives/sweep.directive';
 import { IMAGE_PATHS } from '../../shared/constants';
 
 @Component({
   selector: 'app-hero',
-  imports: [TranslateModule, RouterLink, Skills, Reveal, HeroTerminals, Sweep],
+  imports: [TranslateModule, RouterLink, Skills, Reveal, Sweep],
   templateUrl: './hero.html',
   styleUrl: './hero.scss',
 })
 /**
- * Light hero in the Dia order: statement first, then a "desk" with the
- * illustrated portrait (about a quarter of the width, name, role and location
- * below it) and a terminal window where Claude Code and Codex work, then the
- * four competence areas.
+ * Light hero that answers a recruiter's three questions on the first screen:
+ * which role (Fullstack Developer), what I build (intro, stack), and where to
+ * see it (projects and CV as the two main actions). The illustrated portrait
+ * sits on the left, the four competence areas follow below. How I work with
+ * agents lives in its own section further down.
  *
  * A one-off light sweep (CSS, about four seconds) and staggered entrances
  * play only when motion is allowed.

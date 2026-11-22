@@ -1,20 +1,33 @@
-<article class="project-card">
-  <app-mac-window [title]="project().title | translate" [compact]="true">
+<article class="project-card" [class.project-card--highlight]="entry().highlight">
+  <app-mac-window [title]="entry().titleKey | translate" [compact]="true">
     <div class="project-card__media">
       <img
-        [src]="project().media?.poster ?? project().image"
-        [width]="project().media?.width ?? 640"
-        [height]="project().media?.height ?? 320"
+        [src]="entry().poster"
+        [width]="entry().width"
+        [height]="entry().height"
         alt=""
         loading="lazy"
         decoding="async" />
     </div>
   </app-mac-window>
+  @if (entry().roleKey; as roleKey) {
+    <p class="project-card__role">{{ roleKey | translate }}</p>
+  }
   <h4 class="project-card__title">
-    <a [routerLink]="'/projects/' + project().id" class="project-card__link">
-      {{ project().title | translate }}
-    </a>
+    @if (route(); as route) {
+      <a [routerLink]="route" class="project-card__link">{{ entry().titleKey | translate }}</a>
+    } @else {
+      <a [href]="href()" class="project-card__link" target="_blank" rel="noopener noreferrer">
+        {{ entry().titleKey | translate }}
+      </a>
+    }
   </h4>
-  <p class="project-card__tech">{{ techKey() | translate }}</p>
-  <p class="project-card__more" aria-hidden="true">{{ 'SHOWCASE.LINK_DETAILS' | translate }} →</p>
+  <p class="project-card__tech">{{ entry().techKey | translate }}</p>
+  <p class="project-card__more" aria-hidden="true">
+    @if (route()) {
+      {{ 'SHOWCASE.LINK_DETAILS' | translate }} →
+    } @else {
+      {{ 'SHOWCASE.LINK_LIVE' | translate }} ↗
+    }
+  </p>
 </article>

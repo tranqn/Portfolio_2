@@ -1,40 +1,75 @@
 <div class="terminals liquid-glass" role="img" [attr.aria-label]="'HERO.DESK.LABEL' | translate">
-  <app-mac-window title="Terminal — portfolio">
+  <app-mac-window title="Terminal — stadtpuls">
+    <div class="plan">
+      <p class="plan__title">{{ 'HERO.DESK.PLAN' | translate }}</p>
+      <ol class="plan__steps">
+        <li class="plan__step plan__step--done" style="--d: 11300ms">
+          <span class="plan__icon">✓</span> {{ 'HERO.DESK.STEP_1' | translate }}
+        </li>
+        <li class="plan__step plan__step--done" style="--d: 11300ms">
+          <span class="plan__icon">✓</span> {{ 'HERO.DESK.STEP_2' | translate }}
+        </li>
+        <li class="plan__step plan__step--active" style="--d: 11600ms">
+          <span class="plan__icon">◐</span> {{ 'HERO.DESK.STEP_3' | translate }}
+        </li>
+        <li class="plan__step"><span class="plan__icon">○</span> {{ 'HERO.DESK.STEP_4' | translate }}</li>
+        <li class="plan__step"><span class="plan__icon">○</span> {{ 'HERO.DESK.STEP_5' | translate }}</li>
+      </ol>
+    </div>
+
     <div class="terminals__panes">
       <div class="term term--claude">
         <p class="term__tab"><span class="term__mark">✻</span> claude</p>
         <div class="term__body">
-          <p class="term__line term__line--prompt" style="--d: 500ms">
+          <p class="term__line term__line--prompt" style="--d: 400ms">
             <span class="term__sigil">&gt;</span>
             <span class="term__typed">{{ 'HERO.DESK.CLAUDE_TASK' | translate }}</span>
           </p>
-          <p class="term__line" style="--d: 2000ms">
-            <span class="term__tool">●</span> Read
-            <span class="term__dim">skills.ts, showcase.service.ts</span>
+          <p class="term__line" style="--d: 1700ms">
+            <span class="term__tool">●</span> Plan
+            <span class="term__dim">{{ 'HERO.DESK.CLAUDE_PLAN' | translate }}</span>
           </p>
-          <p class="term__line" style="--d: 2700ms">
+          <p class="term__line" style="--d: 2300ms">
             <span class="term__tool">●</span> Update
-            <span class="term__dim">skills.ts</span>&ngsp;&ngsp;<span class="term__add">+14</span
-            >&ngsp;<span class="term__del">−2</span>
+            <span class="term__dim">api/…/routes.ts</span>&ngsp;&ngsp;<span class="term__add"
+              >+86</span
+            >&ngsp;<span class="term__del">−4</span>
           </p>
-          <p class="term__line" style="--d: 3400ms">
-            <span class="term__tool">●</span> Bash <span class="term__dim">ng test</span>
+          <p class="term__line" style="--d: 2900ms">
+            <span class="term__tool">●</span> Write
+            <span class="term__dim">web/…/liveEvents.ts</span>&ngsp;&ngsp;<span
+              class="term__add"
+              >+112</span
+            >
           </p>
-          <p class="term__line term__line--result" style="--d: 4200ms">
+          <p class="term__line" style="--d: 3500ms">
+            <span class="term__tool">●</span> Bash <span class="term__dim">pnpm test</span>
+          </p>
+          <p class="term__line term__line--result" style="--d: 4000ms">
             <span class="term__dim">⎿</span>&ngsp;<span class="term__ok">{{
-              'HERO.DESK.CLAUDE_TESTS' | translate
+              'HERO.DESK.TESTS_OK' | translate
             }}</span>
           </p>
-          <div class="term__status" style="--from: 2000ms; --span: 3000ms; --d: 5000ms">
-            <p class="term__line term__working">
-              <span class="term__spin">✻</span> {{ 'HERO.DESK.CLAUDE_WORKING' | translate }}
-            </p>
-            <p class="term__line term__done">
-              <span class="term__mark">✻</span> {{ 'HERO.DESK.CLAUDE_DONE' | translate }}
-            </p>
-          </div>
-          <p class="term__line term__line--input" style="--d: 5200ms">
-            <span class="term__sigil">&gt;</span>&ngsp;<span class="term__cursor"></span>
+          <p class="term__line term__handoff" style="--d: 4600ms">
+            → {{ 'HERO.DESK.CLAUDE_HANDOFF' | translate }}
+          </p>
+          <p class="term__line term__handoff term__handoff--in" style="--d: 8600ms">
+            ← {{ 'HERO.DESK.CLAUDE_INBOX' | translate }}
+          </p>
+          <p class="term__line" style="--d: 9100ms">
+            <span class="term__tool">●</span> Update
+            <span class="term__dim">routes.ts</span>&ngsp;&ngsp;<span class="term__add">+9</span
+            >&ngsp;<span class="term__del">−2</span>
+          </p>
+          <p class="term__line" style="--d: 9600ms">
+            <span class="term__tool">●</span> Bash <span class="term__dim">pnpm test</span>
+            &ngsp;<span class="term__ok">✓</span>
+          </p>
+          <p class="term__line term__handoff" style="--d: 10200ms">
+            → {{ 'HERO.DESK.CLAUDE_FIXED' | translate }}
+          </p>
+          <p class="term__line term__working" style="--d: 11600ms">
+            <span class="term__spin">✻</span> {{ 'HERO.DESK.CLAUDE_WORKING' | translate }}
           </p>
         </div>
       </div>
@@ -42,35 +77,36 @@
       <div class="term term--codex">
         <p class="term__tab"><span class="term__mark">›_</span> codex</p>
         <div class="term__body">
-          <p class="term__line term__line--prompt" style="--d: 2400ms">
+          <p class="term__line term__line--prompt" style="--d: 5000ms">
             <span class="term__sigil">›</span>
             <span class="term__typed">{{ 'HERO.DESK.CODEX_TASK' | translate }}</span>
           </p>
-          <p class="term__line" style="--d: 3800ms">
+          <p class="term__line" style="--d: 6200ms">
             <span class="term__tool">•</span> Explored
-            <span class="term__dim">skills.ts, projects.ts</span>
+            <span class="term__dim">routes.ts, liveEvents.ts</span>
           </p>
-          <p class="term__line" style="--d: 4500ms">
-            <span class="term__tool">•</span> Ran <span class="term__dim">npx ng build</span>
+          <p class="term__line" style="--d: 6700ms">
+            <span class="term__tool">•</span> Ran <span class="term__dim">pnpm test:e2e</span>
           </p>
-          <p class="term__line term__line--result" style="--d: 5300ms">
+          <p class="term__line term__line--result" style="--d: 7200ms">
             <span class="term__dim">└</span>&ngsp;<span class="term__ok">{{
-              'HERO.DESK.CODEX_BUILD' | translate
+              'HERO.DESK.TESTS_OK' | translate
             }}</span>
           </p>
-          <p class="term__line" style="--d: 5900ms">
-            <span class="term__tool">•</span> {{ 'HERO.DESK.CODEX_NOTE' | translate }}
+          <p class="term__line term__finding" style="--d: 7700ms">
+            <span class="term__warn">!</span> {{ 'HERO.DESK.CODEX_FINDING' | translate }}
           </p>
-          <div class="term__status" style="--from: 3800ms; --span: 2900ms; --d: 6700ms">
-            <p class="term__line term__working">
-              <span class="term__spin">•</span> {{ 'HERO.DESK.CODEX_WORKING' | translate }}
-            </p>
-            <p class="term__line term__done">
-              <span class="term__ok">✓</span> {{ 'HERO.DESK.CODEX_DONE' | translate }}
-            </p>
-          </div>
-          <p class="term__line term__line--input" style="--d: 6900ms">
-            <span class="term__sigil">›</span>&ngsp;<span class="term__cursor"></span>
+          <p class="term__line term__handoff" style="--d: 8200ms">
+            → {{ 'HERO.DESK.CODEX_HANDOFF' | translate }}
+          </p>
+          <p class="term__line term__handoff term__handoff--in" style="--d: 10600ms">
+            ← {{ 'HERO.DESK.CODEX_INBOX' | translate }}
+          </p>
+          <p class="term__line" style="--d: 11100ms">
+            <span class="term__ok">✓</span> {{ 'HERO.DESK.CODEX_APPROVED' | translate }}
+          </p>
+          <p class="term__line term__dim" style="--d: 11900ms">
+            {{ 'HERO.DESK.CODEX_WAITING' | translate }}
           </p>
         </div>
       </div>

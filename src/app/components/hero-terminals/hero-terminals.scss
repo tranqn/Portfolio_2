@@ -6,6 +6,7 @@ $term-tab-bg: color-mix(in srgb, $line 30%, $paper);
 $claude-clay: #a8502b;
 $term-ok: #2f6b34;
 $term-del: #b3261e;
+$term-warn: #8a4b00;
 
 :host {
   @include glass-backdrop;
@@ -19,6 +20,52 @@ $term-del: #b3261e;
 .terminals {
   padding: 22px 16px 26px;
   border-radius: 22px;
+}
+
+// ---- Shared plan: which step of the project the agents are on ----
+
+.plan {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 14px;
+  padding: 9px 16px;
+  font: 500 12px/1.4 $font-mono;
+  color: $ink-muted;
+  background: $term-bg;
+  border-bottom: 1px solid $line;
+}
+
+.plan__title {
+  margin: 0;
+  color: $ink;
+}
+
+.plan__steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.plan__step--done {
+  color: $term-ok;
+  animation: plan-reach 400ms $ease-out-soft var(--d) backwards;
+}
+
+.plan__step--active {
+  color: $accent;
+  font-weight: 600;
+  animation: plan-reach 400ms $ease-out-soft var(--d) backwards;
+}
+
+@keyframes plan-reach {
+  from {
+    color: $ink-muted;
+    opacity: 0.55;
+  }
 }
 
 // ---- Terminal panes ----
@@ -43,7 +90,7 @@ $term-del: #b3261e;
 }
 
 .term__body {
-  min-height: 268px;
+  min-height: 300px;
   padding: 16px 16px 18px;
   font: 400 12.5px/1.65 $font-mono;
   color: $ink;
@@ -104,30 +151,33 @@ $term-del: #b3261e;
   color: $term-del;
 }
 
-// Working and finished status share one grid cell, so nothing shifts
-.term__status {
-  display: grid;
-  margin-top: 6px;
+.term__handoff {
+  margin-top: 8px;
+  color: $accent;
+}
 
-  > .term__line {
-    grid-area: 1 / 1;
-  }
+.term__handoff--in {
+  margin-top: 12px;
+}
+
+.term__finding {
+  margin-top: 4px;
+  color: $term-warn;
+}
+
+.term__warn {
+  font-weight: 700;
 }
 
 .term__working {
-  opacity: 0;
+  margin-top: 12px;
   color: $ink-muted;
-  animation: term-flash var(--span) linear var(--from) both;
-}
-
-.term__done {
-  animation: term-in 320ms $ease-out-soft var(--d) backwards;
 }
 
 .term__spin {
   display: inline-block;
   color: $claude-clay;
-  animation: term-spin 900ms linear var(--from) 3;
+  animation: term-spin 900ms linear var(--d) 5;
 }
 
 .term__cursor {
@@ -157,18 +207,6 @@ $term-del: #b3261e;
   }
 }
 
-@keyframes term-flash {
-  0%,
-  100% {
-    opacity: 0;
-  }
-
-  3%,
-  97% {
-    opacity: 1;
-  }
-}
-
 @keyframes term-spin {
   to {
     transform: rotate(360deg);
@@ -178,6 +216,13 @@ $term-del: #b3261e;
 @keyframes term-blink {
   50% {
     opacity: 0;
+  }
+}
+
+// Narrow two-column panes: slightly smaller type keeps file names and diffs on one line
+@media (max-width: 1180px) {
+  .term__body {
+    font-size: 11.5px;
   }
 }
 

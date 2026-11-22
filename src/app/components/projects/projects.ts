@@ -20,6 +20,7 @@ const ZYKLUS_CARD: ProjectCardEntry = {
   poster: 'media/projects/zyklus.jpg',
   width: 960,
   height: 640,
+  walkthrough: 'media/projects/zyklus.mp4',
   link: { href: 'https://mci.quocnamtran.com' },
 };
 

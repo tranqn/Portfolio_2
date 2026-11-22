@@ -1,0 +1,18 @@
+<figure class="ingest" role="img" [attr.aria-label]="k + 'DIAGRAM_LABEL' | translate">
+  <figcaption class="eyebrow" aria-hidden="true">{{ k + 'DIAGRAM_TITLE' | translate }}</figcaption>
+  <ol class="ingest__flow" aria-hidden="true">
+    @for (step of steps; track $index; let last = $last) {
+      <li class="ingest__step" [class.ingest__step--split]="step.length > 1">
+        @for (box of step; track box.name) {
+          <span class="ingest__box">
+            <strong>{{ k + box.name | translate }}</strong>
+            <small>{{ k + box.sub | translate }}</small>
+          </span>
+        }
+      </li>
+      @if (!last) {
+        <li class="ingest__arrow">→</li>
+      }
+    }
+  </ol>
+</figure>

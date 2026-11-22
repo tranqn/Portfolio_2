@@ -14,6 +14,13 @@ export interface ShowcaseItem {
   code?: { url: string; host: 'GitHub' | 'GitLab' };
   /** Own recording for entries without a detail page (otherwise the project's media is used). */
   media?: ProjectMediaAsset;
+  /**
+   * Evidence for the detail page. Texts live under `<i18nKey>.EVIDENCE`
+   * (DECISION, TRADEOFF, VERIFICATION); links point at the test, ADR or code.
+   */
+  evidence?: { links: { labelKey: string; url: string }[]; diagram?: 'stadtpuls-ingest' };
+  /** Live demo needs a sign-in, so the recording becomes the primary path. */
+  liveNeedsLogin?: boolean;
   /** Number of overview points (`<i18nKey>.OVERVIEW.0…n`) shown when no recording exists. */
   overviewPoints?: number;
 }

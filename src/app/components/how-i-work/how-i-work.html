@@ -1,0 +1,35 @@
+<section id="arbeitsweise" class="how" tabindex="-1" aria-labelledby="how-heading">
+  <header class="how__head" appReveal>
+    <p class="eyebrow">{{ 'HOW.LABEL' | translate }}</p>
+    <h2 id="how-heading" class="how__title">
+      <span appSweep>{{ 'HOW.TITLE_1' | translate }}</span><br />
+      <em appSweep [sweepDelay]="400">{{ 'HOW.TITLE_2' | translate }}</em>
+    </h2>
+    <p class="how__lead">{{ 'HOW.LEAD' | translate }}</p>
+    <p class="how__text">{{ 'HOW.TEXT' | translate }}</p>
+  </header>
+
+  <div class="how__grid">
+    <figure class="how__terminal" appReveal="window">
+      <app-hero-terminals />
+      <figcaption>{{ 'HOW.TERMINAL_CAPTION' | translate }}</figcaption>
+    </figure>
+
+    <article class="how__example" appReveal [revealDelay]="80" aria-labelledby="how-example-title">
+      <p class="eyebrow">{{ 'HOW.EXAMPLE.LABEL' | translate }}</p>
+      <h3 id="how-example-title" class="how__example-title">{{ 'HOW.EXAMPLE.TITLE' | translate }}</h3>
+      <p class="how__example-problem">{{ 'HOW.EXAMPLE.PROBLEM' | translate }}</p>
+      <dl class="how__steps">
+        @for (part of exampleParts; track part) {
+          <div>
+            <dt>{{ 'HOW.EXAMPLE.' + part + '_TERM' | translate }}</dt>
+            <dd>{{ 'HOW.EXAMPLE.' + part | translate }}</dd>
+          </div>
+        }
+      </dl>
+      <a class="how__try quiet-link" [href]="praxisTryUrl" target="_blank" rel="noopener noreferrer">
+        {{ 'HOW.EXAMPLE.TRY' | translate }} <span aria-hidden="true">↗</span>
+      </a>
+    </article>
+  </div>
+</section>

@@ -91,3 +91,12 @@
 .project-card__role + .project-card__title {
   margin-top: 4px;
 }
+
+// Second link above the stretched card link
+.project-card__walkthrough {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  margin: 8px 4px 0;
+  font-size: 15px;
+}

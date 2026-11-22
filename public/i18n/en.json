@@ -10,7 +10,8 @@
     "NAV_LABEL": "Main navigation",
     "LANG_SWITCH": "Deutsch",
     "LANG_SWITCH_LABEL": "Auf Deutsch wechseln",
-    "SKIP": "Skip to content"
+    "SKIP": "Skip to content",
+    "HOW": "How I work"
   },
   "HERO": {
     "ROLE": "Fullstack Developer",
@@ -48,17 +49,11 @@
     "LABEL": "About me",
     "TITLE": "Who's Nam?",
     "TEXT_1": "I am Nam, a fullstack developer. I build complete web applications with modern interfaces, secure REST APIs and reliable deployments. I recently completed a practical fullstack development program at Developer Akademie. During this time, I built Join, Coderr, Videoflix and Quizly through individual and team projects.",
-    "TEXT_2": "I like working agentically best. Claude Code and Codex take on analysis, implementation and tests, often in parallel and reviewing each other. I write the specification first and handle quality assurance afterwards: I read every change, test it in the browser and on small screens, check accessibility and decide what ships.",
-    "TEXT_3": "My hands-on projects sharpened that eye. I know where software tends to break: roles and permissions, time zones, duplicate data and deployment. That is where I look first, even when an agent reports that everything is green.",
     "BUTTON": "Get in touch",
     "LOCATION": "Based in Saxony",
     "RELOCATE": "Open to relocate",
     "REMOTE": "Remote anywhere in Germany",
     "HYBRID": "Hybrid in Leipzig, Dresden, Chemnitz or Berlin",
-    "METHOD_LABEL": "How I approach a task",
-    "METHOD_TITLE_1": "Specify. Delegate.",
-    "METHOD_TITLE_2": "Review. Sign off.",
-    "METHOD_TEXT": "Agents deliver fast. Whether the result holds up only shows in the review afterwards. That part stays with me.",
     "TOOLS_TITLE": "Used in projects"
   },
   "SKILLS": {
@@ -303,7 +298,13 @@
       "DECISION": "The domain logic lives framework-free in its own layer: a state machine for appointments and time logic for Europe/Berlin. The interface reports conflicts (409) and stale versions (412) separately.",
       "RESULT": "Live demo with synthetic data. Unit tests run in GitLab CI, Playwright checks workflows and accessibility.",
       "MEDIA_LABEL": "Screen recording: in the Praxis UI Lab day list a patient is selected and called in, followed by search, the command palette with compact density and the history.",
-      "ROLE_SHORT": "Built solo: concept, UI, domain logic, tests"
+      "ROLE_SHORT": "Built solo: concept, UI, domain logic, tests",
+      "EVIDENCE": {
+        "DECISION": "The interface reports conflicts (409) and stale data (412) separately instead of showing a generic error. Domain logic lives in its own framework-free layer.",
+        "TRADEOFF": "Changes appear immediately and are confirmed in the background. That is faster than a spinner per click, but it requires a visible rollback when the server refuses.",
+        "VERIFICATION": "Unit tests for the board store, Playwright tests with axe for workflows and accessibility. The demo lets you trigger 409, 412 and 500 on purpose.",
+        "LINK_TRY": "Demo: trigger errors"
+      }
     },
     "STADTPULS": {
       "NAME": "StadtPuls",
@@ -317,27 +318,29 @@
       "DECISION": "Measurement time and arrival time stay separate so no false time series appear. Incoming data is validated, de-duplicated and decoded in an isolated driver runtime.",
       "RESULT": "253 automated tests, 9 browser tests against the production bundle and a GitLab pipeline with 15 jobs. Live demo and code are public.",
       "MEDIA_LABEL": "Screen recording of StadtPuls with demo data: overview with map, the Hafen site with consumption over 7 and 30 days, then the device list filtered to water meters.",
-      "ROLE_SHORT": "Built solo: services, API, dashboard, pipeline"
-    },
-    "ZYKLUS": {
-      "NAME": "Zyklus",
-      "TAGLINE": "A product for everyday life.",
-      "STACK": "React · PWA · offline sync · Hono API",
-      "TITLE": "Training and nutrition, even offline.",
-      "SUMMARY": "A mobile training app with a plan generator, set logging, a food diary and progress views. Installable, usable offline and available in three languages.",
-      "CONTRIBUTION": "Personal project. I modelled the feature set on an existing training app and built it entirely myself.",
-      "PROBLEM": "Gyms often have poor reception. Entries still need to be saved immediately and synced between devices later.",
-      "TECH": "React PWA, custom sync layer, API with Hono and node:sqlite, Vitest and Playwright in a mobile viewport.",
-      "DECISION": "Plan generator, progression and calorie targets live outside React in a tested domain layer. Sync conflicts are merged per entry.",
-      "RESULT": "Runs live on my server. Using it requires an account.",
-      "OVERVIEW": {
-        "0": "Plan generator with mesocycles and a deload week",
-        "1": "Set logging with a rest timer",
-        "2": "Nutrition with barcode scanner and offline food data",
-        "3": "Sync between devices, works offline",
-        "4": "German, English and Vietnamese"
-      },
-      "MEDIA_LABEL": "Screen recording of Zyklus with a demo account: on the left a workout with set logging and rest timer, on the right an exercise animation, the muscle map and the weekly planner."
+      "ROLE_SHORT": "Built solo: services, API, dashboard, pipeline",
+      "EVIDENCE": {
+        "DECISION": "Every reading carries two timestamps: when the meter measured and when the value reached StadtPuls. Time series and charts only use the measurement time. The types do not even allow an ingestion time there.",
+        "TRADEOFF": "Late or duplicated uplinks land in the right place instead of distorting consumption charts. The price is two data stores (PostgreSQL and InfluxDB) with separate backups, and context and readings are joined in application code.",
+        "VERIFICATION": "Unit tests keep the two timestamps apart. Integration tests check tenant isolation: another tenant's asset answers 404 instead of 403, so not even its existence leaks.",
+        "LINK_ADR": "ADR 03: two data stores",
+        "LINK_TIME": "Test: measurement vs ingestion time",
+        "LINK_TENANT": "Test: 404 instead of 403",
+        "DIAGRAM_TITLE": "Path of a reading",
+        "DIAGRAM_LABEL": "Flow: meters send over LoRaWAN, RabbitMQ accepts the uplinks, Moleculer services validate, deduplicate and decode them, master data lives in PostgreSQL, readings in InfluxDB, and the Vue dashboard reads both through the API.",
+        "D_DEVICE": "Meter",
+        "D_DEVICE_SUB": "LoRaWAN",
+        "D_QUEUE": "RabbitMQ",
+        "D_QUEUE_SUB": "uplinks",
+        "D_SERVICES": "Moleculer",
+        "D_SERVICES_SUB": "validate · dedupe · decode",
+        "D_PG": "PostgreSQL",
+        "D_PG_SUB": "master data",
+        "D_INFLUX": "InfluxDB",
+        "D_INFLUX_SUB": "readings",
+        "D_UI": "Vue",
+        "D_UI_SUB": "dashboard"
+      }
     },
     "CODERR": {
       "NAME": "Coderr",
@@ -351,8 +354,22 @@
       "DECISION": "No Redis, no Celery, no WebSockets. The chat polls over HTTP and pauses in background tabs. Orders store the agreed offer terms as an immutable snapshot.",
       "RESULT": "136 automated tests and a Lighthouse accessibility score of 100. App and database use about 120 MB together. Live demo and code are public.",
       "MEDIA_LABEL": "Screen recording: start page, filters and offer page of Coderr.",
-      "ROLE_SHORT": "Mine: backend, own frontend, deployment"
-    }
+      "ROLE_SHORT": "Mine: backend, own frontend, deployment",
+      "EVIDENCE": {
+        "DECISION": "No Redis, no Celery, no WebSockets. The chat asks for new messages over HTTP every 15 seconds, pauses in background tabs and backs off after errors.",
+        "TRADEOFF": "Messages can arrive up to 15 seconds late. In return the server needs no open channel per user and gets by with about 120 MB for app and database.",
+        "VERIFICATION": "136 automated tests. One covers sending, polling for new messages and read receipts, another checks that orders store the offer terms as a snapshot.",
+        "LINK_POLL": "Test: message polling",
+        "LINK_CLIENT": "Code: polling in the frontend",
+        "LINK_SNAPSHOT": "Test: order snapshot"
+      }
+    },
+    "WALKTHROUGH": "Watch the walkthrough",
+    "LIVE_LOGIN": "Live demo (sign-in required)",
+    "EVIDENCE_TITLE": "Decision, trade-off, evidence",
+    "DECISION_TERM": "Decision",
+    "TRADEOFF_TERM": "Trade-off",
+    "VERIFICATION_TERM": "Evidence"
   },
   "MEDIA": {
     "PAUSE": "Pause",
@@ -364,5 +381,27 @@
     "HOME_DESCRIPTION": "Quóc Nam Tràn, fullstack developer based in Saxony: web applications with Angular, TypeScript and Python/Django, from user workflows to APIs and hosting. Projects, CV and contact.",
     "LEGAL_NOTICE_DESCRIPTION": "Legal notice of the portfolio website of Quóc Nam Tràn.",
     "PRIVACY_POLICY_DESCRIPTION": "Privacy policy of the portfolio website of Quóc Nam Tràn."
+  },
+  "HOW": {
+    "LABEL": "How I work",
+    "TITLE_1": "Specify. Delegate.",
+    "TITLE_2": "Review. Sign off.",
+    "LEAD": "I use Claude Code and Codex for scoped implementation and tests. I define the expected behaviour, review the changes, and verify the scenarios that matter before I ship.",
+    "TEXT": "My hands-on projects trained my eye for this. Software tends to break at roles and permissions, time zones, duplicate data and deployment. That is where I look first, even when an agent reports that everything is green.",
+    "TERMINAL_CAPTION": "Illustration: Claude Code implements, Codex reviews, the sign-off stays with me.",
+    "EXAMPLE": {
+      "LABEL": "A real example",
+      "TITLE": "Praxis UI Lab: conflict or stale data?",
+      "PROBLEM": "Two errors look the same at the front desk but mean different things. A conflict (409) means this status change is not allowed right now. Stale data (412) means someone else changed the appointment in the meantime.",
+      "SPEC_TERM": "Specified",
+      "SPEC": "Both cases visibly roll back the change and are announced to screen readers. On 412 the day list reloads the appointment and shows its real state. On 409 the entered reason stays in place, so a second attempt works without retyping.",
+      "AGENT_TERM": "Agent",
+      "AGENT": "Claude Code implemented the error handling in the board store and the tests from this specification, Codex reviewed the change.",
+      "REVIEW_TERM": "My review",
+      "REVIEW": "I triggered both cases in the demo and checked that the rejected target status never stays on screen after a 412.",
+      "PROOF_TERM": "Evidence",
+      "PROOF": "A unit test checks that the real server state is shown after a 412. A Playwright test checks that the reason survives a 409 and the second attempt succeeds.",
+      "TRY": "Try it yourself: trigger 409 or 412 in the demo"
+    }
   }
 }

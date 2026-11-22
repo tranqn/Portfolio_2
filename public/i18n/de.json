@@ -10,7 +10,8 @@
     "NAV_LABEL": "Hauptnavigation",
     "LANG_SWITCH": "English",
     "LANG_SWITCH_LABEL": "Switch to English",
-    "SKIP": "Zum Inhalt springen"
+    "SKIP": "Zum Inhalt springen",
+    "HOW": "Arbeitsweise"
   },
   "HERO": {
     "ROLE": "Fullstack Developer",
@@ -48,17 +49,11 @@
     "LABEL": "Über mich",
     "TITLE": "Wer ist Nam?",
     "TEXT_1": "Ich bin Nam, Fullstack Developer. Ich entwickle vollständige Webanwendungen mit modernen Frontends, sicheren REST-APIs und stabilen Deployments. Zuletzt habe ich eine praxisorientierte Fullstack-Weiterbildung bei der Developer Akademie abgeschlossen. In dieser Zeit entstanden Join, Coderr, Videoflix und Quizly als Einzel- und Teamprojekte.",
-    "TEXT_2": "Am liebsten arbeite ich agentisch. Claude Code und Codex übernehmen Analyse, Umsetzung und Tests, oft parallel und mit gegenseitigem Review. Ich schreibe vorher die Spezifikation und übernehme danach die Qualitätssicherung: Ich lese jede Änderung, teste sie im Browser und auf kleinen Bildschirmen, prüfe die Barrierefreiheit und entscheide, was ausgeliefert wird.",
-    "TEXT_3": "Den Blick dafür haben mir meine Praxisprojekte geschärft. Ich weiß, wo Software gern bricht: bei Rollen und Rechten, bei Zeitzonen, bei doppelten Daten und beim Deployment. Dort schaue ich zuerst hin, auch wenn ein Agent meldet, dass alles grün ist.",
     "BUTTON": "Kontakt aufnehmen",
     "LOCATION": "Ansässig in Sachsen",
     "RELOCATE": "Bereit zum Umzug",
     "REMOTE": "Remote in ganz Deutschland",
     "HYBRID": "Hybrid in Leipzig, Dresden, Chemnitz oder Berlin",
-    "METHOD_LABEL": "So gehe ich an Aufgaben heran",
-    "METHOD_TITLE_1": "Spezifizieren. Delegieren.",
-    "METHOD_TITLE_2": "Prüfen. Abnehmen.",
-    "METHOD_TEXT": "Agenten liefern schnell. Ob das Ergebnis trägt, zeigt erst die Prüfung danach. Die bleibt bei mir.",
     "TOOLS_TITLE": "In Projekten eingesetzt"
   },
   "SKILLS": {
@@ -303,7 +298,13 @@
       "DECISION": "Die Fachlogik liegt framework-frei in einer eigenen Domänenschicht: ein Statusautomat für Termine und eine Zeitlogik für Europe/Berlin. Konflikte (409) und veraltete Stände (412) meldet die Oberfläche getrennt.",
       "RESULT": "Live-Demo mit synthetischen Daten. Unit-Tests laufen in der GitLab-CI, Playwright prüft Abläufe und Barrierefreiheit.",
       "MEDIA_LABEL": "Bildschirmaufnahme: In der Tagesliste von Praxis UI Lab wird eine Patientin ausgewählt und ins Zimmer gerufen, danach folgen Suche, Befehlspalette mit kompakter Dichte und der Verlauf.",
-      "ROLE_SHORT": "Allein umgesetzt: Konzept, Oberfläche, Fachlogik, Tests"
+      "ROLE_SHORT": "Allein umgesetzt: Konzept, Oberfläche, Fachlogik, Tests",
+      "EVIDENCE": {
+        "DECISION": "Konflikte (409) und veraltete Stände (412) meldet die Oberfläche getrennt, statt einen allgemeinen Fehler zu zeigen. Die Fachlogik liegt framework-frei in einer eigenen Domänenschicht.",
+        "TRADEOFF": "Änderungen erscheinen sofort und werden im Hintergrund bestätigt. Das ist schneller als ein Ladebalken pro Klick, verlangt aber ein sichtbares Zurückrollen, wenn der Server ablehnt.",
+        "VERIFICATION": "Unit-Tests für den Board-Store, Playwright-Tests mit axe für Abläufe und Barrierefreiheit. In der Demo lassen sich 409, 412 und 500 gezielt auslösen.",
+        "LINK_TRY": "Demo: Fehler auslösen"
+      }
     },
     "STADTPULS": {
       "NAME": "StadtPuls",
@@ -317,27 +318,29 @@
       "DECISION": "Messzeit und Eingangszeit bleiben getrennt, damit keine falschen Zeitreihen entstehen. Eingehende Daten werden geprüft, dedupliziert und in einer abgeschotteten Treiber-Laufzeit dekodiert.",
       "RESULT": "253 automatisierte Tests, 9 Browser-Tests gegen das Produktions-Bundle und eine GitLab-Pipeline mit 15 Jobs. Live-Demo und Code sind öffentlich.",
       "MEDIA_LABEL": "Bildschirmaufnahme von StadtPuls mit Demo-Daten: Übersicht mit Karte, Standort Hafen mit Verbrauchsverlauf über 7 und 30 Tage, danach die Geräteliste gefiltert nach Wasserzählern.",
-      "ROLE_SHORT": "Allein umgesetzt: Dienste, API, Dashboard, Pipeline"
-    },
-    "ZYKLUS": {
-      "NAME": "Zyklus",
-      "TAGLINE": "Ein Produkt für den Alltag.",
-      "STACK": "React · PWA · Offline-Sync · Hono-API",
-      "TITLE": "Training und Ernährung, auch ohne Netz.",
-      "SUMMARY": "Mobile Trainings-App mit Plangenerator, Satz-Logging, Ernährungstagebuch und Fortschrittsansicht. Installierbar, offline nutzbar und dreisprachig.",
-      "CONTRIBUTION": "Eigenes Projekt. Den Funktionsumfang habe ich an einer bestehenden Trainings-App ausgerichtet und vollständig selbst umgesetzt.",
-      "PROBLEM": "Im Fitnessstudio ist das Netz oft schlecht. Einträge müssen trotzdem sofort gespeichert und später zwischen Geräten abgeglichen werden.",
-      "TECH": "React-PWA, eigene Synchronisierung, API mit Hono und node:sqlite, Vitest und Playwright im mobilen Viewport.",
-      "DECISION": "Plangenerator, Progression und Kalorienziele liegen getrennt von React in einer getesteten Domänenschicht. Konflikte beim Synchronisieren werden pro Eintrag zusammengeführt.",
-      "RESULT": "Läuft live auf meinem Server. Für die Nutzung ist ein Konto nötig.",
-      "OVERVIEW": {
-        "0": "Plangenerator mit Mesozyklen und Deload-Woche",
-        "1": "Satz-Logging mit Pausen-Timer",
-        "2": "Ernährung mit Barcode-Scanner und Offline-Lebensmitteldaten",
-        "3": "Synchronisierung zwischen Geräten, offline-fähig",
-        "4": "Deutsch, Englisch und Vietnamesisch"
-      },
-      "MEDIA_LABEL": "Bildschirmaufnahme von Zyklus mit einem Demo-Konto: links ein Training mit Satzerfassung und Pausentimer, rechts Übungsanimation, Muskel-Map und Wochenplaner."
+      "ROLE_SHORT": "Allein umgesetzt: Dienste, API, Dashboard, Pipeline",
+      "EVIDENCE": {
+        "DECISION": "Jeder Messwert trägt zwei Zeitstempel: wann der Zähler gemessen hat und wann der Wert bei StadtPuls ankam. Zeitreihen und Diagramme rechnen nur mit der Messzeit. Die Typen lassen eine Eingangszeit dort gar nicht zu.",
+        "TRADEOFF": "Verspätete oder doppelt gesendete Uplinks landen so an der richtigen Stelle, statt Verbrauchskurven zu verfälschen. Dafür gibt es zwei Datenspeicher (PostgreSQL und InfluxDB) mit eigener Sicherung, und Kontext und Messwerte werden im Code zusammengeführt.",
+        "VERIFICATION": "Unit-Tests halten die beiden Zeitstempel auseinander. Integrationstests prüfen die Mandantentrennung: Eine fremde Anlage antwortet mit 404 statt 403, damit nicht einmal ihre Existenz verraten wird.",
+        "LINK_ADR": "ADR 03: zwei Datenspeicher",
+        "LINK_TIME": "Test: Mess- und Eingangszeit",
+        "LINK_TENANT": "Test: 404 statt 403",
+        "DIAGRAM_TITLE": "Weg eines Messwerts",
+        "DIAGRAM_LABEL": "Ablauf: Zähler senden per LoRaWAN, RabbitMQ nimmt die Uplinks an, Moleculer-Dienste prüfen, deduplizieren und dekodieren sie, Stammdaten liegen in PostgreSQL, Messwerte in InfluxDB, das Vue-Dashboard liest beides über die API.",
+        "D_DEVICE": "Zähler",
+        "D_DEVICE_SUB": "LoRaWAN",
+        "D_QUEUE": "RabbitMQ",
+        "D_QUEUE_SUB": "Uplinks",
+        "D_SERVICES": "Moleculer",
+        "D_SERVICES_SUB": "prüfen · dedupl. · dekodieren",
+        "D_PG": "PostgreSQL",
+        "D_PG_SUB": "Stammdaten",
+        "D_INFLUX": "InfluxDB",
+        "D_INFLUX_SUB": "Messwerte",
+        "D_UI": "Vue",
+        "D_UI_SUB": "Dashboard"
+      }
     },
     "CODERR": {
       "NAME": "Coderr",
@@ -351,8 +354,22 @@
       "DECISION": "Kein Redis, kein Celery, keine WebSockets. Der Chat fragt per HTTP nach neuen Nachrichten und pausiert in Hintergrund-Tabs. Bestellungen speichern die Angebotsbedingungen als unveränderlichen Snapshot.",
       "RESULT": "136 automatisierte Tests, Lighthouse 100 bei Barrierefreiheit. App und Datenbank brauchen zusammen rund 120 MB. Live-Demo und Code sind öffentlich.",
       "MEDIA_LABEL": "Bildschirmaufnahme: Startseite, Filter und Angebotsseite von Coderr.",
-      "ROLE_SHORT": "Von mir: Backend, eigenes Frontend, Deployment"
-    }
+      "ROLE_SHORT": "Von mir: Backend, eigenes Frontend, Deployment",
+      "EVIDENCE": {
+        "DECISION": "Kein Redis, kein Celery, keine WebSockets. Der Chat fragt alle 15 Sekunden per HTTP nach neuen Nachrichten, pausiert in Hintergrund-Tabs und wartet nach Fehlern schrittweise länger.",
+        "TRADEOFF": "Nachrichten kommen bis zu 15 Sekunden später an. Dafür braucht der Server keinen dauerhaft offenen Kanal pro Nutzer und kommt mit rund 120 MB für App und Datenbank aus.",
+        "VERIFICATION": "136 automatisierte Tests. Ein Test deckt Senden, Abfragen neuer Nachrichten und Lesebestätigung ab, ein anderer prüft, dass Bestellungen die Angebotsbedingungen als Snapshot speichern.",
+        "LINK_POLL": "Test: Nachrichten abfragen",
+        "LINK_CLIENT": "Code: Polling im Frontend",
+        "LINK_SNAPSHOT": "Test: Bestell-Snapshot"
+      }
+    },
+    "WALKTHROUGH": "Rundgang ansehen",
+    "LIVE_LOGIN": "Live-Demo (Anmeldung nötig)",
+    "EVIDENCE_TITLE": "Entscheidung, Abwägung, Nachweis",
+    "DECISION_TERM": "Entscheidung",
+    "TRADEOFF_TERM": "Abwägung",
+    "VERIFICATION_TERM": "Nachweis"
   },
   "MEDIA": {
     "PAUSE": "Pause",
@@ -364,5 +381,27 @@
     "HOME_DESCRIPTION": "Quóc Nam Tràn, Fullstack Developer aus Sachsen: Webanwendungen mit Angular, TypeScript und Python/Django, von der Oberfläche über die API bis zum Hosting. Projekte, Lebenslauf und Kontakt.",
     "LEGAL_NOTICE_DESCRIPTION": "Impressum der Portfolio-Website von Quóc Nam Tràn.",
     "PRIVACY_POLICY_DESCRIPTION": "Datenschutzerklärung der Portfolio-Website von Quóc Nam Tràn."
+  },
+  "HOW": {
+    "LABEL": "Arbeitsweise",
+    "TITLE_1": "Spezifizieren. Delegieren.",
+    "TITLE_2": "Prüfen. Abnehmen.",
+    "LEAD": "Ich nutze Claude Code und Codex für klar umrissene Umsetzung und Tests. Ich lege das erwartete Verhalten fest, prüfe die Änderungen und teste die Fälle, auf die es ankommt, bevor ich ausliefere.",
+    "TEXT": "Den Blick dafür haben mir meine Praxisprojekte geschärft. Software bricht gern bei Rollen und Rechten, bei Zeitzonen, bei doppelten Daten und beim Deployment. Dort schaue ich zuerst hin, auch wenn ein Agent meldet, dass alles grün ist.",
+    "TERMINAL_CAPTION": "Beispielhafte Darstellung: Claude Code setzt um, Codex prüft, die Abnahme bleibt bei mir.",
+    "EXAMPLE": {
+      "LABEL": "Ein echtes Beispiel",
+      "TITLE": "Praxis UI Lab: Konflikt oder veralteter Stand?",
+      "PROBLEM": "Zwei Fehler sehen am Empfang gleich aus, bedeuten aber Verschiedenes. Ein Konflikt (409) heißt: Dieser Statuswechsel ist gerade nicht erlaubt. Ein veralteter Stand (412) heißt: Jemand anderes hat den Termin inzwischen geändert.",
+      "SPEC_TERM": "Festgelegt",
+      "SPEC": "Beide Fälle rollen die Änderung sichtbar zurück und werden für Screenreader angesagt. Bei 412 lädt die Tagesliste den Termin neu und zeigt den echten Stand. Bei 409 bleibt die eingegebene Begründung stehen, damit ein zweiter Versuch ohne Neueingabe klappt.",
+      "AGENT_TERM": "Agent",
+      "AGENT": "Claude Code hat die Fehlerbehandlung im Board-Store und die Tests nach dieser Vorgabe umgesetzt, Codex hat die Änderung gegengelesen.",
+      "REVIEW_TERM": "Meine Prüfung",
+      "REVIEW": "Ich habe beide Fälle in der Demo ausgelöst und darauf geachtet, dass nach einem 412 nie der abgelehnte Zielstatus stehen bleibt.",
+      "PROOF_TERM": "Nachweis",
+      "PROOF": "Ein Unit-Test prüft, dass nach einem 412 der echte Serverstand angezeigt wird. Ein Playwright-Test prüft, dass nach einem 409 die Begründung erhalten bleibt und der zweite Versuch gelingt.",
+      "TRY": "Selbst ausprobieren: 409 oder 412 in der Demo auslösen"
+    }
   }
 }

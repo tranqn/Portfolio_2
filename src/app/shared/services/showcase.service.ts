@@ -20,12 +20,32 @@ export class ShowcaseService {
       i18nKey: 'SHOWCASE.STADTPULS',
       liveUrl: 'https://stadtpuls.quocnamtran.com',
       code: { url: 'https://gitlab.com/nam.qt/stadtpuls', host: 'GitLab' },
+      liveNeedsLogin: true,
+      evidence: {
+        diagram: 'stadtpuls-ingest',
+        links: [
+          { labelKey: 'SHOWCASE.STADTPULS.EVIDENCE.LINK_ADR', url: 'https://gitlab.com/nam.qt/stadtpuls/-/blob/main/docs/adr/03-two-datastores.md' },
+          { labelKey: 'SHOWCASE.STADTPULS.EVIDENCE.LINK_TIME', url: 'https://gitlab.com/nam.qt/stadtpuls/-/blob/main/packages/core/time.spec.ts' },
+          {
+            labelKey: 'SHOWCASE.STADTPULS.EVIDENCE.LINK_TENANT',
+            url: 'https://gitlab.com/nam.qt/stadtpuls/-/blob/main/services/api/src/api.integration.spec.ts#L272',
+          },
+        ],
+      },
     },
     {
       id: 'praxis',
       projectId: 'praxis-ui-lab',
       i18nKey: 'SHOWCASE.PRAXIS',
       liveUrl: 'https://praxis-ui-lab.quocnamtran.com',
+      evidence: {
+        links: [
+          {
+            labelKey: 'SHOWCASE.PRAXIS.EVIDENCE.LINK_TRY',
+            url: 'https://praxis-ui-lab.quocnamtran.com/einstellungen',
+          },
+        ],
+      },
     },
     {
       id: 'coderr',
@@ -33,6 +53,13 @@ export class ShowcaseService {
       i18nKey: 'SHOWCASE.CODERR',
       liveUrl: 'https://coderr.quocnamtran.com',
       code: { url: 'https://github.com/tranqn/coderr', host: 'GitHub' },
+      evidence: {
+        links: [
+          { labelKey: 'SHOWCASE.CODERR.EVIDENCE.LINK_POLL', url: 'https://github.com/tranqn/coderr/blob/main/backend/message_app/tests.py#L48' },
+          { labelKey: 'SHOWCASE.CODERR.EVIDENCE.LINK_CLIENT', url: 'https://github.com/tranqn/coderr/blob/main/frontend/scripts/messages.js' },
+          { labelKey: 'SHOWCASE.CODERR.EVIDENCE.LINK_SNAPSHOT', url: 'https://github.com/tranqn/coderr/blob/main/backend/order_app/tests.py#L75' },
+        ],
+      },
     },
   ]);
 

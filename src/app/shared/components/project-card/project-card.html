@@ -27,7 +27,12 @@
     @if (route()) {
       {{ 'SHOWCASE.LINK_DETAILS' | translate }} →
     } @else {
-      {{ 'SHOWCASE.LINK_LIVE' | translate }} ↗
+      {{ 'SHOWCASE.LIVE_LOGIN' | translate }} ↗
     }
   </p>
+  @if (entry().walkthrough; as walkthrough) {
+    <a class="project-card__walkthrough quiet-link" [href]="walkthrough" target="_blank" rel="noopener noreferrer">
+      {{ 'SHOWCASE.WALKTHROUGH' | translate }} <span aria-hidden="true">↗</span>
+    </a>
+  }
 </article>

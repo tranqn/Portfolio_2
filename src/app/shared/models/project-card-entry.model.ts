@@ -15,6 +15,8 @@ export interface ProjectCardEntry {
   height: number;
   /** Highlighted card, e.g. the team project. */
   highlight?: boolean;
+  /** Recording opened in the browser's own player (controls, seeking). */
+  walkthrough?: string;
   /** Either an internal detail route or an external live URL. */
   link: { route: string } | { href: string };
 }

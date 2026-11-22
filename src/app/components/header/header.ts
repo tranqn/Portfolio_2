@@ -9,6 +9,7 @@ import { TranslationService } from '../../shared/services/translation.service';
 const NAV_ITEMS = [
   { fragment: 'skills', key: 'HEADER.SKILLS' },
   { fragment: 'projects', key: 'HEADER.PROJECTS' },
+  { fragment: 'arbeitsweise', key: 'HEADER.HOW' },
   { fragment: 'about', key: 'HEADER.ABOUT' },
   { fragment: 'contact', key: 'HEADER.CONTACT' },
 ] as const;

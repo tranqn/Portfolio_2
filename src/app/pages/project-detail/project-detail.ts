@@ -9,10 +9,11 @@ import { ShowcaseService } from '../../shared/services/showcase.service';
 import { MacWindow } from '../../shared/components/mac-window/mac-window';
 import { ProjectMedia } from '../../shared/components/project-media/project-media';
 import { Sweep } from '../../shared/directives/sweep.directive';
+import { IngestDiagram } from '../../shared/components/ingest-diagram/ingest-diagram';
 
 @Component({
   selector: 'app-project-detail',
-  imports: [RouterLink, TranslateModule, MacWindow, ProjectMedia, Sweep],
+  imports: [RouterLink, TranslateModule, MacWindow, ProjectMedia, Sweep, IngestDiagram],
   templateUrl: './project-detail.html',
   styleUrl: './project-detail.scss',
 })
@@ -40,6 +41,12 @@ export class ProjectDetail {
   protected readonly project = computed(() => {
     const id = this.projectId();
     return id ? this.projectDataService.getProjectById(id) : undefined;
+  });
+
+  /** Showcase entry behind this project (evidence, sign-in hint), if any. */
+  protected readonly showcaseItem = computed(() => {
+    const id = this.project()?.id;
+    return id ? this.showcase.allItems().find((item) => item.projectId === id) : undefined;
   });
 
   /** The next project in the circular chain, used for "Next project" navigation. */

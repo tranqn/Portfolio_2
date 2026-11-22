@@ -176,3 +176,39 @@
     gap: 36px;
   }
 }
+
+.project-detail__evidence-list {
+  display: grid;
+  gap: 14px;
+  margin: 16px 0 0;
+
+  div {
+    padding-top: 12px;
+    border-top: 1px solid $line;
+  }
+
+  dt {
+    font: 400 12px/1.4 $font-mono;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: $ink-muted;
+  }
+
+  dd {
+    margin: 4px 0 0;
+  }
+}
+
+.project-detail__diagram {
+  margin-top: 24px;
+}
+
+.project-detail__evidence-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin: 20px 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 15px;
+}

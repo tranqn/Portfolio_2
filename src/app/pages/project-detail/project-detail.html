@@ -30,10 +30,23 @@
           </app-mac-window>
 
           <ul class="project-detail__links" [attr.aria-label]="'PROJECT_DETAIL.LINKS' | translate">
+            @if (showcaseItem()?.liveNeedsLogin && proj.media) {
+              <li>
+                <a class="project-detail__link project-detail__link--primary" [href]="proj.media.video" target="_blank" rel="noopener noreferrer">
+                  {{ 'SHOWCASE.WALKTHROUGH' | translate }} <span aria-hidden="true">↗</span>
+                </a>
+              </li>
+            }
             @if (proj.liveUrl) {
               <li>
-                <a class="project-detail__link project-detail__link--primary" [href]="proj.liveUrl" target="_blank" rel="noopener noreferrer">
-                  {{ 'PROJECTS.LIVE_TEST' | translate }} <span aria-hidden="true">↗</span>
+                <a
+                  class="project-detail__link"
+                  [class.project-detail__link--primary]="!showcaseItem()?.liveNeedsLogin"
+                  [href]="proj.liveUrl"
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  {{ (showcaseItem()?.liveNeedsLogin ? 'SHOWCASE.LIVE_LOGIN' : 'PROJECTS.LIVE_TEST') | translate }}
+                  <span aria-hidden="true">↗</span>
                 </a>
               </li>
             }
@@ -65,6 +78,34 @@
               <h2><span appSweep>{{ 'PROJECT_DETAIL.IMPLEMENTATION' | translate }}</span></h2>
               <p>{{ proj.implementationDetails | translate }}</p>
             </section>
+          }
+
+          @if (showcaseItem(); as item) {
+            @if (item.evidence; as evidence) {
+              <section id="nachweis" class="project-detail__section project-detail__evidence">
+                <h2><span appSweep>{{ 'SHOWCASE.EVIDENCE_TITLE' | translate }}</span></h2>
+                <dl class="project-detail__evidence-list">
+                  @for (part of ['DECISION', 'TRADEOFF', 'VERIFICATION']; track part) {
+                    <div>
+                      <dt>{{ 'SHOWCASE.' + part + '_TERM' | translate }}</dt>
+                      <dd>{{ item.i18nKey + '.EVIDENCE.' + part | translate }}</dd>
+                    </div>
+                  }
+                </dl>
+                @if (evidence.diagram === 'stadtpuls-ingest') {
+                  <app-ingest-diagram class="project-detail__diagram" />
+                }
+                <ul class="project-detail__evidence-links">
+                  @for (link of evidence.links; track link.url) {
+                    <li>
+                      <a class="quiet-link" [href]="link.url" target="_blank" rel="noopener noreferrer">
+                        {{ link.labelKey | translate }} <span aria-hidden="true">↗</span>
+                      </a>
+                    </li>
+                  }
+                </ul>
+              </section>
+            }
           }
 
           <dl class="project-detail__meta">

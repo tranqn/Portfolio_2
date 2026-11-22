@@ -74,10 +74,18 @@
                 </a>
               </li>
             }
+            @if (selected().liveNeedsLogin && selectedMedia(); as media) {
+              <li>
+                <a class="showcase__link" [href]="media.video" target="_blank" rel="noopener noreferrer">
+                  {{ 'SHOWCASE.WALKTHROUGH' | translate }} <span aria-hidden="true">↗</span>
+                </a>
+              </li>
+            }
             @if (selected().liveUrl; as liveUrl) {
               <li>
                 <a class="showcase__link" [href]="liveUrl" target="_blank" rel="noopener noreferrer">
-                  {{ 'SHOWCASE.LINK_LIVE' | translate }} <span aria-hidden="true">↗</span>
+                  {{ (selected().liveNeedsLogin ? 'SHOWCASE.LIVE_LOGIN' : 'SHOWCASE.LINK_LIVE') | translate }}
+                  <span aria-hidden="true">↗</span>
                 </a>
               </li>
             }

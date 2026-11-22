@@ -1,0 +1,132 @@
+@use '../../../styles/variables' as *;
+
+:host {
+  display: block;
+}
+
+.how {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 72px 40px 40px;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.how__head {
+  max-width: 720px;
+  padding-top: 56px;
+  border-top: 1px solid $line;
+}
+
+.how__title {
+  margin-top: 14px;
+
+  em {
+    font-style: normal;
+    font-weight: $font-weight-normal;
+    color: $accent;
+  }
+}
+
+.how__lead {
+  margin: 22px 0 0;
+  font-size: 19px;
+  line-height: 1.6;
+  color: $ink;
+}
+
+.how__text {
+  margin: 14px 0 0;
+  font-size: 17px;
+  line-height: 1.6;
+  color: $ink-muted;
+}
+
+.how__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  align-items: start;
+  gap: 40px;
+  margin-top: 48px;
+}
+
+.how__terminal {
+  margin: 0;
+
+  figcaption {
+    margin-top: 12px;
+    font-size: 14px;
+    color: $ink-muted;
+  }
+}
+
+.how__example {
+  padding: 28px;
+  background: $paper;
+  border: 1px solid $line;
+  border-radius: 20px;
+}
+
+.how__example-title {
+  margin: 10px 0 0;
+  font-size: 24px;
+  line-height: 1.25;
+}
+
+.how__example-problem {
+  margin: 14px 0 0;
+  font-size: 16px;
+  line-height: 1.6;
+  color: $ink-muted;
+}
+
+.how__steps {
+  display: grid;
+  gap: 14px;
+  margin: 20px 0 0;
+
+  div {
+    padding-top: 14px;
+    border-top: 1px solid $line;
+  }
+
+  dt {
+    font: 400 12px/1.4 $font-mono;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: $ink-muted;
+  }
+
+  dd {
+    margin: 4px 0 0;
+    font-size: 15px;
+    line-height: 1.55;
+  }
+}
+
+.how__try {
+  display: inline-block;
+  margin-top: 20px;
+  font-size: 15px;
+}
+
+@media (max-width: 960px) {
+  .how {
+    padding: 48px 20px 24px;
+  }
+
+  .how__head {
+    padding-top: 40px;
+  }
+
+  .how__grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+
+  .how__example {
+    padding: 20px;
+  }
+}

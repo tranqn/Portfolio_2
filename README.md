@@ -1,59 +1,32 @@
-# Portfolio2
+# Portfolio · quocnamtran.com
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.8.
+Source of [quocnamtran.com](https://quocnamtran.com), my portfolio as a fullstack developer with a frontend focus.
 
-## Development server
+- **Angular 20** with standalone components, signals and strict TypeScript.
+- **Static prerendering** of every route via `@angular/ssr`, so each page ships with its own HTML, meta tags, canonical URL and a real 404.
+- **German and English** under separate URLs (`/` and `/en`) with `hreflang`; texts live in `public/i18n/de.json` and `public/i18n/en.json`.
+- **Project case studies** (`src/app/pages/project-detail/`) with walkthrough recordings, a decision / trade-off / evidence block and links pinned to specific commits.
+- **Accessibility and motion:** skip link, visible focus, screen-reader hints, and a reduce-motion switch that also respects `prefers-reduced-motion`.
 
-To start a local development server, run:
+## Development
 
-```bash
-ng serve
+```sh
+npm install
+npm start          # dev server on http://localhost:4200
+npm run build      # prerendered build in dist/Portfolio_2/browser (generates the sitemap first)
+npm run test:ci    # unit tests, headless
+npm run smoke      # after a build: DE and EN routes at 375 and 1440 px, console errors, SEO tags
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Structure
 
-## Code scaffolding
+| Path | Content |
+| --- | --- |
+| `src/app/components/` | Sections of the start page (hero, skills, projects, how I work, about, contact) |
+| `src/app/pages/` | Project detail, legal notice, privacy policy, 404 |
+| `src/app/shared/` | Reusable components, directives, models and data services |
+| `scripts/` | Sitemap generator and Playwright smoke check |
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## License
 
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+All rights reserved. The code is published as a work sample; please do not reuse it.
